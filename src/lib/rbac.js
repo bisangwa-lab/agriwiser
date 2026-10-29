@@ -95,6 +95,19 @@ const PAGE_PANEL = [
 ];
 
 /** The panel a route path belongs to, or null (e.g. the root redirect). */
+/** Resolve a shared weather page to its authorized originating workspace. */
+export function activePanelForPath(user, pathname, workspace, rememberedWorkspace) {
+  const routePanel = panelForPath(pathname);
+  if (routePanel) return routePanel;
+  if (pathname === "/weather") {
+    for (const candidate of [workspace, rememberedWorkspace]) {
+      if (typeof candidate === "string" && Object.hasOwn(PANELS, candidate) && canOpenPanel(user, candidate)) return candidate;
+    }
+    return ROLE_BY_KEY[normalizeRole(user)]?.panel ?? null;
+  }
+  return null;
+}
+
 export function panelForPath(pathname) {
   for (const { prefix, panel } of PAGE_PANEL) {
     if (pathname === prefix || pathname.startsWith(prefix + "/")) return panel;
