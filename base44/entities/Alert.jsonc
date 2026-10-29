@@ -1,0 +1,157 @@
+{
+  "name": "Alert",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "review",
+        "priority"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "acknowledged",
+        "investigating",
+        "resolved",
+        "dismissed"
+      ]
+    },
+    "dedupe_key": {
+      "type": "string"
+    },
+    "rule_id": {
+      "type": "string"
+    },
+    "rule_version": {
+      "type": "number"
+    },
+    "rule_name": {
+      "type": "string"
+    },
+    "rule_threshold_pct": {
+      "type": "number"
+    },
+    "crop": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "indicator": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "season": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string"
+    },
+    "previous_period": {
+      "type": "string"
+    },
+    "observed_value": {
+      "type": "number"
+    },
+    "previous_value": {
+      "type": "number"
+    },
+    "absolute_change": {
+      "type": "number"
+    },
+    "percentage_change": {
+      "type": "number"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "dataset_name": {
+      "type": "string"
+    },
+    "quality_status": {
+      "type": "string"
+    },
+    "quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "evidence_snapshot": {
+      "type": "string"
+    },
+    "observation_count": {
+      "type": "number"
+    },
+    "generated_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "investigation_id": {
+      "type": "string"
+    },
+    "is_demo": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "title",
+    "severity",
+    "rule_id",
+    "crop",
+    "district",
+    "indicator"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

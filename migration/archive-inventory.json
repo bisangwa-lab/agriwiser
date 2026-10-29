@@ -1,0 +1,3542 @@
+[
+  {
+    "archive": "T1 Agriculture - Agriculture Household Survey 2017 - Part 1.zip",
+    "files": [
+      {
+        "name": "spss/S0_General Information.sav",
+        "bytes": 6643546
+      },
+      {
+        "name": "spss/S10_1_Cattle milk production.sav",
+        "bytes": 417155
+      },
+      {
+        "name": "spss/S10_2_Cattle milk production use.sav",
+        "bytes": 481131
+      },
+      {
+        "name": "spss/S10_3_Honey production.sav",
+        "bytes": 1544596
+      },
+      {
+        "name": "spss/S11_Animal inputs and services.sav",
+        "bytes": 4243163
+      },
+      {
+        "name": "spss/S1_Household members characteristics.sav",
+        "bytes": 18273579
+      },
+      {
+        "name": "spss/S2_Land tenure crops planted.sav",
+        "bytes": 3882625
+      },
+      {
+        "name": "spss/S3_Extension services and agricultural programmes.sav",
+        "bytes": 12337533
+      },
+      {
+        "name": "spss/S4_Funding during 2016_2017.sav",
+        "bytes": 2445818
+      },
+      {
+        "name": "spss/S5_Agricultural Inputs.sav",
+        "bytes": 20848105
+      },
+      {
+        "name": "spss/S6_Agricultural Practices.sav",
+        "bytes": 6303505
+      },
+      {
+        "name": "spss/S7_1_Agricultural small tools.sav",
+        "bytes": 37672037
+      },
+      {
+        "name": "spss/S7_2_Agricultural durable tools.sav",
+        "bytes": 21536002
+      },
+      {
+        "name": "spss/S8_A_Production Use, storage and Expenses.sav",
+        "bytes": 9182603
+      },
+      {
+        "name": "spss/S8_B_Production Use,Storage and Expenses.sav",
+        "bytes": 8753352
+      },
+      {
+        "name": "spss/S9_Number of animals.sav",
+        "bytes": 9918620
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Agriculture Household Survey 2017 - Part 2.zip",
+    "files": [
+      {
+        "name": "stata/S0_General Information.dta",
+        "bytes": 3540453
+      },
+      {
+        "name": "stata/S10_1_Cattle milk production.dta",
+        "bytes": 130660
+      },
+      {
+        "name": "stata/S10_2_Cattle milk production use.dta",
+        "bytes": 299232
+      },
+      {
+        "name": "stata/S10_3_Honey production.dta",
+        "bytes": 646018
+      },
+      {
+        "name": "stata/S11_Animal inputs and services.dta",
+        "bytes": 1939713
+      },
+      {
+        "name": "stata/S1_Household members characteristics.dta",
+        "bytes": 5974125
+      },
+      {
+        "name": "stata/S2_Land tenure and crops planted.dta",
+        "bytes": 927951
+      },
+      {
+        "name": "stata/S3_Extension services and agricultural programmes.dta",
+        "bytes": 2449318
+      },
+      {
+        "name": "stata/S4_Funding during 2016_2017.dta",
+        "bytes": 537013
+      },
+      {
+        "name": "stata/S5_Agricultural Inputs.dta",
+        "bytes": 9945195
+      },
+      {
+        "name": "stata/S6_Agricultural Practices.dta",
+        "bytes": 2469591
+      },
+      {
+        "name": "stata/S7_1_Agricultural small tools.dta",
+        "bytes": 13043525
+      },
+      {
+        "name": "stata/S7_2_Agricultural durable tools.dta",
+        "bytes": 7457995
+      },
+      {
+        "name": "stata/S8_A_Production Use,storage and Expenses.dta",
+        "bytes": 6031273
+      },
+      {
+        "name": "stata/S8_B_Production Use,Storage and Expenses.dta",
+        "bytes": 5681243
+      },
+      {
+        "name": "stata/S9_Number of animals.dta",
+        "bytes": 2715742
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Agriculture Household Survey 2020.zip",
+    "files": [
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_0.sav",
+        "bytes": 1027918
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_1.sav",
+        "bytes": 7802671
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_2.1.sav",
+        "bytes": 8164402
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_2.2.sav",
+        "bytes": 1082642
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_2.3.sav",
+        "bytes": 3533947
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_3.1.sav",
+        "bytes": 4666804
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_3.2.sav",
+        "bytes": 4190801
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_4.sav",
+        "bytes": 5048137
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_5.sav",
+        "bytes": 6331005
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_6.sav",
+        "bytes": 8192024
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_7.1.sav",
+        "bytes": 8128600
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_7.2.sav",
+        "bytes": 9872314
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_7.3.sav",
+        "bytes": 3442884
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_8.sav",
+        "bytes": 7076281
+      },
+      {
+        "name": "AHS2020 Microdata/spss/Rwa_AHS_2020_Section_9.sav",
+        "bytes": 6145070
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Agriculture Household Survey 2020.rdf",
+        "bytes": 766
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Agriculture Household Survey 2020.xml",
+        "bytes": 1083881
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_0.dta",
+        "bytes": 370764
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_1.dta",
+        "bytes": 2058554
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_2.1.dta",
+        "bytes": 2287787
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_2.2.dta",
+        "bytes": 1228064
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_2.3.dta",
+        "bytes": 810680
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_3.1.dta",
+        "bytes": 819469
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_3.2.dta",
+        "bytes": 644746
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_4.dta",
+        "bytes": 745927
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_5.dta",
+        "bytes": 2429686
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_6.dta",
+        "bytes": 3617355
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_7.1.dta",
+        "bytes": 3011667
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_7.2.dta",
+        "bytes": 2796273
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_7.3.dta",
+        "bytes": 961911
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_8.dta",
+        "bytes": 2570036
+      },
+      {
+        "name": "AHS2020 Microdata/stata/Rwa_AHS_2020_Section_9.dta",
+        "bytes": 3429166
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Agriculture Household Survey 2024.zip",
+    "files": [
+      {
+        "name": "Microdata/AHS2024_Credits.dta",
+        "bytes": 1608894
+      },
+      {
+        "name": "Microdata/AHS2024_Saving.dta",
+        "bytes": 705394
+      },
+      {
+        "name": "Microdata/AHS2024_Section0.dta",
+        "bytes": 112637
+      },
+      {
+        "name": "Microdata/AHS2024_Section11_1_CATTLE MILK PRODUCTION AND USE.dta",
+        "bytes": 2468782
+      },
+      {
+        "name": "Microdata/AHS2024_Section11_2_EGG PRODUCTION.dta",
+        "bytes": 1572311
+      },
+      {
+        "name": "Microdata/AHS2024_Section11_3_HONEY PRODUCTION.dta",
+        "bytes": 833196
+      },
+      {
+        "name": "Microdata/AHS2024_Section1_HOUSEHOLD MEMBERS CHARACTERISTICS.dta",
+        "bytes": 9450696
+      },
+      {
+        "name": "Microdata/AHS2024_Section2_LAND TENURE.dta",
+        "bytes": 3076793
+      },
+      {
+        "name": "Microdata/AHS2024_Section3_4_CROP GROWN, SEEDS AND PRODUCTION & AGRICULTURAL INPUTS AND PRACTICES.dta",
+        "bytes": 129363683
+      },
+      {
+        "name": "Microdata/AHS2024_Section5_FRUITS PRODUCTION.dta",
+        "bytes": 762558
+      },
+      {
+        "name": "Microdata/AHS2024_Section6_EXTENSION SERVICES AND AGRICULTURAL PROGRAMMES.dta",
+        "bytes": 2014383
+      },
+      {
+        "name": "Microdata/AHS2024_Section7_AGRICULTURAL TOOLS.dta",
+        "bytes": 2022477
+      },
+      {
+        "name": "Microdata/AHS2024_Section8_SUSTAINABLE AGRICULTURE.dta",
+        "bytes": 1531895
+      },
+      {
+        "name": "Microdata/AHS2024_Section9_10_12_LIVESTOCK AND ANIMAL INPUTS EXPENDITURES,.dta",
+        "bytes": 2746806
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Food Security and Vulnerability Analysis 2015.zip",
+    "files": [
+      {
+        "name": "cfsva-2015-master-DB- annex.sav",
+        "bytes": 3895092
+      },
+      {
+        "name": "cfsva-2015-child-DB- annex.sav",
+        "bytes": 2881349
+      },
+      {
+        "name": "cfsva-2015-mother-DB- annex.sav",
+        "bytes": 2004577
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Food Security and Vulnerability Analysis 2018 - Part 1.zip",
+    "files": [
+      {
+        "name": "3_CFSVA18_DB_VillageQues_Full_Annex_201904_NISR.sav",
+        "bytes": 343327
+      },
+      {
+        "name": "__MACOSX/._3_CFSVA18_DB_VillageQues_Full_Annex_201904_NISR.sav",
+        "bytes": 212
+      },
+      {
+        "name": "2_CFSVA18_DB_ChildAndMother_Full_Annex_201904_NISR.sav",
+        "bytes": 4116440
+      },
+      {
+        "name": "__MACOSX/._2_CFSVA18_DB_ChildAndMother_Full_Annex_201904_NISR.sav",
+        "bytes": 212
+      },
+      {
+        "name": "1_CFSVA18_DB_HouseholdQues_Full_Annex_201904_NISR.sav",
+        "bytes": 5280685
+      },
+      {
+        "name": "__MACOSX/._1_CFSVA18_DB_HouseholdQues_Full_Annex_201904_NISR.sav",
+        "bytes": 212
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Food Security and Vulnerability Analysis 2018 - Part 2.zip",
+    "files": [
+      {
+        "name": "2_CFSVA18_DB_ChildAndMother_Full_Annex_201904_NISR.dta",
+        "bytes": 13505110
+      },
+      {
+        "name": "__MACOSX/._2_CFSVA18_DB_ChildAndMother_Full_Annex_201904_NISR.dta",
+        "bytes": 212
+      },
+      {
+        "name": "3_CFSVA18_DB_VillageQues_Full_Annex_201904_NISR.dta",
+        "bytes": 1489668
+      },
+      {
+        "name": "__MACOSX/._3_CFSVA18_DB_VillageQues_Full_Annex_201904_NISR.dta",
+        "bytes": 212
+      },
+      {
+        "name": "1_CFSVA18_DB_HouseholdQues_Full_Annex_201904_NISR.dta",
+        "bytes": 27773879
+      },
+      {
+        "name": "__MACOSX/._1_CFSVA18_DB_HouseholdQues_Full_Annex_201904_NISR.dta",
+        "bytes": 212
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Food Security and Vulnerability Analysis 2021.zip",
+    "files": [
+      {
+        "name": "Microdata/CFSVAHH2021_UNDER_5_ChildWithMother.dta",
+        "bytes": 2075719
+      },
+      {
+        "name": "Microdata/CFSVAHH2021_UNDER_5_ChildWithMother.sav",
+        "bytes": 1404890
+      },
+      {
+        "name": "Microdata/CFSVA_2021_VILLAGE.dta",
+        "bytes": 1045709
+      },
+      {
+        "name": "Microdata/CFSVA_2021_VILLAGE.sav",
+        "bytes": 1968811
+      },
+      {
+        "name": "Microdata/CFSVA_HH_2021_MASTER_DATASET.dta",
+        "bytes": 53754932
+      },
+      {
+        "name": "Microdata/CFSVA_HH_2021_MASTER_DATASET.sav",
+        "bytes": 22596065
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Food Security and Vulnerability Analysis 2024.zip",
+    "files": [
+      {
+        "name": "Microdata/csvfile/CFSVA2024_HH data.csv",
+        "bytes": 31796153
+      },
+      {
+        "name": "Microdata/csvfile/CFSVA2024_HH_CHILD_6_59_MONTHS.csv",
+        "bytes": 1366932
+      },
+      {
+        "name": "Microdata/csvfile/CFSVA2024_HH_WOMEN_15_49_YEARS.csv",
+        "bytes": 2242886
+      },
+      {
+        "name": "Microdata/spss/CFSVA2024_HH.sav",
+        "bytes": 77112285
+      },
+      {
+        "name": "Microdata/spss/CFSVA2024_HH_CHILD_6_59_MONTHS.sav",
+        "bytes": 4098983
+      },
+      {
+        "name": "Microdata/spss/CFSVA2024_HH_WOMEN_15_49_YEARS.sav",
+        "bytes": 4534087
+      },
+      {
+        "name": "Microdata/stata/CFSVA2024_HH.dta",
+        "bytes": 77831742
+      },
+      {
+        "name": "Microdata/stata/CFSVA2024_HH_CHILD_6_59_MONTHS.dta",
+        "bytes": 4151058
+      },
+      {
+        "name": "Microdata/stata/CFSVA2024_HH_WOMEN_15_49_YEARS.dta",
+        "bytes": 3885978
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2013 - Part 1.zip",
+    "files": [
+      {
+        "name": "rsas-2013-data-stata-Season A/02_Date_Sowing_Production_Harvest.dta",
+        "bytes": 2130609
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/02_LSF_Date_Sowing_Production_Harvest.dta",
+        "bytes": 17146
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/03_Area_Season_A.dta",
+        "bytes": 1806399
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/03_Area_Season_A_Province.dta",
+        "bytes": 8012
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/03_Area_Season_A_Province_Phys.dta",
+        "bytes": 6572
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/03_Big_Farmer_Season_A.dta",
+        "bytes": 127491
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/03_LSF_Area_Season_A_Province.dta",
+        "bytes": 3294
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/03_SSF_Area_Season_A_Province.dta",
+        "bytes": 3644
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/04_Production_Yield_A.dta",
+        "bytes": 8546
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_A_Large_Scale_InorganicFertilizer_Types.dta",
+        "bytes": 4242
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_A_Small_Scale_InorganicFertilizer_Types.dta",
+        "bytes": 19614
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Antierrosion.dta",
+        "bytes": 5042
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Antierrosion_by_type.dta",
+        "bytes": 3707
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Improved by crop.dta",
+        "bytes": 4148
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Inorganic_A.dta",
+        "bytes": 4277
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Irrigation.dta",
+        "bytes": 5042
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Irrigation_by_Type.dta",
+        "bytes": 2452
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Organic_A.dta",
+        "bytes": 5042
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_pesticide.dta",
+        "bytes": 5042
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_pesticide_by_Type.dta",
+        "bytes": 3322
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Seeds.dta",
+        "bytes": 15096
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_LSF_Traditional by crop.dta",
+        "bytes": 21284
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Antierrosion_A.dta",
+        "bytes": 94059
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Antierrosion_by_type.dta",
+        "bytes": 36261
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Improved by crop.dta",
+        "bytes": 15192
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Inorganic_A.dta",
+        "bytes": 124313
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Irrigation.dta",
+        "bytes": 93051
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Irrigation_by_Type.dta",
+        "bytes": 9035
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Organic_A.dta",
+        "bytes": 93763
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_pesticide.dta",
+        "bytes": 93129
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_pesticide_by_Type.dta",
+        "bytes": 11149
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Seeds.dta",
+        "bytes": 74783
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/05_SSF_Traditional by crop.dta",
+        "bytes": 110412
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/06_LSF_Small_equipment_exp.dta",
+        "bytes": 29236
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/06_LSF_Small_equipment_received.dta",
+        "bytes": 3543
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/06_SSF_Small_equipment_exp.dta",
+        "bytes": 508010
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/06_SSF_Small_equipment_received.dta",
+        "bytes": 8924
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/07_LSF_Use of production.dta",
+        "bytes": 345840
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/07_SSF_use of production.dta",
+        "bytes": 704865
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/1_Identifiant_A_LSF.dta",
+        "bytes": 5001
+      },
+      {
+        "name": "rsas-2013-data-stata-Season A/1_Identifiant_A_Small_Scale_Farmer.dta",
+        "bytes": 421999
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/01_LSF_Ident.dta",
+        "bytes": 5753
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/01_LSF_Sowing_Production_Harvest.dta",
+        "bytes": 39522
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/01_SSF_Identification_B.dta",
+        "bytes": 429946
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/01_SSF_Sowing_Production_Harvest.dta",
+        "bytes": 1137572
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/02_Area_Season.dta",
+        "bytes": 8039
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/02_Area_Season_Phy.dta",
+        "bytes": 6545
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/02_LSF_Area_Season.dta",
+        "bytes": 128627
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/02_Prod_Area_Yield_Season.dta",
+        "bytes": 8036
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_Inorganic_Type.dta",
+        "bytes": 29883
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Antierosion_B.dta",
+        "bytes": 4378
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Antierosion_B_by_type.dta",
+        "bytes": 3120
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Improved by crop_B.dta",
+        "bytes": 3425
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Inorganic_B.dta",
+        "bytes": 4390
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Inorganic_Type.dta",
+        "bytes": 2910
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Irrigation_B.dta",
+        "bytes": 4431
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Irrigation_B_by_type.dta",
+        "bytes": 1644
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Organic_B.dta",
+        "bytes": 4431
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_PesticideB.dta",
+        "bytes": 4463
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_PesticideB_by_Type.dta",
+        "bytes": 2396
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_seeds_B.dta",
+        "bytes": 4001
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_LSF_Traditional by crop_B.dta",
+        "bytes": 6563
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_Phys_Area_Season_B.dta",
+        "bytes": 3723
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Antierosion_B.dta",
+        "bytes": 95793
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Antierosion_B_by_type.dta",
+        "bytes": 10421
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Improved by crop_B.dta",
+        "bytes": 8927
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Inorganic_B.dta",
+        "bytes": 95793
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Irrigation_B.dta",
+        "bytes": 95793
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Irrigation_B_by_type.dta",
+        "bytes": 4032
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Organic_B.dta",
+        "bytes": 95793
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_PesticideB.dta",
+        "bytes": 95793
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_PesticideB_by_Type.dta",
+        "bytes": 13724
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Pure_mixed_Crop_Land.dta",
+        "bytes": 3659332
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_seeds_B.dta",
+        "bytes": 91673
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/03_SSF_Traditional by crop_B.dta",
+        "bytes": 232373
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/04_LSF_Small_equipment_B_Exp.dta",
+        "bytes": 25282
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/04_LSF_Small_equipment_B_reic.dta",
+        "bytes": 2674
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/04_SSF_Small_equipment_B_Exp.dta",
+        "bytes": 521125
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/04_SSF_Small_equipment_B_reic.dta",
+        "bytes": 5505
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/05_LSF_Use of production.dta",
+        "bytes": 22695
+      },
+      {
+        "name": "rsas-2013-data-stata-Season B/05_SSF_Use of production.dta",
+        "bytes": 2584852
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/01_SSF_Identification_C.dta",
+        "bytes": 18929
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/01_SSF_Sowing_Production_Harvest_C.dta",
+        "bytes": 22485
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/03_Area_Province_crop_C.dta",
+        "bytes": 130182
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/03_Area_Province_crop_C_Total2.dta",
+        "bytes": 2084
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/03_SSF_Yield_Production_Area_c_crop.dta",
+        "bytes": 3653
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Antierosion_C.dta",
+        "bytes": 9817
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Antierosion_C_by_type.dta",
+        "bytes": 2525
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Improved by crop_C.dta",
+        "bytes": 3544
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Inorganic_C.dta",
+        "bytes": 9832
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Inorganic_C_Type.dta",
+        "bytes": 8542
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Irrigation_C.dta",
+        "bytes": 9832
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Irrigation_C_by_type.dta",
+        "bytes": 2623
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Organic_C.dta",
+        "bytes": 9832
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_PesticideC.dta",
+        "bytes": 9832
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_PesticideC_by_Type.dta",
+        "bytes": 11313
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Pure_and_Mixed_C.dta",
+        "bytes": 148891
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Seeds_C.dta",
+        "bytes": 9846
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Small_equipment_C_Exp.dta",
+        "bytes": 33704
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Small_equipment_C_rec.dta",
+        "bytes": 2938
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/04_SSF_Traditional by crop_C.dta",
+        "bytes": 12357
+      },
+      {
+        "name": "rsas-2013-data-stata-season C/05_SSF_Use of productionC.dta",
+        "bytes": 192997
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2013 - Part 2.zip",
+    "files": [
+      {
+        "name": "rsas-2013-data-spss-Season A/02_Date_Sowing_Production_Harvest.sav",
+        "bytes": 3424637
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/02_LSF_Date_Sowing_Production_Harvest.sav",
+        "bytes": 24783
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/03_Area_Season_A.sav",
+        "bytes": 2196929
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/03_Area_Season_A_Province.sav",
+        "bytes": 7467
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/03_Area_Season_A_Province_Phys.sav",
+        "bytes": 6154
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/03_Big_Farmer_Season_A.sav",
+        "bytes": 47456
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/03_LSF_Area_Season_A_Province.sav",
+        "bytes": 3039
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/03_SSF_Area_Season_A_Province.sav",
+        "bytes": 3442
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/04_Production_Yield_A.sav",
+        "bytes": 5797
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_A_Large_Scale_InorganicFertilizer_Types.sav",
+        "bytes": 5745
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_A_Small_Scale_InorganicFertilizer_Types.sav",
+        "bytes": 30157
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Antierrosion.sav",
+        "bytes": 7796
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Antierrosion_by_type.sav",
+        "bytes": 4500
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Improved by crop.sav",
+        "bytes": 5473
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Inorganic_A.sav",
+        "bytes": 6249
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Irrigation.sav",
+        "bytes": 7757
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Irrigation_by_Type.sav",
+        "bytes": 2056
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Organic_A.sav",
+        "bytes": 7781
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_pesticide.sav",
+        "bytes": 7811
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_pesticide_by_Type.sav",
+        "bytes": 3712
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Seeds.sav",
+        "bytes": 7372
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_LSF_Traditional by crop.sav",
+        "bytes": 10713
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Antierrosion_A.sav",
+        "bytes": 170805
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Antierrosion_by_type.sav",
+        "bytes": 64733
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Improved by crop.sav",
+        "bytes": 25717
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Inorganic_A.sav",
+        "bytes": 246799
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Irrigation.sav",
+        "bytes": 168937
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Irrigation_by_Type.sav",
+        "bytes": 4680
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Organic_A.sav",
+        "bytes": 78324
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_pesticide.sav",
+        "bytes": 169135
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_pesticide_by_Type.sav",
+        "bytes": 18585
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Seeds.sav",
+        "bytes": 135368
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/05_SSF_Traditional by crop.sav",
+        "bytes": 200285
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/06_LSF_Small_equipment_exp.sav",
+        "bytes": 60425
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/06_LSF_Small_equipment_received.sav",
+        "bytes": 3456
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/06_SSF_Small_equipment_exp.sav",
+        "bytes": 828466
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/06_SSF_Small_equipment_received.sav",
+        "bytes": 11892
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/07_LSF_Use of production.sav",
+        "bytes": 158044
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/07_SSF_use of production.sav",
+        "bytes": 348548
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/1_Identifiant_A_LSF.sav",
+        "bytes": 7685
+      },
+      {
+        "name": "rsas-2013-data-spss-Season A/1_Identifiant_A_Small_Scale_Farmer.sav",
+        "bytes": 514171
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/01_LSF_Ident.sav",
+        "bytes": 7773
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/01_LSF_Sowing_Production_Harvest.sav",
+        "bytes": 87464
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/01_SSF_Identification_B.sav",
+        "bytes": 526336
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/01_SSF_Sowing_Production_Harvest.sav",
+        "bytes": 1494426
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/02_Area_Season.sav",
+        "bytes": 7513
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/02_Area_Season_Phy.sav",
+        "bytes": 6232
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/02_LSF_Area_Season.sav",
+        "bytes": 197544
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/02_Prod_Area_Yield_Season.sav",
+        "bytes": 5559
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_Inorganic_Type.sav",
+        "bytes": 49410
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Antierosion_B.sav",
+        "bytes": 6424
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Antierosion_B_by_type.sav",
+        "bytes": 2017
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Improved by crop_B.sav",
+        "bytes": 4129
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Inorganic_B.sav",
+        "bytes": 6342
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Inorganic_Type.sav",
+        "bytes": 3617
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Irrigation_B.sav",
+        "bytes": 6441
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Irrigation_B_by_type.sav",
+        "bytes": 1303
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Organic_B.sav",
+        "bytes": 6481
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_PesticideB.sav",
+        "bytes": 6485
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_PesticideB_by_Type.sav",
+        "bytes": 2613
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_seeds_B.sav",
+        "bytes": 5592
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_LSF_Traditional by crop_B.sav",
+        "bytes": 9892
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_Phys_Area_Season_B.sav",
+        "bytes": 3510
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Antierosion_B.sav",
+        "bytes": 173981
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Antierosion_B_by_type.sav",
+        "bytes": 17341
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Improved by crop_B.sav",
+        "bytes": 14233
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Inorganic_B.sav",
+        "bytes": 173967
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Irrigation_B.sav",
+        "bytes": 173933
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Irrigation_B_by_type.sav",
+        "bytes": 5668
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Organic_B.sav",
+        "bytes": 173966
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_PesticideB.sav",
+        "bytes": 173955
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_PesticideB_by_Type.sav",
+        "bytes": 23381
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Pure_mixed_Crop_Land.sav",
+        "bytes": 5665311
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_seeds_B.sav",
+        "bytes": 166348
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/03_SSF_Traditional by crop_B.sav",
+        "bytes": 423889
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/04_LSF_Small_equipment_B_Exp.sav",
+        "bytes": 56005
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/04_LSF_Small_equipment_B_reic.sav",
+        "bytes": 2589
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/04_SSF_Small_equipment_B_Exp.sav",
+        "bytes": 742815
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/04_SSF_Small_equipment_B_reic.sav",
+        "bytes": 6405
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/05_LSF_Use of production.sav",
+        "bytes": 17358
+      },
+      {
+        "name": "rsas-2013-data-spss-Season B/05_SSF_Use of production.sav",
+        "bytes": 550123
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/01_SSF_Identification_C.sav",
+        "bytes": 24922
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/01_SSF_Sowing_Production_Harvest_C.sav",
+        "bytes": 31134
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/03_Area_Province_crop_C.sav",
+        "bytes": 168030
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/03_Area_Province_crop_C_Total2.sav",
+        "bytes": 1619
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/03_SSF_Yield_Production_Area_c_crop.sav",
+        "bytes": 2458
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Antierosion_C.sav",
+        "bytes": 16408
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Antierosion_C_by_type.sav",
+        "bytes": 2885
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Improved by crop_C.sav",
+        "bytes": 3729
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Inorganic_C.sav",
+        "bytes": 16399
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Inorganic_C_Type.sav",
+        "bytes": 13973
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Irrigation_C.sav",
+        "bytes": 16353
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Irrigation_C_by_type.sav",
+        "bytes": 3116
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Organic_C.sav",
+        "bytes": 16378
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_PesticideC.sav",
+        "bytes": 16387
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_PesticideC_by_Type.sav",
+        "bytes": 18989
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Pure_and_Mixed_C.sav",
+        "bytes": 190503
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Seeds_C.sav",
+        "bytes": 16340
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Small_equipment_C_Exp.sav",
+        "bytes": 64657
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Small_equipment_C_rec.sav",
+        "bytes": 3001
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/04_SSF_Traditional by crop_C.sav",
+        "bytes": 18843
+      },
+      {
+        "name": "rsas-2013-data-spss-Season C/05_SSF_Use of productionC.sav",
+        "bytes": 117545
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2014 - Part 1.zip",
+    "files": [
+      {
+        "name": "farmq_part2b_fertilizer.dta",
+        "bytes": 23127
+      },
+      {
+        "name": "farmq_part2b_pesticide.dta",
+        "bytes": 12404
+      },
+      {
+        "name": "farmq_part5a.dta",
+        "bytes": 284782
+      },
+      {
+        "name": "farmq_part7.dta",
+        "bytes": 28383
+      },
+      {
+        "name": "farmq_use_of_production.dta",
+        "bytes": 64517
+      },
+      {
+        "name": "farmq_weight.dta",
+        "bytes": 539
+      },
+      {
+        "name": "ssf_screening.dta",
+        "bytes": 313667
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 1580
+      },
+      {
+        "name": "farmq_part0.dta",
+        "bytes": 9017
+      },
+      {
+        "name": "farmq_part1.dta",
+        "bytes": 16024
+      },
+      {
+        "name": "farmq_part2.dta",
+        "bytes": 9950
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2014 - Part 2.zip",
+    "files": [
+      {
+        "name": "lsf_farmq_part2_antierosion.dta",
+        "bytes": 15552
+      },
+      {
+        "name": "lsf_farmq_part2_inorganic.dta",
+        "bytes": 9836
+      },
+      {
+        "name": "lsf_farmq_part2_irrigation.dta",
+        "bytes": 8122
+      },
+      {
+        "name": "lsf_farmq_part2_organic.dta",
+        "bytes": 7327
+      },
+      {
+        "name": "lsf_farmq_part2_pesticide.dta",
+        "bytes": 9110
+      },
+      {
+        "name": "lsf_farmq_part2_smalltools.dta",
+        "bytes": 108663
+      },
+      {
+        "name": "lsf_farmq_part3_useofproduction.dta",
+        "bytes": 33659
+      },
+      {
+        "name": "lsf_screening.dta",
+        "bytes": 78004
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 1770
+      },
+      {
+        "name": "farmq_part0.dta",
+        "bytes": 92083
+      },
+      {
+        "name": "farmq_part1.dta",
+        "bytes": 340046
+      },
+      {
+        "name": "farmq_part1b.dta",
+        "bytes": 445909
+      },
+      {
+        "name": "farmq_part2a.dta",
+        "bytes": 238278
+      },
+      {
+        "name": "farmq_part2b.dta",
+        "bytes": 146112
+      },
+      {
+        "name": "farmq_part2c.dta",
+        "bytes": 2766528
+      },
+      {
+        "name": "farmq_part4.dta",
+        "bytes": 634689
+      },
+      {
+        "name": "farmq_screening.dta",
+        "bytes": 2823270
+      },
+      {
+        "name": "farmq_weight.dta",
+        "bytes": 539
+      },
+      {
+        "name": "lsf_farmq_part0.dta",
+        "bytes": 4429
+      },
+      {
+        "name": "lsf_farmq_part1.dta",
+        "bytes": 15108
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2014 - Part 3.zip",
+    "files": [
+      {
+        "name": "farmq_part2a.dta",
+        "bytes": 88550
+      },
+      {
+        "name": "farmq_part2c.dta",
+        "bytes": 2856272
+      },
+      {
+        "name": "farmq_part3.dta",
+        "bytes": 437351
+      },
+      {
+        "name": "farmq_part5.dta",
+        "bytes": 826923
+      },
+      {
+        "name": "farmq_weight.dta",
+        "bytes": 539
+      },
+      {
+        "name": "lsf_farmq_part0.dta",
+        "bytes": 4402
+      },
+      {
+        "name": "lsf_farmq_part1.dta",
+        "bytes": 18965
+      },
+      {
+        "name": "lsf_farmq_part2a.dta",
+        "bytes": 11836
+      },
+      {
+        "name": "lsf_farmq_part2b.dta",
+        "bytes": 12284
+      },
+      {
+        "name": "lsf_farmq_part2c.dta",
+        "bytes": 104740
+      },
+      {
+        "name": "lsf_farmq_part3.dta",
+        "bytes": 26056
+      },
+      {
+        "name": "lsf_farmq_part5.dta",
+        "bytes": 32599
+      },
+      {
+        "name": "lsf_screening.dta",
+        "bytes": 83352
+      },
+      {
+        "name": "ssf_screening.dta",
+        "bytes": 4084603
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 1930
+      },
+      {
+        "name": "farmq_part0.dta",
+        "bytes": 60590
+      },
+      {
+        "name": "farmq_part1.dta",
+        "bytes": 215120
+      },
+      {
+        "name": "farmq_part2_fertilizer.dta",
+        "bytes": 109035
+      },
+      {
+        "name": "farmq_part2_pesticide.dta",
+        "bytes": 96876
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2015 - Part 1.zip",
+    "files": [
+      {
+        "name": "02_Plot_Ident_LSF.dta",
+        "bytes": 13085
+      },
+      {
+        "name": "05_Use_of_Production_LSF.dta",
+        "bytes": 55323
+      },
+      {
+        "name": "07_IC_Expense_Small_Tools_Eq_LSF.dta",
+        "bytes": 136378
+      },
+      {
+        "name": "farmq_part0.dta",
+        "bytes": 68324
+      },
+      {
+        "name": "farmq_part1.dta",
+        "bytes": 278136
+      },
+      {
+        "name": "farmq_part2a.dta",
+        "bytes": 103022
+      },
+      {
+        "name": "farmq_part2b_fertilizer.dta",
+        "bytes": 127971
+      },
+      {
+        "name": "farmq_part2b_pesticide.dta",
+        "bytes": 113756
+      },
+      {
+        "name": "farmq_part4.dta",
+        "bytes": 737148
+      },
+      {
+        "name": "farmq_part6a.dta",
+        "bytes": 2893856
+      },
+      {
+        "name": "farmq_part7.dta",
+        "bytes": 501723
+      },
+      {
+        "name": "lsf_screening.dta",
+        "bytes": 126033
+      },
+      {
+        "name": "ssf_screening.dta",
+        "bytes": 3487167
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 1930
+      },
+      {
+        "name": "01_General_Info_LSF.dta",
+        "bytes": 5215
+      },
+      {
+        "name": "02_Antierosion_LSF.dta",
+        "bytes": 2150
+      },
+      {
+        "name": "02_Antierosion_Type_LSF.dta",
+        "bytes": 2874
+      },
+      {
+        "name": "02_Inorganic_Fertilizer_LSF.dta",
+        "bytes": 10329
+      },
+      {
+        "name": "02_Inorganic_Fertilizer_Oper_LSF.dta",
+        "bytes": 2161
+      },
+      {
+        "name": "02_Irrigation_LSF.dta",
+        "bytes": 2607
+      },
+      {
+        "name": "02_Irrigation_Type_LSF.dta",
+        "bytes": 2194
+      },
+      {
+        "name": "02_Organic_fert_LSF.dta",
+        "bytes": 2089
+      },
+      {
+        "name": "02_pesticides_oper_LSF.dta",
+        "bytes": 2139
+      },
+      {
+        "name": "02_pesticides_Types_LSF.dta",
+        "bytes": 3311
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2015 - Part 2.zip",
+    "files": [
+      {
+        "name": "LSF_Trad_seeds_op.dta",
+        "bytes": 2118
+      },
+      {
+        "name": "SSF_Screening Segment .dta",
+        "bytes": 3895702
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 1930
+      },
+      {
+        "name": "farmq_part0.dta",
+        "bytes": 66344
+      },
+      {
+        "name": "farmq_part1.dta",
+        "bytes": 259716
+      },
+      {
+        "name": "farmq_part2a.dta",
+        "bytes": 100630
+      },
+      {
+        "name": "farmq_part2b_fertilizer.dta",
+        "bytes": 122688
+      },
+      {
+        "name": "farmq_part2b_pesticide.dta",
+        "bytes": 109020
+      },
+      {
+        "name": "farmq_part4.dta",
+        "bytes": 737403
+      },
+      {
+        "name": "farmq_part6a.dta",
+        "bytes": 2644537
+      },
+      {
+        "name": "LSF Screening 2015 Season B.dta",
+        "bytes": 151444
+      },
+      {
+        "name": "LSF_Antierosion_op.dta",
+        "bytes": 3025
+      },
+      {
+        "name": "LSF_Antierosion_Type.dta",
+        "bytes": 3255
+      },
+      {
+        "name": "LSF_Impr_seeds.dta",
+        "bytes": 1120
+      },
+      {
+        "name": "LSF_Impr_seeds_op.dta",
+        "bytes": 2118
+      },
+      {
+        "name": "LSF_seeds_op.dta",
+        "bytes": 3084
+      },
+      {
+        "name": "LSF_Summary.dta",
+        "bytes": 25497
+      },
+      {
+        "name": "LSF_Trad_seeds.dta",
+        "bytes": 1235
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2015 - Part 3.zip",
+    "files": [
+      {
+        "name": "Phase_2_Part_6_A.dta",
+        "bytes": 301387
+      },
+      {
+        "name": "Phase_2_Part_7.dta",
+        "bytes": 31473
+      },
+      {
+        "name": "SCREENING_C.dta",
+        "bytes": 455051
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 1605
+      },
+      {
+        "name": "Phase_2_Part_0.dta",
+        "bytes": 9384
+      },
+      {
+        "name": "Phase_2_Part_1.dta",
+        "bytes": 17177
+      },
+      {
+        "name": "Phase_2_Part_2_A.dta",
+        "bytes": 21111
+      },
+      {
+        "name": "Phase_2_Part_2_B0.dta",
+        "bytes": 9572
+      },
+      {
+        "name": "Phase_2_Part_2_B1.dta",
+        "bytes": 11762
+      },
+      {
+        "name": "Phase_2_Part_2_B2.dta",
+        "bytes": 13364
+      },
+      {
+        "name": "Phase_2_Part_4.dta",
+        "bytes": 73734
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2016 - Part 1.zip",
+    "files": [
+      {
+        "name": "lsf_farmq_part2a.dta",
+        "bytes": 14479
+      },
+      {
+        "name": "lsf_farmq_part2b.dta",
+        "bytes": 14621
+      },
+      {
+        "name": "lsf_farmq_part4.dta",
+        "bytes": 30625
+      },
+      {
+        "name": "lsf_farmq_part6a.dta",
+        "bytes": 151992
+      },
+      {
+        "name": "lsf_farmq_part6b.dta",
+        "bytes": 78437
+      },
+      {
+        "name": "lsf_farmq_part7.dta",
+        "bytes": 24693
+      },
+      {
+        "name": "lsf_Screening.dta",
+        "bytes": 156052
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 2299
+      },
+      {
+        "name": "farmq_part0.dta",
+        "bytes": 75729
+      },
+      {
+        "name": "farmq_part1.dta",
+        "bytes": 359764
+      },
+      {
+        "name": "farmq_part2a.dta",
+        "bytes": 186747
+      },
+      {
+        "name": "farmq_part2b.dta",
+        "bytes": 211369
+      },
+      {
+        "name": "farmq_part4.dta",
+        "bytes": 780367
+      },
+      {
+        "name": "farmq_part6a.dta",
+        "bytes": 4994985
+      },
+      {
+        "name": "farmq_part6b.dta",
+        "bytes": 2887179
+      },
+      {
+        "name": "farmq_part7.dta",
+        "bytes": 516479
+      },
+      {
+        "name": "farmq_Screening.dta",
+        "bytes": 4511825
+      },
+      {
+        "name": "lsf_farmq_part0.dta",
+        "bytes": 5762
+      },
+      {
+        "name": "lsf_farmq_part1.dta",
+        "bytes": 23084
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2016 - Part 2.zip",
+    "files": [
+      {
+        "name": "farmq_part6b.dta",
+        "bytes": 340719
+      },
+      {
+        "name": "farmq_part7.dta",
+        "bytes": 46333
+      },
+      {
+        "name": "screening2016C.dta",
+        "bytes": 505280
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 2026
+      },
+      {
+        "name": "farmq_part0.dta",
+        "bytes": 14901
+      },
+      {
+        "name": "farmq_part1.dta",
+        "bytes": 29833
+      },
+      {
+        "name": "farmq_part2a.dta",
+        "bytes": 25480
+      },
+      {
+        "name": "farmq_part2b.dta",
+        "bytes": 25636
+      },
+      {
+        "name": "farmq_part4.dta",
+        "bytes": 66744
+      },
+      {
+        "name": "farmq_part6a.dta",
+        "bytes": 681287
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2016 - Part 3.zip",
+    "files": [
+      {
+        "name": "Part_VII_BIG.dta",
+        "bytes": 26678
+      },
+      {
+        "name": "screening_2016_a_final.dta",
+        "bytes": 2750940
+      },
+      {
+        "name": "SCREENING_2016_A_Final_BIG.dta",
+        "bytes": 142990
+      },
+      {
+        "name": "Yield.dta",
+        "bytes": 2219
+      },
+      {
+        "name": "Part_I_FARM.dta",
+        "bytes": 660850
+      },
+      {
+        "name": "Part_I_FARM_BIG.dta",
+        "bytes": 42826
+      },
+      {
+        "name": "Part_II_A.dta",
+        "bytes": 240625
+      },
+      {
+        "name": "Part_II_A_BIG.dta",
+        "bytes": 15469
+      },
+      {
+        "name": "Part_II_B.dta",
+        "bytes": 234531
+      },
+      {
+        "name": "Part_II_B_BIG.dta",
+        "bytes": 17892
+      },
+      {
+        "name": "Part_IV.dta",
+        "bytes": 1241081
+      },
+      {
+        "name": "Part_IV_BIG.dta",
+        "bytes": 60738
+      },
+      {
+        "name": "Part_VI_A.dta",
+        "bytes": 3260986
+      },
+      {
+        "name": "Part_VI_A_BIG.dta",
+        "bytes": 152651
+      },
+      {
+        "name": "Part_VI_B.dta",
+        "bytes": 1926701
+      },
+      {
+        "name": "Part_VI_B_BIG.dta",
+        "bytes": 77992
+      },
+      {
+        "name": "Part_VII.dta",
+        "bytes": 450217
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2017 - Part 1.zip",
+    "files": [
+      {
+        "name": "SeasonA_2017_SSF_Antierosion.dta",
+        "bytes": 1402203
+      },
+      {
+        "name": "SeasonA_2017_SSF_Crop production.dta",
+        "bytes": 6337300
+      },
+      {
+        "name": "SeasonA_2017_SSF_Fertilizers.dta",
+        "bytes": 2206277
+      },
+      {
+        "name": "SeasonA_2017_SSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 4110565
+      },
+      {
+        "name": "SeasonA_2017_SSF_Pesticides.dta",
+        "bytes": 1276533
+      },
+      {
+        "name": "SeasonA_2017_SSF_Screening.dta",
+        "bytes": 13107427
+      },
+      {
+        "name": "SeasonB_2017_LSF_Antierosion.dta",
+        "bytes": 100478
+      },
+      {
+        "name": "SeasonB_2017_LSF_Crop production.dta",
+        "bytes": 374137
+      },
+      {
+        "name": "SeasonB_2017_LSF_Fertilizers.dta",
+        "bytes": 177070
+      },
+      {
+        "name": "SeasonB_2017_LSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 546109
+      },
+      {
+        "name": "SeasonB_2017_LSF_Pesticides.dta",
+        "bytes": 107387
+      },
+      {
+        "name": "SeasonB_2017_LSF_Screening.dta",
+        "bytes": 122014
+      },
+      {
+        "name": "SeasonB_2017_SSF_Antierosion.dta",
+        "bytes": 1331749
+      },
+      {
+        "name": "SeasonB_2017_SSF_Crop production.dta",
+        "bytes": 6444972
+      },
+      {
+        "name": "SeasonB_2017_SSF_Fertilizers.dta",
+        "bytes": 1974285
+      },
+      {
+        "name": "SeasonB_2017_SSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 6576860
+      },
+      {
+        "name": "SeasonB_2017_SSF_Pesticides.dta",
+        "bytes": 1250669
+      },
+      {
+        "name": "SeasonB_2017_SSF_Screening.dta",
+        "bytes": 11527806
+      },
+      {
+        "name": "SeasonC_2017_SSF_Antierosion.dta",
+        "bytes": 330909
+      },
+      {
+        "name": "SeasonC_2017_SSF_Crop production.dta",
+        "bytes": 476930
+      },
+      {
+        "name": "SeasonC_2017_SSF_Fertilizers.dta",
+        "bytes": 823141
+      },
+      {
+        "name": "SeasonC_2017_SSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 666441
+      },
+      {
+        "name": "SeasonC_2017_SSF_Pesticides.dta",
+        "bytes": 486887
+      },
+      {
+        "name": "SeasonC_2017_SSF_Screening.dta",
+        "bytes": 1549079
+      },
+      {
+        "name": "SeasonA_2017_LSF_Antierosion.dta",
+        "bytes": 75341
+      },
+      {
+        "name": "SeasonA_2017_LSF_Crop production.dta",
+        "bytes": 172562
+      },
+      {
+        "name": "SeasonA_2017_LSF_Fertilizers.dta",
+        "bytes": 200813
+      },
+      {
+        "name": "SeasonA_2017_LSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 256840
+      },
+      {
+        "name": "SeasonA_2017_LSF_Pesticides.dta",
+        "bytes": 116966
+      },
+      {
+        "name": "SeasonA_2017_LSF_Screening.dta",
+        "bytes": 149187
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2017 - Part 2.zip",
+    "files": [
+      {
+        "name": "SeasonB_2017_LSF_Antierosion.sav",
+        "bytes": 99050
+      },
+      {
+        "name": "SeasonB_2017_LSF_Crop production.sav",
+        "bytes": 389749
+      },
+      {
+        "name": "SeasonB_2017_LSF_Fertilizers.sav",
+        "bytes": 175125
+      },
+      {
+        "name": "SeasonB_2017_LSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 547671
+      },
+      {
+        "name": "SeasonB_2017_LSF_Pesticides.sav",
+        "bytes": 105786
+      },
+      {
+        "name": "SeasonB_2017_LSF_Screening.sav",
+        "bytes": 411441
+      },
+      {
+        "name": "SeasonB_2017_SSF_Antierosion.sav",
+        "bytes": 1330204
+      },
+      {
+        "name": "SeasonB_2017_SSF_Crop production.sav",
+        "bytes": 6543529
+      },
+      {
+        "name": "SeasonB_2017_SSF_Fertilizers.sav",
+        "bytes": 1972227
+      },
+      {
+        "name": "SeasonB_2017_SSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 6622853
+      },
+      {
+        "name": "SeasonB_2017_SSF_Pesticides.sav",
+        "bytes": 1248956
+      },
+      {
+        "name": "SeasonB_2017_SSF_Screening.sav",
+        "bytes": 12964074
+      },
+      {
+        "name": "SeasonC_2017_SSF_Antierosion.sav",
+        "bytes": 492176
+      },
+      {
+        "name": "SeasonC_2017_SSF_Crop production.sav",
+        "bytes": 496141
+      },
+      {
+        "name": "SeasonC_2017_SSF_Fertilizers.sav",
+        "bytes": 1038186
+      },
+      {
+        "name": "SeasonC_2017_SSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 717520
+      },
+      {
+        "name": "SeasonC_2017_SSF_Pesticides.sav",
+        "bytes": 654892
+      },
+      {
+        "name": "SeasonC_2017_SSF_Screening.sav",
+        "bytes": 1702776
+      },
+      {
+        "name": "SeasonA_2017_LSF_Antierosion.sav",
+        "bytes": 73927
+      },
+      {
+        "name": "SeasonA_2017_LSF_Crop production.sav",
+        "bytes": 186924
+      },
+      {
+        "name": "SeasonA_2017_LSF_Fertilizers.sav",
+        "bytes": 198852
+      },
+      {
+        "name": "SeasonA_2017_LSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 254982
+      },
+      {
+        "name": "SeasonA_2017_LSF_Pesticides.sav",
+        "bytes": 115353
+      },
+      {
+        "name": "SeasonA_2017_LSF_Screening.sav",
+        "bytes": 475210
+      },
+      {
+        "name": "SeasonA_2017_SSF_Antierosion.sav",
+        "bytes": 1461362
+      },
+      {
+        "name": "SeasonA_2017_SSF_Crop production.sav",
+        "bytes": 7110487
+      },
+      {
+        "name": "SeasonA_2017_SSF_Fertilizers.sav",
+        "bytes": 2263583
+      },
+      {
+        "name": "SeasonA_2017_SSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 4174334
+      },
+      {
+        "name": "SeasonA_2017_SSF_Pesticides.sav",
+        "bytes": 1330179
+      },
+      {
+        "name": "SeasonA_2017_SSF_Screening.sav",
+        "bytes": 14741140
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2018 - Part 1.zip",
+    "files": [
+      {
+        "name": "SeasonA_2018_SSF_Crop production.dta",
+        "bytes": 6373904
+      },
+      {
+        "name": "SeasonA_2018_SSF_Fertilizers.dta",
+        "bytes": 3641633
+      },
+      {
+        "name": "SeasonA_2018_SSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 4530404
+      },
+      {
+        "name": "SeasonA_2018_SSF_Pesticides.dta",
+        "bytes": 3195120
+      },
+      {
+        "name": "SeasonA_2018_SSF_Screening.dta",
+        "bytes": 8832788
+      },
+      {
+        "name": "SeasonB_2018_LSF_Antierosion.dta",
+        "bytes": 46399
+      },
+      {
+        "name": "SeasonB_2018_LSF_Crop production.dta",
+        "bytes": 364683
+      },
+      {
+        "name": "SeasonB_2018_LSF_Fertilizers.dta",
+        "bytes": 113656
+      },
+      {
+        "name": "SeasonB_2018_LSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 213604
+      },
+      {
+        "name": "SeasonB_2018_LSF_Pesticides.dta",
+        "bytes": 69673
+      },
+      {
+        "name": "SeasonB_2018_LSF_Screening.dta",
+        "bytes": 108064
+      },
+      {
+        "name": "SeasonB_2018_SSF_Antierosion.dta",
+        "bytes": 847837
+      },
+      {
+        "name": "SeasonB_2018_SSF_Crop production.dta",
+        "bytes": 6624614
+      },
+      {
+        "name": "SeasonB_2018_SSF_Fertilizers.dta",
+        "bytes": 1438078
+      },
+      {
+        "name": "SeasonB_2018_SSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 3148549
+      },
+      {
+        "name": "SeasonB_2018_SSF_Pesticides.dta",
+        "bytes": 930227
+      },
+      {
+        "name": "SeasonB_2018_SSF_Screening.dta",
+        "bytes": 3208455
+      },
+      {
+        "name": "SeasonC_2018_SSF_Antierosion.dta",
+        "bytes": 40043
+      },
+      {
+        "name": "SeasonC_2018_SSF_Crop production.dta",
+        "bytes": 329740
+      },
+      {
+        "name": "SeasonC_2018_SSF_Fertilizers.dta",
+        "bytes": 77049
+      },
+      {
+        "name": "SeasonC_2018_SSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 103951
+      },
+      {
+        "name": "SeasonC_2018_SSF_Pesticides.dta",
+        "bytes": 63478
+      },
+      {
+        "name": "SeasonC_2018_SSF_Screening.dta",
+        "bytes": 393362
+      },
+      {
+        "name": "SeasonA_2018_LSF_Antierosion.dta",
+        "bytes": 96419
+      },
+      {
+        "name": "SeasonA_2018_LSF_Crop production.dta",
+        "bytes": 478544
+      },
+      {
+        "name": "SeasonA_2018_LSF_Fertilizers.dta",
+        "bytes": 410997
+      },
+      {
+        "name": "SeasonA_2018_LSF_Irrigation_Soil_preparation_and_Land_tenure.dta",
+        "bytes": 503620
+      },
+      {
+        "name": "SeasonA_2018_LSF_Pesticides.dta",
+        "bytes": 361911
+      },
+      {
+        "name": "SeasonA_2018_LSF_Screening.dta",
+        "bytes": 177959
+      },
+      {
+        "name": "SeasonA_2018_SSF_Antierosion.dta",
+        "bytes": 851173
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2018 - Part 2.zip",
+    "files": [
+      {
+        "name": "SeasonA_2018_SSF_Pesticides.sav",
+        "bytes": 3649498
+      },
+      {
+        "name": "SeasonA_2018_SSF_Screening.sav",
+        "bytes": 9729417
+      },
+      {
+        "name": "SeasonB_2018_LSF_Antierosion.sav",
+        "bytes": 111339
+      },
+      {
+        "name": "SeasonB_2018_LSF_Crop production.sav",
+        "bytes": 541349
+      },
+      {
+        "name": "SeasonB_2018_LSF_Fertilizers.sav",
+        "bytes": 200450
+      },
+      {
+        "name": "SeasonB_2018_LSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 420016
+      },
+      {
+        "name": "SeasonB_2018_LSF_Pesticides.sav",
+        "bytes": 131495
+      },
+      {
+        "name": "SeasonB_2018_LSF_Screening.sav",
+        "bytes": 435106
+      },
+      {
+        "name": "SeasonB_2018_SSF_Antierosion.sav",
+        "bytes": 846673
+      },
+      {
+        "name": "SeasonB_2018_SSF_Crop production.sav",
+        "bytes": 6977144
+      },
+      {
+        "name": "SeasonB_2018_SSF_Fertilizers.sav",
+        "bytes": 1436153
+      },
+      {
+        "name": "SeasonB_2018_SSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 3359560
+      },
+      {
+        "name": "SeasonB_2018_SSF_Pesticides.sav",
+        "bytes": 928981
+      },
+      {
+        "name": "SeasonB_2018_SSF_Screening.sav",
+        "bytes": 9594487
+      },
+      {
+        "name": "SeasonC_2018_SSF_Antierosion.sav",
+        "bytes": 101797
+      },
+      {
+        "name": "SeasonC_2018_SSF_Crop production.sav",
+        "bytes": 576834
+      },
+      {
+        "name": "SeasonC_2018_SSF_Fertilizers.sav",
+        "bytes": 187044
+      },
+      {
+        "name": "SeasonC_2018_SSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 399664
+      },
+      {
+        "name": "SeasonC_2018_SSF_Pesticides.sav",
+        "bytes": 123446
+      },
+      {
+        "name": "SeasonC_2018_SSF_Screening.sav",
+        "bytes": 1425127
+      },
+      {
+        "name": "SeasonA_2018_LSF_Antierosion.sav",
+        "bytes": 100572
+      },
+      {
+        "name": "SeasonA_2018_LSF_Crop production.sav",
+        "bytes": 505799
+      },
+      {
+        "name": "SeasonA_2018_LSF_Fertilizers.sav",
+        "bytes": 470356
+      },
+      {
+        "name": "SeasonA_2018_LSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 532322
+      },
+      {
+        "name": "SeasonA_2018_LSF_Pesticides.sav",
+        "bytes": 442290
+      },
+      {
+        "name": "SeasonA_2018_LSF_Screening.sav",
+        "bytes": 433032
+      },
+      {
+        "name": "SeasonA_2018_SSF_Antierosion.sav",
+        "bytes": 899925
+      },
+      {
+        "name": "SeasonA_2018_SSF_Crop production.sav",
+        "bytes": 6774288
+      },
+      {
+        "name": "SeasonA_2018_SSF_Fertilizers.sav",
+        "bytes": 3981599
+      },
+      {
+        "name": "SeasonA_2018_SSF_Irrigation_Soil_preparation_and_Land_tenure.sav",
+        "bytes": 4817433
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2019 - Part 1.zip",
+    "files": [
+      {
+        "name": "SPSS/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 404286
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonB_PartIV_Agricultural practice.sav",
+        "bytes": 6009026
+      },
+      {
+        "name": "SPSS/rwa-sas-seasonC-Screening.sav",
+        "bytes": 1602567
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonA_PartIV_Agricultural practice.sav",
+        "bytes": 6191154
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 3960345
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonB_PartV_Land Tenure.sav",
+        "bytes": 8376402
+      },
+      {
+        "name": "SPSS/rwa-sas-seasonA_Crop production.sav",
+        "bytes": 12913244
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 4218225
+      },
+      {
+        "name": "SPSS/rwa-sas-seasonC_Crop production.sav",
+        "bytes": 664655
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonC_PartIV_Agricultural practice.sav",
+        "bytes": 536923
+      },
+      {
+        "name": "SPSS/rwa-sas-seasonB_Crop production.sav",
+        "bytes": 11968114
+      },
+      {
+        "name": "SPSS/rwa-sas-seasonB-Screening.sav",
+        "bytes": 8343423
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonA_PartV_Land Tenure.sav",
+        "bytes": 8614106
+      },
+      {
+        "name": "SPSS/rwa-sas-SeasonC_PartV_Land Tenure.sav",
+        "bytes": 695955
+      },
+      {
+        "name": "SPSS/rwa-sas-seasonA-Screening.sav",
+        "bytes": 9004539
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2019 - Part 2.zip",
+    "files": [
+      {
+        "name": "STATA/rwa-sas-seasonC-Screening.dta",
+        "bytes": 583476
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonB_PartIV_Agricultural practice.dta",
+        "bytes": 2996014
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 213143
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonB_PartV_Land Tenure.dta",
+        "bytes": 3086641
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 1954117
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonA_PartIV_Agricultural practice.dta",
+        "bytes": 3166478
+      },
+      {
+        "name": "STATA/rwa-sas-seasonB_Crop production.dta",
+        "bytes": 7312882
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonC_PartIV_Agricultural practice.dta",
+        "bytes": 280776
+      },
+      {
+        "name": "STATA/rwa-sas-seasonC_Crop production.dta",
+        "bytes": 408458
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 2156780
+      },
+      {
+        "name": "STATA/rwa-sas-seasonA_Crop production.dta",
+        "bytes": 7724405
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonC_PartV_Land Tenure.dta",
+        "bytes": 276790
+      },
+      {
+        "name": "STATA/rwa-sas-seasonA-Screening.dta",
+        "bytes": 3809137
+      },
+      {
+        "name": "STATA/rwa-sas-SeasonA_PartV_Land Tenure.dta",
+        "bytes": 3428154
+      },
+      {
+        "name": "STATA/rwa-sas-seasonB-Screening.dta",
+        "bytes": 3312518
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2020.zip",
+    "files": [
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonA_Crop production.sav",
+        "bytes": 22818616
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 7075427
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-SeasonA_PartIV_Agricultural practice.sav",
+        "bytes": 6472044
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonA_Screening_Agroforestry.sav",
+        "bytes": 2429044
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonA_Screening_Antierosion_land consolidation.sav",
+        "bytes": 3131630
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonA-Screening_crops.sav",
+        "bytes": 8554074
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonB_Crop production.sav",
+        "bytes": 19475178
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 6374339
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-SeasonB_PartIV_Agricultural practice.sav",
+        "bytes": 6307558
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonB_Screening_Agroforestry.sav",
+        "bytes": 2602532
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonB_Screening_Antierosion_land consolidation.sav",
+        "bytes": 3105818
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonB-Screening_crops.sav",
+        "bytes": 7799041
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonC_Crop production.sav",
+        "bytes": 2378051
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 1899459
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-SeasonC_PartIV_Agricultural practice.sav",
+        "bytes": 1258336
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonC_Screening_Agroforestry.sav",
+        "bytes": 448243
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonC_Screening_Antierosion_land consolidation.sav",
+        "bytes": 893236
+      },
+      {
+        "name": "Datasets/SPSS/rwa-sas-seasonC-Screening_crops.sav",
+        "bytes": 1750212
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonA_Crop production.dta",
+        "bytes": 10927615
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 2204536
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-SeasonA_PartIV_Agricultural practice.dta",
+        "bytes": 1613601
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonA_Screening_Agroforestry.dta",
+        "bytes": 584125
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonA_Screening_Antierosion_land consolidation.dta",
+        "bytes": 787760
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonA-Screening_crops.dta",
+        "bytes": 2093201
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonB_Crop production.dta",
+        "bytes": 9860605
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 1874239
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-SeasonB_PartIV_Agricultural practice.dta",
+        "bytes": 1378482
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonB_Screening_Agroforestry.dta",
+        "bytes": 509201
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonB_Screening_Antierosion_land consolidation.dta",
+        "bytes": 663773
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonB-Screening_crops.dta",
+        "bytes": 2008449
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonC_Crop production.dta",
+        "bytes": 766385
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 512759
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-SeasonC_PartIV_Agricultural practice.dta",
+        "bytes": 243235
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonC_Screening_Agroforestry.dta",
+        "bytes": 90973
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonC_Screening_Antierosion_land consolidation.dta",
+        "bytes": 188384
+      },
+      {
+        "name": "Datasets/STATA/rwa-sas-seasonC-Screening_crops.dta",
+        "bytes": 445176
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2021.zip",
+    "files": [
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonA_Crop production.sav",
+        "bytes": 24661464
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 8223358
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-SeasonA_PartIV_Agricultural practice.sav",
+        "bytes": 8058052
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonA_Screening_Agroforestry.sav",
+        "bytes": 2940781
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonA_Screening_Antierosion_land consolidation.sav",
+        "bytes": 3528168
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonA-Screening_crops.sav",
+        "bytes": 8889941
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonB_Crop production.sav",
+        "bytes": 21535606
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 8020873
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-SeasonB_PartIV_Agricultural practice.sav",
+        "bytes": 8827022
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonB_Screening_Agroforestry.sav",
+        "bytes": 2895512
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonB_Screening_Antierosion_land consolidation.sav",
+        "bytes": 3774606
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonB-Screening_crops.sav",
+        "bytes": 8298300
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonC_Crop production.sav",
+        "bytes": 1898000
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 1519811
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-SeasonC_PartIV_Agricultural practice.sav",
+        "bytes": 1098941
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonC_Screening_Agroforestry.sav",
+        "bytes": 489162
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonC_Screening_Antierosion_land consolidation.sav",
+        "bytes": 592587
+      },
+      {
+        "name": "Microdata_SAS2021/SPSS/rwa-sas-seasonC-Screening_crops.sav",
+        "bytes": 1601806
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonA_Crop production.dta",
+        "bytes": 12928253
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 2896047
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-SeasonA_PartIV_Agricultural practice.dta",
+        "bytes": 2150792
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonA_Screening_Agroforestry.dta",
+        "bytes": 556393
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonA_Screening_Antierosion_land consolidation.dta",
+        "bytes": 649827
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonA-Screening_crops.dta",
+        "bytes": 1913739
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonB_Crop production.dta",
+        "bytes": 11428036
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 2939264
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-SeasonB_PartIV_Agricultural practice.dta",
+        "bytes": 2279400
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonB_Screening_Agroforestry.dta",
+        "bytes": 548407
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonB_Screening_Antierosion_land consolidation.dta",
+        "bytes": 695436
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonB-Screening_crops.dta",
+        "bytes": 1788117
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonC_Crop production.dta",
+        "bytes": 665387
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 421107
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-SeasonC_PartIV_Agricultural practice.dta",
+        "bytes": 240231
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonC_Screening_Agroforestry.dta",
+        "bytes": 116290
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonC_Screening_Antierosion_land consolidation.dta",
+        "bytes": 112826
+      },
+      {
+        "name": "Microdata_SAS2021/STATA/rwa-sas-seasonC-Screening_crops.dta",
+        "bytes": 355396
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2022.zip",
+    "files": [
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonA_Crop production.sav",
+        "bytes": 51596931
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 16917465
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-SeasonA_PartIV_Agricultural practice.sav",
+        "bytes": 14477586
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonA_Screening_Agroforestry.sav",
+        "bytes": 8010084
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonA_Screening_Antierosion_land consolidation.sav",
+        "bytes": 8498342
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonA-Screening_crops.sav",
+        "bytes": 21850957
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonB_Crop production.sav",
+        "bytes": 44665940
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 14928950
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-SeasonB_PartIV_Agricultural practice.sav",
+        "bytes": 13925091
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonB_Screening_Agroforestry.sav",
+        "bytes": 7704877
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonB_Screening_Antierosion_land consolidation.sav",
+        "bytes": 8280239
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonB-Screening_crops.sav",
+        "bytes": 19689374
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonC_Crop production.sav",
+        "bytes": 7233559
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 6846328
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-SeasonC_PartIV_Agricultural practice.sav",
+        "bytes": 3834688
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonC_Screening_Agroforestry.sav",
+        "bytes": 1347487
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonC_Screening_Antierosion_land consolidation.sav",
+        "bytes": 1268138
+      },
+      {
+        "name": "Microdata_SAS_2022/SPSS/rwa-sas-seasonC-Screening_crops.sav",
+        "bytes": 4352241
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonA_Crop production.dta",
+        "bytes": 37223997
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 11198521
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-SeasonA_PartIV_Agricultural practice.dta",
+        "bytes": 8599378
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonA_Screening_Agroforestry.dta",
+        "bytes": 5191819
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonA_Screening_Antierosion_land consolidation.dta",
+        "bytes": 5360183
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonA-Screening_crops.dta",
+        "bytes": 12938619
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonB_Crop production.dta",
+        "bytes": 32146193
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 9875026
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-SeasonB_PartIV_Agricultural practice.dta",
+        "bytes": 8325300
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonB_Screening_Agroforestry.dta",
+        "bytes": 5084745
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonB_Screening_Antierosion_land consolidation.dta",
+        "bytes": 5316911
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonB-Screening_crops.dta",
+        "bytes": 12407454
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonC_Crop production.dta",
+        "bytes": 5166871
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 4433240
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-SeasonC_PartIV_Agricultural practice.dta",
+        "bytes": 2455131
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonC_Screening_Agroforestry.dta",
+        "bytes": 772272
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonC_Screening_Antierosion_land consolidation.dta",
+        "bytes": 761786
+      },
+      {
+        "name": "Microdata_SAS_2022/STATA/rwa-sas-seasonC-Screening_crops.dta",
+        "bytes": 2485107
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2023.zip",
+    "files": [
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonA_Crop production.csv",
+        "bytes": 21289321
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.csv",
+        "bytes": 5629538
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-SeasonA_PartIV_Agricultural practice.csv",
+        "bytes": 3570366
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonA_Screening_Agroforestry.csv",
+        "bytes": 3731131
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonA_Screening_Antierosion_land consolidation.csv",
+        "bytes": 4493204
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonA-Screening_crops.csv",
+        "bytes": 12166806
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonB_Crop production.csv",
+        "bytes": 20088437
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.csv",
+        "bytes": 5110676
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-SeasonB_PartIV_Agricultural practice.csv",
+        "bytes": 4043391
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonB_Screening_Agroforestry.csv",
+        "bytes": 2929499
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonB_Screening_Antierosion_land consolidation.csv",
+        "bytes": 3682750
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonB-Screening_crops.csv",
+        "bytes": 10957610
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonC_Crop production.csv",
+        "bytes": 1640348
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.csv",
+        "bytes": 900005
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-SeasonC_PartIV_Agricultural practice.csv",
+        "bytes": 708860
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonC_Screening_Agroforestry.csv",
+        "bytes": 557437
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonC_Screening_Antierosion_land consolidation.csv",
+        "bytes": 614662
+      },
+      {
+        "name": "Microdata_SAS2023/CSV files/rwa-sas-seasonC-Screening_crops.csv",
+        "bytes": 1778622
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonA_Crop production.sav",
+        "bytes": 53435509
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 17326972
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-SeasonA_PartIV_Agricultural practice.sav",
+        "bytes": 14420141
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonA_Screening_Agroforestry.sav",
+        "bytes": 7377430
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonA_Screening_Antierosion_land consolidation.sav",
+        "bytes": 8348539
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonA-Screening_crops.sav",
+        "bytes": 22345313
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonB_Crop production.sav",
+        "bytes": 50026290
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 21739269
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-SeasonB_PartIV_Agricultural practice.sav",
+        "bytes": 11345008
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonB_Screening_Agroforestry.sav",
+        "bytes": 6127328
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonB_Screening_Antierosion_land consolidation.sav",
+        "bytes": 7053662
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonB-Screening_crops.sav",
+        "bytes": 20533895
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonC_Crop production.sav",
+        "bytes": 4070409
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.sav",
+        "bytes": 3859883
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-SeasonC_PartIV_Agricultural practice.sav",
+        "bytes": 2326976
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonC_Screening_Agroforestry.sav",
+        "bytes": 1266561
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonC_Screening_Antierosion_land consolidation.sav",
+        "bytes": 1226837
+      },
+      {
+        "name": "Microdata_SAS2023/SPSS/rwa-sas-seasonC-Screening_crops.sav",
+        "bytes": 3965306
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonA_Crop production.dta",
+        "bytes": 38726193
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-SeasonA_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 17326972
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-SeasonA_PartIV_Agricultural practice.dta",
+        "bytes": 8921565
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonA_Screening_Agroforestry.dta",
+        "bytes": 4964758
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonA_Screening_Antierosion_land consolidation.dta",
+        "bytes": 5361409
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonA-Screening_crops.dta",
+        "bytes": 14295784
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonB_Crop production.dta",
+        "bytes": 36183242
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-SeasonB_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 15220482
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-SeasonB_PartIV_Agricultural practice.dta",
+        "bytes": 6223694
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonB_Screening_Agroforestry.dta",
+        "bytes": 4123798
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonB_Screening_Antierosion_land consolidation.dta",
+        "bytes": 4706371
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonB-Screening_crops.dta",
+        "bytes": 12841144
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonC_Crop production.dta",
+        "bytes": 3026091
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-SeasonC_PartIII_Fertilizers_Pesticides.dta",
+        "bytes": 2739782
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-SeasonC_PartIV_Agricultural practice.dta",
+        "bytes": 1466301
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonC_Screening_Agroforestry.dta",
+        "bytes": 741149
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonC_Screening_Antierosion_land consolidation.dta",
+        "bytes": 735840
+      },
+      {
+        "name": "Microdata_SAS2023/Stata/rwa-sas-seasonC-Screening_crops.dta",
+        "bytes": 2381374
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2024.zip",
+    "files": [
+      {
+        "name": "Dataset/Season A/Rwa_raw_fertilizer_pesticideA2024.csv",
+        "bytes": 6724279
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_fertilizer_pesticideA2024.dta",
+        "bytes": 11825421
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_fertilizer_pesticideA2024.sav",
+        "bytes": 18583419
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Agricultural_practice.csv",
+        "bytes": 4519820
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Agricultural_practice.dta",
+        "bytes": 3485768
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Agricultural_practice.sav",
+        "bytes": 9396346
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Production.csv",
+        "bytes": 20158165
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Production.dta",
+        "bytes": 20638548
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Production.sav",
+        "bytes": 34630442
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Screening.csv",
+        "bytes": 17837263
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Screening.dta",
+        "bytes": 21934136
+      },
+      {
+        "name": "Dataset/Season A/Rwa_raw_SeasonA2024_Screening.sav",
+        "bytes": 35253025
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_fertilizer_pesticideB2024.csv",
+        "bytes": 5821408
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_fertilizer_pesticideB2024.dta",
+        "bytes": 10765619
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_fertilizer_pesticideB2024.sav",
+        "bytes": 16787285
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Agricultural_practice.csv",
+        "bytes": 4359376
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Agricultural_practice.dta",
+        "bytes": 3403459
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Agricultural_practice.sav",
+        "bytes": 8436138
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Production.csv",
+        "bytes": 18632423
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Production.dta",
+        "bytes": 20992268
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Production.sav",
+        "bytes": 33898058
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Screening.csv",
+        "bytes": 8773356
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Screening.dta",
+        "bytes": 11704765
+      },
+      {
+        "name": "Dataset/Season B/Rwa_raw_SeasonB2024_Screening.sav",
+        "bytes": 18523871
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_fertilizer_pesticideB2024.csv",
+        "bytes": 714126
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_fertilizer_pesticideC2024.dta",
+        "bytes": 1389249
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_fertilizer_pesticideC2024.sav",
+        "bytes": 2033923
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Agricultural_practice.csv",
+        "bytes": 463343
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Agricultural_practice.dta",
+        "bytes": 336403
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Agricultural_practice.sav",
+        "bytes": 748282
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Production.csv",
+        "bytes": 1054538
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Production.dta",
+        "bytes": 1170655
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Production.sav",
+        "bytes": 1867136
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Screening.csv",
+        "bytes": 1939486
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Screening.dta",
+        "bytes": 2791812
+      },
+      {
+        "name": "Dataset/Season C/Rwa_raw_SeasonC2024_Screening.sav",
+        "bytes": 4804569
+      }
+    ]
+  },
+  {
+    "archive": "T1 Agriculture - Seasonal Agriculture Survey 2025.zip",
+    "files": [
+      {
+        "name": "Microdata/Season A/Rwa_raw_fertilizer_pesticideA2025.csv",
+        "bytes": 5189960
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_fertilizer_pesticideA2025.dta",
+        "bytes": 22016801
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_fertilizer_pesticideA2025.sav",
+        "bytes": 22814095
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Agricultural_practice.csv",
+        "bytes": 4421388
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Agricultural_practice.dta",
+        "bytes": 49991597
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Agricultural_practice.sav",
+        "bytes": 52309203
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Production.csv",
+        "bytes": 21779580
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Production.dta",
+        "bytes": 59516314
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Production.sav",
+        "bytes": 61620363
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Screening.csv",
+        "bytes": 18127455
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Screening.dta",
+        "bytes": 40154452
+      },
+      {
+        "name": "Microdata/Season A/Rwa_raw_SeasonA2025_Screening.sav",
+        "bytes": 51331150
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_fertilizer_pesticideB2025.csv",
+        "bytes": 5301501
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_fertilizer_pesticideB2025.dta",
+        "bytes": 69527911
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_fertilizer_pesticideB2025.sav",
+        "bytes": 70209654
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Agricultural_practice.csv",
+        "bytes": 3621054
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Agricultural_practice.dta",
+        "bytes": 27475836
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Agricultural_practice.sav",
+        "bytes": 29984864
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Production.csv",
+        "bytes": 20448711
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Production.dta",
+        "bytes": 63431944
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Production.sav",
+        "bytes": 65345633
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Screening.csv",
+        "bytes": 18486822
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Screening.dta",
+        "bytes": 150751567
+      },
+      {
+        "name": "Microdata/Season B/Rwa_raw_SeasonB2025_Screening.sav",
+        "bytes": 154877643
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_fertilizer_pesticideC2025.csv",
+        "bytes": 620253
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_fertilizer_pesticideC2025.dta",
+        "bytes": 5205929
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_fertilizer_pesticideC2025.sav",
+        "bytes": 5214225
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Agricultural_practice.csv",
+        "bytes": 447090
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Agricultural_practice.dta",
+        "bytes": 1129275
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Agricultural_practice.sav",
+        "bytes": 1219735
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Production.csv",
+        "bytes": 1270374
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Production.dta",
+        "bytes": 3293744
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Production.sav",
+        "bytes": 3316505
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Screening.csv",
+        "bytes": 2197131
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Screening.dta",
+        "bytes": 10345641
+      },
+      {
+        "name": "Microdata/Season C/Rwa_raw_SeasonC2025_Screening.sav",
+        "bytes": 10924010
+      }
+    ]
+  }
+]

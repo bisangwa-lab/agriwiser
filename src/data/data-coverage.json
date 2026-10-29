@@ -1,0 +1,3420 @@
+{
+  "crops": [
+    "Banana",
+    "Banana for Beer",
+    "Beans",
+    "Bush Beans",
+    "Bush Beans + Small Red Beans",
+    "Cassava",
+    "Chia Seeds",
+    "Climbing Beans",
+    "Cooking Banana",
+    "Dessert Banana",
+    "Fodder Crops",
+    "Fruits",
+    "Groundnuts",
+    "Irish Potato",
+    "Maize",
+    "Other Cereals",
+    "Other Crops",
+    "Peas",
+    "Rice",
+    "Small Red Beans",
+    "Sorghum",
+    "Soybean",
+    "Sweet Potato",
+    "Vegetables",
+    "Wheat",
+    "Yams & Taro"
+  ],
+  "mainCrops": [
+    "Banana",
+    "Beans",
+    "Cassava",
+    "Chia Seeds",
+    "Fodder Crops",
+    "Fruits",
+    "Groundnuts",
+    "Irish Potato",
+    "Maize",
+    "Other Cereals",
+    "Other Crops",
+    "Peas",
+    "Rice",
+    "Sorghum",
+    "Soybean",
+    "Sweet Potato",
+    "Vegetables",
+    "Wheat",
+    "Yams & Taro"
+  ],
+  "subtypes": {
+    "Cooking Banana": "Banana",
+    "Dessert Banana": "Banana",
+    "Banana for Beer": "Banana",
+    "Bush Beans": "Beans",
+    "Climbing Beans": "Beans",
+    "Small Red Beans": "Beans",
+    "Bush Beans + Small Red Beans": "Beans"
+  },
+  "years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "seasons": [
+    "Season A",
+    "Season B",
+    "Season C"
+  ],
+  "availability": [
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Small Red Beans",
+      "level": "subtype",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2018,
+      "season": "Season C",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 30
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 112
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 28
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 28
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 112
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 112
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 112
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 112
+    },
+    {
+      "year": 2019,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 28
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 90
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2020,
+      "season": "Season C",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 30
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 30
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 90
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Bush Beans + Small Red Beans",
+      "level": "subtype",
+      "expected": 30
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Small Red Beans",
+      "level": "subtype",
+      "expected": 90
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2021,
+      "season": "Season C",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 60
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Chia Seeds",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2022,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2023,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2024,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2025,
+      "season": "Season C",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season A",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Banana",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Banana for Beer",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Beans",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Bush Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Cassava",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Climbing Beans",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Cooking Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Dessert Banana",
+      "level": "subtype",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Fodder Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Fruits",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Groundnuts",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Irish Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Maize",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Other Cereals",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Other Crops",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Peas",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Rice",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Sorghum",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Soybean",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Sweet Potato",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Vegetables",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Wheat",
+      "level": "main",
+      "expected": 120
+    },
+    {
+      "year": 2026,
+      "season": "Season B",
+      "crop": "Yams & Taro",
+      "level": "main",
+      "expected": 120
+    }
+  ],
+  "tableCount": 1161,
+  "datasetCount": 17,
+  "observationCount": 55394
+}

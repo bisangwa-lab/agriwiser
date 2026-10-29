@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "base44-tanstack-app",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/server.js",
+  "d1_databases": [
+    {
+      "binding": "LOCAL_AUTH_DB",
+      "database_name": "hingasmart-local-auth",
+      "database_id": "00000000-0000-0000-0000-000000000001",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "name": "ImportLog",
+  "type": "object",
+  "properties": {
+    "file_name": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "dataset_name": {
+      "type": "string"
+    },
+    "imported_by": {
+      "type": "string"
+    },
+    "total_rows": {
+      "type": "number"
+    },
+    "imported_rows": {
+      "type": "number"
+    },
+    "rejected_rows": {
+      "type": "number"
+    },
+    "warning_count": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "completed_with_warnings",
+        "failed"
+      ]
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "file_name",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

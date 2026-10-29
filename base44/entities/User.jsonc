@@ -1,0 +1,14 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "workspace_role": {
+      "type": "string",
+      "enum": [
+        "planner",
+        "officer",
+        "data_manager"
+      ]
+    }
+  }
+}

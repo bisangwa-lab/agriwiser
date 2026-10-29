@@ -1,0 +1,4447 @@
+{
+  "method": "District/cell polygon intersections in cylindrical equal-area coordinates, including holes and every multipolygon member. Weight = overlap area / full district area.",
+  "datasets": {
+    "merra2": {
+      "districts": [
+        {
+          "district": "Nyarugenge",
+          "areaKm2": 132.79711759653935,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 1,
+              "areaKm2": 132.79711759653935
+            }
+          ]
+        },
+        {
+          "district": "Gasabo",
+          "areaKm2": 431.43834850100274,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 1,
+              "areaKm2": 431.43834850100274
+            }
+          ]
+        },
+        {
+          "district": "Kicukiro",
+          "areaKm2": 167.71559033990607,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 1,
+              "areaKm2": 167.71559033990607
+            }
+          ]
+        },
+        {
+          "district": "Nyanza",
+          "areaKm2": 674.924588423074,
+          "cells": [
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.21640737388721806,
+              "areaKm2": 146.05865775254895
+            },
+            {
+              "id": "merra2:-2.5:30",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.7554659015021885,
+              "areaKm2": 509.8825126390312
+            },
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.028126724610593155,
+              "areaKm2": 18.98341803149373
+            }
+          ]
+        },
+        {
+          "district": "Gisagara",
+          "areaKm2": 682.688143486467,
+          "cells": [
+            {
+              "id": "merra2:-3:30",
+              "dataset": "merra2",
+              "latitude": -3,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -3.25,
+                "north": -2.75
+              },
+              "weight": 0.10286885307911069,
+              "areaKm2": 70.2273463311602
+            },
+            {
+              "id": "merra2:-2.5:30",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.8971311469208889,
+              "areaKm2": 612.4607971553065
+            }
+          ]
+        },
+        {
+          "district": "Nyaruguru",
+          "areaKm2": 1015.3555603610735,
+          "cells": [
+            {
+              "id": "merra2:-3:29.375",
+              "dataset": "merra2",
+              "latitude": -3,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -3.25,
+                "north": -2.75
+              },
+              "weight": 0.24939304155235853,
+              "areaKm2": 253.22261145554748
+            },
+            {
+              "id": "merra2:-3:30",
+              "dataset": "merra2",
+              "latitude": -3,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -3.25,
+                "north": -2.75
+              },
+              "weight": 0.013987996719082085,
+              "areaKm2": 14.202790247032448
+            },
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.6974555669688077,
+              "areaKm2": 708.1653880265641
+            },
+            {
+              "id": "merra2:-2.5:30",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.03916339475975165,
+              "areaKm2": 39.764770631929565
+            }
+          ]
+        },
+        {
+          "district": "Huye",
+          "areaKm2": 583.9073981939987,
+          "cells": [
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.3679666349878344,
+              "areaKm2": 214.85844045794715
+            },
+            {
+              "id": "merra2:-2.5:30",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.6320333650121649,
+              "areaKm2": 369.0489577360511
+            }
+          ]
+        },
+        {
+          "district": "Nyamagabe",
+          "areaKm2": 1095.9925310766118,
+          "cells": [
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.9731879972240411,
+              "areaKm2": 1066.6067762909554
+            },
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.026812002775958934,
+              "areaKm2": 29.385754785656374
+            }
+          ]
+        },
+        {
+          "district": "Ruhango",
+          "areaKm2": 628.4528214179638,
+          "cells": [
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.016644154350762934,
+              "areaKm2": 10.460065761853045
+            },
+            {
+              "id": "merra2:-2.5:30",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.07897197190868799,
+              "areaKm2": 49.63015855895515
+            },
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.25371146670549893,
+              "areaKm2": 159.4456870771606
+            },
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.6506724070350502,
+              "areaKm2": 408.91691001999516
+            }
+          ]
+        },
+        {
+          "district": "Muhanga",
+          "areaKm2": 649.4461044536707,
+          "cells": [
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.23893885589890046,
+              "areaKm2": 155.1779091661579
+            },
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.7477049838304826,
+              "areaKm2": 485.5940890293018
+            },
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.008805627191516724,
+              "areaKm2": 5.718780276801854
+            },
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.004550533079099008,
+              "areaKm2": 2.9553259814084183
+            }
+          ]
+        },
+        {
+          "district": "Kamonyi",
+          "areaKm2": 663.0606371792247,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 1,
+              "areaKm2": 663.0606371792247
+            }
+          ]
+        },
+        {
+          "district": "Karongi",
+          "areaKm2": 994.2524851097196,
+          "cells": [
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.07336966714331852,
+              "areaKm2": 72.94797388891739
+            },
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.9266303328566816,
+              "areaKm2": 921.3045112208023
+            }
+          ]
+        },
+        {
+          "district": "Rutsiro",
+          "areaKm2": 1166.2943850705833,
+          "cells": [
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.986425384089704,
+              "areaKm2": 1150.4623867549153
+            },
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.01357461591029593,
+              "areaKm2": 15.83199831566795
+            }
+          ]
+        },
+        {
+          "district": "Rubavu",
+          "areaKm2": 388.3695060288726,
+          "cells": [
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.07206638240281944,
+              "areaKm2": 27.988385335070824
+            },
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.9279336175971806,
+              "areaKm2": 360.3811206938018
+            }
+          ]
+        },
+        {
+          "district": "Nyabihu",
+          "areaKm2": 540.6761298393684,
+          "cells": [
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.025800913280869767,
+              "areaKm2": 13.949937939021826
+            },
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.9741990867191302,
+              "areaKm2": 526.7261919003466
+            }
+          ]
+        },
+        {
+          "district": "Ngororero",
+          "areaKm2": 679.0500597432821,
+          "cells": [
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.9706890891862895,
+              "areaKm2": 659.1464840041019
+            },
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.029310910813709,
+              "areaKm2": 19.903575739179107
+            }
+          ]
+        },
+        {
+          "district": "Rusizi",
+          "areaKm2": 963.5877920842981,
+          "cells": [
+            {
+              "id": "merra2:-2.5:28.75",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 28.75,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 28.4375,
+                "east": 29.0625,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.5452475462330032,
+              "areaKm2": 525.3938792140408
+            },
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.45475245376699736,
+              "areaKm2": 438.19391287025786
+            }
+          ]
+        },
+        {
+          "district": "Rulindo",
+          "areaKm2": 570.1319725559248,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.4613264009488713,
+              "areaKm2": 263.0169309651054
+            },
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.538673599051129,
+              "areaKm2": 307.1150415908195
+            }
+          ]
+        },
+        {
+          "district": "Gakenke",
+          "areaKm2": 707.2893200882509,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.2671491839733778,
+              "areaKm2": 188.9517646946614
+            },
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.12995958702084254,
+              "areaKm2": 91.91902794292159
+            },
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.6028912290057789,
+              "areaKm2": 426.4185274506673
+            }
+          ]
+        },
+        {
+          "district": "Musanze",
+          "areaKm2": 529.2625819313408,
+          "cells": [
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.8415458094852606,
+              "areaKm2": 445.39870794166933
+            },
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.15845419051473986,
+              "areaKm2": 83.86387398967179
+            }
+          ]
+        },
+        {
+          "district": "Burera",
+          "areaKm2": 648.1010686982278,
+          "cells": [
+            {
+              "id": "merra2:-1.5:29.375",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.03866248652978987,
+              "areaKm2": 25.057198838487647
+            },
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.9613375134702102,
+              "areaKm2": 623.0438698597402
+            }
+          ]
+        },
+        {
+          "district": "Gicumbi",
+          "areaKm2": 832.1873443506815,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.15115595275526789,
+              "areaKm2": 125.79007090620347
+            },
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.8488440472447328,
+              "areaKm2": 706.3972734444787
+            }
+          ]
+        },
+        {
+          "district": "Rwamagana",
+          "areaKm2": 683.9176363042897,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.3364555294813339,
+              "areaKm2": 230.1078704443821
+            },
+            {
+              "id": "merra2:-2:30.625",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.6635444705186667,
+              "areaKm2": 453.80976585990794
+            }
+          ]
+        },
+        {
+          "district": "Nyagatare",
+          "areaKm2": 1926.1794901939,
+          "cells": [
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.2882030652694811,
+              "areaKm2": 555.1308333330884
+            },
+            {
+              "id": "merra2:-1.5:30.625",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.4840350268159347,
+              "areaKm2": 932.3383411883077
+            },
+            {
+              "id": "merra2:-1:30",
+              "dataset": "merra2",
+              "latitude": -1,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.25,
+                "north": -0.75
+              },
+              "weight": 0.024899656424879485,
+              "areaKm2": 47.96120751847763
+            },
+            {
+              "id": "merra2:-1:30.625",
+              "dataset": "merra2",
+              "latitude": -1,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -1.25,
+                "north": -0.75
+              },
+              "weight": 0.20286225148970588,
+              "areaKm2": 390.74910815402836
+            }
+          ]
+        },
+        {
+          "district": "Gatsibo",
+          "areaKm2": 1590.9517669326065,
+          "cells": [
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.028727679396559572,
+              "areaKm2": 45.704352295829885
+            },
+            {
+              "id": "merra2:-2:30.625",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.11281629173759118,
+              "areaKm2": 179.4852786787051
+            },
+            {
+              "id": "merra2:-1.5:30",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.199660207333235,
+              "areaKm2": 317.64975964294075
+            },
+            {
+              "id": "merra2:-1.5:30.625",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.6587958215326151,
+              "areaKm2": 1048.1123763151318
+            }
+          ]
+        },
+        {
+          "district": "Kayonza",
+          "areaKm2": 1940.8239315509616,
+          "cells": [
+            {
+              "id": "merra2:-2:30.625",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.7166447282695249,
+              "areaKm2": 1390.8812390453297
+            },
+            {
+              "id": "merra2:-1.5:30.625",
+              "dataset": "merra2",
+              "latitude": -1.5,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -1.75,
+                "north": -1.25
+              },
+              "weight": 0.28335527173047476,
+              "areaKm2": 549.942692505631
+            }
+          ]
+        },
+        {
+          "district": "Kirehe",
+          "areaKm2": 1194.0826332080183,
+          "cells": [
+            {
+              "id": "merra2:-2.5:30.625",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.49954810003931516,
+              "areaKm2": 596.501710709008
+            },
+            {
+              "id": "merra2:-2:30.625",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.5004518999606845,
+              "areaKm2": 597.5809224990098
+            }
+          ]
+        },
+        {
+          "district": "Ngoma",
+          "areaKm2": 872.1311730969966,
+          "cells": [
+            {
+              "id": "merra2:-2.5:30.625",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.19806712590419337,
+              "areaKm2": 172.74051486677467
+            },
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.05142958893440418,
+              "areaKm2": 44.85334772925823
+            },
+            {
+              "id": "merra2:-2:30.625",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.750503285161403,
+              "areaKm2": 654.537310500964
+            }
+          ]
+        },
+        {
+          "district": "Bugesera",
+          "areaKm2": 1298.5760992874627,
+          "cells": [
+            {
+              "id": "merra2:-2.5:30",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.4482249002862958,
+              "areaKm2": 582.0541426172899
+            },
+            {
+              "id": "merra2:-2.5:30.625",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.03841800270969203,
+              "areaKm2": 49.88870010116704
+            },
+            {
+              "id": "merra2:-2:30",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.6875,
+                "east": 30.3125,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.5040610446730172,
+              "areaKm2": 654.56162519425
+            },
+            {
+              "id": "merra2:-2:30.625",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 30.625,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 30.3125,
+                "east": 30.9375,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.009296052330994021,
+              "areaKm2": 12.071631374754341
+            }
+          ]
+        },
+        {
+          "district": "Nyamasheke",
+          "areaKm2": 1176.3380089287,
+          "cells": [
+            {
+              "id": "merra2:-2.5:28.75",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 28.75,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 28.4375,
+                "east": 29.0625,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.216663802418413,
+              "areaKm2": 254.86986594379718
+            },
+            {
+              "id": "merra2:-2.5:29.375",
+              "dataset": "merra2",
+              "latitude": -2.5,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.75,
+                "north": -2.25
+              },
+              "weight": 0.6247855017473668,
+              "areaKm2": 734.9589331330162
+            },
+            {
+              "id": "merra2:-2:29.375",
+              "dataset": "merra2",
+              "latitude": -2,
+              "longitude": 29.375,
+              "resolution": "0.5° latitude × 0.625° longitude",
+              "bounds": {
+                "west": 29.0625,
+                "east": 29.6875,
+                "south": -2.25,
+                "north": -1.75
+              },
+              "weight": 0.15855069583422066,
+              "areaKm2": 186.50920985188702
+            }
+          ]
+        }
+      ],
+      "cells": [
+        {
+          "id": "merra2:-2:30",
+          "dataset": "merra2",
+          "latitude": -2,
+          "longitude": 30,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.6875,
+            "east": 30.3125,
+            "south": -2.25,
+            "north": -1.75
+          }
+        },
+        {
+          "id": "merra2:-2.5:29.375",
+          "dataset": "merra2",
+          "latitude": -2.5,
+          "longitude": 29.375,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.0625,
+            "east": 29.6875,
+            "south": -2.75,
+            "north": -2.25
+          }
+        },
+        {
+          "id": "merra2:-2.5:30",
+          "dataset": "merra2",
+          "latitude": -2.5,
+          "longitude": 30,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.6875,
+            "east": 30.3125,
+            "south": -2.75,
+            "north": -2.25
+          }
+        },
+        {
+          "id": "merra2:-3:30",
+          "dataset": "merra2",
+          "latitude": -3,
+          "longitude": 30,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.6875,
+            "east": 30.3125,
+            "south": -3.25,
+            "north": -2.75
+          }
+        },
+        {
+          "id": "merra2:-3:29.375",
+          "dataset": "merra2",
+          "latitude": -3,
+          "longitude": 29.375,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.0625,
+            "east": 29.6875,
+            "south": -3.25,
+            "north": -2.75
+          }
+        },
+        {
+          "id": "merra2:-2:29.375",
+          "dataset": "merra2",
+          "latitude": -2,
+          "longitude": 29.375,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.0625,
+            "east": 29.6875,
+            "south": -2.25,
+            "north": -1.75
+          }
+        },
+        {
+          "id": "merra2:-1.5:29.375",
+          "dataset": "merra2",
+          "latitude": -1.5,
+          "longitude": 29.375,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.0625,
+            "east": 29.6875,
+            "south": -1.75,
+            "north": -1.25
+          }
+        },
+        {
+          "id": "merra2:-1.5:30",
+          "dataset": "merra2",
+          "latitude": -1.5,
+          "longitude": 30,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.6875,
+            "east": 30.3125,
+            "south": -1.75,
+            "north": -1.25
+          }
+        },
+        {
+          "id": "merra2:-2.5:28.75",
+          "dataset": "merra2",
+          "latitude": -2.5,
+          "longitude": 28.75,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 28.4375,
+            "east": 29.0625,
+            "south": -2.75,
+            "north": -2.25
+          }
+        },
+        {
+          "id": "merra2:-2:30.625",
+          "dataset": "merra2",
+          "latitude": -2,
+          "longitude": 30.625,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 30.3125,
+            "east": 30.9375,
+            "south": -2.25,
+            "north": -1.75
+          }
+        },
+        {
+          "id": "merra2:-1.5:30.625",
+          "dataset": "merra2",
+          "latitude": -1.5,
+          "longitude": 30.625,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 30.3125,
+            "east": 30.9375,
+            "south": -1.75,
+            "north": -1.25
+          }
+        },
+        {
+          "id": "merra2:-1:30",
+          "dataset": "merra2",
+          "latitude": -1,
+          "longitude": 30,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 29.6875,
+            "east": 30.3125,
+            "south": -1.25,
+            "north": -0.75
+          }
+        },
+        {
+          "id": "merra2:-1:30.625",
+          "dataset": "merra2",
+          "latitude": -1,
+          "longitude": 30.625,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 30.3125,
+            "east": 30.9375,
+            "south": -1.25,
+            "north": -0.75
+          }
+        },
+        {
+          "id": "merra2:-2.5:30.625",
+          "dataset": "merra2",
+          "latitude": -2.5,
+          "longitude": 30.625,
+          "resolution": "0.5° latitude × 0.625° longitude",
+          "bounds": {
+            "west": 30.3125,
+            "east": 30.9375,
+            "south": -2.75,
+            "north": -2.25
+          }
+        }
+      ]
+    },
+    "era5": {
+      "districts": [
+        {
+          "district": "Nyarugenge",
+          "areaKm2": 132.79711759653935,
+          "cells": [
+            {
+              "id": "era5:-2:30",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.9933280479584959,
+              "areaKm2": 131.91110159668526
+            },
+            {
+              "id": "era5:-1.75:30",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.00667195204150308,
+              "areaKm2": 0.8860159998539553
+            }
+          ]
+        },
+        {
+          "district": "Gasabo",
+          "areaKm2": 431.43834850100274,
+          "cells": [
+            {
+              "id": "era5:-2:30",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.24469651733591916,
+              "areaKm2": 105.57146132335595
+            },
+            {
+              "id": "era5:-2:30.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.38356578587220447,
+              "areaKm2": 165.48498919819315
+            },
+            {
+              "id": "era5:-1.75:30",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.15289591385365478,
+              "areaKm2": 65.9651605655724
+            },
+            {
+              "id": "era5:-1.75:30.25",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.21884178293822257,
+              "areaKm2": 94.41673741388166
+            }
+          ]
+        },
+        {
+          "district": "Kicukiro",
+          "areaKm2": 167.71559033990607,
+          "cells": [
+            {
+              "id": "era5:-2:30",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.40754505666614044,
+              "areaKm2": 68.35165976887222
+            },
+            {
+              "id": "era5:-2:30.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.5924549433338595,
+              "areaKm2": 99.36393057103385
+            }
+          ]
+        },
+        {
+          "district": "Nyanza",
+          "areaKm2": 674.924588423074,
+          "cells": [
+            {
+              "id": "era5:-2.5:29.75",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.14500139649536492,
+              "areaKm2": 97.86500785040512
+            },
+            {
+              "id": "era5:-2.5:30",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.08966649422505434,
+              "areaKm2": 60.518121710184744
+            },
+            {
+              "id": "era5:-2.25:29.5",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.05271297496009136,
+              "areaKm2": 35.57728292949547
+            },
+            {
+              "id": "era5:-2.25:29.75",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.509436424194428,
+              "areaKm2": 343.8311689271469
+            },
+            {
+              "id": "era5:-2.25:30",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.20318271012506106,
+              "areaKm2": 137.1330070058416
+            }
+          ]
+        },
+        {
+          "district": "Gisagara",
+          "areaKm2": 682.688143486467,
+          "cells": [
+            {
+              "id": "era5:-2.75:29.75",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.3807535777776705,
+              "areaKm2": 259.935953138868
+            },
+            {
+              "id": "era5:-2.75:30",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.10037071469050812,
+              "areaKm2": 68.52189687247285
+            },
+            {
+              "id": "era5:-2.5:29.75",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.2841821551138572,
+              "areaKm2": 194.00778788666236
+            },
+            {
+              "id": "era5:-2.5:30",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.23469355241796372,
+              "areaKm2": 160.22250558846346
+            }
+          ]
+        },
+        {
+          "district": "Nyaruguru",
+          "areaKm2": 1015.3555603610735,
+          "cells": [
+            {
+              "id": "era5:-2.75:29.25",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.06306355363173312,
+              "areaKm2": 64.03192983610899
+            },
+            {
+              "id": "era5:-2.75:29.5",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.5715696104401855,
+              "areaKm2": 580.346382093855
+            },
+            {
+              "id": "era5:-2.75:29.75",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.16368495362807284,
+              "areaKm2": 166.1984278137082
+            },
+            {
+              "id": "era5:-2.5:29.25",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.017267870413020695,
+              "areaKm2": 17.533028239455028
+            },
+            {
+              "id": "era5:-2.5:29.5",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.1844140118869882,
+              "areaKm2": 187.24579237794657
+            }
+          ]
+        },
+        {
+          "district": "Huye",
+          "areaKm2": 583.9073981939987,
+          "cells": [
+            {
+              "id": "era5:-2.75:29.5",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.001694381474928025,
+              "areaKm2": 0.989361878573333
+            },
+            {
+              "id": "era5:-2.75:29.75",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.13275629097576466,
+              "areaKm2": 77.51738045754416
+            },
+            {
+              "id": "era5:-2.5:29.5",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.07491530717683816,
+              "areaKm2": 43.74360209853176
+            },
+            {
+              "id": "era5:-2.5:29.75",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.7895388930865233,
+              "areaKm2": 461.0176008351214
+            },
+            {
+              "id": "era5:-2.25:29.75",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.0010951272859448648,
+              "areaKm2": 0.6394529242273213
+            }
+          ]
+        },
+        {
+          "district": "Nyamagabe",
+          "areaKm2": 1095.9925310766118,
+          "cells": [
+            {
+              "id": "era5:-2.5:29.25",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.13685080448250447,
+              "areaKm2": 149.98745958465062
+            },
+            {
+              "id": "era5:-2.5:29.5",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.49365856715054224,
+              "areaKm2": 541.0461024989763
+            },
+            {
+              "id": "era5:-2.5:29.75",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.017468276343488864,
+              "areaKm2": 19.145100403246058
+            },
+            {
+              "id": "era5:-2.25:29.25",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.03881430620830367,
+              "areaKm2": 42.54018970322139
+            },
+            {
+              "id": "era5:-2.25:29.5",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.3131714498131574,
+              "areaKm2": 343.2335699416545
+            },
+            {
+              "id": "era5:-2.25:29.75",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.000036596002003273103,
+              "areaKm2": 0.04010894486285204
+            }
+          ]
+        },
+        {
+          "district": "Ruhango",
+          "areaKm2": 628.4528214179638,
+          "cells": [
+            {
+              "id": "era5:-2.25:29.5",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.08979552889300946,
+              "areaKm2": 56.43225348353008
+            },
+            {
+              "id": "era5:-2.25:29.75",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.6680103836977215,
+              "areaKm2": 419.8130103713297
+            },
+            {
+              "id": "era5:-2.25:30",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.19079306420555422,
+              "areaKm2": 119.90443950695928
+            },
+            {
+              "id": "era5:-2:29.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.0015013042576252015,
+              "areaKm2": 0.9434988965113597
+            },
+            {
+              "id": "era5:-2:29.75",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.043137889567018875,
+              "areaKm2": 27.110128408409558
+            },
+            {
+              "id": "era5:-2:30",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.006761829379070452,
+              "areaKm2": 4.249490751223704
+            }
+          ]
+        },
+        {
+          "district": "Muhanga",
+          "areaKm2": 649.4461044536707,
+          "cells": [
+            {
+              "id": "era5:-2.25:29.75",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.012089508397148924,
+              "areaKm2": 7.851484133288309
+            },
+            {
+              "id": "era5:-2:29.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.005189750906263209,
+              "areaKm2": 3.3704635091575486
+            },
+            {
+              "id": "era5:-2:29.75",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.703171669179468,
+              "areaKm2": 456.6721013107908
+            },
+            {
+              "id": "era5:-1.75:29.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.2795490715171183,
+              "areaKm2": 181.55205550043306
+            }
+          ]
+        },
+        {
+          "district": "Kamonyi",
+          "areaKm2": 663.0606371792247,
+          "cells": [
+            {
+              "id": "era5:-2.25:30",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.07943960623030508,
+              "areaKm2": 52.67327592433279
+            },
+            {
+              "id": "era5:-2:29.75",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.33900653014217763,
+              "areaKm2": 224.78188588399036
+            },
+            {
+              "id": "era5:-2:30",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.550777095402015,
+              "areaKm2": 365.19861182098276
+            },
+            {
+              "id": "era5:-1.75:29.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.01685039091117186,
+              "areaKm2": 11.17283093428063
+            },
+            {
+              "id": "era5:-1.75:30",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.013926377314330255,
+              "areaKm2": 9.23403261563812
+            }
+          ]
+        },
+        {
+          "district": "Karongi",
+          "areaKm2": 994.2524851097196,
+          "cells": [
+            {
+              "id": "era5:-2.25:29.25",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.20345514894417074,
+              "areaKm2": 202.2857874461099
+            },
+            {
+              "id": "era5:-2.25:29.5",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.33887983584875203,
+              "areaKm2": 336.93211894619554
+            },
+            {
+              "id": "era5:-2:29.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.24337518291815627,
+              "areaKm2": 241.97638043040945
+            },
+            {
+              "id": "era5:-2:29.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.2142898322889217,
+              "areaKm2": 213.05819828700544
+            }
+          ]
+        },
+        {
+          "district": "Rutsiro",
+          "areaKm2": 1166.2943850705833,
+          "cells": [
+            {
+              "id": "era5:-2:29.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.3895903354914564,
+              "areaKm2": 454.3770207614504
+            },
+            {
+              "id": "era5:-2:29.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.2567282462195529,
+              "areaKm2": 299.42071205488276
+            },
+            {
+              "id": "era5:-1.75:29.25",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.259221736295607,
+              "areaKm2": 302.3288555298139
+            },
+            {
+              "id": "era5:-1.75:29.5",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.09445968199338405,
+              "areaKm2": 110.1677967244367
+            }
+          ]
+        },
+        {
+          "district": "Rubavu",
+          "areaKm2": 388.3695060288726,
+          "cells": [
+            {
+              "id": "era5:-1.75:29.25",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.5884398527963358,
+              "areaKm2": 228.53209495821545
+            },
+            {
+              "id": "era5:-1.75:29.5",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.13861489246405032,
+              "areaKm2": 53.833797314508516
+            },
+            {
+              "id": "era5:-1.5:29.25",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.17505341973715727,
+              "areaKm2": 67.98541015198467
+            },
+            {
+              "id": "era5:-1.5:29.5",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.09789183500245693,
+              "areaKm2": 38.0182036041641
+            }
+          ]
+        },
+        {
+          "district": "Nyabihu",
+          "areaKm2": 540.6761298393684,
+          "cells": [
+            {
+              "id": "era5:-1.75:29.5",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.6008167712215232,
+              "areaKm2": 324.8472866066384
+            },
+            {
+              "id": "era5:-1.75:29.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.026022531935886658,
+              "areaKm2": 14.069761855716566
+            },
+            {
+              "id": "era5:-1.5:29.5",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.3651096732555355,
+              "areaKm2": 197.4060851027193
+            },
+            {
+              "id": "era5:-1.5:29.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.008051023587054324,
+              "areaKm2": 4.352996274294001
+            }
+          ]
+        },
+        {
+          "district": "Ngororero",
+          "areaKm2": 679.0500597432821,
+          "cells": [
+            {
+              "id": "era5:-2:29.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.3762717874910659,
+              "areaKm2": 255.5073797755198
+            },
+            {
+              "id": "era5:-2:29.75",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.09386073383744621,
+              "areaKm2": 63.73613691986614
+            },
+            {
+              "id": "era5:-1.75:29.5",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.41758584885969946,
+              "areaKm2": 283.5616956161281
+            },
+            {
+              "id": "era5:-1.75:29.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.11228162981178774,
+              "areaKm2": 76.24484743176754
+            }
+          ]
+        },
+        {
+          "district": "Rusizi",
+          "areaKm2": 963.5877920842981,
+          "cells": [
+            {
+              "id": "era5:-2.75:29",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 28.875,
+                "east": 29.125,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.14660043965216102,
+              "areaKm2": 141.26239396301324
+            },
+            {
+              "id": "era5:-2.75:29.25",
+              "dataset": "era5",
+              "latitude": -2.75,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.875,
+                "north": -2.625
+              },
+              "weight": 0.031628339457809504,
+              "areaKm2": 30.47668178544335
+            },
+            {
+              "id": "era5:-2.5:28.75",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 28.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 28.625,
+                "east": 28.875,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.007312098235541232,
+              "areaKm2": 7.045848594288668
+            },
+            {
+              "id": "era5:-2.5:29",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 28.875,
+                "east": 29.125,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.4541582344366618,
+              "areaKm2": 437.621330377726
+            },
+            {
+              "id": "era5:-2.5:29.25",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.3590803031228505,
+              "areaKm2": 346.005396467108
+            },
+            {
+              "id": "era5:-2.25:29",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 28.875,
+                "east": 29.125,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.0012205850949763078,
+              "areaKm2": 1.176140896719224
+            }
+          ]
+        },
+        {
+          "district": "Rulindo",
+          "areaKm2": 570.1319725559248,
+          "cells": [
+            {
+              "id": "era5:-2:30",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.02352161767154677,
+              "areaKm2": 13.41042628078526
+            },
+            {
+              "id": "era5:-1.75:29.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.0021101529640173582,
+              "areaKm2": 1.2030656717699477
+            },
+            {
+              "id": "era5:-1.75:30",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.9098582835023724,
+              "areaKm2": 518.7392979195554
+            },
+            {
+              "id": "era5:-1.75:30.25",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.004351740567274008,
+              "areaKm2": 2.481066433671569
+            },
+            {
+              "id": "era5:-1.5:29.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.002584842652687621,
+              "areaKm2": 1.4737014403234825
+            },
+            {
+              "id": "era5:-1.5:30",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.05757336264210233,
+              "areaKm2": 32.82441480981939
+            }
+          ]
+        },
+        {
+          "district": "Gakenke",
+          "areaKm2": 707.2893200882509,
+          "cells": [
+            {
+              "id": "era5:-1.75:29.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.6901956540313853,
+              "areaKm2": 488.16801486772414
+            },
+            {
+              "id": "era5:-1.75:30",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.10303933665124586,
+              "areaKm2": 72.87862236240407
+            },
+            {
+              "id": "era5:-1.5:29.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.20676500931736763,
+              "areaKm2": 146.2426828581218
+            }
+          ]
+        },
+        {
+          "district": "Musanze",
+          "areaKm2": 529.2625819313408,
+          "cells": [
+            {
+              "id": "era5:-1.5:29.5",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.375,
+                "east": 29.625,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.5957761798515658,
+              "areaKm2": 315.32203920143064
+            },
+            {
+              "id": "era5:-1.5:29.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.40422382014843394,
+              "areaKm2": 213.9405427299101
+            }
+          ]
+        },
+        {
+          "district": "Burera",
+          "areaKm2": 648.1010686982278,
+          "cells": [
+            {
+              "id": "era5:-1.5:29.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.6139551307796477,
+              "areaKm2": 397.90497639104984
+            },
+            {
+              "id": "era5:-1.5:30",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.27858558274501966,
+              "areaKm2": 180.55161390096578
+            },
+            {
+              "id": "era5:-1.25:29.75",
+              "dataset": "era5",
+              "latitude": -1.25,
+              "longitude": 29.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.625,
+                "east": 29.875,
+                "south": -1.375,
+                "north": -1.125
+              },
+              "weight": 0.10522078486287983,
+              "areaKm2": 68.19370311889872
+            },
+            {
+              "id": "era5:-1.25:30",
+              "dataset": "era5",
+              "latitude": -1.25,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.375,
+                "north": -1.125
+              },
+              "weight": 0.0022385016124524264,
+              "areaKm2": 1.4507752873131237
+            }
+          ]
+        },
+        {
+          "district": "Gicumbi",
+          "areaKm2": 832.1873443506815,
+          "cells": [
+            {
+              "id": "era5:-1.75:30",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.1258219648610324,
+              "areaKm2": 104.70744679868731
+            },
+            {
+              "id": "era5:-1.75:30.25",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.35231806488341133,
+              "areaKm2": 293.19463478209724
+            },
+            {
+              "id": "era5:-1.5:30",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.4371419140059721,
+              "areaKm2": 363.78396852100394
+            },
+            {
+              "id": "era5:-1.5:30.25",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.08471805624958405,
+              "areaKm2": 70.50129424889302
+            }
+          ]
+        },
+        {
+          "district": "Rwamagana",
+          "areaKm2": 683.9176363042897,
+          "cells": [
+            {
+              "id": "era5:-2.25:30.25",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.0018532146342214305,
+              "areaKm2": 1.2674461722012393
+            },
+            {
+              "id": "era5:-2:30.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.534730880480452,
+              "areaKm2": 365.71187983710234
+            },
+            {
+              "id": "era5:-2:30.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.35805206909820464,
+              "areaKm2": 244.87812477150428
+            },
+            {
+              "id": "era5:-1.75:30.25",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.05460263545729813,
+              "areaKm2": 37.34370537794013
+            },
+            {
+              "id": "era5:-1.75:30.5",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.05076120032982494,
+              "areaKm2": 34.7164801455424
+            }
+          ]
+        },
+        {
+          "district": "Nyagatare",
+          "areaKm2": 1926.1794901939,
+          "cells": [
+            {
+              "id": "era5:-1.5:30",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.017367891300090615,
+              "areaKm2": 33.45367601015161
+            },
+            {
+              "id": "era5:-1.5:30.25",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.21819008506380566,
+              "areaKm2": 420.2732668135648
+            },
+            {
+              "id": "era5:-1.5:30.5",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.17352825852539838,
+              "areaKm2": 334.2465725406871
+            },
+            {
+              "id": "era5:-1.5:30.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.04041403616692218,
+              "areaKm2": 77.84468758068
+            },
+            {
+              "id": "era5:-1.25:30",
+              "dataset": "era5",
+              "latitude": -1.25,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -1.375,
+                "north": -1.125
+              },
+              "weight": 0.00018343324259524737,
+              "areaKm2": 0.3533253497067275
+            },
+            {
+              "id": "era5:-1.25:30.25",
+              "dataset": "era5",
+              "latitude": -1.25,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.375,
+                "north": -1.125
+              },
+              "weight": 0.23609706134168845,
+              "areaKm2": 454.7653172514114
+            },
+            {
+              "id": "era5:-1.25:30.5",
+              "dataset": "era5",
+              "latitude": -1.25,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.375,
+                "north": -1.125
+              },
+              "weight": 0.2662882847622722,
+              "areaKm2": 512.9190325880015
+            },
+            {
+              "id": "era5:-1:30.25",
+              "dataset": "era5",
+              "latitude": -1,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.125,
+                "north": -0.875
+              },
+              "weight": 0.011993873752934873,
+              "areaKm2": 23.10235363087809
+            },
+            {
+              "id": "era5:-1:30.5",
+              "dataset": "era5",
+              "latitude": -1,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.125,
+                "north": -0.875
+              },
+              "weight": 0.03593707584429417,
+              "areaKm2": 69.22125842882205
+            }
+          ]
+        },
+        {
+          "district": "Gatsibo",
+          "areaKm2": 1590.9517669326065,
+          "cells": [
+            {
+              "id": "era5:-2:30.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.000021557775178577836,
+              "areaKm2": 0.034297380511494294
+            },
+            {
+              "id": "era5:-1.75:30.25",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.21683525511224058,
+              "areaKm2": 344.9744322541016
+            },
+            {
+              "id": "era5:-1.75:30.5",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.15780321469109995,
+              "areaKm2": 251.05730324045092
+            },
+            {
+              "id": "era5:-1.75:30.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.008315616347259061,
+              "areaKm2": 13.22974452080547
+            },
+            {
+              "id": "era5:-1.5:30.25",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.177083704993202,
+              "areaKm2": 281.7316333539071
+            },
+            {
+              "id": "era5:-1.5:30.5",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.27050103611610815,
+              "areaKm2": 430.3541013660231
+            },
+            {
+              "id": "era5:-1.5:30.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.1694396149649114,
+              "areaKm2": 269.57025481680625
+            }
+          ]
+        },
+        {
+          "district": "Kayonza",
+          "areaKm2": 1940.8239315509616,
+          "cells": [
+            {
+              "id": "era5:-2:30.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.18835337072787725,
+              "areaKm2": 365.56072949695454
+            },
+            {
+              "id": "era5:-2:30.75",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.232887296268759,
+              "areaKm2": 451.9932379526064
+            },
+            {
+              "id": "era5:-1.75:30.5",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.25073721782008035,
+              "areaKm2": 486.63679287571813
+            },
+            {
+              "id": "era5:-1.75:30.75",
+              "dataset": "era5",
+              "latitude": -1.75,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -1.875,
+                "north": -1.625
+              },
+              "weight": 0.3140049189246994,
+              "areaKm2": 609.428261273776
+            },
+            {
+              "id": "era5:-1.5:30.5",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.004073186932142544,
+              "areaKm2": 7.905338675582892
+            },
+            {
+              "id": "era5:-1.5:30.75",
+              "dataset": "era5",
+              "latitude": -1.5,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -1.625,
+                "north": -1.375
+              },
+              "weight": 0.009944009326442073,
+              "areaKm2": 19.299571276324734
+            }
+          ]
+        },
+        {
+          "district": "Kirehe",
+          "areaKm2": 1194.0826332080183,
+          "cells": [
+            {
+              "id": "era5:-2.5:30.5",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.04273870132401937,
+              "areaKm2": 51.03354101687607
+            },
+            {
+              "id": "era5:-2.5:30.75",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.02429609773415609,
+              "areaKm2": 29.011548359080468
+            },
+            {
+              "id": "era5:-2.25:30.5",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.18075867078340244,
+              "areaKm2": 215.84078958422646
+            },
+            {
+              "id": "era5:-2.25:30.75",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.5530030612999199,
+              "areaKm2": 660.3313516091035
+            },
+            {
+              "id": "era5:-2.25:31",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 31,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.875,
+                "east": 31.125,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.00018739336430135704,
+              "areaKm2": 0.22376316189067386
+            },
+            {
+              "id": "era5:-2:30.75",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.1881823643179944,
+              "areaKm2": 224.70529310814138
+            },
+            {
+              "id": "era5:-2:31",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 31,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.875,
+                "east": 31.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.010833711176205477,
+              "areaKm2": 12.936346368698572
+            }
+          ]
+        },
+        {
+          "district": "Ngoma",
+          "areaKm2": 872.1311730969966,
+          "cells": [
+            {
+              "id": "era5:-2.25:30.25",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.18771315802957025,
+              "areaKm2": 163.710496718071
+            },
+            {
+              "id": "era5:-2.25:30.5",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.5684807869239966,
+              "areaKm2": 495.789815583129
+            },
+            {
+              "id": "era5:-2.25:30.75",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.024989836131114797,
+              "areaKm2": 21.79441510053086
+            },
+            {
+              "id": "era5:-2:30.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.03173523419553982,
+              "areaKm2": 27.677287027464068
+            },
+            {
+              "id": "era5:-2:30.5",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.5,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.375,
+                "east": 30.625,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.18559295120691238,
+              "areaKm2": 161.86139825461814
+            },
+            {
+              "id": "era5:-2:30.75",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.75,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.625,
+                "east": 30.875,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.0014880335128671914,
+              "areaKm2": 1.2977604131845084
+            }
+          ]
+        },
+        {
+          "district": "Bugesera",
+          "areaKm2": 1298.5760992874627,
+          "cells": [
+            {
+              "id": "era5:-2.5:30",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.02577069657681997,
+              "areaKm2": 33.46521063664764
+            },
+            {
+              "id": "era5:-2.5:30.25",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.039933213884574895,
+              "areaKm2": 51.85631711824321
+            },
+            {
+              "id": "era5:-2.25:30",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.3256742364194011,
+              "areaKm2": 422.91277956792874
+            },
+            {
+              "id": "era5:-2.25:30.25",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.45642794657928903,
+              "areaKm2": 592.7064224747196
+            },
+            {
+              "id": "era5:-2:30",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.875,
+                "east": 30.125,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.06438398259990108,
+              "areaKm2": 83.60750098117141
+            },
+            {
+              "id": "era5:-2:30.25",
+              "dataset": "era5",
+              "latitude": -2,
+              "longitude": 30.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 30.125,
+                "east": 30.375,
+                "south": -2.125,
+                "north": -1.875
+              },
+              "weight": 0.08780992394001405,
+              "areaKm2": 114.02786850875222
+            }
+          ]
+        },
+        {
+          "district": "Nyamasheke",
+          "areaKm2": 1176.3380089287,
+          "cells": [
+            {
+              "id": "era5:-2.5:29",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 28.875,
+                "east": 29.125,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.2373206247780068,
+              "areaKm2": 279.1692712290756
+            },
+            {
+              "id": "era5:-2.5:29.25",
+              "dataset": "era5",
+              "latitude": -2.5,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.625,
+                "north": -2.375
+              },
+              "weight": 0.20349014385328357,
+              "areaKm2": 239.3731906569863
+            },
+            {
+              "id": "era5:-2.25:29",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 28.875,
+                "east": 29.125,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.1418061120651586,
+              "areaKm2": 166.81191952064876
+            },
+            {
+              "id": "era5:-2.25:29.25",
+              "dataset": "era5",
+              "latitude": -2.25,
+              "longitude": 29.25,
+              "resolution": "0.25° latitude × 0.25° longitude",
+              "bounds": {
+                "west": 29.125,
+                "east": 29.375,
+                "south": -2.375,
+                "north": -2.125
+              },
+              "weight": 0.41738311930355093,
+              "areaKm2": 490.9836275219891
+            }
+          ]
+        }
+      ],
+      "cells": [
+        {
+          "id": "era5:-2:30",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 30,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.875,
+            "east": 30.125,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-1.75:30",
+          "dataset": "era5",
+          "latitude": -1.75,
+          "longitude": 30,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.875,
+            "east": 30.125,
+            "south": -1.875,
+            "north": -1.625
+          }
+        },
+        {
+          "id": "era5:-2:30.25",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 30.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.125,
+            "east": 30.375,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-1.75:30.25",
+          "dataset": "era5",
+          "latitude": -1.75,
+          "longitude": 30.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.125,
+            "east": 30.375,
+            "south": -1.875,
+            "north": -1.625
+          }
+        },
+        {
+          "id": "era5:-2.5:29.75",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 29.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.625,
+            "east": 29.875,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.5:30",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 30,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.875,
+            "east": 30.125,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.25:29.5",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 29.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.375,
+            "east": 29.625,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2.25:29.75",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 29.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.625,
+            "east": 29.875,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2.25:30",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 30,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.875,
+            "east": 30.125,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2.75:29.75",
+          "dataset": "era5",
+          "latitude": -2.75,
+          "longitude": 29.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.625,
+            "east": 29.875,
+            "south": -2.875,
+            "north": -2.625
+          }
+        },
+        {
+          "id": "era5:-2.75:30",
+          "dataset": "era5",
+          "latitude": -2.75,
+          "longitude": 30,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.875,
+            "east": 30.125,
+            "south": -2.875,
+            "north": -2.625
+          }
+        },
+        {
+          "id": "era5:-2.75:29.25",
+          "dataset": "era5",
+          "latitude": -2.75,
+          "longitude": 29.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.125,
+            "east": 29.375,
+            "south": -2.875,
+            "north": -2.625
+          }
+        },
+        {
+          "id": "era5:-2.75:29.5",
+          "dataset": "era5",
+          "latitude": -2.75,
+          "longitude": 29.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.375,
+            "east": 29.625,
+            "south": -2.875,
+            "north": -2.625
+          }
+        },
+        {
+          "id": "era5:-2.5:29.25",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 29.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.125,
+            "east": 29.375,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.5:29.5",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 29.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.375,
+            "east": 29.625,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.25:29.25",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 29.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.125,
+            "east": 29.375,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2:29.5",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 29.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.375,
+            "east": 29.625,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-2:29.75",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 29.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.625,
+            "east": 29.875,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-1.75:29.75",
+          "dataset": "era5",
+          "latitude": -1.75,
+          "longitude": 29.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.625,
+            "east": 29.875,
+            "south": -1.875,
+            "north": -1.625
+          }
+        },
+        {
+          "id": "era5:-2:29.25",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 29.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.125,
+            "east": 29.375,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-1.75:29.25",
+          "dataset": "era5",
+          "latitude": -1.75,
+          "longitude": 29.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.125,
+            "east": 29.375,
+            "south": -1.875,
+            "north": -1.625
+          }
+        },
+        {
+          "id": "era5:-1.75:29.5",
+          "dataset": "era5",
+          "latitude": -1.75,
+          "longitude": 29.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.375,
+            "east": 29.625,
+            "south": -1.875,
+            "north": -1.625
+          }
+        },
+        {
+          "id": "era5:-1.5:29.25",
+          "dataset": "era5",
+          "latitude": -1.5,
+          "longitude": 29.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.125,
+            "east": 29.375,
+            "south": -1.625,
+            "north": -1.375
+          }
+        },
+        {
+          "id": "era5:-1.5:29.5",
+          "dataset": "era5",
+          "latitude": -1.5,
+          "longitude": 29.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.375,
+            "east": 29.625,
+            "south": -1.625,
+            "north": -1.375
+          }
+        },
+        {
+          "id": "era5:-1.5:29.75",
+          "dataset": "era5",
+          "latitude": -1.5,
+          "longitude": 29.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.625,
+            "east": 29.875,
+            "south": -1.625,
+            "north": -1.375
+          }
+        },
+        {
+          "id": "era5:-2.75:29",
+          "dataset": "era5",
+          "latitude": -2.75,
+          "longitude": 29,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 28.875,
+            "east": 29.125,
+            "south": -2.875,
+            "north": -2.625
+          }
+        },
+        {
+          "id": "era5:-2.5:28.75",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 28.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 28.625,
+            "east": 28.875,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.5:29",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 29,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 28.875,
+            "east": 29.125,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.25:29",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 29,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 28.875,
+            "east": 29.125,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-1.5:30",
+          "dataset": "era5",
+          "latitude": -1.5,
+          "longitude": 30,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.875,
+            "east": 30.125,
+            "south": -1.625,
+            "north": -1.375
+          }
+        },
+        {
+          "id": "era5:-1.25:29.75",
+          "dataset": "era5",
+          "latitude": -1.25,
+          "longitude": 29.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.625,
+            "east": 29.875,
+            "south": -1.375,
+            "north": -1.125
+          }
+        },
+        {
+          "id": "era5:-1.25:30",
+          "dataset": "era5",
+          "latitude": -1.25,
+          "longitude": 30,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 29.875,
+            "east": 30.125,
+            "south": -1.375,
+            "north": -1.125
+          }
+        },
+        {
+          "id": "era5:-1.5:30.25",
+          "dataset": "era5",
+          "latitude": -1.5,
+          "longitude": 30.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.125,
+            "east": 30.375,
+            "south": -1.625,
+            "north": -1.375
+          }
+        },
+        {
+          "id": "era5:-2.25:30.25",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 30.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.125,
+            "east": 30.375,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2:30.5",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 30.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.375,
+            "east": 30.625,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-1.75:30.5",
+          "dataset": "era5",
+          "latitude": -1.75,
+          "longitude": 30.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.375,
+            "east": 30.625,
+            "south": -1.875,
+            "north": -1.625
+          }
+        },
+        {
+          "id": "era5:-1.5:30.5",
+          "dataset": "era5",
+          "latitude": -1.5,
+          "longitude": 30.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.375,
+            "east": 30.625,
+            "south": -1.625,
+            "north": -1.375
+          }
+        },
+        {
+          "id": "era5:-1.5:30.75",
+          "dataset": "era5",
+          "latitude": -1.5,
+          "longitude": 30.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.625,
+            "east": 30.875,
+            "south": -1.625,
+            "north": -1.375
+          }
+        },
+        {
+          "id": "era5:-1.25:30.25",
+          "dataset": "era5",
+          "latitude": -1.25,
+          "longitude": 30.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.125,
+            "east": 30.375,
+            "south": -1.375,
+            "north": -1.125
+          }
+        },
+        {
+          "id": "era5:-1.25:30.5",
+          "dataset": "era5",
+          "latitude": -1.25,
+          "longitude": 30.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.375,
+            "east": 30.625,
+            "south": -1.375,
+            "north": -1.125
+          }
+        },
+        {
+          "id": "era5:-1:30.25",
+          "dataset": "era5",
+          "latitude": -1,
+          "longitude": 30.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.125,
+            "east": 30.375,
+            "south": -1.125,
+            "north": -0.875
+          }
+        },
+        {
+          "id": "era5:-1:30.5",
+          "dataset": "era5",
+          "latitude": -1,
+          "longitude": 30.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.375,
+            "east": 30.625,
+            "south": -1.125,
+            "north": -0.875
+          }
+        },
+        {
+          "id": "era5:-1.75:30.75",
+          "dataset": "era5",
+          "latitude": -1.75,
+          "longitude": 30.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.625,
+            "east": 30.875,
+            "south": -1.875,
+            "north": -1.625
+          }
+        },
+        {
+          "id": "era5:-2:30.75",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 30.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.625,
+            "east": 30.875,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-2.5:30.5",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 30.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.375,
+            "east": 30.625,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.5:30.75",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 30.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.625,
+            "east": 30.875,
+            "south": -2.625,
+            "north": -2.375
+          }
+        },
+        {
+          "id": "era5:-2.25:30.5",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 30.5,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.375,
+            "east": 30.625,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2.25:30.75",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 30.75,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.625,
+            "east": 30.875,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2.25:31",
+          "dataset": "era5",
+          "latitude": -2.25,
+          "longitude": 31,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.875,
+            "east": 31.125,
+            "south": -2.375,
+            "north": -2.125
+          }
+        },
+        {
+          "id": "era5:-2:31",
+          "dataset": "era5",
+          "latitude": -2,
+          "longitude": 31,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.875,
+            "east": 31.125,
+            "south": -2.125,
+            "north": -1.875
+          }
+        },
+        {
+          "id": "era5:-2.5:30.25",
+          "dataset": "era5",
+          "latitude": -2.5,
+          "longitude": 30.25,
+          "resolution": "0.25° latitude × 0.25° longitude",
+          "bounds": {
+            "west": 30.125,
+            "east": 30.375,
+            "south": -2.625,
+            "north": -2.375
+          }
+        }
+      ]
+    }
+  }
+}

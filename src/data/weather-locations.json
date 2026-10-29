@@ -1,0 +1,336 @@
+{
+  "method": "Centroid of the largest district polygon, with an interior scan-line fallback for concave polygons. Not a station or district-wide average.",
+  "boundary_source": "geoBoundaries / Open Data Rwanda, ADM2 2012; see migration/rwanda-boundaries-source.json",
+  "locations": [
+    {
+      "district": "Bugesera",
+      "latitude": -2.23969,
+      "longitude": 30.150152,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30,
+        "id": "merra2:-2:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Burera",
+      "latitude": -1.466251,
+      "longitude": 29.826554,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 30,
+        "id": "merra2:-1.5:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Gakenke",
+      "latitude": -1.698468,
+      "longitude": 29.784228,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 30,
+        "id": "merra2:-1.5:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Gasabo",
+      "latitude": -1.891471,
+      "longitude": 30.142238,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30,
+        "id": "merra2:-2:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Gatsibo",
+      "latitude": -1.61902,
+      "longitude": 30.445362,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 30.625,
+        "id": "merra2:-1.5:30.625",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Gicumbi",
+      "latitude": -1.621574,
+      "longitude": 30.113892,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 30,
+        "id": "merra2:-1.5:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Gisagara",
+      "latitude": -2.618066,
+      "longitude": 29.843616,
+      "grid": {
+        "latitude": -2.5,
+        "longitude": 30,
+        "id": "merra2:-2.5:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Huye",
+      "latitude": -2.524673,
+      "longitude": 29.708839,
+      "grid": {
+        "latitude": -2.5,
+        "longitude": 30,
+        "id": "merra2:-2.5:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Kamonyi",
+      "latitude": -2.009505,
+      "longitude": 29.902392,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30,
+        "id": "merra2:-2:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Karongi",
+      "latitude": -2.140905,
+      "longitude": 29.39384,
+      "grid": {
+        "latitude": -2,
+        "longitude": 29.375,
+        "id": "merra2:-2:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Kayonza",
+      "latitude": -1.845113,
+      "longitude": 30.641932,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30.625,
+        "id": "merra2:-2:30.625",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Kicukiro",
+      "latitude": -2.008805,
+      "longitude": 30.143671,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30,
+        "id": "merra2:-2:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Kirehe",
+      "latitude": -2.234398,
+      "longitude": 30.710311,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30.625,
+        "id": "merra2:-2:30.625",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Muhanga",
+      "latitude": -1.954851,
+      "longitude": 29.722718,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30,
+        "id": "merra2:-2:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Musanze",
+      "latitude": -1.498433,
+      "longitude": 29.606562,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 29.375,
+        "id": "merra2:-1.5:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Ngoma",
+      "latitude": -2.183043,
+      "longitude": 30.457139,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30.625,
+        "id": "merra2:-2:30.625",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Ngororero",
+      "latitude": -1.877851,
+      "longitude": 29.569478,
+      "grid": {
+        "latitude": -2,
+        "longitude": 29.375,
+        "id": "merra2:-2:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Nyabihu",
+      "latitude": -1.647354,
+      "longitude": 29.510536,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 29.375,
+        "id": "merra2:-1.5:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Nyagatare",
+      "latitude": -1.338259,
+      "longitude": 30.379951,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 30.625,
+        "id": "merra2:-1.5:30.625",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Nyamagabe",
+      "latitude": -2.411341,
+      "longitude": 29.469914,
+      "grid": {
+        "latitude": -2.5,
+        "longitude": 29.375,
+        "id": "merra2:-2.5:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Nyamasheke",
+      "latitude": -2.353834,
+      "longitude": 29.156009,
+      "grid": {
+        "latitude": -2.5,
+        "longitude": 29.375,
+        "id": "merra2:-2.5:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Nyanza",
+      "latitude": -2.335825,
+      "longitude": 29.793503,
+      "grid": {
+        "latitude": -2.5,
+        "longitude": 30,
+        "id": "merra2:-2.5:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Nyarugenge",
+      "latitude": -1.99207,
+      "longitude": 30.028905,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30,
+        "id": "merra2:-2:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Nyaruguru",
+      "latitude": -2.694796,
+      "longitude": 29.516873,
+      "grid": {
+        "latitude": -2.5,
+        "longitude": 29.375,
+        "id": "merra2:-2.5:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Rubavu",
+      "latitude": -1.665124,
+      "longitude": 29.330276,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 29.375,
+        "id": "merra2:-1.5:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Ruhango",
+      "latitude": -2.19358,
+      "longitude": 29.771756,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30,
+        "id": "merra2:-2:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Rulindo",
+      "latitude": -1.73923,
+      "longitude": 29.987195,
+      "grid": {
+        "latitude": -1.5,
+        "longitude": 30,
+        "id": "merra2:-1.5:30",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Rusizi",
+      "latitude": -2.558974,
+      "longitude": 29.079699,
+      "grid": {
+        "latitude": -2.5,
+        "longitude": 29.375,
+        "id": "merra2:-2.5:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Rutsiro",
+      "latitude": -1.908918,
+      "longitude": 29.324647,
+      "grid": {
+        "latitude": -2,
+        "longitude": 29.375,
+        "id": "merra2:-2:29.375",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    },
+    {
+      "district": "Rwamagana",
+      "latitude": -1.975508,
+      "longitude": 30.354749,
+      "grid": {
+        "latitude": -2,
+        "longitude": 30.625,
+        "id": "merra2:-2:30.625",
+        "resolution": "0.5° latitude × 0.625° longitude"
+      }
+    }
+  ]
+}

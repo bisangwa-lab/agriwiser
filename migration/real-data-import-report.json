@@ -1,0 +1,6678 @@
+{
+  "prepared_at": "2026-10-29T17:34:39.668057+00:00",
+  "observation_count": 55394,
+  "datasets": 17,
+  "table_count": 1161,
+  "archive_count": 32,
+  "archive_files": 845,
+  "profiled_files": 837,
+  "years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "seasons": [
+    "Season A",
+    "Season B",
+    "Season C"
+  ],
+  "crops": [
+    "Banana",
+    "Banana for Beer",
+    "Beans",
+    "Bush Beans",
+    "Bush Beans + Small Red Beans",
+    "Cassava",
+    "Chia Seeds",
+    "Climbing Beans",
+    "Cooking Banana",
+    "Dessert Banana",
+    "Fodder Crops",
+    "Fruits",
+    "Groundnuts",
+    "Irish Potato",
+    "Maize",
+    "Other Cereals",
+    "Other Crops",
+    "Peas",
+    "Rice",
+    "Small Red Beans",
+    "Sorghum",
+    "Soybean",
+    "Sweet Potato",
+    "Vegetables",
+    "Wheat",
+    "Yams & Taro"
+  ],
+  "main_crops": [
+    "Banana",
+    "Beans",
+    "Cassava",
+    "Chia Seeds",
+    "Fodder Crops",
+    "Fruits",
+    "Groundnuts",
+    "Irish Potato",
+    "Maize",
+    "Other Cereals",
+    "Other Crops",
+    "Peas",
+    "Rice",
+    "Sorghum",
+    "Soybean",
+    "Sweet Potato",
+    "Vegetables",
+    "Wheat",
+    "Yams & Taro"
+  ],
+  "missing_observations": 2563,
+  "normalization_audit": [
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 12",
+      "normalized_rows": 270,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "normalized_rows": 270,
+      "metric": "harvested_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "normalized_rows": 270,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 21",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 22",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "normalized_rows": 270,
+      "metric": "production",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "normalized_rows": 270,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "normalized_rows": 270,
+      "metric": "harvested_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 19",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 20",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 21",
+      "normalized_rows": 270,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 24",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 25",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 26",
+      "normalized_rows": 270,
+      "metric": "production",
+      "season": "Season C"
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 15",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 1",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 2",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "normalized_rows": 360,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 4",
+      "normalized_rows": 720,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 5",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 6 ",
+      "normalized_rows": 720,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 7",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "normalized_rows": 360,
+      "metric": "production",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 9 ",
+      "normalized_rows": 630,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 10",
+      "normalized_rows": 600,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 11",
+      "normalized_rows": 270,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "normalized_rows": 480,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "normalized_rows": 480,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 9",
+      "normalized_rows": 140,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "normalized_rows": 480,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 480,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 12",
+      "normalized_rows": 140,
+      "metric": "harvested_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 450,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 14",
+      "normalized_rows": 450,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 15",
+      "normalized_rows": 224,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Maize",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Rice",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Wheat",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Bush Beans",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Climbing Beans",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Irish Potato",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Soybean",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Cassava",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Cooking Banana",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Dessert Banana",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Banana for Beer",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 16",
+      "reason": "Yield unit not explicit; full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Maize",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Rice",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Wheat",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Bush Beans",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Climbing Beans",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Irish Potato",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Soybean",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Cassava",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Cooking Banana",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Dessert Banana",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Banana for Beer",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 17",
+      "reason": "Yield unit not explicit; full table retained."
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 18",
+      "normalized_rows": 450,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "normalized_rows": 450,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 20",
+      "normalized_rows": 140,
+      "metric": "production",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 9 ",
+      "normalized_rows": 630,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 10",
+      "normalized_rows": 270,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 270,
+      "metric": "harvested_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 14",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 16",
+      "normalized_rows": 210,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 20",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 21",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 22",
+      "normalized_rows": 210,
+      "metric": "production",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 270,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 14",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "normalized_rows": 270,
+      "metric": "harvested_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 17",
+      "normalized_rows": 660,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 18 ",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 20",
+      "normalized_rows": 210,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 24",
+      "crop": "Bush Beans",
+      "reason": "Repeated ambiguous header; normalized columns excluded, full table retained."
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 24",
+      "normalized_rows": 630,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 25",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "normalized_rows": 210,
+      "metric": "production",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "normalized_rows": 720,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 240,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 14",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "normalized_rows": 720,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "normalized_rows": 240,
+      "metric": "harvested_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 17",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 18 ",
+      "normalized_rows": 720,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 19",
+      "normalized_rows": 240,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 23",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 24",
+      "normalized_rows": 720,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "normalized_rows": 240,
+      "metric": "production",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "normalized_rows": 690,
+      "metric": "cultivated_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 12",
+      "normalized_rows": 240,
+      "metric": "cultivated_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "normalized_rows": 690,
+      "metric": "harvested_area",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 15",
+      "normalized_rows": 240,
+      "metric": "harvested_area",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 16",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 17",
+      "normalized_rows": 690,
+      "metric": "reported_yield",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 18",
+      "normalized_rows": 240,
+      "metric": "reported_yield",
+      "season": "Season C"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season A"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "normalized_rows": 690,
+      "metric": "production",
+      "season": "Season B"
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 24",
+      "normalized_rows": 240,
+      "metric": "production",
+      "season": "Season C"
+    }
+  ],
+  "national_reconciliation": [
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 249435.04439999998,
+      "national_value": 249435.04440000004,
+      "tolerance": 498.8700888000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 251018.7153,
+      "national_value": 251018.7153,
+      "tolerance": 502.03743060000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 95683.4638,
+      "national_value": 95683.46380000001,
+      "tolerance": 191.36692760000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 54048.46239,
+      "national_value": 54048.46238999999,
+      "tolerance": 108.09692478,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 24765.84408,
+      "national_value": 24765.844079999995,
+      "tolerance": 49.531688159999995,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 273222.978,
+      "national_value": 273222.978,
+      "tolerance": 546.445956,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 102457.9476,
+      "national_value": 102457.9476,
+      "tolerance": 204.9158952,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 44093.6719,
+      "national_value": 44093.6719,
+      "tolerance": 88.18734380000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 126671.3585,
+      "national_value": 126671.35850000002,
+      "tolerance": 253.34271700000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 329001.45785,
+      "national_value": 329001.45785,
+      "tolerance": 658.0029157,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 208831.015,
+      "national_value": 208831.015,
+      "tolerance": 417.66203,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 120170.44285,
+      "national_value": 120170.44284999999,
+      "tolerance": 240.3408857,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 10245.451735999999,
+      "national_value": 10245.451736000003,
+      "tolerance": 20.490903472000007,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Groundnuts",
+      "indicator": "cultivated_area",
+      "district_sum": 9562.982316,
+      "national_value": 9562.982316,
+      "tolerance": 19.125964632,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 31515.03469,
+      "national_value": 31515.034689999993,
+      "tolerance": 63.030069379999986,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 19141.5456,
+      "national_value": 19141.5456,
+      "tolerance": 38.2830912,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Fodder Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 9566.89641,
+      "national_value": 9566.89641,
+      "tolerance": 19.13379282,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 58136.884,
+      "national_value": 58136.884000000005,
+      "tolerance": 116.27376800000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 92943.7499,
+      "national_value": 92943.75,
+      "tolerance": 185.88750000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 172596.35666,
+      "national_value": 172596.4,
+      "tolerance": 345.1928,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 97288.6468,
+      "national_value": 97288.65,
+      "tolerance": 194.57729999999998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 16725.46087,
+      "national_value": 16725.46,
+      "tolerance": 33.450919999999996,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 258564.3841,
+      "national_value": 258564.36000000002,
+      "tolerance": 517.12872,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 90123.382,
+      "national_value": 90123.38,
+      "tolerance": 180.24676000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 48808.8769,
+      "national_value": 48808.88,
+      "tolerance": 97.61775999999999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 119632.1252,
+      "national_value": 119632.1,
+      "tolerance": 239.26420000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 329111.69755,
+      "national_value": 329111.7,
+      "tolerance": 658.2234000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 207112.21441,
+      "national_value": 207112.2,
+      "tolerance": 414.22440000000006,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 121999.48314,
+      "national_value": 121999.5,
+      "tolerance": 243.999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 40058.556215,
+      "national_value": 40058.556215000004,
+      "tolerance": 80.11711243,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 20160.817851,
+      "national_value": 20160.817851,
+      "tolerance": 40.321635702,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 58639.12,
+      "national_value": 58639.12,
+      "tolerance": 117.27824000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 12",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 5738.3250915,
+      "national_value": 5738.325091499999,
+      "tolerance": 11.476650182999999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 249275.57129,
+      "national_value": 249275.57129,
+      "tolerance": 498.55114258,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 34719.211741,
+      "national_value": 34719.211741,
+      "tolerance": 69.438423482,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 16972.896149,
+      "national_value": 16972.896149,
+      "tolerance": 33.945792298,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 2616.6185065,
+      "national_value": 2616.6185065,
+      "tolerance": 5.233237013,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 3543.610671,
+      "national_value": 3543.610671,
+      "tolerance": 7.087221342,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 38833.0016957748,
+      "national_value": 38833.001695774794,
+      "tolerance": 77.6660033915496,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 88707.9205086,
+      "national_value": 88707.9205086,
+      "tolerance": 177.4158410172,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 53956.6035127,
+      "national_value": 53956.60351269999,
+      "tolerance": 107.91320702539998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 13482.462302,
+      "national_value": 13482.462302000002,
+      "tolerance": 26.964924604000004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 109985.30929942481,
+      "national_value": 109985.30929942481,
+      "tolerance": 219.97061859884963,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 40364.6623349203,
+      "national_value": 40364.6623349203,
+      "tolerance": 80.72932466984061,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 15502.96427590891,
+      "national_value": 15502.96427590891,
+      "tolerance": 31.00592855181782,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 54117.6826885956,
+      "national_value": 54117.682688595596,
+      "tolerance": 108.2353653771912,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 328960.5029917,
+      "national_value": 328960.5029917,
+      "tolerance": 657.9210059834,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 208790.3890444,
+      "national_value": 208790.3890444,
+      "tolerance": 417.58077808880006,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 120170.11394730001,
+      "national_value": 120170.1139473,
+      "tolerance": 240.3402278946,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 10243.9624716,
+      "national_value": 10243.962471600002,
+      "tolerance": 20.487924943200003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 9562.9820608,
+      "national_value": 9562.9820608,
+      "tolerance": 19.125964121600003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 31512.712077,
+      "national_value": 31512.712077,
+      "tolerance": 63.025424154,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 18322.391589699997,
+      "national_value": 18322.391589699997,
+      "tolerance": 36.644783179399994,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 5377.821305719717,
+      "national_value": 5377.821305719718,
+      "tolerance": 10.755642611439436,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 8795.0440558,
+      "national_value": 8795.0440558,
+      "tolerance": 17.5900881116,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 8683.577801200001,
+      "national_value": 8683.577801200001,
+      "tolerance": 17.367155602400004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 92748.791176,
+      "national_value": 92748.791176,
+      "tolerance": 185.497582352,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 120004.8526114,
+      "national_value": 120004.85261140001,
+      "tolerance": 240.00970522280002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 17578.372528,
+      "national_value": 17578.372528,
+      "tolerance": 35.156745056,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 10293.733323,
+      "national_value": 10293.733323,
+      "tolerance": 20.587466646000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 2506.4134799999997,
+      "national_value": 2506.41348,
+      "tolerance": 5.012826960000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 54679.28335664806,
+      "national_value": 54679.28335664806,
+      "tolerance": 109.35856671329613,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 86579.7228104,
+      "national_value": 86579.72281039998,
+      "tolerance": 173.15944562079997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 41715.942171,
+      "national_value": 41715.942171,
+      "tolerance": 83.431884342,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 15333.7847799,
+      "national_value": 15333.784779899997,
+      "tolerance": 30.667569559799997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 92501.41669206406,
+      "national_value": 92501.41669206406,
+      "tolerance": 185.0028333841281,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 30323.2643644488,
+      "national_value": 30323.2643644488,
+      "tolerance": 60.64652872889761,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 13441.519680997262,
+      "national_value": 13441.519680997264,
+      "tolerance": 26.883039361994527,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 48736.63264661799,
+      "national_value": 48736.632646618,
+      "tolerance": 97.47326529323601,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 328858.2302168,
+      "national_value": 328858.2302168,
+      "tolerance": 657.7164604336,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 206871.1109764,
+      "national_value": 206871.11097639997,
+      "tolerance": 413.7422219527999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 121987.1192404,
+      "national_value": 121987.1192404,
+      "tolerance": 243.9742384808,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 8244.6549155,
+      "national_value": 8244.6549155,
+      "tolerance": 16.489309831,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 21085.5678705,
+      "national_value": 21085.5678705,
+      "tolerance": 42.171135741,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 39998.5137435,
+      "national_value": 39998.51374350001,
+      "tolerance": 79.99702748700001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 19842.4249213,
+      "national_value": 19842.4249213,
+      "tolerance": 39.6848498426,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 5345.709592651367,
+      "national_value": 5345.7095926513675,
+      "tolerance": 10.691419185302735,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 9674.1558521,
+      "national_value": 9674.155852099999,
+      "tolerance": 19.348311704199997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 27507.50525730073,
+      "national_value": 27507.505257300727,
+      "tolerance": 55.01501051460146,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 5738.3250915,
+      "national_value": 5738.325091499999,
+      "tolerance": 11.476650182999999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 38292.52613964307,
+      "national_value": 38292.52613964308,
+      "tolerance": 76.58505227928616,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Irish Potato",
+      "indicator": "production",
+      "district_sum": 80929.37717250705,
+      "national_value": 80929.37717250705,
+      "tolerance": 161.85875434501412,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Beans",
+      "indicator": "production",
+      "district_sum": 3046.455166869162,
+      "national_value": 3046.4551668691615,
+      "tolerance": 6.092910333738323,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Bush Beans",
+      "indicator": "production",
+      "district_sum": 2947.7994965612083,
+      "national_value": 2947.7994965612083,
+      "tolerance": 5.895598993122417,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Climbing Beans",
+      "indicator": "production",
+      "district_sum": 98.6556703079533,
+      "national_value": 98.6556703079533,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Peas",
+      "indicator": "production",
+      "district_sum": 548.9805205231025,
+      "national_value": 548.9805205231027,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Soybean",
+      "indicator": "production",
+      "district_sum": 483.253038017922,
+      "national_value": 483.25303801792205,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Groundnuts",
+      "indicator": "production",
+      "district_sum": 3.9112944308758997,
+      "national_value": 3.9112944308758997,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2024_Annual_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 65980.4836169417,
+      "national_value": 65980.48361694171,
+      "tolerance": 131.96096723388342,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 244095.1603,
+      "national_value": 244095.2,
+      "tolerance": 488.1904,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Sorghum",
+      "indicator": "cultivated_area",
+      "district_sum": 40352.805756,
+      "national_value": 40352.8,
+      "tolerance": 80.7056,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Rice",
+      "indicator": "cultivated_area",
+      "district_sum": 17311.60853,
+      "national_value": 17311.61,
+      "tolerance": 34.62322,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Wheat",
+      "indicator": "cultivated_area",
+      "district_sum": 2391.282146,
+      "national_value": 2391.051,
+      "tolerance": 4.782102,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Other Cereals",
+      "indicator": "cultivated_area",
+      "district_sum": 3570.630438,
+      "national_value": 3570.63,
+      "tolerance": 7.14126,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 247839.0055,
+      "national_value": 247839,
+      "tolerance": 495.678,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 82457.8991,
+      "national_value": 82457.9,
+      "tolerance": 164.9158,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 54485.23794,
+      "national_value": 54485.24,
+      "tolerance": 108.97048,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 23150.00721,
+      "national_value": 23150.01,
+      "tolerance": 46.300019999999996,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 268551.8208,
+      "national_value": 268551.82999999996,
+      "tolerance": 537.1036599999999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 104232.1942,
+      "national_value": 104232.2,
+      "tolerance": 208.4644,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 40539.7343,
+      "national_value": 40539.73,
+      "tolerance": 81.07946000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 123779.89229999999,
+      "national_value": 123779.9,
+      "tolerance": 247.5598,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 327147.02817,
+      "national_value": 327147,
+      "tolerance": 654.294,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 202512.5455,
+      "national_value": 202512.5,
+      "tolerance": 405.02500000000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 124634.48267,
+      "national_value": 124634.5,
+      "tolerance": 249.269,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 9881.664016,
+      "national_value": 9881.663,
+      "tolerance": 19.763326000000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Groundnuts",
+      "indicator": "cultivated_area",
+      "district_sum": 10832.262952,
+      "national_value": 10832.26,
+      "tolerance": 21.66452,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 20780.13252,
+      "national_value": 20780.127800000002,
+      "tolerance": 41.560255600000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Fruits",
+      "indicator": "cultivated_area",
+      "district_sum": 14020.71719,
+      "national_value": 14020.72,
+      "tolerance": 28.041439999999998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Fodder Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 9813.29645,
+      "national_value": 9813.296,
+      "tolerance": 19.626592000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 64132.15249,
+      "national_value": 64132.15,
+      "tolerance": 128.2643,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 93004.9835,
+      "national_value": 93004.99,
+      "tolerance": 186.00998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Rice",
+      "indicator": "cultivated_area",
+      "district_sum": 17969.566365000002,
+      "national_value": 17969.566365,
+      "tolerance": 35.93913273,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 196881.37428359006,
+      "national_value": 196881.3742835901,
+      "tolerance": 393.7627485671802,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 89679.2879,
+      "national_value": 89679.29,
+      "tolerance": 179.35858,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 18573.34492,
+      "national_value": 18573.35,
+      "tolerance": 37.146699999999996,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 238119.1912,
+      "national_value": 238119.15,
+      "tolerance": 476.2383,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 85220.6031,
+      "national_value": 85220.6,
+      "tolerance": 170.4412,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 35831.6548,
+      "national_value": 35831.65,
+      "tolerance": 71.6633,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 117066.9333,
+      "national_value": 117066.9,
+      "tolerance": 234.13379999999998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 335051.77765,
+      "national_value": 335051.7,
+      "tolerance": 670.1034000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 211973.74619,
+      "national_value": 211973.7,
+      "tolerance": 423.9474,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 123078.03146,
+      "national_value": 123078,
+      "tolerance": 246.156,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 8088.9406894,
+      "national_value": 8088.941,
+      "tolerance": 16.177882,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 38152.23853,
+      "national_value": 38152.24,
+      "tolerance": 76.30448,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 20699.34155,
+      "national_value": 20699.34155,
+      "tolerance": 41.3986831,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 66373.46765,
+      "national_value": 66373.46765,
+      "tolerance": 132.74693530000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 4538.8917254521575,
+      "national_value": 4538.891725452158,
+      "tolerance": 9.077783450904317,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 10389.221365135445,
+      "national_value": 10389.221365135443,
+      "tolerance": 20.778442730270886,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 3136.1907861493182,
+      "national_value": 3136.1907861493182,
+      "tolerance": 6.272381572298636,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 3030.540897012331,
+      "national_value": 3030.540897012331,
+      "tolerance": 6.061081794024662,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 105.64988913698754,
+      "national_value": 105.64988913698754,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 589.5169369434585,
+      "national_value": 589.5169369434584,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 642.6687790793576,
+      "national_value": 642.6687790793577,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Groundnuts",
+      "indicator": "cultivated_area",
+      "district_sum": 20.874112224066387,
+      "national_value": 20.874112224066387,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 5796.047931265556,
+      "national_value": 5796.047931265556,
+      "tolerance": 11.592095862531112,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 242439.411786,
+      "national_value": 242439.411786,
+      "tolerance": 484.87882357200004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 40297.563868,
+      "national_value": 40297.563868,
+      "tolerance": 80.595127736,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 17078.206185,
+      "national_value": 17078.206185,
+      "tolerance": 34.15641237,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 2384.2221560000003,
+      "national_value": 2384.2221560000003,
+      "tolerance": 4.768444312000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 3570.6606229,
+      "national_value": 3570.6606229,
+      "tolerance": 7.1413212458,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 40089.65007403691,
+      "national_value": 40089.650074036916,
+      "tolerance": 80.17930014807384,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 78583.0489721,
+      "national_value": 78583.04897210002,
+      "tolerance": 157.16609794420003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 54465.2882984,
+      "national_value": 54465.2882984,
+      "tolerance": 108.93057659680001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 12951.116875,
+      "national_value": 12951.116875,
+      "tolerance": 25.90223375,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 109994.2469597832,
+      "national_value": 109994.24695978321,
+      "tolerance": 219.98849391956642,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 41198.320260606,
+      "national_value": 41198.320260606,
+      "tolerance": 82.396640521212,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 15454.71447934643,
+      "national_value": 15454.714479346429,
+      "tolerance": 30.909428958692857,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 53341.21221983077,
+      "national_value": 53341.21221983078,
+      "tolerance": 106.68242443966156,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 327090.200443,
+      "national_value": 327090.20044300007,
+      "tolerance": 654.1804008860001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 202492.3871205,
+      "national_value": 202492.3871205,
+      "tolerance": 404.984774241,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 124597.8133225,
+      "national_value": 124597.81332249999,
+      "tolerance": 249.19562664499998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 9880.4958957,
+      "national_value": 9880.4958957,
+      "tolerance": 19.7609917914,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 10831.5639923,
+      "national_value": 10831.5639923,
+      "tolerance": 21.6631279846,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 29361.0670724,
+      "national_value": 29361.067072399997,
+      "tolerance": 58.722134144799995,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 19814.5315586,
+      "national_value": 19814.5315586,
+      "tolerance": 39.6290631172,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 5704.525724378694,
+      "national_value": 5704.525724378694,
+      "tolerance": 11.409051448757388,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 8298.4214424,
+      "national_value": 8298.4214424,
+      "tolerance": 16.5968428848,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 8832.1935472,
+      "national_value": 8832.1935472,
+      "tolerance": 17.664387094400002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 92978.831099,
+      "national_value": 92978.831099,
+      "tolerance": 185.957662198,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 107195.15084,
+      "national_value": 107195.15083999999,
+      "tolerance": 214.39030168,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 17969.566365000002,
+      "national_value": 17969.566365000002,
+      "tolerance": 35.939132730000004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 9297.76851,
+      "national_value": 9297.768510000002,
+      "tolerance": 18.595537020000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 3756.8840467,
+      "national_value": 3756.8840467,
+      "tolerance": 7.5137680934,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 59052.87382380626,
+      "national_value": 59052.87382380626,
+      "tolerance": 118.10574764761252,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 81044.5022281,
+      "national_value": 81044.50222810001,
+      "tolerance": 162.08900445620003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 45927.7899357,
+      "national_value": 45927.78993570001,
+      "tolerance": 91.85557987140002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 15839.3945911,
+      "national_value": 15839.394591099997,
+      "tolerance": 31.678789182199996,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 93802.84953102306,
+      "national_value": 93802.84953102306,
+      "tolerance": 187.60569906204614,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 30603.601951895598,
+      "national_value": 30603.601951895598,
+      "tolerance": 61.207203903791196,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 13745.82378860509,
+      "national_value": 13745.82378860509,
+      "tolerance": 27.49164757721018,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 49453.42379052238,
+      "national_value": 49453.42379052238,
+      "tolerance": 98.90684758104476,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 334987.587929,
+      "national_value": 334987.58792900003,
+      "tolerance": 669.9751758580001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 211932.488754,
+      "national_value": 211932.48875400002,
+      "tolerance": 423.86497750800004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 123055.099175,
+      "national_value": 123055.09917500001,
+      "tolerance": 246.11019835000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 8087.0117497,
+      "national_value": 8087.011749700001,
+      "tolerance": 16.174023499400004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 17804.105361,
+      "national_value": 17804.105361,
+      "tolerance": 35.608210722,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 38151.1656956,
+      "national_value": 38151.16569560001,
+      "tolerance": 76.30233139120001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 19674.250847799998,
+      "national_value": 19674.250847799995,
+      "tolerance": 39.34850169559999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 5572.419432725014,
+      "national_value": 5572.419432725015,
+      "tolerance": 11.14483886545003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 9548.2313777,
+      "national_value": 9548.231377700002,
+      "tolerance": 19.096462755400005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 17",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 30538.55085607309,
+      "national_value": 30538.550856073092,
+      "tolerance": 61.07710171214619,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 4538.8917254521575,
+      "national_value": 4538.891725452158,
+      "tolerance": 9.077783450904317,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 10389.221365135445,
+      "national_value": 10389.221365135443,
+      "tolerance": 20.778442730270886,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 3136.1907861493182,
+      "national_value": 3136.1907861493182,
+      "tolerance": 6.272381572298636,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 3030.540897012331,
+      "national_value": 3030.540897012331,
+      "tolerance": 6.061081794024662,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 105.64988913698754,
+      "national_value": 105.64988913698754,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 589.5169369434585,
+      "national_value": 589.5169369434584,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 642.6687790793576,
+      "national_value": 642.6687790793577,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 20.874112224066387,
+      "national_value": 20.874112224066387,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2025_Annual_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 5796.047931265556,
+      "national_value": 5796.047931265556,
+      "tolerance": 11.592095862531112,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 245404.4795,
+      "national_value": 245404.5,
+      "tolerance": 490.809,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 236356.49942,
+      "national_value": 236356.5,
+      "tolerance": 472.713,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 96216.9528,
+      "national_value": 96216.95,
+      "tolerance": 192.4339,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 32366.155323,
+      "national_value": 32366.16,
+      "tolerance": 64.73232,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 267676.2535,
+      "national_value": 267676.23,
+      "tolerance": 535.35246,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 99689.0601,
+      "national_value": 99689.06,
+      "tolerance": 199.37812,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 38127.1698,
+      "national_value": 38127.17,
+      "tolerance": 76.25434,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 129860.0236,
+      "national_value": 129860,
+      "tolerance": 259.72,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 327906.58722,
+      "national_value": 327906.6,
+      "tolerance": 655.8131999999999,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 203759.5491,
+      "national_value": 203759.6,
+      "tolerance": 407.5192,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 124147.03812,
+      "national_value": 124147,
+      "tolerance": 248.294,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 19634.91554572867,
+      "national_value": 19243.97150745433,
+      "tolerance": 38.487943014908666,
+      "passed": false
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Fruits",
+      "indicator": "cultivated_area",
+      "district_sum": 13620.09128772969,
+      "national_value": 8183.16505545318,
+      "tolerance": 16.36633011090636,
+      "passed": false
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 11",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 71489.89,
+      "national_value": 71489.89,
+      "tolerance": 142.97978,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 245001.460730968,
+      "national_value": 245001.460730968,
+      "tolerance": 490.002921461936,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 38299.64543963694,
+      "national_value": 38299.64543963694,
+      "tolerance": 76.59929087927388,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 17207.56520945427,
+      "national_value": 17207.56520945427,
+      "tolerance": 34.41513041890854,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 2177.0210870585943,
+      "national_value": 2177.0210870585943,
+      "tolerance": 4.354042174117189,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 6797.939230384325,
+      "national_value": 6797.939230384323,
+      "tolerance": 13.595878460768647,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 41627.69644600434,
+      "national_value": 41627.69644600434,
+      "tolerance": 83.25539289200867,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 76591.7999043362,
+      "national_value": 76591.79990433619,
+      "tolerance": 153.1835998086724,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 55192.2526682057,
+      "national_value": 55192.25266820571,
+      "tolerance": 110.38450533641142,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 9306.818562112465,
+      "national_value": 9306.818562112465,
+      "tolerance": 18.61363712422493,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 112010.2645999777,
+      "national_value": 112010.2645999777,
+      "tolerance": 224.0205291999554,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 41317.784743692515,
+      "national_value": 41317.78474369251,
+      "tolerance": 82.63556948738501,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 15783.304933298472,
+      "national_value": 15783.304933298468,
+      "tolerance": 31.566609866596938,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 54909.17492298672,
+      "national_value": 54909.174922986735,
+      "tolerance": 109.81834984597347,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 327821.38754602935,
+      "national_value": 327821.3875460293,
+      "tolerance": 655.6427750920586,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 203713.57099289025,
+      "national_value": 203713.57099289025,
+      "tolerance": 407.4271419857805,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 124107.81655313907,
+      "national_value": 124107.81655313907,
+      "tolerance": 248.21563310627815,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 9563.275454575954,
+      "national_value": 9563.275454575956,
+      "tolerance": 19.126550909151913,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 9248.02229765597,
+      "national_value": 9248.02229765597,
+      "tolerance": 18.496044595311943,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 28545.50959279509,
+      "national_value": 28545.5095927951,
+      "tolerance": 57.091019185590206,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 19241.293067934737,
+      "national_value": 19241.293067934734,
+      "tolerance": 38.48258613586947,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 6760.84150984097,
+      "national_value": 6760.841509840969,
+      "tolerance": 13.521683019681937,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 8497.249588298404,
+      "national_value": 8497.249588298404,
+      "tolerance": 16.994499176596808,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_A.xlsx",
+      "sheet": "Table 12",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 10674.437711212478,
+      "national_value": 10674.437711212478,
+      "tolerance": 21.348875422424957,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 94823.3951,
+      "national_value": 94823.39510000001,
+      "tolerance": 189.64679020000003,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 192304.559,
+      "national_value": 192304.559,
+      "tolerance": 384.609118,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 84774.5566,
+      "national_value": 84774.55660000003,
+      "tolerance": 169.54911320000005,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 20968.86246,
+      "national_value": 20968.862459999997,
+      "tolerance": 41.937724919999994,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 250771.5066,
+      "national_value": 250771.50660000002,
+      "tolerance": 501.5430132000001,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 97498.4076,
+      "national_value": 97498.4076,
+      "tolerance": 194.99681520000001,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 36413.6945,
+      "national_value": 36413.6945,
+      "tolerance": 72.827389,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 116859.4045,
+      "national_value": 116859.40449999998,
+      "tolerance": 233.71880899999996,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 333734.8887032466,
+      "national_value": 333734.8887032466,
+      "tolerance": 667.4697774064932,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 210357.53320324662,
+      "national_value": 210357.53320324662,
+      "tolerance": 420.71506640649324,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 38331.4798,
+      "national_value": 38331.47979999999,
+      "tolerance": 76.66295959999998,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 21310.238164839604,
+      "national_value": 21310.2381648396,
+      "tolerance": 42.6204763296792,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Fruits",
+      "indicator": "cultivated_area",
+      "district_sum": 15534.539491581681,
+      "national_value": 15534.539491581683,
+      "tolerance": 31.06907898316337,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 9",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 74041.25866,
+      "national_value": 74041.25866,
+      "tolerance": 148.08251732000002,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 94705.56907976576,
+      "national_value": 94705.56907976576,
+      "tolerance": 189.41113815953153,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 103136.1969650008,
+      "national_value": 103136.1969650008,
+      "tolerance": 206.27239393000158,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 17532.818365027164,
+      "national_value": 17532.818365027164,
+      "tolerance": 35.06563673005433,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 9137.655988425215,
+      "national_value": 9137.655988425213,
+      "tolerance": 18.275311976850425,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 4691.447684287681,
+      "national_value": 4691.447684287681,
+      "tolerance": 9.382895368575362,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 60540.116409330294,
+      "national_value": 60540.11640933028,
+      "tolerance": 121.08023281866056,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 78504.35253828907,
+      "national_value": 78504.35253828908,
+      "tolerance": 157.00870507657817,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 48424.2099588593,
+      "national_value": 48424.2099588593,
+      "tolerance": 96.8484199177186,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 16960.882229856605,
+      "national_value": 16960.88222985661,
+      "tolerance": 33.921764459713216,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 99538.79656956444,
+      "national_value": 99538.79656956444,
+      "tolerance": 199.07759313912888,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 33848.85609465693,
+      "national_value": 33848.85609465693,
+      "tolerance": 67.69771218931386,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 14240.251898254592,
+      "national_value": 14240.251898254592,
+      "tolerance": 28.480503796509183,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 51449.688576652916,
+      "national_value": 51449.688576652916,
+      "tolerance": 102.89937715330584,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 333734.8872674713,
+      "national_value": 333734.8872674713,
+      "tolerance": 667.4697745349426,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 210357.5299179244,
+      "national_value": 210357.5299179244,
+      "tolerance": 420.7150598358488,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 123377.3573495469,
+      "national_value": 123377.3573495469,
+      "tolerance": 246.75471469909382,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 7981.0644376763485,
+      "national_value": 7981.0644376763485,
+      "tolerance": 15.962128875352697,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 17941.014006167727,
+      "national_value": 17941.014006167723,
+      "tolerance": 35.88202801233545,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 38330.550873608365,
+      "national_value": 38330.550873608365,
+      "tolerance": 76.66110174721673,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 20705.098046383548,
+      "national_value": 20705.098046383544,
+      "tolerance": 41.41019609276709,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 5447.885518347448,
+      "national_value": 5447.885518347449,
+      "tolerance": 10.895771036694898,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 9145.305352507232,
+      "national_value": 9145.305352507232,
+      "tolerance": 18.290610705014466,
+      "passed": true
+    },
+    {
+      "file": "Tables_2026_Season_B.xlsx",
+      "sheet": "Table 10",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 32926.454811598865,
+      "national_value": 32926.45481159886,
+      "tolerance": 65.85290962319772,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Other Cereals",
+      "indicator": "cultivated_area",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 5682.695185,
+      "national_value": 5682.6951850000005,
+      "tolerance": 11.365390370000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 7739.6283619999995,
+      "national_value": 7739.628361999999,
+      "tolerance": 15.479256723999997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 885.391727,
+      "national_value": 885.3917270000002,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 872.627277,
+      "national_value": 872.6272770000003,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 12.76445,
+      "national_value": 12.76445,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 228.40772099999998,
+      "national_value": 228.40772099999998,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 350.9518686,
+      "national_value": 350.9518686,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 3017.0074637,
+      "national_value": 3017.0074636999993,
+      "tolerance": 6.034014927399999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Fruits",
+      "indicator": "cultivated_area",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 3",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Other Cereals",
+      "indicator": "production",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 26358.194471688894,
+      "national_value": 26358.194471688894,
+      "tolerance": 52.71638894337779,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Irish Potato",
+      "indicator": "production",
+      "district_sum": 80486.73466908046,
+      "national_value": 80486.73466908046,
+      "tolerance": 160.97346933816092,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Yams & Taro",
+      "indicator": "production",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Beans",
+      "indicator": "production",
+      "district_sum": 1026.693802105957,
+      "national_value": 1026.693802105957,
+      "tolerance": 2.053387604211914,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Bush Beans",
+      "indicator": "production",
+      "district_sum": 1011.9820445687732,
+      "national_value": 1011.9820445687731,
+      "tolerance": 2.023964089137546,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Climbing Beans",
+      "indicator": "production",
+      "district_sum": 14.711757537183999,
+      "national_value": 14.711757537183999,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Peas",
+      "indicator": "production",
+      "district_sum": 136.9749177100257,
+      "national_value": 136.9749177100257,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Soybean",
+      "indicator": "production",
+      "district_sum": 226.729294060977,
+      "national_value": 226.72929406097697,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 40416.815908885554,
+      "national_value": 40416.81590888555,
+      "tolerance": 80.83363181777109,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Fruits",
+      "indicator": "production",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2018_Tables.xlsx",
+      "sheet": "Appendix 8",
+      "crop": "Other Crops",
+      "indicator": "production",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 215158.0,
+      "national_value": 215159,
+      "tolerance": 430.318,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 195133.0,
+      "national_value": 195135,
+      "tolerance": 390.27,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 97642.0,
+      "national_value": 97639,
+      "tolerance": 195.278,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 49728.0,
+      "national_value": 49728,
+      "tolerance": 99.456,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 12696.0,
+      "national_value": 12695,
+      "tolerance": 25.39,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 253997.0,
+      "national_value": 253996,
+      "tolerance": 507.992,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 299442.0,
+      "national_value": 299443,
+      "tolerance": 598.886,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 15013.0,
+      "national_value": 15012,
+      "tolerance": 30.024,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 7",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 43403.0,
+      "national_value": 43405,
+      "tolerance": 86.81,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 73140.0,
+      "national_value": 73139,
+      "tolerance": 146.278,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 187509.0,
+      "national_value": 187511,
+      "tolerance": 375.022,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 80921.0,
+      "national_value": 80919,
+      "tolerance": 161.838,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 49243.0,
+      "national_value": 49244,
+      "tolerance": 98.488,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 15468.0,
+      "national_value": 15469,
+      "tolerance": 30.938000000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 236418.0,
+      "national_value": 236417,
+      "tolerance": 472.834,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 282101.0,
+      "national_value": 282099,
+      "tolerance": 564.198,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 14972.0,
+      "national_value": 14976,
+      "tolerance": 29.952,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 42553.0,
+      "national_value": 42554,
+      "tolerance": 85.108,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 215158.0,
+      "national_value": 215159,
+      "tolerance": 430.318,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 97642.0,
+      "national_value": 97639,
+      "tolerance": 195.278,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 49728.0,
+      "national_value": 49728,
+      "tolerance": 99.456,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 12696.0,
+      "national_value": 12695,
+      "tolerance": 25.39,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 82527.0,
+      "national_value": 82523,
+      "tolerance": 165.046,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 299442.0,
+      "national_value": 299443,
+      "tolerance": 598.886,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 14800.0,
+      "national_value": 14801,
+      "tolerance": 29.602,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 6417.0,
+      "national_value": 6419,
+      "tolerance": 12.838000000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 73140.0,
+      "national_value": 73139,
+      "tolerance": 146.278,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 80921.0,
+      "national_value": 80919,
+      "tolerance": 161.838,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 49243.0,
+      "national_value": 49244,
+      "tolerance": 98.488,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 15468.0,
+      "national_value": 15469,
+      "tolerance": 30.938000000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 74733.0,
+      "national_value": 74733,
+      "tolerance": 149.466,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 282101.0,
+      "national_value": 282099,
+      "tolerance": 564.198,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 14968.0,
+      "national_value": 14972,
+      "tolerance": 29.944,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 30995.0,
+      "national_value": 30995,
+      "tolerance": 61.99,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Maize",
+      "indicator": "production",
+      "district_sum": 331094.0,
+      "national_value": 331090,
+      "tolerance": 662.1800000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 674259.0,
+      "national_value": 674257,
+      "tolerance": 1348.5140000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Irish Potato",
+      "indicator": "production",
+      "district_sum": 468931.0,
+      "national_value": 468931,
+      "tolerance": 937.862,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Banana",
+      "indicator": "production",
+      "district_sum": 1020141.0,
+      "national_value": 1020141,
+      "tolerance": 2040.2820000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Beans",
+      "indicator": "production",
+      "district_sum": 252569.0,
+      "national_value": 252569,
+      "tolerance": 505.13800000000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 18",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 158928.0,
+      "national_value": 158927,
+      "tolerance": 317.854,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Maize",
+      "indicator": "production",
+      "district_sum": 90127.0,
+      "national_value": 90128,
+      "tolerance": 180.256,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 546785.0,
+      "national_value": 546788,
+      "tolerance": 1093.576,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Irish Potato",
+      "indicator": "production",
+      "district_sum": 422265.0,
+      "national_value": 422266,
+      "tolerance": 844.532,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Yams & Taro",
+      "indicator": "production",
+      "district_sum": 100699.0,
+      "national_value": 100700,
+      "tolerance": 201.4,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Banana",
+      "indicator": "production",
+      "district_sum": 830490.0,
+      "national_value": 830491,
+      "tolerance": 1660.982,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Beans",
+      "indicator": "production",
+      "district_sum": 230745.0,
+      "national_value": 230744,
+      "tolerance": 461.488,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 155509.0,
+      "national_value": 155506,
+      "tolerance": 311.012,
+      "passed": true
+    },
+    {
+      "file": "SAS_2019_Tables.xlsx",
+      "sheet": "Table 19",
+      "crop": "Other Crops",
+      "indicator": "production",
+      "district_sum": 88984.0,
+      "national_value": 88985,
+      "tolerance": 177.97,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 221521.2322,
+      "national_value": 221521.2322000001,
+      "tolerance": 443.0424644000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 190446.77257,
+      "national_value": 190446.77257000003,
+      "tolerance": 380.89354514000007,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 89426.5202,
+      "national_value": 89426.52019999998,
+      "tolerance": 178.85304039999997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 51516.19124,
+      "national_value": 51516.19123999999,
+      "tolerance": 103.03238247999998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 18057.90024,
+      "national_value": 18057.90024,
+      "tolerance": 36.11580048,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 272499.61455,
+      "national_value": 272499.61454999994,
+      "tolerance": 544.9992290999999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 106408.8355,
+      "national_value": 106408.8355,
+      "tolerance": 212.81767100000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 126402.4756,
+      "national_value": 126402.4756,
+      "tolerance": 252.8049512,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 362198.95498,
+      "national_value": 362198.95498000004,
+      "tolerance": 724.3979099600001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 18246.1035,
+      "national_value": 18246.1035,
+      "tolerance": 36.492207,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Fruits",
+      "indicator": "cultivated_area",
+      "district_sum": 7256.2103,
+      "national_value": 7256.2103,
+      "tolerance": 14.5124206,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Fodder Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 157920.4199,
+      "national_value": 157920.4199,
+      "tolerance": 315.8408398,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 8",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 54731.96029,
+      "national_value": 54731.96029,
+      "tolerance": 109.46392058,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 221521.2322,
+      "national_value": 221521.2322000001,
+      "tolerance": 443.0424644000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 33294.928711,
+      "national_value": 33294.92871099999,
+      "tolerance": 66.589857422,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 14507.37911,
+      "national_value": 14507.37911,
+      "tolerance": 29.01475822,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 4186.74439,
+      "national_value": 4186.74439,
+      "tolerance": 8.37348878,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 3082.036864,
+      "national_value": 3082.0368640000006,
+      "tolerance": 6.164073728000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 41159.88333721566,
+      "national_value": 41159.88333721565,
+      "tolerance": 82.3197666744313,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 89426.5202,
+      "national_value": 89426.52019999998,
+      "tolerance": 178.85304039999997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 51516.19124,
+      "national_value": 51516.19123999999,
+      "tolerance": 103.03238247999998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 14449.514796,
+      "national_value": 14449.514796,
+      "tolerance": 28.899029591999998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 36464.03416012945,
+      "national_value": 35734.98515570007,
+      "tolerance": 71.46997031140015,
+      "passed": false
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 15247.591858593923,
+      "national_value": 14979.927308037104,
+      "tolerance": 29.95985461607421,
+      "passed": false
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 362198.942946,
+      "national_value": 362198.942946,
+      "tolerance": 724.3978858920001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 240157.41665600002,
+      "national_value": 240157.41665600004,
+      "tolerance": 480.3148333120001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 122041.52629,
+      "national_value": 122041.52629000001,
+      "tolerance": 244.08305258000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 10530.409882,
+      "national_value": 10530.409882,
+      "tolerance": 21.060819764,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 14609.104025999999,
+      "national_value": 14609.104025999999,
+      "tolerance": 29.218208051999998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 24677.17722,
+      "national_value": 24677.177219999994,
+      "tolerance": 49.35435443999999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 18246.1025123,
+      "national_value": 18246.1025123,
+      "tolerance": 36.492205024600004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 4778.288409280522,
+      "national_value": 4778.288409280522,
+      "tolerance": 9.556576818561043,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 9987.7788158,
+      "national_value": 9987.7788158,
+      "tolerance": 19.9755576316,
+      "passed": true
+    },
+    {
+      "file": "SAS_2020_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 12455.16266500478,
+      "national_value": 12455.162665004778,
+      "tolerance": 24.910325330009556,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 80570.0211,
+      "national_value": 80570.02,
+      "tolerance": 161.14004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 147320.291,
+      "national_value": 147320.3,
+      "tolerance": 294.6406,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 87762.4751,
+      "national_value": 87762.48,
+      "tolerance": 175.52496,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 15087.9936,
+      "national_value": 15087.99,
+      "tolerance": 30.17598,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 202807.0991,
+      "national_value": 202807.10000000003,
+      "tolerance": 405.6142000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 71261.8229,
+      "national_value": 71261.82,
+      "tolerance": 142.52364000000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 37668.4786,
+      "national_value": 37668.48,
+      "tolerance": 75.33696,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 93876.7976,
+      "national_value": 93876.8,
+      "tolerance": 187.7536,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 301658.3119,
+      "national_value": 301658.3,
+      "tolerance": 603.3166,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 101794.8356,
+      "national_value": 101794.8,
+      "tolerance": 203.58960000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 7520.852223,
+      "national_value": 7520.852,
+      "tolerance": 15.041704,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 15573.76635,
+      "national_value": 15573.77,
+      "tolerance": 31.147540000000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Fruits",
+      "indicator": "cultivated_area",
+      "district_sum": 8371.24272,
+      "national_value": 8371.243,
+      "tolerance": 16.742486,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 12 ",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 47016.935020000004,
+      "national_value": 47016.93,
+      "tolerance": 94.03386,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 5225.8084128,
+      "national_value": 5225.808412800001,
+      "tolerance": 10.451616825600002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 9666.8229608,
+      "national_value": 9666.822960799998,
+      "tolerance": 19.3336459216,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 3747.7098794,
+      "national_value": 3747.7098794,
+      "tolerance": 7.4954197588,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 3517.4213447,
+      "national_value": 3517.4213447,
+      "tolerance": 7.0348426894000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 230.2885347,
+      "national_value": 230.2885347,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 541.9983042,
+      "national_value": 541.9983041999999,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 741.3584699,
+      "national_value": 741.3584699,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 5061.4365686,
+      "national_value": 5061.436568599999,
+      "tolerance": 10.1228731372,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 80569.7639526,
+      "national_value": 80569.7639526,
+      "tolerance": 161.1395279052,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 133033.3647141,
+      "national_value": 133033.36471409997,
+      "tolerance": 266.06672942819995,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 16302.28501,
+      "national_value": 16302.285010000003,
+      "tolerance": 32.604570020000004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 8748.606266,
+      "national_value": 8748.606265999999,
+      "tolerance": 17.497212532,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 1660.201647,
+      "national_value": 1660.2016469999999,
+      "tolerance": 3.3204032939999997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 47837.452173317586,
+      "national_value": 47837.45217331758,
+      "tolerance": 95.67490434663516,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 87762.4752687,
+      "national_value": 87762.47526870001,
+      "tolerance": 175.52495053740003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 51595.2857841,
+      "national_value": 51595.2857841,
+      "tolerance": 103.1905715682,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 15017.1785242,
+      "national_value": 15017.178524200002,
+      "tolerance": 30.034357048400004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 82136.73325133759,
+      "national_value": 82136.7332513376,
+      "tolerance": 164.2734665026752,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 24192.68378753055,
+      "national_value": 24192.683787530546,
+      "tolerance": 48.385367575061096,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 12174.360731692761,
+      "national_value": 12174.360731692763,
+      "tolerance": 24.348721463385527,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 45769.68873211428,
+      "national_value": 45769.688732114286,
+      "tolerance": 91.53937746422858,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 301583.8077024,
+      "national_value": 301583.8077024,
+      "tolerance": 603.1676154048,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 201782.517504,
+      "national_value": 201782.51750400002,
+      "tolerance": 403.56503500800005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 99801.2901984,
+      "national_value": 99801.2901984,
+      "tolerance": 199.60258039680002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 7520.851797,
+      "national_value": 7520.851797,
+      "tolerance": 15.041703594000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 21533.5380591,
+      "national_value": 21533.5380591,
+      "tolerance": 43.0670761182,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 25573.5177167,
+      "national_value": 25573.5177167,
+      "tolerance": 51.1470354334,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 15573.7658954,
+      "national_value": 15573.765895399998,
+      "tolerance": 31.147531790799995,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 4429.411869195092,
+      "national_value": 4429.411869195092,
+      "tolerance": 8.858823738390184,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 8249.2520222,
+      "national_value": 8249.2520222,
+      "tolerance": 16.4985040444,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 25031.51510723413,
+      "national_value": 25031.515107234132,
+      "tolerance": 50.06303021446826,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 5225.8084128,
+      "national_value": 5225.808412800001,
+      "tolerance": 10.451616825600002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 9666.8229608,
+      "national_value": 9666.822960799998,
+      "tolerance": 19.3336459216,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 0.0,
+      "national_value": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 3747.7098794,
+      "national_value": 3747.7098794,
+      "tolerance": 7.4954197588,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 3517.4213447,
+      "national_value": 3517.4213447,
+      "tolerance": 7.0348426894000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 230.2885347,
+      "national_value": 230.2885347,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 541.9983042,
+      "national_value": 541.9983041999999,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 741.3584699,
+      "national_value": 741.3584699,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 5061.4365686,
+      "national_value": 5061.436568599999,
+      "tolerance": 10.1228731372,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 28789.558941988274,
+      "national_value": 28789.558941988274,
+      "tolerance": 57.57911788397655,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "crop": "Irish Potato",
+      "indicator": "production",
+      "district_sum": 81347.83190390602,
+      "national_value": 81347.83190390604,
+      "tolerance": 162.69566380781208,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "crop": "Bush Beans",
+      "indicator": "production",
+      "district_sum": 3398.003038759684,
+      "national_value": 3398.003038759684,
+      "tolerance": 6.796006077519368,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "crop": "Climbing Beans",
+      "indicator": "production",
+      "district_sum": 168.2814905191035,
+      "national_value": 168.28149051910353,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "crop": "Peas",
+      "indicator": "production",
+      "district_sum": 468.5562182579071,
+      "national_value": 468.5562182579072,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "crop": "Soybean",
+      "indicator": "production",
+      "district_sum": 425.69766610003495,
+      "national_value": 425.697666100035,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2021_Tables.xlsx",
+      "sheet": "Table 26",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 56978.836813884576,
+      "national_value": 56978.836813884576,
+      "tolerance": 113.95767362776915,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 5078.537303,
+      "national_value": 5078.537303,
+      "tolerance": 10.157074606,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 10457.614860900001,
+      "national_value": 10457.614860900003,
+      "tolerance": 20.915229721800007,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 3292.2227628,
+      "national_value": 3292.2227628,
+      "tolerance": 6.5844455256000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 3191.4561072,
+      "national_value": 3191.4561072,
+      "tolerance": 6.3829122144,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 100.7666556,
+      "national_value": 100.76665559999999,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Peas",
+      "indicator": "cultivated_area",
+      "district_sum": 581.3707528,
+      "national_value": 581.3707528,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Soybean",
+      "indicator": "cultivated_area",
+      "district_sum": 1033.7854979,
+      "national_value": 1033.7854979,
+      "tolerance": 2.0675709958,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 5097.0021479,
+      "national_value": 5097.002147899999,
+      "tolerance": 10.194004295799997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 81282.3485871,
+      "national_value": 81282.34858710002,
+      "tolerance": 162.56469717420003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Sorghum",
+      "indicator": "harvested_area",
+      "district_sum": 139792.0878479,
+      "national_value": 139792.08784789997,
+      "tolerance": 279.58417569579996,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Rice",
+      "indicator": "harvested_area",
+      "district_sum": 16474.241817,
+      "national_value": 16474.241817000002,
+      "tolerance": 32.948483634000006,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Wheat",
+      "indicator": "harvested_area",
+      "district_sum": 8481.6139812,
+      "national_value": 8481.613981200002,
+      "tolerance": 16.963227962400005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Chia Seeds",
+      "indicator": "harvested_area",
+      "district_sum": 11578.151123700001,
+      "national_value": 11578.1511237,
+      "tolerance": 23.1563022474,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Other Cereals",
+      "indicator": "harvested_area",
+      "district_sum": 2136.4228542,
+      "national_value": 2136.4228541999996,
+      "tolerance": 4.272845708399999,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 48494.317128841234,
+      "national_value": 48494.31712884123,
+      "tolerance": 96.98863425768245,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 86588.9025718,
+      "national_value": 86588.90257179999,
+      "tolerance": 173.17780514359998,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 52844.4023782,
+      "national_value": 52844.4023782,
+      "tolerance": 105.6888047564,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 83313.83962633276,
+      "national_value": 83313.83962633277,
+      "tolerance": 166.62767925266556,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 24565.0745952087,
+      "national_value": 24565.074595208698,
+      "tolerance": 49.1301491904174,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 12513.15991264715,
+      "national_value": 12513.159912647152,
+      "tolerance": 25.026319825294305,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 46235.60511847691,
+      "national_value": 46235.60511847691,
+      "tolerance": 92.47121023695382,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 268628.3210383,
+      "national_value": 268628.3210383,
+      "tolerance": 537.2566420766,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 170661.0313215,
+      "national_value": 170661.03132150002,
+      "tolerance": 341.32206264300004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 97967.2897168,
+      "national_value": 97967.2897168,
+      "tolerance": 195.93457943360002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 7033.563315,
+      "national_value": 7033.563315000002,
+      "tolerance": 14.067126630000004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Groundnuts",
+      "indicator": "harvested_area",
+      "district_sum": 19545.1523208,
+      "national_value": 19545.1523208,
+      "tolerance": 39.0903046416,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 37229.1176135,
+      "national_value": 37229.1176135,
+      "tolerance": 74.458235227,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 15776.8885826,
+      "national_value": 15776.888582599999,
+      "tolerance": 31.5537771652,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 4213.023894290971,
+      "national_value": 4213.023894290971,
+      "tolerance": 8.426047788581942,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Fodder Crops",
+      "indicator": "harvested_area",
+      "district_sum": 10128.7873367,
+      "national_value": 10128.7873367,
+      "tolerance": 20.2575746734,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 15 ",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 28753.605137141585,
+      "national_value": 28753.60513714159,
+      "tolerance": 57.50721027428318,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 5078.537303,
+      "national_value": 5078.537303,
+      "tolerance": 10.157074606,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 10457.614860900001,
+      "national_value": 10457.614860900003,
+      "tolerance": 20.915229721800007,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 3292.2227628,
+      "national_value": 3292.2227628,
+      "tolerance": 6.5844455256000005,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 3191.4561072,
+      "national_value": 3191.4561072,
+      "tolerance": 6.3829122144,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 100.7666556,
+      "national_value": 100.76665559999999,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Peas",
+      "indicator": "harvested_area",
+      "district_sum": 581.3707528,
+      "national_value": 581.3707528,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Soybean",
+      "indicator": "harvested_area",
+      "district_sum": 1033.7854979,
+      "national_value": 1033.7854979,
+      "tolerance": 2.0675709958,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 16",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 5097.0021479,
+      "national_value": 5097.002147899999,
+      "tolerance": 10.194004295799997,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 28980.058240308146,
+      "national_value": 28980.058240308146,
+      "tolerance": 57.96011648061629,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Irish Potato",
+      "indicator": "production",
+      "district_sum": 90916.07844833491,
+      "national_value": 90916.07844833491,
+      "tolerance": 181.83215689666983,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Beans",
+      "indicator": "production",
+      "district_sum": 3381.449391348074,
+      "national_value": 3381.4493913480737,
+      "tolerance": 6.762898782696148,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Bush Beans",
+      "indicator": "production",
+      "district_sum": 3306.2398129148887,
+      "national_value": 3306.2398129148883,
+      "tolerance": 6.612479625829777,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Climbing Beans",
+      "indicator": "production",
+      "district_sum": 75.2095784331854,
+      "national_value": 75.20957843318538,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Peas",
+      "indicator": "production",
+      "district_sum": 444.92978318457494,
+      "national_value": 444.92978318457494,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Soybean",
+      "indicator": "production",
+      "district_sum": 784.5072797036869,
+      "national_value": 784.5072797036869,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "file": "SAS_2022_Tables.xlsx",
+      "sheet": "Table 25",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 55355.41473976089,
+      "national_value": 55355.41473976088,
+      "tolerance": 110.71082947952176,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 226982.0,
+      "national_value": 226982,
+      "tolerance": 453.964,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 239221.0,
+      "national_value": 239221,
+      "tolerance": 478.442,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 106671.0,
+      "national_value": 106670,
+      "tolerance": 213.34,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Irish Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 55613.0,
+      "national_value": 55613,
+      "tolerance": 111.226,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 21069.0,
+      "national_value": 21066,
+      "tolerance": 42.132,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 255291.0,
+      "national_value": 255290,
+      "tolerance": 510.58,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 96264.0,
+      "national_value": 96262,
+      "tolerance": 192.524,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 37011.0,
+      "national_value": 37009,
+      "tolerance": 74.018,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 122018.0,
+      "national_value": 122019,
+      "tolerance": 244.038,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 312278.0,
+      "national_value": 312279,
+      "tolerance": 624.558,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 204240.0,
+      "national_value": 204238,
+      "tolerance": 408.476,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 108042.0,
+      "national_value": 108041,
+      "tolerance": 216.082,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 16761.0,
+      "national_value": 16758,
+      "tolerance": 33.516,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Fruits",
+      "indicator": "cultivated_area",
+      "district_sum": 10129.0,
+      "national_value": 10131,
+      "tolerance": 20.262,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 10",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 61406.0,
+      "national_value": 61409,
+      "tolerance": 122.818,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Maize",
+      "indicator": "cultivated_area",
+      "district_sum": 93927.0,
+      "national_value": 93927,
+      "tolerance": 187.854,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cassava",
+      "indicator": "cultivated_area",
+      "district_sum": 159091.0,
+      "national_value": 159089,
+      "tolerance": 318.178,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 96231.0,
+      "national_value": 96231,
+      "tolerance": 192.46200000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Yams & Taro",
+      "indicator": "cultivated_area",
+      "district_sum": 16016.0,
+      "national_value": 16015,
+      "tolerance": 32.03,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 258096.0,
+      "national_value": 258094,
+      "tolerance": 516.188,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Cooking Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 87736.0,
+      "national_value": 87735,
+      "tolerance": 175.47,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Dessert Banana",
+      "indicator": "cultivated_area",
+      "district_sum": 53998.0,
+      "national_value": 54000,
+      "tolerance": 108.0,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Banana for Beer",
+      "indicator": "cultivated_area",
+      "district_sum": 116358.0,
+      "national_value": 116359,
+      "tolerance": 232.71800000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 309490.0,
+      "national_value": 309489,
+      "tolerance": 618.9780000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Bush Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 192995.0,
+      "national_value": 192994,
+      "tolerance": 385.988,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Climbing Beans",
+      "indicator": "cultivated_area",
+      "district_sum": 116493.0,
+      "national_value": 116496,
+      "tolerance": 232.99200000000002,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 19162.0,
+      "national_value": 19164,
+      "tolerance": 38.328,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 11",
+      "crop": "Other Crops",
+      "indicator": "cultivated_area",
+      "district_sum": 57896.0,
+      "national_value": 57896,
+      "tolerance": 115.792,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 12",
+      "crop": "Sweet Potato",
+      "indicator": "cultivated_area",
+      "district_sum": 4235.0,
+      "national_value": 4235,
+      "tolerance": 8.47,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 12",
+      "crop": "Vegetables",
+      "indicator": "cultivated_area",
+      "district_sum": 5232.0,
+      "national_value": 5233,
+      "tolerance": 10.466000000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 224974.0,
+      "national_value": 224976,
+      "tolerance": 449.952,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 90655.0,
+      "national_value": 90657,
+      "tolerance": 181.314,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Irish Potato",
+      "indicator": "harvested_area",
+      "district_sum": 55582.0,
+      "national_value": 55583,
+      "tolerance": 111.166,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 13369.0,
+      "national_value": 13371,
+      "tolerance": 26.742,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 107411.0,
+      "national_value": 107411,
+      "tolerance": 214.822,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 39233.0,
+      "national_value": 39234,
+      "tolerance": 78.468,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 15459.0,
+      "national_value": 15459,
+      "tolerance": 30.918,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 52718.0,
+      "national_value": 52718,
+      "tolerance": 105.436,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 312159.0,
+      "national_value": 312160,
+      "tolerance": 624.32,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 204122.0,
+      "national_value": 204118,
+      "tolerance": 408.236,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 108043.0,
+      "national_value": 108041,
+      "tolerance": 216.082,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 13",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 16383.0,
+      "national_value": 16382,
+      "tolerance": 32.764,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Maize",
+      "indicator": "harvested_area",
+      "district_sum": 93814.0,
+      "national_value": 93816,
+      "tolerance": 187.632,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Cassava",
+      "indicator": "harvested_area",
+      "district_sum": 49653.0,
+      "national_value": 49655,
+      "tolerance": 99.31,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 83215.0,
+      "national_value": 83212,
+      "tolerance": 166.424,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Yams & Taro",
+      "indicator": "harvested_area",
+      "district_sum": 13623.0,
+      "national_value": 13621,
+      "tolerance": 27.242,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Banana",
+      "indicator": "harvested_area",
+      "district_sum": 88359.0,
+      "national_value": 88361,
+      "tolerance": 176.722,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Cooking Banana",
+      "indicator": "harvested_area",
+      "district_sum": 28295.0,
+      "national_value": 28294,
+      "tolerance": 56.588,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Dessert Banana",
+      "indicator": "harvested_area",
+      "district_sum": 13068.0,
+      "national_value": 13068,
+      "tolerance": 26.136,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Banana for Beer",
+      "indicator": "harvested_area",
+      "district_sum": 47000.0,
+      "national_value": 46998,
+      "tolerance": 93.996,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Beans",
+      "indicator": "harvested_area",
+      "district_sum": 309411.0,
+      "national_value": 309410,
+      "tolerance": 618.82,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Bush Beans",
+      "indicator": "harvested_area",
+      "district_sum": 192965.0,
+      "national_value": 192965,
+      "tolerance": 385.93,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Climbing Beans",
+      "indicator": "harvested_area",
+      "district_sum": 116443.0,
+      "national_value": 116445,
+      "tolerance": 232.89000000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 17853.0,
+      "national_value": 17854,
+      "tolerance": 35.708,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Fruits",
+      "indicator": "harvested_area",
+      "district_sum": 4622.0,
+      "national_value": 4625,
+      "tolerance": 9.25,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 14",
+      "crop": "Other Crops",
+      "indicator": "harvested_area",
+      "district_sum": 27849.0,
+      "national_value": 27848,
+      "tolerance": 55.696,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Sweet Potato",
+      "indicator": "harvested_area",
+      "district_sum": 4235.0,
+      "national_value": 4235,
+      "tolerance": 8.47,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 15",
+      "crop": "Vegetables",
+      "indicator": "harvested_area",
+      "district_sum": 5232.0,
+      "national_value": 5233,
+      "tolerance": 10.466000000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Maize",
+      "indicator": "production",
+      "district_sum": 390876.0,
+      "national_value": 390879,
+      "tolerance": 781.758,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 667598.0,
+      "national_value": 667598,
+      "tolerance": 1335.1960000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Irish Potato",
+      "indicator": "production",
+      "district_sum": 454353.0,
+      "national_value": 454355,
+      "tolerance": 908.71,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Yams & Taro",
+      "indicator": "production",
+      "district_sum": 85260.0,
+      "national_value": 85259,
+      "tolerance": 170.518,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Banana",
+      "indicator": "production",
+      "district_sum": 1219407.0,
+      "national_value": 1219408,
+      "tolerance": 2438.8160000000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Cooking Banana",
+      "indicator": "production",
+      "district_sum": 555973.0,
+      "national_value": 555973,
+      "tolerance": 1111.946,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Dessert Banana",
+      "indicator": "production",
+      "district_sum": 129369.0,
+      "national_value": 129371,
+      "tolerance": 258.742,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Banana for Beer",
+      "indicator": "production",
+      "district_sum": 534062.0,
+      "national_value": 534065,
+      "tolerance": 1068.13,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Beans",
+      "indicator": "production",
+      "district_sum": 197210.0,
+      "national_value": 197212,
+      "tolerance": 394.42400000000004,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Bush Beans",
+      "indicator": "production",
+      "district_sum": 107901.0,
+      "national_value": 107905,
+      "tolerance": 215.81,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 22",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 132698.0,
+      "national_value": 132699,
+      "tolerance": 265.398,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Maize",
+      "indicator": "production",
+      "district_sum": 117614.0,
+      "national_value": 117613,
+      "tolerance": 235.226,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Cassava",
+      "indicator": "production",
+      "district_sum": 736689.0,
+      "national_value": 736686,
+      "tolerance": 1473.372,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Sweet Potato",
+      "indicator": "production",
+      "district_sum": 620186.0,
+      "national_value": 620185,
+      "tolerance": 1240.3700000000001,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Yams & Taro",
+      "indicator": "production",
+      "district_sum": 106666.0,
+      "national_value": 106665,
+      "tolerance": 213.33,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Banana",
+      "indicator": "production",
+      "district_sum": 1089378.0,
+      "national_value": 1089377,
+      "tolerance": 2178.754,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Cooking Banana",
+      "indicator": "production",
+      "district_sum": 493867.0,
+      "national_value": 493865,
+      "tolerance": 987.73,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Dessert Banana",
+      "indicator": "production",
+      "district_sum": 149266.0,
+      "national_value": 149266,
+      "tolerance": 298.532,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Banana for Beer",
+      "indicator": "production",
+      "district_sum": 446247.0,
+      "national_value": 446246,
+      "tolerance": 892.492,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Beans",
+      "indicator": "production",
+      "district_sum": 244196.0,
+      "national_value": 244194,
+      "tolerance": 488.38800000000003,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Bush Beans",
+      "indicator": "production",
+      "district_sum": 138868.0,
+      "national_value": 138870,
+      "tolerance": 277.74,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Climbing Beans",
+      "indicator": "production",
+      "district_sum": 105325.0,
+      "national_value": 105324,
+      "tolerance": 210.648,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 171530.0,
+      "national_value": 171530,
+      "tolerance": 343.06,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Fruits",
+      "indicator": "production",
+      "district_sum": 26085.0,
+      "national_value": 26084,
+      "tolerance": 52.168,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 23",
+      "crop": "Other Crops",
+      "indicator": "production",
+      "district_sum": 122634.0,
+      "national_value": 122632,
+      "tolerance": 245.264,
+      "passed": true
+    },
+    {
+      "file": "SAS_2023_Tables.xlsx",
+      "sheet": "Table 24",
+      "crop": "Vegetables",
+      "indicator": "production",
+      "district_sum": 73504.0,
+      "national_value": 73504,
+      "tolerance": 147.008,
+      "passed": true
+    }
+  ],
+  "source_files": [
+    {
+      "name": "NISR SAS 2024 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-02/SAS%202024_Annual%20Tables.xlsx",
+      "sha256": "5c7c6024d9a7b766d9911348aa3b5d5316555c6aa4a8c53f10dc290e2d8906e6"
+    },
+    {
+      "name": "NISR SAS 2025 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-12/SAS%202025_Annual%20Tables.xlsx",
+      "sha256": "3a6ed44f1e973578e46221b392e54833bb39e73b681be6e54fa2b44efe5fe1f7"
+    },
+    {
+      "name": "NISR SAS 2026 \u00b7 Season A",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2026-04/Tables_2026%20Season%20A.xlsx",
+      "sha256": "c4e4cb4c4e697febac1cb332280189a4dc6ff7f10d0de956bff279b284c5d4c2"
+    },
+    {
+      "name": "NISR SAS 2026 \u00b7 Season B",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2026-09/Tables_2026%20Season%20B.xlsx",
+      "sha256": "5ca81c6b0a54c4a282ed718d134423920cc75279a5827bbe772fe6eb1a4e9d27"
+    },
+    {
+      "name": "NISR SAS 2015 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/2015_Tables%20_ABC.xls",
+      "sha256": "32405220ae1093dec8e32896203ea77ccb0af56d2e6f4071626f789e7444b548"
+    },
+    {
+      "name": "NISR SAS 2016 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/SAS-2016%20Final%20Report.xlsx",
+      "sha256": "8350a9844afdc89c31d27e0dc9aa91a4135a19e764ccb4fa2ac8b02d20e0410e"
+    },
+    {
+      "name": "NISR SAS 2017 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/USAS%202017%20Tables.xls",
+      "sha256": "31094ba3097436c4ed21dd548d35e26706e38d647306311e88664445162ce31d"
+    },
+    {
+      "name": "NISR SAS 2018 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/2018%20Annual%20Tables_Final%20%281%29.xlsx",
+      "sha256": "4eb98b2822da5071863da873a89f6f8d7dd747c938280582dda999b09814fbe0"
+    },
+    {
+      "name": "NISR SAS 2019 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202019%20_Annual%20report%20_Tables.xlsx",
+      "sha256": "51101cae342030329db6b0047d28e6df9ad4c9d1c64742af33840b8f4145ff19"
+    },
+    {
+      "name": "NISR SAS 2020 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/USAS%202020%20_Final_Tables.xlsx",
+      "sha256": "ddc1845613af91fee7863d00b47d9c7db5cd308d7c305de3b57400c84a5e12d2"
+    },
+    {
+      "name": "NISR SAS 2021 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202021_Tables.xlsx",
+      "sha256": "1596c99a351e40e58be6afe82badf69e7f187110a2415dd3857b9f3fbf08e659"
+    },
+    {
+      "name": "NISR SAS 2022 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2026-09/SAS%202022_Tables_0.xlsx",
+      "sha256": "8576cd4a462d7fb015b491bcccfafc9488e34db338917858f436b4f23e0b6de6"
+    },
+    {
+      "name": "NISR SAS 2023 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202023_Annual%20Tables%20%283%29.xlsx",
+      "sha256": "fc07b45002c7aff36a0d6ee437acc47ff4bfea33b8bf240f264a78b41322fc82"
+    },
+    {
+      "name": "NISR AHS 2017 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/Agricultural_Household_Survey_2017.xlsx",
+      "sha256": "9c0cd42341cdc87491468f0ebca3120d2937c5b31945e2ba04853af288039122"
+    },
+    {
+      "name": "NISR AHS 2020 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/AHS_2020%20Tables%20%281%29.xlsx",
+      "sha256": "b9cdd0a4fd5d4ca7cdeb909a05032359c30cb3b546f21f3fa2affd269661eced"
+    },
+    {
+      "name": "NISR AHS 2024 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-10/AHS_2024%20Tables.xlsx",
+      "sha256": "bfe8a4884dfa7e0b3bae64d753efb10eeab14ab98085f9bc8d8a01791d135ffd"
+    },
+    {
+      "name": "NISR CFSVA 2018 \u00b7 Annual tables",
+      "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/CFSVA_2018.xlsx",
+      "sha256": "fc08ee4fa0c0796713f9c3d3f4425b505196d58253e679bb382a1cac8e9c6bc5"
+    }
+  ],
+  "scope_note": "All populated worksheets imported. Every supplied archive catalogued and readable microdata schemas indexed. Charts use published weighted estimates; respondent records remain private.",
+  "report_count": 30,
+  "report_pages": 2403
+}

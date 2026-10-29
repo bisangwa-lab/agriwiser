@@ -1,0 +1,113 @@
+{
+  "name": "Dataset",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "source_reference": {
+      "type": "string"
+    },
+    "retrieval_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "reporting_period": {
+      "type": "string"
+    },
+    "geographic_coverage": {
+      "type": "string"
+    },
+    "geography_level": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "methodology": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "string"
+    },
+    "units": {
+      "type": "string"
+    },
+    "update_cadence": {
+      "type": "string"
+    },
+    "indicators": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality_status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "provisional",
+        "demonstration"
+      ]
+    },
+    "quality_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo": {
+      "type": "boolean"
+    },
+    "row_count": {
+      "type": "number"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "publisher"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

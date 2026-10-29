@@ -1,0 +1,147 @@
+{
+  "name": "Investigation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "in_progress",
+        "awaiting_evidence",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "elevated"
+      ]
+    },
+    "crop": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "indicator": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "string"
+    },
+    "assignee_email": {
+      "type": "string"
+    },
+    "assignee_name": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "outcome_summary": {
+      "type": "string"
+    },
+    "closed_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "alert_id": {
+      "type": "string"
+    },
+    "alert_title": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "dataset_name": {
+      "type": "string"
+    },
+    "metric_snapshot": {
+      "type": "string"
+    },
+    "calculation_snapshot": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "title",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

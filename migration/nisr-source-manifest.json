@@ -1,0 +1,109 @@
+[
+  {
+    "filename": "SAS_2024_Annual_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-02/SAS%202024_Annual%20Tables.xlsx"
+  },
+  {
+    "filename": "SAS_2025_Annual_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-12/SAS%202025_Annual%20Tables.xlsx"
+  },
+  {
+    "filename": "Tables_2026_Season_A.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2026-04/Tables_2026%20Season%20A.xlsx"
+  },
+  {
+    "filename": "Tables_2026_Season_B.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2026-09/Tables_2026%20Season%20B.xlsx"
+  },
+  {
+    "filename": "SAS_2015_Tables.xls",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/2015_Tables%20_ABC.xls",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2015",
+    "year": 2015,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2016_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/SAS-2016%20Final%20Report.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2016",
+    "year": 2016,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2017_Tables.xls",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/USAS%202017%20Tables.xls",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2017",
+    "year": 2017,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2018_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/2018%20Annual%20Tables_Final%20%281%29.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2018",
+    "year": 2018,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2019_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202019%20_Annual%20report%20_Tables.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2019",
+    "year": 2019,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2020_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/USAS%202020%20_Final_Tables.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2020",
+    "year": 2020,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2021_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202021_Tables.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2021",
+    "year": 2021,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2022_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2026-09/SAS%202022_Tables_0.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2022",
+    "year": 2022,
+    "family": "SAS"
+  },
+  {
+    "filename": "SAS_2023_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202023_Annual%20Tables%20%283%29.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Seasonal-Agricultural-Survey/Seasonal-Agricultural-Survey/seasonal-agricultural-survey-2023",
+    "year": 2023,
+    "family": "SAS"
+  },
+  {
+    "filename": "AHS_2017_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/Agricultural_Household_Survey_2017.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Agricultural-Household-Survey/agricultural-household-survey-2017",
+    "year": 2017,
+    "family": "AHS"
+  },
+  {
+    "filename": "AHS_2020_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/AHS_2020%20Tables%20%281%29.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Agricultural-Household-Survey/agricultural-household-survey-2020",
+    "year": 2020,
+    "family": "AHS"
+  },
+  {
+    "filename": "AHS_2024_Tables.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-10/AHS_2024%20Tables.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/Agricultural-Household-Survey/agricultural-household-survey-2024",
+    "year": 2024,
+    "family": "AHS"
+  },
+  {
+    "filename": "CFSVA_2018_Tables_1.xlsx",
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/CFSVA_2018.xlsx",
+    "publication_url": "https://statistics.gov.rw/data-sources/surveys/CFSVA/comprehensive-food-security-and-vulnerability-analysis-cfsva-2018",
+    "year": 2018,
+    "family": "CFSVA"
+  }
+]

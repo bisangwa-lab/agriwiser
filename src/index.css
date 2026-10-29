@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm white canvas, deep green identity, neutral grey support tones. */
+    --background: 150 17% 97%;
+    --foreground: 163 28% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 163 28% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 163 28% 11%;
+
+    --primary: 158 62% 22%;
+    --primary-foreground: 42 40% 98%;
+
+    --secondary: 150 16% 94%;
+    --secondary-foreground: 163 28% 15%;
+
+    --muted: 150 15% 96%;
+    --muted-foreground: 161 9% 42%;
+
+    --accent: 152 34% 93%;
+    --accent-foreground: 158 60% 18%;
+
+    --destructive: 4 68% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 13% 90%;
+    --input: 150 14% 86%;
+    --ring: 158 62% 30%;
+
+    --radius: 0.75rem;
+
+    --chart-1: 158 62% 27%;
+    --chart-2: 96 40% 44%;
+    --chart-3: 41 76% 48%;
+    --chart-4: 197 48% 40%;
+    --chart-5: 24 62% 50%;
+
+    --sidebar-background: 158 48% 17%;
+    --sidebar-foreground: 150 14% 86%;
+    --sidebar-primary: 94 62% 62%;
+    --sidebar-primary-foreground: 165 38% 8%;
+    --sidebar-accent: 155 44% 24%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 166 20% 20%;
+    --sidebar-ring: 152 52% 46%;
+
+    --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Fraunces", ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.16);
+  }
+}
+
+@layer components {
+  /* One card surface used across the app: hairline border, very soft lift. */
+  .panel {
+    @apply rounded-2xl border border-border bg-card;
+    box-shadow: 0 2px 4px rgba(12, 40, 30, 0.025), 0 10px 24px -20px rgba(12, 40, 30, 0.22);
+  }
+
+  .dashboard-card {
+    @apply panel overflow-hidden;
+  }
+
+  .dashboard-card-heading {
+    @apply flex flex-wrap items-start justify-between gap-3 border-b border-border/70 px-5 py-4;
+  }
+
+  .dashboard-grid-empty {
+    background-image: linear-gradient(hsl(var(--border) / 0.45) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.25) 1px, transparent 1px);
+    background-size: 100% 48px, 80px 100%;
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hairline {
+    @apply border-b border-border/70;
+  }
+
+  .brand-serif {
+    font-family: var(--font-display);
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .panel {
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}

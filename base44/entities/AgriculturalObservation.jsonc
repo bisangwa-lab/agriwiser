@@ -1,0 +1,109 @@
+{
+  "name": "AgriculturalObservation",
+  "type": "object",
+  "properties": {
+    "dataset_id": {
+      "type": "string"
+    },
+    "dataset_name": {
+      "type": "string"
+    },
+    "source_publisher": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "crop",
+        "climate"
+      ]
+    },
+    "geography": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "crop": {
+      "type": "string"
+    },
+    "season": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number"
+    },
+    "period": {
+      "type": "string"
+    },
+    "indicator": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "observation_status": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "estimated",
+        "provisional",
+        "forecast"
+      ]
+    },
+    "quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_demo": {
+      "type": "boolean"
+    },
+    "reported_zero": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "geography",
+    "season",
+    "year",
+    "indicator",
+    "value",
+    "unit"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

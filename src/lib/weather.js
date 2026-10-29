@@ -1,0 +1,11 @@
+import { createServerFn } from "@tanstack/react-start";
+import { requireUser } from "./auth-middleware.js";
+import { validateWeatherRange,validateWeatherMap,validateBaseline } from "./weather-model.js";
+import { runWeather,runWeatherMap,runWeatherBaseline,runWeatherStatus,runMeteoCatalogue,runMeteoWeather,safeWeather } from "./weather.server.js";
+import { validateMeteoRange } from './meteo-rwanda-provider.js';
+export const getWeather=createServerFn({method:'POST'}).middleware([requireUser]).validator(validateWeatherRange).handler(({data,context})=>safeWeather(()=>runWeather(context.user,data)));
+export const getWeatherMap=createServerFn({method:'POST'}).middleware([requireUser]).validator(validateWeatherMap).handler(({data,context})=>safeWeather(()=>runWeatherMap(context.user,data)));
+export const getWeatherBaseline=createServerFn({method:'POST'}).middleware([requireUser]).validator(validateBaseline).handler(({data,context})=>safeWeather(()=>runWeatherBaseline(context.user,data)));
+export const getWeatherStatus=createServerFn({method:'POST'}).middleware([requireUser]).handler(({context})=>safeWeather(()=>runWeatherStatus(context.user)));
+export const getMeteoCatalogue=createServerFn({method:'POST'}).middleware([requireUser]).handler(({context})=>safeWeather(()=>runMeteoCatalogue(context.user)));
+export const getMeteoWeather=createServerFn({method:'POST'}).middleware([requireUser]).validator(validateMeteoRange).handler(({data,context})=>safeWeather(()=>runMeteoWeather(context.user,data)));
