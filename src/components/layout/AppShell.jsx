@@ -6,7 +6,7 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { BrandMark } from "@/components/layout/BrandMark";
 import { SidebarNav } from "@/components/layout/SidebarNav";
 import { isLocalAuth } from "@/api/base44Client";
-import { PANELS, panelForPath, roleLabel } from "@/lib/rbac";
+import { PANELS, activePanelForPath, panelForPath, roleLabel } from "@/lib/rbac";
 import { displayName, initials } from "@/lib/roles";
 import { useDatasets } from "@/hooks/useAgriRecords";
 
@@ -17,7 +17,18 @@ import { useDatasets } from "@/hooks/useAgriRecords";
 export function AppShell({ user, children }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = useRouterState({ select: (state) => state.location.pathname });
-  const panel = pathname === "/weather" ? {label:"Weather & climate"} : PANELS[panelForPath(pathname)];
+  const weatherWorkspace = useRouterState({ select: (state) => state.location.search?.workspace });
+  const workspaceKey = `hingasmart-active-workspace:${user?.id ?? user?.email ?? "anonymous"}`;
+  const [rememberedWorkspace, setRememberedWorkspace] = useState(() => {
+    try { return sessionStorage.getItem(workspaceKey); } catch { return null; }
+  });
+  const currentPanel = activePanelForPath(user, pathname, weatherWorkspace, rememberedWorkspace);
+  const panel = pathname === "/weather" ? { label: "Weather & climate" } : PANELS[panelForPath(pathname)];
+  useEffect(() => {
+    if (!currentPanel) return;
+    setRememberedWorkspace(currentPanel);
+    try { sessionStorage.setItem(workspaceKey, currentPanel); } catch { /* Storage is optional. */ }
+  }, [currentPanel, workspaceKey]);
   const { data: datasets = [], isLoading: loadingDatasets, error: datasetError } = useDatasets();
   const quickEntry = isLocalAuth && import.meta.env.DEV && import.meta.env.VITE_LOCAL_QUICK_LOGIN === "true";
 
@@ -28,7 +39,7 @@ export function AppShell({ user, children }) {
   return (
     <div className="min-h-screen bg-background lg:grid lg:grid-cols-[244px_minmax(0,1fr)]">
       <aside className="no-print sticky top-0 hidden h-screen overflow-y-auto border-r border-sidebar-border bg-sidebar lg:block">
-        <SidebarNav user={user} pathname={pathname} />
+        <SidebarNav user={user} pathname={pathname} currentPanel={currentPanel} />
       </aside>
 
       <div className="flex min-h-screen min-w-0 flex-col">
@@ -69,7 +80,7 @@ export function AppShell({ user, children }) {
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetContent side="left" className="w-[272px] border-sidebar-border bg-sidebar p-0">
           <SheetTitle className="sr-only">Navigation</SheetTitle>
-          <SidebarNav user={user} pathname={pathname} />
+          <SidebarNav user={user} pathname={pathname} currentPanel={currentPanel} />
         </SheetContent>
       </Sheet>
     </div>
