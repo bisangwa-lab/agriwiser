@@ -27,7 +27,7 @@ import { BrandMark } from "@/components/layout/BrandMark";
 import { useAuth } from "@/lib/AuthContext";
 import { cn } from "@/lib/utils";
 import { displayName, initials } from "@/lib/roles";
-import { PANELS, PANEL_ORDER, ROLE_BY_KEY, normalizeRole, panelForPath, roleLabel } from "@/lib/rbac";
+import { PANELS, PANEL_ORDER, normalizeRole, roleLabel } from "@/lib/rbac";
 
 // Each panel's own navigation. A signed-in user sees only the pages of the
 // panel they are in — so each panel is a separate experience, not one merged
@@ -57,11 +57,10 @@ const NAV_BY_PANEL = {
 };
 
 /** The primary navigation. `pathname` is resolved once by the shell and shared. */
-export function SidebarNav({ user, pathname }) {
+export function SidebarNav({ user, pathname, currentPanel }) {
   const { logout } = useAuth();
   const role = normalizeRole(user);
   const isSuperAdmin = role === "super_admin";
-  const currentPanel = pathname === "/weather" ? ROLE_BY_KEY[role]?.panel : panelForPath(pathname);
   const items = currentPanel ? NAV_BY_PANEL[currentPanel] ?? [] : [];
 
   return (
@@ -82,6 +81,7 @@ export function SidebarNav({ user, pathname }) {
             <Link
               key={item.to}
               to={item.to}
+              search={item.to === "/weather" ? { workspace: currentPanel } : undefined}
               className={cn(
                 "group flex items-center gap-3 rounded-lg px-3 py-2 text-[13.5px] font-medium transition-colors",
                 active
