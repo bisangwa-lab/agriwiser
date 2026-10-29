@@ -5,7 +5,7 @@ export const LOCATION_METHOD=locations.method;
 export const WEATHER_ROLES=["super_admin","data_manager","agricultural_analyst","policy_maker","agricultural_officer","field_investigator","field_supervisor"];
 export const canReadWeather=user=>WEATHER_ROLES.includes(normalizeRole(user));
 export function assertWeatherAccess(user) {if(!user)throw Object.assign(new Error("Sign in to use weather data."),{status:401,code:'UNAUTHORIZED'});if(!canReadWeather(user))throw Object.assign(new Error("Your role cannot access climate analysis."),{status:403,code:'FORBIDDEN'});}
-export const WEATHER_PARAMETERS={PRECTOTCORR:{label:"Precipitation corrected",unit:"mm/day",summaryUnit:"mm",field:"rainfall",kind:"total"},T2M:{label:"Mean temperature at 2 m",unit:"C",summaryUnit:"°C",field:"temperature",kind:"mean"},T2M_MIN:{label:"Minimum temperature at 2 m",unit:"C",summaryUnit:"°C",field:"minimum",kind:"minimum"},T2M_MAX:{label:"Maximum temperature at 2 m",unit:"C",summaryUnit:"°C",field:"maximum",kind:"maximum"}};
+export const WEATHER_PARAMETERS={PRECTOTCORR:{label:"Precipitation",unit:"mm/day",summaryUnit:"mm",field:"rainfall",kind:"total"},T2M:{label:"Mean temperature at 2 m",unit:"C",summaryUnit:"°C",field:"temperature",kind:"mean"},T2M_MIN:{label:"Minimum temperature at 2 m",unit:"C",summaryUnit:"°C",field:"minimum",kind:"minimum"},T2M_MAX:{label:"Maximum temperature at 2 m",unit:"C",summaryUnit:"°C",field:"maximum",kind:"maximum"}};
 export const POWER_DOCUMENTATION="https://power.larc.nasa.gov/docs/services/api/temporal/daily/";
 export const DEFAULT_THRESHOLDS={rainfallDeficitPct:-20,hotDayC:35,coldDayC:10,temperatureAnomalyC:2};
 export const failure=(code,message,status=502,retryAfter)=>Object.assign(new Error(message),{code,status,retryAfter});
@@ -43,7 +43,7 @@ export function validateWeatherMap(input){
 export function validateBaseline(input){
  if(!input||Object.keys(input).some(key=>!["location","year","season","baselineStart","baselineEnd","dataset"].includes(key)))throw failure("INVALID_INPUT","Invalid climate baseline.",400);
  const location=validateLocation(input.location),period=seasonRange(input.year,input.season);
- validateWeatherRange({location,...period,...(input.dataset?{dataset:input.dataset}:{})});
+ validateWeatherRange({location,...period,...(input.dataset!==undefined?{dataset:input.dataset}:{})});
  if(!Number.isInteger(input.baselineStart)||!Number.isInteger(input.baselineEnd)||input.baselineStart<1982||input.baselineEnd>input.year-1||input.baselineEnd-input.baselineStart<19||input.baselineEnd-input.baselineStart>39)throw failure("INVALID_BASELINE","Use 20–40 completed baseline years from 1982 onward, all before the selected year.",400);
  return {...input,location};
 }

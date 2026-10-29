@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { WeatherIntegrationStatus } from '@/components/weather/WeatherIntegrationStatus';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { createFileRoute } from "@tanstack/react-router";
 import { requireWorkspace } from "@/lib/route-access";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,11 +17,12 @@ import { useDatasets } from "@/hooks/useAgriRecords";
 import { useAuth } from "@/lib/AuthContext";
 import { isAdmin } from "@/lib/roles";
 import { INDICATORS } from "@/lib/constants";
-import { Database, ShieldCheck } from "lucide-react";
+import { CloudSun, Database, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/_authed/data-sources")({
+  validateSearch: search => ({ ...(search.tab === 'weather' ? { tab: 'weather' } : {}) }),
   beforeLoad: requireWorkspace(["data_manager"]),
-  head: () => ({ meta: [{ title: "Data sources · HingaSmart Rwanda" }] }),
+  head: () => ({ meta: [{ title: "Data management · HingaSmart Rwanda" }] }),
   component: DataSourcesPage,
 });
 
@@ -48,6 +50,8 @@ const EXPECTED_SOURCES = [
 ];
 
 function DataSourcesPage() {
+  const { tab } = Route.useSearch();
+  const navigate = Route.useNavigate();
   const { user } = useAuth();
   const admin = isAdmin(user);
   const { data: datasets = [], isLoading, error, refetch } = useDatasets();
@@ -70,12 +74,18 @@ function DataSourcesPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Data sources"
-        title="Data sources and quality"
-        description="Every dataset used here, with its publisher, period, coverage, units, method and known limitations. Nothing on this platform is presented as an official statistic unless the dataset record says so."
+        eyebrow="Administration · Data management"
+        title="Data management"
+        description="Manage dataset sources and quality, or inspect weather integration coverage and recent provider outcomes."
       />
 
-      <WeatherIntegrationStatus />
+      <Tabs value={tab ?? 'datasets'} onValueChange={value => navigate({ search: value === 'weather' ? { tab: 'weather' } : {} })}>
+        <TabsList aria-label="Data management sections" className="mb-4 h-auto flex-wrap justify-start gap-1">
+          <TabsTrigger value="datasets" className="gap-2"><Database className="h-4 w-4" aria-hidden />Datasets & sources</TabsTrigger>
+          <TabsTrigger value="weather" className="gap-2"><CloudSun className="h-4 w-4" aria-hidden />Weather integrations</TabsTrigger>
+        </TabsList>
+        <TabsContent value="weather"><WeatherIntegrationStatus /></TabsContent>
+        <TabsContent value="datasets" className="space-y-6">
       <Card className="panel border-0 shadow-none">
         <CardContent className="space-y-3 pt-5">
           <div className="flex flex-wrap items-center gap-2">
@@ -199,6 +209,8 @@ function DataSourcesPage() {
           </CardContent>
         </Card>
       </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }

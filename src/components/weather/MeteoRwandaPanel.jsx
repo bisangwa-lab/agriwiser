@@ -10,7 +10,7 @@ import { PageHeader } from '@/components/common/PageHeader';
 import { RainfallChart,TemperatureChart } from './WeatherCharts';
 
 export function WeatherSourceSelect({value,onChange}){
- return <label className="no-print block max-w-sm text-xs text-muted-foreground">Weather source<select aria-label="Weather source" className="mt-2 h-10 w-full rounded-lg border bg-background px-3" value={value} onChange={event=>onChange(event.target.value)}><option value="nasa">NASA POWER · gridded estimates</option><option value="meteo">Meteo Rwanda · authorized delivery</option></select></label>;
+ return <label className="no-print block max-w-md text-xs text-muted-foreground">Weather source<select aria-label="Weather source" className="mt-2 h-10 w-full rounded-lg border bg-background px-3" value={value} onChange={event=>onChange(event.target.value)}><option value="era5">Open-Meteo · ERA5 · 0.25° estimates</option><option value="nasa">NASA POWER · MERRA-2 · 0.5° × 0.625° estimates</option><option value="meteo">Meteo Rwanda · authorized delivery</option></select></label>;
 }
 export function MeteoRwandaPanel({onSourceChange}){
  const catalogue=useMeteoCatalogue(),[stationId,setStationId]=useState(''),[start,setStart]=useState('2025-03-01'),[end,setEnd]=useState('2025-06-30'),[request,setRequest]=useState(null),[error,setError]=useState('');

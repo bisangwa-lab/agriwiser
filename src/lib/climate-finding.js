@@ -1,0 +1,10 @@
+import {assertWeatherAccess,failure} from './weather-model.js';
+import {findingSchema} from './climate-analysis-model.js';
+export async function saveClimateFindingEvidence({cache,write,clock=()=>Date.now()},user,input){
+ assertWeatherAccess(user);const data=findingSchema.parse(input),context={user};input=data;
+ const snapshot=await cache.get('climate-analysis|'+input.analysisId);
+ if(!snapshot||snapshot.owner!==String(user.id??user.email)||snapshot.expiresAt<=clock())throw failure('ANALYSIS_EXPIRED','Run the analysis again before saving this finding.',400);
+ const analysis=snapshot.result,s=analysis.scope,now=new Date(clock()).toISOString();
+ const record={id:'climate-finding-'+input.analysisId,title:`Climate analysis: ${s.crop} in ${s.district} · ${s.year} ${s.season}`,description:input.notes,summary:input.notes,reason:input.notes,questions:input.notes,district:s.district,crop:s.crop,season:s.season,year:s.year,period:`${s.year} ${s.season}`,previous_period:`${s.referenceYear} ${s.season}`,indicator:'yield',status:'draft',requested_by:context.user.email,requested_by_name:context.user.full_name??'',evidence:'Server-preserved weather, crop records, source requests, baseline completeness and comparison periods. '+analysis.limitation,metric_snapshot:JSON.stringify({production:analysis.crops.current.production,harvested_area:analysis.crops.current.area,yield:analysis.crops.current.yield,previous_production:analysis.crops.reference.production,previous_area:analysis.crops.reference.area,previous_yield:analysis.crops.reference.yield,production_change_pct:analysis.crops.changes.production.percent,rainfall_mm:analysis.current.summary.rainfall,yield_change_pct:analysis.crops.changes.yield.percent,rainfall_anomaly_pct:analysis.normal?.rainfallAnomalyPct??null}),calculation_snapshot:JSON.stringify(analysis),dataset_id:analysis.crops.current.records[0]?.dataset_id??'',dataset_name:'Weather & agricultural analysis',is_demo:false,created_date:now,updated_date:now};
+ return {record:await write(record)};
+}

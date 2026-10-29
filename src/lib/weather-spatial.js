@@ -19,10 +19,10 @@ export function weightedDistrictWeather(location,results,start,end){
  const rows=dates.map(date=>{
   const row={date,qualityFlags:[],spatialCoverage:{}};
   for(const code of Object.keys(WEATHER_PARAMETERS)){
-   let weight=0,value=0;
-   for(const cell of location.cells){const raw=byCell.get(cell.id).get(date)?.[code];if(typeof raw==='number'&&Number.isFinite(raw)){weight+=cell.weight;value+=raw*cell.weight;}}
+   let weight=0,value=0,validCells=0;
+   for(const cell of location.cells){const raw=byCell.get(cell.id).get(date)?.[code];if(typeof raw==='number'&&Number.isFinite(raw)){weight+=cell.weight;value+=raw*cell.weight;validCells++;}}
    row.spatialCoverage[code]=Math.min(1,weight);
-   row[code]=Math.abs(weight-1)<1e-7?value:null;
+   row[code]=validCells===location.cells.length&&Math.abs(weight-1)<1e-7?value:null;
    if(row[code]===null)row.qualityFlags.push(`${code}: ${(weight*100).toFixed(2)}% of district area has valid cell data; full district estimate unavailable`);
   }
   return row;
@@ -30,9 +30,10 @@ export function weightedDistrictWeather(location,results,start,end){
  const loaded=location.cells.map(cell=>results.get(cell.id)).filter(item=>item?.cache);
  const sources=[...new Map(loaded.flatMap(item=>item.sources).map(source=>[source.sourceUrl,source])).values()];
  const stale=loaded.find(item=>item.cache.status==='stale');
+ const errors=[...new Map(location.cells.flatMap(cell=>{const item=results.get(cell.id);return item?.error?[item.error]:item?.errors??[];}).map(error=>[error.code+'|'+error.message,error])).values()];
  const summary=aggregateWeather(rows,start,end);
  summary.spatialCoverage=Object.fromEntries(Object.keys(WEATHER_PARAMETERS).map(code=>[code,Math.min(...rows.map(row=>row.spatialCoverage[code]))]));
- return {location,start,end,dataset:location.dataset,rows,summary,sources,classification:'model-estimated',spatialSupport:`Area-weighted ${WEATHER_DATASETS[location.dataset].label} district estimate. Each daily value is the sum of intersecting cell values × district overlap fractions, requiring 100% area coverage. No interpolation or station observations. Daily minima/maxima are area averages of cell daily minima/maxima, not the coldest/hottest place in the district.`,cache:{status:stale?'stale':loaded.some(item=>item.cache.status==='refreshed')?'refreshed':'cached',staleReason:stale?.cache.staleReason??null,retrievedAt:loaded.map(item=>item.cache.retrievedAt).filter(Boolean).sort()[0]??null},cells:location.cells.map(cell=>({...cell,error:results.get(cell.id)?.error??null,cache:results.get(cell.id)?.cache??null,summary:results.get(cell.id)?.rows?aggregateWeather(results.get(cell.id).rows,start,end):null}))};
+ return {location,start,end,dataset:location.dataset,rows,summary,sources,errors,classification:'model-estimated',spatialSupport:`Area-weighted ${WEATHER_DATASETS[location.dataset].label} district estimate. Each daily value is the sum of intersecting cell values × district overlap fractions, requiring 100% area coverage. No interpolation or station observations. Daily minima/maxima are area averages of cell daily minima/maxima, not the coldest/hottest place in the district.`,cache:{status:!loaded.length?'unavailable':loaded.length<location.cells.length||loaded.some(item=>item.cache.status==='partial')?'partial':stale?'stale':loaded.some(item=>item.cache.status==='refreshed')?'refreshed':'cached',staleReason:stale?.cache.staleReason??errors[0]??null,retrievedAt:loaded.map(item=>item.cache.retrievedAt).filter(Boolean).sort()[0]??null},cells:location.cells.map(cell=>({...cell,error:results.get(cell.id)?.error??results.get(cell.id)?.errors?.[0]??null,cache:results.get(cell.id)?.cache??null,summary:results.get(cell.id)?.rows?aggregateWeather(results.get(cell.id).rows,start,end):null}))};
 }
 export async function spatialWeatherRange(engine,location,start,end,dataset='merra2'){
  const resolved=spatialLocation(location,dataset);

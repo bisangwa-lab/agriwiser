@@ -39,7 +39,9 @@ test('persistent administrator monitoring counts cache quality and bounds safe e
  const db={prepare:statement=>({bind:(...args)=>({first:async()=>sql.prepare(statement).get(...args),run:async()=>sql.prepare(statement).run(...args)}),all:async()=>({results:sql.prepare(statement).all()}),first:async()=>sql.prepare(statement).get(),run:async()=>sql.prepare(statement).run()})},store=createD1WeatherStore(db);
  await store.cache.set('weather-v1|merra2:-2:30|2025',{expiresAt:1,source:{provider:'NASA POWER',retrievedAt:now},rows:[{date:'2025-01-01',PRECTOTCORR:0,T2M:null}]});
  for(let i=0;i<105;i++)await store.record({at:now,event:i%2?'success':'error',code:i%2?undefined:'TIMEOUT'});
- const status=await store.status();assert.equal(status.entries.length,1);assert.equal(status.quality.days,1);assert.equal(status.quality.rainfall_missing,0);assert.equal(status.quality.temperature_missing,1);assert.equal(status.events.length,20);assert.equal(sql.prepare('SELECT COUNT(*) AS count FROM weather_events').get().count,100);sql.close();
+ const status=await store.status();assert.equal(status.entries.length,1);assert.equal(status.quality.days,1);assert.equal(status.quality.rainfall_missing,0);assert.equal(status.quality.temperature_missing,1);assert.equal(status.events.length,20);assert.equal(sql.prepare('SELECT COUNT(*) AS count FROM weather_events').get().count,100);
+ await store.cache.set('weather-v1|era5:-2:30|2025',{expiresAt:1,source:{provider:'Open-Meteo',retrievedAt:now},rows:[{date:'2025-01-01',PRECTOTCORR:null,T2M:20}]});
+ const combined=await store.status();assert.equal(combined.quality.days,2);assert.equal(combined.qualityByProvider['NASA POWER'].rainfall_missing,0);assert.equal(combined.qualityByProvider['NASA POWER'].temperature_missing,1);assert.equal(combined.qualityByProvider['Open-Meteo'].rainfall_missing,1);assert.equal(combined.qualityByProvider['Open-Meteo'].temperature_missing,0);sql.close();
 });
 test('transient failures get one bounded backoff retry and every attempt is monitored',async()=>{
  const map=new Map(),events=[],delays=[];let calls=0;

@@ -21,12 +21,14 @@ export function explainChange({
   qualityFlags = [],
   coverage,
   ruleId,
+  calculationNote,
+  valueDigits,
 }) {
   const meta = INDICATORS[indicator] ?? INDICATORS.production;
   const rule = ruleId ? RULE_BY_ID[ruleId] : null;
   const absolute = absoluteChange(current, previous);
   const percent = percentageChange(current, previous);
-  const digits = meta.derived ? 2 : 0;
+  const digits = valueDigits ?? (meta.derived || indicator === "reported_yield" ? 2 : 0);
 
   const scope = [crop || "all crops", geography || "all districts", season || "both seasons"]
     .filter(Boolean)
@@ -64,9 +66,9 @@ export function explainChange({
     },
     {
       title: "The calculation used",
-      body: meta.derived
+      body: calculationNote ?? (meta.derived
         ? "Yield = production (t) ÷ harvested area (ha). It is derived, never stored, and is only produced when both values exist for the same crop, district, period and unit, and harvested area is greater than zero. Absolute change = current − previous. Percentage change = ((current − previous) ÷ previous) × 100."
-        : "Totals are summed from the approved observations for the selected crop, geography and period. Absolute change = current − previous. Percentage change = ((current − previous) ÷ previous) × 100, and is only produced when the previous value is present and not zero.",
+        : indicator === "reported_yield" ? "Published yield is read from one crop and one district, in kg/ha; rates are never summed. Absolute change = current − previous. Percentage change = ((current − previous) ÷ previous) × 100 with a non-zero baseline." : "Totals are summed from the approved observations for the selected crop, geography and period. Absolute change = current − previous. Percentage change = ((current − previous) ÷ previous) × 100, and is only produced when the previous value is present and not zero."),
     },
     {
       title: "Source dataset",
@@ -93,7 +95,7 @@ export function explainChange({
     {
       title: "What this data can and cannot establish",
       body: [
-        "It can establish: what was reported for each period, how large the difference is, and whether the comparison is valid.",
+        "It can establish: what was reported for each period, how large the difference is, and whether the required values are available for this calculation.",
         "It cannot establish: why the change happened. Reported changes can reflect weather, inputs, pests, prices, market access, measurement, reporting coverage or a revision to the source table.",
         "Correlation between two series — for example rainfall and production — is not evidence that one caused the other.",
       ].join("\n"),

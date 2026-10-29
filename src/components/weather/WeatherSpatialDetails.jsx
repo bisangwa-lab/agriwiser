@@ -1,0 +1,16 @@
+const display=(value,unit='')=>!Number.isFinite(value)?'Unavailable':value.toLocaleString('en-GB',{maximumFractionDigits:2})+(unit?' '+unit:'');
+export function WeatherRetrievalErrors({errors=[]}){
+ return errors.length?<div role="alert" className="my-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-xs text-amber-950">{[...new Map(errors.map(error=>[error.code+'|'+error.message,error])).values()].map(error=><p key={error.code+'|'+error.message}>{error.message}{error.retryAfter?` Retry after about ${error.retryAfter} seconds.`:''}</p>)}<p className="mt-2">Completed cell-years remain cached. Retry to retrieve missing history; unavailable years are excluded from baseline completeness.</p></div>:null;
+}
+export function WeatherSpatialDetails({weather}){
+ if(!weather)return <p className="text-xs text-muted-foreground">Awaiting validated weather data.</p>;
+ const location=weather.location;
+ return <div className="space-y-3 text-xs text-muted-foreground">
+  <WeatherRetrievalErrors errors={weather.errors}/>
+  <p>{weather.spatialSupport}</p>
+  <p>{location.spatialResolution??location.grid?.resolution} · {location.cells?`${location.cells.length} intersecting cells · district area ${display(location.areaKm2,'km²')}`:`Sampled cell ${location.grid?.latitude}, ${location.grid?.longitude} · requested point ${location.latitude}, ${location.longitude}`}</p>
+  {location.cells&&<details><summary className="cursor-pointer text-primary">Inspect district area weights & cell coverage</summary><div className="mt-3 overflow-auto"><table className="w-full text-left"><thead><tr><th className="p-2">Cell centre</th><th className="p-2">District area share</th><th className="p-2">Precipitation days</th><th className="p-2">Temperature days</th><th className="p-2">Status</th></tr></thead><tbody>{location.cells.map(cell=>{const data=weather.cells?.find(item=>item.id===cell.id);return <tr key={cell.id} className="border-t"><td className="p-2">{cell.latitude}, {cell.longitude}</td><td className="p-2">{display(cell.weight*100,'%')}</td><td className="p-2">{data?.summary?`${data.summary.validDays.PRECTOTCORR}/${data.summary.expectedDays}`:'Unavailable'}</td><td className="p-2">{data?.summary?`${data.summary.validDays.T2M}/${data.summary.expectedDays}`:'Unavailable'}</td><td className="p-2">{data?.error?.message??data?.cache?.status??'Not loaded'}</td></tr>;})}</tbody></table></div><p className="mt-3">Weights use polygon intersection areas, including islands and holes. Each daily district parameter requires valid cell values across the full district area. Missing areas are never replaced by the remaining cells.</p></details>}
+  {weather.summary?.spatialCoverage&&<p>Minimum area coverage during this period: precipitation {display(weather.summary.spatialCoverage.PRECTOTCORR*100,'%')}; mean temperature {display(weather.summary.spatialCoverage.T2M*100,'%')}. Daily minima and maxima are area averages of cell daily minima and maxima.</p>}
+  <p>Gridded estimates can differ from local measurements, especially in complex terrain. Recent days can be provisional or unavailable. Finer grid spacing does not guarantee greater accuracy; local station validation remains necessary.</p>
+ </div>;
+}

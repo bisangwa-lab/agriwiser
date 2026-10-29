@@ -22,7 +22,7 @@ async function storage(){
    if(typeof caches==='undefined'||!caches.default)throw failure('CACHE_NOT_CONFIGURED','Configure a WEATHER_DB D1 binding or Cloudflare Cache API for weather caching.',503);
    const edge=caches.default;
    store={record:async event=>{transientEvents=[{provider:'NASA POWER',...event},...transientEvents].slice(0,20);},status:async()=>({entries:[],quality:null,events:transientEvents,persistent:false}),cache:{get:async key=>{const response=await edge.match('https://hingasmart-weather-cache.invalid/'+encodeURIComponent(key));return response?response.json():null;},set:async(key,data)=>{await edge.put('https://hingasmart-weather-cache.invalid/'+encodeURIComponent(key),new Response(JSON.stringify(data),{headers:{'Content-Type':'application/json','Cache-Control':'public, max-age=2678400'}}));}},
-    consume:async(key,limit=60)=>{const window=Math.floor(Date.now()/60000),old=transientLimits.get(key),used=old?.window===window?old.used+1:1;if(used>limit)throw failure('APP_RATE_LIMIT','Too many weather requests. Retry in a minute.',429,60);transientLimits.set(key,{window,used});for(const [id,value]of transientLimits)if(value.window<window-1)transientLimits.delete(id);}};
+    consume:async(key,limit=60,cost=1,windowMs=60000)=>{const window=Math.floor(Date.now()/windowMs)*windowMs,old=transientLimits.get(key),used=old?.window===window?old.used+cost:cost;if(used>limit)throw failure('APP_RATE_LIMIT','Weather request budget reached. Retry after the limit window.',429,Math.ceil((window+windowMs-Date.now())/1000));transientLimits.set(key,{window,used});for(const [id,value]of transientLimits)if(value.window<Date.now()-2*86400000)transientLimits.delete(id);}};
   }
   service=createWeatherService(store);return {service,store};
  })().catch(error=>{setup=undefined;throw error;});return setup;
@@ -48,10 +48,13 @@ export async function runWeatherStatus(user){
  assertWeatherAccess(user);
  if(!['super_admin','data_manager'].includes(normalizeRole(user)))throw failure('FORBIDDEN','Only administrators and data managers can inspect integration operations.',403);
  await authorize(user);const report=await store.status(),entries=report.entries;
- const latest=entries.map(item=>item.source.retrievedAt).sort().at(-1),events=report.events;
- const years=[...new Set(entries.map(item=>Number(item.cache_key.split('|').at(-1))))].sort((a,b)=>a-b);
+ function providerReport(provider){
+  const selected=entries.filter(item=>item.source.provider===provider),events=report.events.filter(item=>item.provider===provider);
+  const latest=selected.map(item=>item.source.retrievedAt).sort().at(-1);
+  return {provider,status:events[0]?.event==='error'?'last-attempt-failed':latest?'verified-cache':'not-yet-retrieved',lastSuccessfulRetrieval:latest??null,entries:selected.length,gridCells:new Set(selected.map(item=>item.cache_key.split('|')[1])).size,years:[...new Set(selected.map(item=>Number(item.cache_key.split('|').at(-1))))].sort((a,b)=>a-b),staleEntries:selected.filter(item=>item.expires_at<=Date.now()).length,quality:report.qualityByProvider?.[provider]??null,events,source:selected.find(item=>item.source.retrievedAt===latest)?.source??null};
+ }
  let meteo;try{meteo=await runMeteoCatalogue(user);}catch(error){meteo={status:'delivery-error',message:error.code&&error.status?error.message:'The authorized delivery could not be validated.',locations:[]};}
- return {checkedAt:new Date().toISOString(),persistent:report.persistent,nasa:{provider:'NASA POWER',status:events[0]?.event==='error'?'last-attempt-failed':latest?'verified-cache':'not-yet-retrieved',lastSuccessfulRetrieval:latest??null,entries:entries.length,gridCells:new Set(entries.map(item=>item.cache_key.split('|')[1])).size,years,staleEntries:entries.filter(item=>item.expires_at<=Date.now()).length,quality:report.quality,events,source:entries.find(item=>item.source.retrievedAt===latest)?.source??null},meteo};
+ return {checkedAt:new Date().toISOString(),persistent:report.persistent,nasa:providerReport('NASA POWER'),era5:providerReport('Open-Meteo'),events:report.events,meteo};
 }
 function resolveLocation(input){
  if(input.district)return WEATHER_LOCATIONS.find(item=>item.district===input.district);
@@ -65,6 +68,7 @@ async function authorize(user){
  const key=Array.from(new Uint8Array(digest),byte=>byte.toString(16).padStart(2,'0')).join('');
  await storageContext.store.consume('user:'+key,60);return storageContext.service;
 }
+export async function authorizeClimateAnalysis(user){const engine=await authorize(user);return {engine,store};}
 export async function runWeather(user,input){
  const engine=await authorize(user),location=resolveLocation(input.location);
  return spatialWeatherRange(engine,location,input.start,input.end,input.dataset??'merra2');
@@ -82,7 +86,7 @@ export async function runWeatherBaseline(user,input){
  const engine=await authorize(user),location=resolveLocation(input.location),first=seasonRange(input.baselineStart,input.season),last=seasonRange(input.baselineEnd,input.season),current=seasonRange(input.year,input.season);
  const [history,selected]=await Promise.all([spatialWeatherRange(engine,location,first.start,last.end,input.dataset??'merra2'),spatialWeatherRange(engine,location,current.start,current.end,input.dataset??'merra2')]);
  const rows=[...new Map([...history.rows,...selected.rows].map(row=>[row.date,row])).values()].sort((a,b)=>a.date.localeCompare(b.date));
- return {...climateBaseline(rows,input),dataset:input.dataset??'merra2',spatialSupport:history.spatialSupport,location:history.location,selectedRows:selected.rows,sources:[...history.sources,...selected.sources],cache:{status:history.cache.status==='stale'||selected.cache.status==='stale'?'stale':history.cache.status==='cached'&&selected.cache.status==='cached'?'cached':'refreshed',retrievedAt:[history.cache.retrievedAt,selected.cache.retrievedAt].sort()[0]}};
+ return {...climateBaseline(rows,input),dataset:input.dataset??'merra2',spatialSupport:history.spatialSupport,location:history.location,errors:[...history.errors??[],...selected.errors??[]],historyCells:history.cells??[],selectedRows:selected.rows,sources:[...history.sources,...selected.sources],cache:{status:[history.cache.status,selected.cache.status].includes('unavailable')?'unavailable':[history.cache.status,selected.cache.status].includes('partial')?'partial':[history.cache.status,selected.cache.status].includes('stale')?'stale':history.cache.status==='cached'&&selected.cache.status==='cached'?'cached':'refreshed',retrievedAt:[history.cache.retrievedAt,selected.cache.retrievedAt].filter(Boolean).sort()[0]??null}};
 }
 export async function safeWeather(action){
  try{return {ok:true,data:await action()};}

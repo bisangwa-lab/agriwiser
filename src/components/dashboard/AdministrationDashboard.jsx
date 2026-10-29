@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { WeatherIntegrationStatus } from '@/components/weather/WeatherIntegrationStatus';
-import { Database, FileUp, ShieldCheck, TriangleAlert, Users } from "lucide-react";
+import { CloudSun, Database, FileUp, ShieldCheck, TriangleAlert, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/common/PageHeader";
 import { StatCard } from "@/components/common/StatCard";
@@ -43,7 +42,9 @@ export default function AdministrationDashboard() {
       <StatCard label="Imports needing review" value={imports.error ? undefined : importsForReview} icon={FileUp} footnote="Warnings or failed imports" />
       <StatCard label="Validation warnings" value={imports.error ? undefined : warnings} icon={ShieldCheck} footnote="Across recorded imports" />
     </section>
-    <WeatherIntegrationStatus />
+    <DashboardCard title="Weather integrations" subtitle="Provider operations in Data management" action={<Button asChild size="sm" variant="outline" className="gap-2"><Link to="/data-sources" search={{ tab: 'weather' }}><CloudSun className="h-3.5 w-3.5" aria-hidden />View integration status</Link></Button>}>
+      <p className="text-xs leading-relaxed text-muted-foreground">Inspect NASA POWER, Open-Meteo ERA5 and Meteo Rwanda separately, with cached coverage, missing-data rates, retrieval timestamps and recent provider outcomes.</p>
+    </DashboardCard>
     <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_300px]">
       <div className="space-y-5">
         <DashboardCard title="Recent imports" subtitle="Track what was received and what needs checking" action={<DashboardLink to="/data-sources">View catalogue</DashboardLink>} contentClassName="p-0">

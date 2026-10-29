@@ -54,7 +54,7 @@ export function TrendChart({ data, xKey = "label", series, unitShort, height = 3
             tickLine={false}
             axisLine={false}
             width={64}
-            tickFormatter={(value) => formatNumber(value, 0)}
+            tickFormatter={(value) => formatNumber(value, Math.min(2, series[0]?.digits ?? 0))}
           />
           <Tooltip
             content={
