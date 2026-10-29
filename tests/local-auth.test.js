@@ -5,7 +5,7 @@ import { DatabaseSync } from "node:sqlite";
 import { createLocalAuthService, SESSION_SECONDS } from "../src/lib/local-auth-service.js";
 import { tokenHash } from "../src/lib/local-password.js";
 import { QUICK_LOCAL_ACCOUNTS, quickLoginAllowed } from "../src/lib/local-quick-login.js";
-import { PANEL_ORDER, canOpenPanel } from "../src/lib/rbac.js";
+import { PANEL_ORDER, canOpenPanel, activePanelForPath } from "../src/lib/rbac.js";
 import { destinationAfterSignIn } from "../src/lib/sign-in.js";
 
 const schema = readFileSync(new URL("../migrations/0001_local_auth.sql", import.meta.url), "utf8");
@@ -131,4 +131,20 @@ test("all five Base44 panels have separate accounts, assigned landing pages and 
     assert.equal(destinationAfterSignIn(user, account.path), account.path);
     for (const panel of PANEL_ORDER) assert.equal(canOpenPanel(user, panel), key === "administrator" || panel === account.key);
   }
+});
+
+test("shared weather navigation preserves the authorized originating workspace", () => {
+  const admin = {role: "admin", workspace_role: "super_admin"};
+  const analyst = {role: "user", workspace_role: "agricultural_analyst"};
+  const officer = {role: "user", workspace_role: "agricultural_officer"};
+  assert.equal(activePanelForPath(admin, "/weather", "analytics", "admin"), "analytics");
+  assert.equal(activePanelForPath(admin, "/weather", "field_operations", "admin"), "field_operations");
+  assert.equal(activePanelForPath(admin, "/weather", "admin", "analytics"), "admin");
+  assert.equal(activePanelForPath(admin, "/weather", undefined, "analytics"), "analytics");
+  assert.equal(activePanelForPath(admin, "/weather"), "admin");
+  assert.equal(activePanelForPath(analyst, "/weather", "admin", "analytics"), "analytics");
+  assert.equal(activePanelForPath(officer, "/weather", "admin", "field_operations"), "field_operations");
+  assert.equal(activePanelForPath(analyst, "/weather", "admin", "admin"), "analytics");
+  assert.equal(activePanelForPath(admin, "/compare", "admin", "admin"), "analytics");
+  assert.equal(activePanelForPath(admin, "/weather", "__proto__", "field_operations"), "field_operations");
 });
