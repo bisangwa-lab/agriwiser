@@ -19,7 +19,7 @@ const NOTE_LABEL = NOTE_TYPES.reduce((acc, item) => {
 }, {});
 
 /** Notes, field observations and evidence attached to an investigation. */
-export function ObservationsPanel({ investigationId }) {
+export function ObservationsPanel({ investigationId, isDemo = false }) {
   const { user } = useAuth();
   const { data: notes = [], isLoading, refetch } = useInvestigationNotes(investigationId);
   const [form, setForm] = useState({ note_type: "field_observation", content: "", observed_on: "" });
@@ -42,7 +42,7 @@ export function ObservationsPanel({ investigationId }) {
         observed_on: form.observed_on || new Date().toISOString().slice(0, 10),
         author_name: user?.full_name ?? user?.email ?? "Unknown",
         author_email: user?.email ?? "",
-        is_demo: false,
+        is_demo: Boolean(isDemo),
       });
       setForm((prev) => ({ ...prev, content: "", observed_on: "" }));
       await refetch();
