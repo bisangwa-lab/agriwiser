@@ -3,6 +3,7 @@ import schema from "../../migrations/0002_local_data.sql?raw";
 import { localSessionUser } from "./local-auth.server.js";
 import { readLocalRecords } from "./local-data-service.js";
 import { createDistrictReview, saveDistrictFinding } from "./district-review-service.js";
+import { mutateFieldWork } from "./field-work-service.js";
 
 let initialized;
 export async function runLocalRead(input) {
@@ -22,4 +23,9 @@ export async function runDistrictReview(input) {
 export async function runDistrictFinding(input) {
   await runLocalRead({ entity: "Dataset", options: { limit: 1 } });
   return saveDistrictFinding(env.LOCAL_AUTH_DB, await localSessionUser(), input);
+}
+
+export async function runLocalFieldWrite(input) {
+  await runLocalRead({ entity: "Dataset", options: { limit: 1 } });
+  return mutateFieldWork(env.LOCAL_AUTH_DB, await localSessionUser(), input);
 }
