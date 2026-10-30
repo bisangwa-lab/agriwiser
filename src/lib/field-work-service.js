@@ -63,6 +63,15 @@ const getStored = async (db, entity, id) => {
   if (!row) throw fail("This field-work record was not found.", 404);
   return { original: row.data, record: JSON.parse(row.data) };
 };
+async function resolveAssignee(db, email) {
+  const normalized = optionalText(email, "Assigned officer email", 254).toLowerCase();
+  if (!normalized) return { assignee_name: "", assignee_email: "" };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalized)) throw fail("Enter a valid officer email address.");
+  const officer = await db.prepare("SELECT full_name,email,workspace_role,active FROM local_users WHERE email=?")
+    .bind(normalized).first();
+  if (!officer?.active || !WRITERS.has(officer.workspace_role)) throw fail("Assign an existing, active field-work account. Check the officer email.");
+  return { assignee_name: officer.full_name || officer.email, assignee_email: officer.email };
+}
 async function parentRecord(db, id) {
   requiredText(id, "Investigation reference", 240);
   return (await getStored(db, "Investigation", id)).record;
@@ -79,10 +88,11 @@ export async function mutateFieldWork(db, user, input, now = () => new Date().to
       const reason = requiredText(data.reason, "Reason for investigation", 2000, 10);
       const alert = data.alert_id ? (await getStored(db, "Alert", requiredText(data.alert_id, "Alert reference", 240))).record : null;
       if (data.status && data.status !== "open") throw fail("New investigations begin as open.");
+      const assignee = await resolveAssignee(db, data.assignee_email);
       record = {
         id: crypto.randomUUID(), title, reason,
         ...textFields(data, ["description", "questions", "evidence"], 4000),
-        ...textFields(data, ["assignee_name", "assignee_email", "period"], 180),
+        ...textFields(data, ["period"], 180), ...assignee,
         crop: among(data.crop, CROPS, "crop"),
         district: among(data.district, DISTRICT_NAMES, "district"),
         indicator: among(data.indicator, ["production", "harvested_area", "yield"], "indicator"),
@@ -132,12 +142,13 @@ export async function mutateFieldWork(db, user, input, now = () => new Date().to
     const nextStatus = among(data.status ?? stored.status, enumKeys(INVESTIGATION_STATUSES), "investigation status", false);
     const summary = optionalText(data.outcome_summary ?? stored.outcome_summary, "Outcome", 4000);
     if (nextStatus === "completed" && summary.length < 15) throw fail("Write an outcome of at least 15 characters before completing an investigation.");
+    const assignee = await resolveAssignee(db, data.assignee_email ?? stored.assignee_email);
     record = {
       ...stored,
       title: requiredText(data.title ?? stored.title, "Investigation title", 180, 5),
       reason: requiredText(data.reason ?? stored.reason, "Reason for investigation", 2000, 10),
       ...textFields({ ...stored, ...data }, ["description", "questions"], 4000),
-      ...textFields({ ...stored, ...data }, ["assignee_name", "assignee_email", "period"], 180),
+      ...textFields({ ...stored, ...data }, ["period"], 180), ...assignee,
       crop: among(emptyIf(data.crop ?? stored.crop), CROPS, "crop"),
       district: among(emptyIf(data.district ?? stored.district), DISTRICT_NAMES, "district"),
       indicator: among(emptyIf(data.indicator ?? stored.indicator), ["production", "harvested_area", "yield"], "indicator"),
