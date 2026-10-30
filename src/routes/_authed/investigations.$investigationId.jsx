@@ -72,10 +72,10 @@ function InvestigationDetailPage() {
     try {
       const payload = { ...form, ...extra };
       if (payload.status === "completed" && !payload.closed_date) payload.closed_date = new Date().toISOString();
-      await base44.entities.Investigation.update(investigationId, payload);
+      const savedRecord = await base44.entities.Investigation.update(investigationId, payload);
       await queryClient.invalidateQueries({ queryKey: ["investigation", investigationId] });
       await queryClient.invalidateQueries({ queryKey: ["investigations"] });
-      setForm((prev) => ({ ...prev, ...payload }));
+      setForm((prev) => ({ ...prev, ...payload, assignee_name: savedRecord?.assignee_name ?? prev.assignee_name, assignee_email: savedRecord?.assignee_email ?? prev.assignee_email }));
       setNotice("Saved. The record and its evidence are stored, not held in the browser.");
     } catch (err) {
       setSaveError(err?.message ?? "The investigation could not be saved.");
@@ -300,12 +300,12 @@ function InvestigationDetailPage() {
 
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="space-y-1.5">
-                <Label htmlFor="d-assignee">Assigned to</Label>
+                <Label htmlFor="d-assignee">Assigned officer (from account)</Label>
                 <Input
                   id="d-assignee"
                   value={form.assignee_name}
-                  onChange={(event) => set("assignee_name", event.target.value)}
-                  placeholder="Name"
+                  readOnly
+                  placeholder="Enter an officer email to assign"
                 />
                 {user?.full_name && form.assignee_name !== user.full_name ? (
                   <button
@@ -325,9 +325,10 @@ function InvestigationDetailPage() {
                 <Input id="d-due" type="date" value={form.due_date} onChange={(event) => set("due_date", event.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="d-assignee-email">Assignee email</Label>
+                <Label htmlFor="d-assignee-email">Officer account email</Label>
                 <Input
                   id="d-assignee-email"
+                  type="email"
                   value={form.assignee_email}
                   onChange={(event) => set("assignee_email", event.target.value)}
                 />
@@ -417,15 +418,14 @@ function InvestigationDetailPage() {
                 <Button
                   size="sm"
                   onClick={() => save({ status: "completed", closed_date: new Date().toISOString() })}
-                  disabled={saving || !form.outcome_summary?.trim()}
+                  disabled={saving || (form.outcome_summary?.trim().length ?? 0) < 15}
                 >
                   Complete with this summary
                 </Button>
               </div>
-              {!form.outcome_summary?.trim() ? (
+              {(form.outcome_summary?.trim().length ?? 0) < 15 ? (
                 <p className="text-[11.5px] text-muted-foreground">
-                  A summary is required before an investigation can be completed. A record is never closed as a
-                  conclusion without a written outcome.
+                  Write at least 15 characters describing the outcome before marking the investigation complete.
                 </p>
               ) : null}
               {investigation.closed_date ? (
