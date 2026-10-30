@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
-import { AlertTriangle, ArrowRight, CheckCircle2, ClipboardList, CloudRain, MapPin, Plus, Search, UserRoundCheck } from "lucide-react";
+import { AlertTriangle, ArrowRight, ClipboardList, CloudRain, MapPin, Plus, Search } from "lucide-react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { ToneTag, investigationStatusLabel, investigationStatusTone } from "@/components/common/ToneTag";
 import { EmptyState } from "@/components/common/EmptyState";
@@ -42,7 +42,7 @@ export default function FieldDashboard() {
   const [search, setSearch] = useState("");
   const [createOpen, setCreateOpen] = useState(false);
   const [showWeather, setShowWeather] = useState(false);
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString().slice(0, 10); // Rwanda UTC+02, without DST.
   const items = investigations.data ?? [];
   const actions = followUps.data ?? [];
   const myEmail = (user?.email ?? "").toLowerCase();
