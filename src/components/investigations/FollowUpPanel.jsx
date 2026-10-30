@@ -14,7 +14,7 @@ import { base44, isLocalAuth } from "@/api/base44Client";
 import { useFollowUps } from "@/hooks/useAgriRecords";
 import { ListChecks, Loader2, Plus } from "lucide-react";
 
-export function FollowUpPanel({ investigationId }) {
+export function FollowUpPanel({ investigationId, isDemo = false }) {
   const client = useQueryClient();
   const { data: actions = [], isLoading, refetch } = useFollowUps(investigationId);
   const [form, setForm] = useState({ title: "", description: "", owner: "", due_date: "" });
@@ -46,6 +46,7 @@ export function FollowUpPanel({ investigationId }) {
         owner: form.owner.trim(),
         due_date: form.due_date,
         status: "pending",
+        is_demo: Boolean(isDemo),
       });
       setForm({ title: "", description: "", owner: "", due_date: "" });
       await refresh();
