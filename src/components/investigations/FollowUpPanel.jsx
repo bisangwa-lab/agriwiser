@@ -10,7 +10,7 @@ import { EmptyState } from "@/components/common/EmptyState";
 import { ToneTag, followUpStatusLabel, followUpStatusTone } from "@/components/common/ToneTag";
 import { FOLLOWUP_STATUSES } from "@/lib/constants";
 import { formatDate } from "@/lib/format";
-import { base44 } from "@/api/base44Client";
+import { base44, isLocalAuth } from "@/api/base44Client";
 import { useFollowUps } from "@/hooks/useAgriRecords";
 import { ListChecks, Loader2, Plus } from "lucide-react";
 
@@ -63,6 +63,7 @@ export function FollowUpPanel({ investigationId }) {
       await base44.entities.FollowUpAction.update(action.id, {
         status,
         ...(notes !== undefined ? { notes } : {}),
+        ...(!isLocalAuth ? { completion_date: status === "completed" ? new Date().toISOString().slice(0, 10) : "" } : {}),
       });
       setCompletionId(null);
       setCompletionNotes("");
