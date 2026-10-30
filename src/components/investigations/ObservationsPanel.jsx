@@ -19,7 +19,7 @@ const NOTE_LABEL = NOTE_TYPES.reduce((acc, item) => {
 }, {});
 
 /** Notes, field observations and evidence attached to an investigation. */
-export function ObservationsPanel({ investigationId }) {
+export function ObservationsPanel({ investigationId, isDemo = false }) {
   const { user } = useAuth();
   const { data: notes = [], isLoading, refetch } = useInvestigationNotes(investigationId);
   const [form, setForm] = useState({ note_type: "field_observation", content: "", observed_on: "" });
@@ -28,8 +28,8 @@ export function ObservationsPanel({ investigationId }) {
 
   async function addNote(event) {
     event.preventDefault();
-    if (!form.content.trim()) {
-      setError("Write the observation before saving it.");
+    if (form.content.trim().length < 10) {
+      setError("Describe what was checked in at least 10 characters.");
       return;
     }
     setSaving(true);
@@ -42,7 +42,7 @@ export function ObservationsPanel({ investigationId }) {
         observed_on: form.observed_on || new Date().toISOString().slice(0, 10),
         author_name: user?.full_name ?? user?.email ?? "Unknown",
         author_email: user?.email ?? "",
-        is_demo: true,
+        is_demo: Boolean(isDemo),
       });
       setForm((prev) => ({ ...prev, content: "", observed_on: "" }));
       await refetch();
@@ -58,8 +58,7 @@ export function ObservationsPanel({ investigationId }) {
       <CardHeader className="pb-3">
         <CardTitle className="text-base">Observations and evidence</CardTitle>
         <CardDescription className="text-[12.5px]">
-          What was seen or collected, who recorded it and when. Entries are kept in addition to the evidence
-          that triggered the investigation.
+          Add dated field notes or source checks. Record only what was actually observed, and distinguish uncertainty from a verified finding.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -97,7 +96,9 @@ export function ObservationsPanel({ investigationId }) {
               rows={3}
               value={form.content}
               onChange={(event) => setForm((prev) => ({ ...prev, content: event.target.value }))}
-              placeholder="What was seen, and how it compares with the reported figure"
+              placeholder="What did you check? What did you actually observe? What remains uncertain?"
+              required
+              minLength={10}
             />
           </div>
           {error ? <p className="text-[12.5px] text-destructive">{error}</p> : null}

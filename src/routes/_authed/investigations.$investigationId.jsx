@@ -37,7 +37,6 @@ const EDITABLE = [
   "district",
   "indicator",
   "period",
-  "evidence",
   "questions",
   "assignee_name",
   "assignee_email",
@@ -72,11 +71,16 @@ function InvestigationDetailPage() {
     setNotice(null);
     try {
       const payload = { ...form, ...extra };
+      if (["completed", "cancelled"].includes(payload.status) && (payload.outcome_summary?.trim().length ?? 0) < 15) {
+        setSaveError("Describe the outcome or cancellation reason in at least 15 characters before closing this case.");
+        return;
+      }
       if (payload.status === "completed" && !payload.closed_date) payload.closed_date = new Date().toISOString();
-      await base44.entities.Investigation.update(investigationId, payload);
+      if (payload.status !== "completed") payload.closed_date = "";
+      const savedRecord = await base44.entities.Investigation.update(investigationId, payload);
       await queryClient.invalidateQueries({ queryKey: ["investigation", investigationId] });
       await queryClient.invalidateQueries({ queryKey: ["investigations"] });
-      setForm((prev) => ({ ...prev, ...payload }));
+      setForm((prev) => ({ ...prev, ...payload, assignee_name: savedRecord?.assignee_name ?? prev.assignee_name, assignee_email: savedRecord?.assignee_email ?? prev.assignee_email }));
       setNotice("Saved. The record and its evidence are stored, not held in the browser.");
     } catch (err) {
       setSaveError(err?.message ?? "The investigation could not be saved.");
@@ -159,12 +163,17 @@ function InvestigationDetailPage() {
         </p>
       ) : null}
 
+      <div className="rounded-xl border bg-muted/35 p-4 text-xs leading-relaxed text-muted-foreground">
+        <p className="font-semibold text-foreground">Work through the investigation</p>
+        <p className="mt-1">1. Confirm the question and assignment → 2. Record dated checks → 3. Assign follow-up work → 4. Summarize the outcome. Save changes when you update the investigation details.</p>
+      </div>
+
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
         <Card className="panel border-0 shadow-none">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base">Details</CardTitle>
+            <CardTitle className="text-base">1. Review the finding and assignment</CardTitle>
             <CardDescription className="text-[12.5px]">
-              Editing these fields does not change the evidence recorded when the investigation was created.
+              Confirm the district, crop, reporting period and who is responsible. Original evidence remains unchanged.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -296,12 +305,12 @@ function InvestigationDetailPage() {
 
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="space-y-1.5">
-                <Label htmlFor="d-assignee">Assigned to</Label>
+                <Label htmlFor="d-assignee">Assigned officer (from account)</Label>
                 <Input
                   id="d-assignee"
                   value={form.assignee_name}
-                  onChange={(event) => set("assignee_name", event.target.value)}
-                  placeholder="Name"
+                  readOnly
+                  placeholder="Enter an officer email to assign"
                 />
                 {user?.full_name && form.assignee_name !== user.full_name ? (
                   <button
@@ -321,9 +330,10 @@ function InvestigationDetailPage() {
                 <Input id="d-due" type="date" value={form.due_date} onChange={(event) => set("due_date", event.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="d-assignee-email">Assignee email</Label>
+                <Label htmlFor="d-assignee-email">Officer account email</Label>
                 <Input
                   id="d-assignee-email"
+                  type="email"
                   value={form.assignee_email}
                   onChange={(event) => set("assignee_email", event.target.value)}
                 />
@@ -335,20 +345,16 @@ function InvestigationDetailPage() {
         <div className="space-y-5">
           <Card className="panel border-0 shadow-none">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base">Evidence and source context</CardTitle>
+              <CardTitle className="text-base">Original source evidence</CardTitle>
               <CardDescription className="text-[12.5px]">
                 Preserved from the moment the investigation was created, so the original finding is never lost.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-1.5">
-                <Label htmlFor="d-evidence">Supporting evidence and source references</Label>
-                <Textarea
-                  id="d-evidence"
-                  rows={5}
-                  value={form.evidence}
-                  onChange={(event) => set("evidence", event.target.value)}
-                />
+                <p className="text-xs font-medium text-foreground">Original source notes (read-only)</p>
+                <p className="whitespace-pre-line rounded-lg border border-border bg-muted/40 p-3 text-xs leading-relaxed text-muted-foreground">{investigation.evidence || "No original evidence note was supplied."}</p>
+                <p className="text-[11px] text-muted-foreground">Add new checks below as dated observations. The original evidence is not overwritten.</p>
               </div>
 
               {investigation.alert_id ? (
@@ -382,11 +388,19 @@ function InvestigationDetailPage() {
             </CardContent>
           </Card>
 
+        </div>
+      </div>
+
+      <div className="grid gap-5 xl:grid-cols-2">
+        <ObservationsPanel investigationId={investigationId} isDemo={Boolean(investigation.is_demo)} />
+        <FollowUpPanel investigationId={investigationId} isDemo={Boolean(investigation.is_demo)} />
+      </div>
+
           <Card className="panel border-0 shadow-none">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base">Outcome</CardTitle>
+              <CardTitle className="text-base">4. Record the outcome</CardTitle>
               <CardDescription className="text-[12.5px]">
-                Close the investigation with what was found, what remains uncertain, and what should happen next.
+                Write what the evidence establishes, what is still uncertain, and the recommended next step. This does not prove a cause.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -409,15 +423,14 @@ function InvestigationDetailPage() {
                 <Button
                   size="sm"
                   onClick={() => save({ status: "completed", closed_date: new Date().toISOString() })}
-                  disabled={saving || !form.outcome_summary?.trim()}
+                  disabled={saving || (form.outcome_summary?.trim().length ?? 0) < 15}
                 >
                   Complete with this summary
                 </Button>
               </div>
-              {!form.outcome_summary?.trim() ? (
+              {(form.outcome_summary?.trim().length ?? 0) < 15 ? (
                 <p className="text-[11.5px] text-muted-foreground">
-                  A summary is required before an investigation can be completed. A record is never closed as a
-                  conclusion without a written outcome.
+                  Write at least 15 characters describing the outcome before marking the investigation complete.
                 </p>
               ) : null}
               {investigation.closed_date ? (
@@ -427,13 +440,6 @@ function InvestigationDetailPage() {
               ) : null}
             </CardContent>
           </Card>
-        </div>
-      </div>
-
-      <div className="grid gap-5 xl:grid-cols-2">
-        <ObservationsPanel investigationId={investigationId} />
-        <FollowUpPanel investigationId={investigationId} />
-      </div>
 
       <div className="flex flex-wrap gap-2">
         <Button variant="ghost" size="sm" onClick={() => navigate({ to: "/investigations" })}>

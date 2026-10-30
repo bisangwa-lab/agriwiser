@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { base44 } from "@/api/base44Client";
+import { fetchAll } from "@/lib/fetch-all";
 
 /** Dataset descriptions, units, sources and limitations. */
 export function useDatasets() {
@@ -41,8 +42,8 @@ export function useInvestigations({ enabled = true } = {}) {
     queryKey: ["investigations"],
     enabled,
     queryFn: async () => {
-      const page = await base44.entities.Investigation.list({ sort: "-created_date", limit: 300 });
-      return page?.items ?? [];
+      return (await fetchAll(base44.entities.Investigation, {}, { pageSize: 500 }))
+        .sort((a, b) => (b.created_date ?? "").localeCompare(a.created_date ?? ""));
     },
     staleTime: 20_000,
   });
@@ -53,8 +54,8 @@ export function useAllFollowUps() {
   return useQuery({
     queryKey: ["follow-ups-all"],
     queryFn: async () => {
-      const page = await base44.entities.FollowUpAction.list({ sort: "due_date", limit: 300 });
-      return page?.items ?? [];
+      return (await fetchAll(base44.entities.FollowUpAction, {}, { pageSize: 500 }))
+        .sort((a, b) => (a.due_date ?? "9999").localeCompare(b.due_date ?? "9999"));
     },
     staleTime: 30_000,
   });
@@ -74,11 +75,8 @@ export function useFollowUps(investigationId) {
     queryKey: ["follow-ups", investigationId],
     enabled: Boolean(investigationId),
     queryFn: async () => {
-      const page = await base44.entities.FollowUpAction.filter(
-        { investigation_id: investigationId },
-        { sort: "created_date", limit: 100 },
-      );
-      return page?.items ?? [];
+      return (await fetchAll(base44.entities.FollowUpAction, { investigation_id: investigationId }, { pageSize: 500 }))
+        .sort((a, b) => (a.created_date ?? "").localeCompare(b.created_date ?? ""));
     },
     staleTime: 10_000,
   });
@@ -89,11 +87,8 @@ export function useInvestigationNotes(investigationId) {
     queryKey: ["investigation-notes", investigationId],
     enabled: Boolean(investigationId),
     queryFn: async () => {
-      const page = await base44.entities.InvestigationNote.filter(
-        { investigation_id: investigationId },
-        { sort: "-created_date", limit: 200 },
-      );
-      return page?.items ?? [];
+      return (await fetchAll(base44.entities.InvestigationNote, { investigation_id: investigationId }, { pageSize: 500 }))
+        .sort((a, b) => (b.created_date ?? "").localeCompare(a.created_date ?? ""));
     },
     staleTime: 10_000,
   });

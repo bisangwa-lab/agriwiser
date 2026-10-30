@@ -12,6 +12,8 @@ import { ToneTag } from "@/components/common/ToneTag";
 import { AlertCard } from "@/components/alerts/AlertCard";
 import { NewInvestigationDialog } from "@/components/investigations/NewInvestigationDialog";
 import { useAlerts, useDatasets } from "@/hooks/useAgriRecords";
+import { useAuth } from "@/lib/AuthContext";
+import { canOpenPanel } from "@/lib/rbac";
 import { regenerateAlerts } from "@/lib/server-fns";
 import { ALERT_RULES, ALERT_SEVERITIES, ALERT_STATUSES, CROPS, DISTRICT_NAMES } from "@/lib/constants";
 import { formatNumber } from "@/lib/format";
@@ -69,6 +71,8 @@ function investigationDraftFrom(alert) {
 
 function AlertsPage() {
   const navigate = useNavigate();
+  const {user} = useAuth();
+  const canViewCases = canOpenPanel(user, "field_operations");
   const queryClient = useQueryClient();
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -117,6 +121,10 @@ function AlertsPage() {
 
   function startInvestigation(alert) {
     if (alert.investigation_id) {
+      if (!canViewCases) {
+        setNotice("This alert already has an investigation in Field Operations. Ask an authorized field officer for its status.");
+        return;
+      }
       navigate({ to: "/investigations/$investigationId", params: { investigationId: alert.investigation_id } });
       return;
     }
@@ -229,9 +237,9 @@ function AlertsPage() {
           Compare two values
         </Link>{" "}
         or{" "}
-        <Link to="/investigations" className="font-medium text-primary hover:underline">
+        {canViewCases ? <Link to="/investigations" className="font-medium text-primary hover:underline">
           open the investigation workspace
-        </Link>
+        </Link> : <span>create an investigation from an alert to hand it to Field Operations</span>}
         .
       </p>
 
@@ -241,6 +249,7 @@ function AlertsPage() {
         initialValues={draft}
         alertId={activeAlert?.id}
         onCreated={async () => {
+          setNotice(canViewCases ? "Investigation created. Open Field Operations to continue." : "Investigation created and available to authorized Field Operations staff.");
           await queryClient.invalidateQueries({ queryKey: ["alerts"] });
           await queryClient.invalidateQueries({ queryKey: ["investigations"] });
         }}
