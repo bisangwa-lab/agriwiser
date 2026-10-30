@@ -42,7 +42,8 @@ export function useInvestigations({ enabled = true } = {}) {
     queryKey: ["investigations"],
     enabled,
     queryFn: async () => {
-      if (isLocalAuth) return fetchAll(base44.entities.Investigation, {}, { pageSize: 500 });
+      if (isLocalAuth) return (await fetchAll(base44.entities.Investigation, {}, { pageSize: 500 }))
+        .sort((a, b) => (b.created_date ?? "").localeCompare(a.created_date ?? ""));
       const page = await base44.entities.Investigation.list({ sort: "-created_date", limit: 300 });
       return page?.items ?? [];
     },
@@ -55,7 +56,8 @@ export function useAllFollowUps() {
   return useQuery({
     queryKey: ["follow-ups-all"],
     queryFn: async () => {
-      if (isLocalAuth) return fetchAll(base44.entities.FollowUpAction, {}, { pageSize: 500 });
+      if (isLocalAuth) return (await fetchAll(base44.entities.FollowUpAction, {}, { pageSize: 500 }))
+        .sort((a, b) => (a.due_date ?? "9999").localeCompare(b.due_date ?? "9999"));
       const page = await base44.entities.FollowUpAction.list({ sort: "due_date", limit: 300 });
       return page?.items ?? [];
     },
@@ -77,7 +79,8 @@ export function useFollowUps(investigationId) {
     queryKey: ["follow-ups", investigationId],
     enabled: Boolean(investigationId),
     queryFn: async () => {
-      if (isLocalAuth) return fetchAll(base44.entities.FollowUpAction, { investigation_id: investigationId }, { pageSize: 500 });
+      if (isLocalAuth) return (await fetchAll(base44.entities.FollowUpAction, { investigation_id: investigationId }, { pageSize: 500 }))
+        .sort((a, b) => (a.created_date ?? "").localeCompare(b.created_date ?? ""));
       const page = await base44.entities.FollowUpAction.filter(
         { investigation_id: investigationId },
         { sort: "created_date", limit: 100 },
@@ -93,7 +96,8 @@ export function useInvestigationNotes(investigationId) {
     queryKey: ["investigation-notes", investigationId],
     enabled: Boolean(investigationId),
     queryFn: async () => {
-      if (isLocalAuth) return fetchAll(base44.entities.InvestigationNote, { investigation_id: investigationId }, { pageSize: 500 });
+      if (isLocalAuth) return (await fetchAll(base44.entities.InvestigationNote, { investigation_id: investigationId }, { pageSize: 500 }))
+        .sort((a, b) => (b.created_date ?? "").localeCompare(a.created_date ?? ""));
       const page = await base44.entities.InvestigationNote.filter(
         { investigation_id: investigationId },
         { sort: "-created_date", limit: 200 },
