@@ -392,8 +392,8 @@ function InvestigationDetailPage() {
       </div>
 
       <div className="grid gap-5 xl:grid-cols-2">
-        <ObservationsPanel investigationId={investigationId} />
-        <FollowUpPanel investigationId={investigationId} />
+        <ObservationsPanel investigationId={investigationId} isDemo={Boolean(investigation.is_demo)} />
+        <FollowUpPanel investigationId={investigationId} isDemo={Boolean(investigation.is_demo)} />
       </div>
 
           <Card className="panel border-0 shadow-none">
