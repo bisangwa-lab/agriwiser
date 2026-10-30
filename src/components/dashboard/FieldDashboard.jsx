@@ -1,72 +1,177 @@
-import { Link } from "@tanstack/react-router";
-import { WeatherContext } from '@/components/weather/WeatherContext';
-import { useEffect, useState } from "react";
-import { ClipboardCheck, ClipboardList, Clock3, Flag, MapPin, TriangleAlert } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useMemo, useState } from "react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
+import { AlertTriangle, ArrowRight, CheckCircle2, ClipboardList, CloudRain, MapPin, Plus, Search, UserRoundCheck } from "lucide-react";
 import { PageHeader } from "@/components/common/PageHeader";
-import { StatCard } from "@/components/common/StatCard";
-import { EmptyState } from "@/components/common/EmptyState";
 import { ToneTag, investigationStatusLabel, investigationStatusTone } from "@/components/common/ToneTag";
-import { DashboardCard, DashboardLink } from "./DashboardCard";
-import { DistributionChart } from "./DistributionChart";
+import { EmptyState } from "@/components/common/EmptyState";
+import { DashboardCard } from "./DashboardCard";
+import { NewInvestigationDialog } from "@/components/investigations/NewInvestigationDialog";
+import { WeatherContext } from "@/components/weather/WeatherContext";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useAllFollowUps, useInvestigations } from "@/hooks/useAgriRecords";
 import { useAuth } from "@/lib/AuthContext";
 
+const isOpen = (item) => !["completed", "cancelled"].includes(item.status);
+const day = (value) => typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : null;
+const urgency = (item, today) => {
+  if (!isOpen(item)) return 5;
+  if (day(item.due_date) && item.due_date < today) return 0;
+  if (!item.assignee_email) return 1;
+  if (item.status === "awaiting_evidence") return 2;
+  if (item.priority === "elevated") return 3;
+  return 4;
+};
+const nextStep = (item, today) => {
+  if (!isOpen(item)) return "Review the outcome and any remaining follow-up.";
+  if (day(item.due_date) && item.due_date < today) return "Past due — review the investigation and update its plan.";
+  if (!item.assignee_email) return "Choose who is responsible for checking this finding.";
+  if (item.status === "awaiting_evidence") return "Add the missing observations or source checks.";
+  if (item.status === "open") return "Review the original question and start collecting evidence.";
+  return "Record verified findings and agree the next action.";
+};
+
 export default function FieldDashboard() {
   const { user } = useAuth();
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const investigations = useInvestigations();
   const followUps = useAllFollowUps();
-  const [today, setToday] = useState(null);
-  useEffect(() => { setToday(new Date()); }, []);
-  const all = investigations.data ?? [];
+  const [filter, setFilter] = useState("attention");
+  const [search, setSearch] = useState("");
+  const [createOpen, setCreateOpen] = useState(false);
+  const [showWeather, setShowWeather] = useState(false);
+  const today = new Date().toISOString().slice(0, 10);
+  const items = investigations.data ?? [];
   const actions = followUps.data ?? [];
-  const mine = all.filter((item) => item.assignee_email?.toLowerCase() === user?.email?.toLowerCase());
-  const inProgress = all.filter((item) => item.status === "open" || item.status === "in_progress");
-  const awaiting = all.filter((item) => item.status === "awaiting_evidence");
-  const completed = all.filter((item) => item.status === "completed");
-  const openActions = actions.filter((item) => item.status === "pending" || item.status === "in_progress");
-  const dateOf = (value) => value && Number.isFinite(Date.parse(value)) ? Date.parse(value + (value.length === 10 ? "T23:59:59+02:00" : "")) : null;
-  const dueSoon = openActions.filter((item) => today && dateOf(item.due_date) !== null && dateOf(item.due_date) >= today.getTime() && dateOf(item.due_date) - today.getTime() <= 7 * 86400000);
-  const overdue = openActions.filter((item) => today && dateOf(item.due_date) !== null && dateOf(item.due_date) < today.getTime());
-  const recent = [...all].sort((a, b) => (b.updated_date ?? "").localeCompare(a.updated_date ?? "")).slice(0, 8);
+  const myEmail = (user?.email ?? "").toLowerCase();
+  const mine = items.filter((item) => isOpen(item) && item.assignee_email?.toLowerCase() === myEmail);
+  const unassigned = items.filter((item) => isOpen(item) && !item.assignee_email);
+  const overdue = items.filter((item) => isOpen(item) && day(item.due_date) && item.due_date < today);
+  const awaiting = items.filter((item) => isOpen(item) && item.status === "awaiting_evidence");
+  const pendingActions = actions.filter((action) => ["pending", "in_progress"].includes(action.status));
+  const overdueActions = pendingActions.filter((action) => day(action.due_date) && action.due_date < today);
+  const filters = [
+    { key: "attention", label: "Needs attention", count: [...new Set([...overdue, ...unassigned, ...awaiting].map(item => item.id))].length },
+    { key: "mine", label: "Assigned to me", count: mine.length },
+    { key: "unassigned", label: "Unassigned", count: unassigned.length },
+    { key: "all", label: "All investigations", count: items.length },
+  ];
+  const visible = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    const selected = items.filter((item) => {
+      if (filter === "attention" && !(overdue.some(row => row.id === item.id) || unassigned.some(row => row.id === item.id) || awaiting.some(row => row.id === item.id))) return false;
+      if (filter === "mine" && !(isOpen(item) && item.assignee_email?.toLowerCase() === myEmail)) return false;
+      if (filter === "unassigned" && !(isOpen(item) && !item.assignee_email)) return false;
+      return !term || [item.title, item.reason, item.crop, item.district].some(value => String(value ?? "").toLowerCase().includes(term));
+    });
+    return selected.sort((a, b) => urgency(a, today) - urgency(b, today) || (a.due_date || "9999").localeCompare(b.due_date || "9999") || (b.updated_date || "").localeCompare(a.updated_date || ""));
+  }, [items, filter, search, myEmail, today, overdue, unassigned, awaiting]);
+  const orderedActions = [...pendingActions].sort((a, b) => (a.due_date || "9999").localeCompare(b.due_date || "9999")).slice(0, 5);
 
-  return <div className="space-y-5">
-    <PageHeader eyebrow="Panel 3 · Field operations" title="Field operations overview" description="A clear view of assigned work, evidence to collect and actions due next."
-      actions={<Button asChild size="sm" className="gap-2 text-xs"><Link to="/investigations"><ClipboardList className="h-3.5 w-3.5" aria-hidden />Open investigations</Link></Button>} />
-    <section aria-label="Workload" className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-      <StatCard label="Assigned to me" value={mine.length} icon={ClipboardList} footnote="Matched to your account" />
-      <StatCard label="In progress" value={inProgress.length} icon={ClipboardCheck} footnote="Open or being investigated" />
-      <StatCard label="Awaiting evidence" value={awaiting.length} icon={Flag} footnote="Further evidence is needed" />
-      <StatCard label="Actions due soon" value={dueSoon.length} icon={Clock3} footnote="Within the next seven days" />
-      <StatCard label="Overdue actions" value={overdue.length} icon={TriangleAlert} footnote="Past due and still open" />
-    </section>
-    <WeatherContext />
-    <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1fr)_300px]">
-      <div className="space-y-5">
-        <DashboardCard title="Investigation queue" subtitle="Recently updated records you are authorized to view" action={<DashboardLink to="/investigations">View all</DashboardLink>} contentClassName="p-0">
-          <div className="overflow-x-auto"><table className="w-full min-w-[560px] text-left text-[12px]">
-            <thead className="border-b border-border/70 bg-muted/35 text-[10px] uppercase tracking-wider text-muted-foreground"><tr>{["Investigation", "Location", "Assigned to", "Status"].map((title) => <th key={title} className="px-5 py-3 font-medium">{title}</th>)}</tr></thead>
-            <tbody className="divide-y divide-border/60">{recent.map((item) => <tr key={item.id} className="hover:bg-muted/25">
-              <td className="max-w-[280px] px-5 py-4"><Link to="/investigations/$investigationId" params={{ investigationId: item.id }} className="font-medium hover:text-primary hover:underline">{item.title}</Link><p className="mt-1 text-[10.5px] text-muted-foreground">{item.crop ?? "Crop not recorded"} · {item.period ?? "Period not recorded"}</p></td>
-              <td className="px-5 py-4 text-muted-foreground">{item.district ?? "Not recorded"}</td><td className="px-5 py-4 text-muted-foreground">{item.assignee_name || "Unassigned"}</td><td className="px-5 py-4"><ToneTag tone={investigationStatusTone(item.status)}>{investigationStatusLabel(item.status)}</ToneTag></td>
-            </tr>)}</tbody>
-          </table></div>
-          {!recent.length && <EmptyState icon={ClipboardList} title="No investigations in your queue" description="Authorized tasks will appear here with their question, location, assignee and current status." className="py-14" />}
-        </DashboardCard>
-        <DashboardCard title="Upcoming follow-up actions" subtitle="Keep evidence collection moving">
-          {dueSoon.length ? <ul className="divide-y divide-border/60">{dueSoon.slice(0, 5).map((item) => <li key={item.id} className="flex items-center justify-between gap-3 py-3"><span className="text-[12px] font-medium">{item.title}</span><span className="whitespace-nowrap text-[11px] text-muted-foreground">{item.due_date}</span></li>)}</ul>
-            : <div className="flex items-start gap-3 rounded-xl bg-muted/30 p-4"><Clock3 className="mt-0.5 h-5 w-5 text-primary" aria-hidden /><div><p className="text-[12px] font-medium">No actions due in the next seven days</p><p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">Actions with a recorded due date will be listed here.</p></div></div>}
-        </DashboardCard>
+  return <div className="space-y-6">
+    <PageHeader eyebrow="Field operations" title="Turn findings into action"
+      description="Know what needs checking, record what you found, and follow up until the next step is clear."
+      actions={<Button size="sm" onClick={() => setCreateOpen(true)}><Plus className="mr-1.5 h-4 w-4"/>Start an investigation</Button>} />
+
+    <section aria-label="Field work at a glance" className="grid gap-3 sm:grid-cols-3">
+      <div className="rounded-xl border bg-card p-4">
+        <p className="text-xs text-muted-foreground">My active investigations</p>
+        <p className="mt-2 text-3xl font-semibold tabular-nums">{mine.length}</p>
+        <button className="mt-2 text-xs font-medium text-primary underline" onClick={() => setFilter("mine")}>View assigned work</button>
       </div>
+      <div className="rounded-xl border bg-card p-4">
+        <p className="text-xs text-muted-foreground">Unassigned investigations</p>
+        <p className="mt-2 text-3xl font-semibold tabular-nums">{unassigned.length}</p>
+        <button className="mt-2 text-xs font-medium text-primary underline" onClick={() => setFilter("unassigned")}>Review ownership</button>
+      </div>
+      <div className="rounded-xl border bg-card p-4">
+        <p className="text-xs text-muted-foreground">Overdue work</p>
+        <p className="mt-2 text-3xl font-semibold tabular-nums">{overdue.length + overdueActions.length}</p>
+        <p className="mt-2 text-xs text-muted-foreground">{overdue.length} investigations · {overdueActions.length} follow-ups</p>
+      </div>
+    </section>
+
+    <div className="rounded-xl border bg-muted/30 p-4">
+      <p className="text-xs font-semibold text-foreground">How to move a finding forward</p>
+      <ol className="mt-3 grid gap-3 text-xs text-muted-foreground sm:grid-cols-4">
+        {[
+          ["1", "Review the concern", "Read the original figures and reporting period."],
+          ["2", "Check the evidence", "Record observations, gaps and source checks."],
+          ["3", "Agree the next action", "Assign a responsible person and due date."],
+          ["4", "Record the outcome", "State what was established and what is still unknown."],
+        ].map(([number, label, description]) => <li key={number} className="flex gap-2">
+          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 font-semibold text-primary">{number}</span>
+          <span><strong className="block text-foreground">{label}</strong><span className="mt-1 block leading-relaxed">{description}</span></span>
+        </li>)}
+      </ol>
+    </div>
+
+    <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1.6fr)_minmax(260px,0.8fr)]">
+      <DashboardCard title="Investigation queue" subtitle="Start with work that is late, unassigned or waiting for evidence."
+        action={<Button asChild size="sm" variant="outline"><Link to="/investigations">See all <ArrowRight className="ml-1.5 h-3.5 w-3.5"/></Link></Button>}>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter investigations">
+          {filters.map(option => <Button key={option.key} size="sm" variant={filter === option.key ? "default" : "outline"} aria-pressed={filter === option.key} onClick={() => setFilter(option.key)}>
+            {option.label} <span className="ml-1.5 tabular-nums opacity-70">{option.count}</span>
+          </Button>)}
+        </div>
+        <div className="relative mt-4">
+          <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground"/>
+          <Input className="pl-9" value={search} onChange={event => setSearch(event.target.value)} placeholder="Find a crop, district or investigation" aria-label="Search the field investigation queue"/>
+        </div>
+        {investigations.error ? <p role="alert" className="mt-4 text-sm text-destructive">{investigations.error.message}</p>
+          : investigations.isLoading ? <p role="status" className="mt-5 text-sm text-muted-foreground">Loading your field work…</p>
+          : visible.length === 0 ? <EmptyState icon={ClipboardList} title={items.length ? "No matching investigations" : "No investigations yet"}
+              description={items.length ? "Choose another filter to see active or completed work." : "Start by documenting a finding that needs verification."}
+              action={<Button size="sm" onClick={() => setCreateOpen(true)}>Start an investigation</Button>} className="py-8"/>
+          : <ul className="mt-4 divide-y">
+              {visible.slice(0, 8).map(item => <li key={item.id} className="py-4 first:pt-0">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div className="min-w-0 flex-1">
+                    <Link to="/investigations/$investigationId" params={{investigationId:item.id}} className="text-sm font-semibold hover:underline">{item.title}</Link>
+                    <p className="mt-1 text-xs text-muted-foreground">{[item.district, item.crop, item.period].filter(Boolean).join(" · ") || "Scope needs confirmation"}</p>
+                  </div>
+                  <ToneTag tone={investigationStatusTone(item.status)}>{investigationStatusLabel(item.status)}</ToneTag>
+                </div>
+                <p className="mt-2 text-xs leading-relaxed">{nextStep(item, today)}</p>
+                <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+                  <span>{item.assignee_name || "Not assigned"}{item.due_date ? " · Due " + item.due_date : " · No due date"}</span>
+                  <Link to="/investigations/$investigationId" params={{investigationId:item.id}} className="inline-flex items-center font-medium text-primary hover:underline">Open case <ArrowRight className="ml-1 h-3.5 w-3.5"/></Link>
+                </div>
+              </li>)}
+              {visible.length > 8 && <li className="pt-3 text-xs text-muted-foreground">Showing 8 of {visible.length} matches. <Link to="/investigations" className="font-semibold text-primary underline">Open the full list</Link></li>}
+            </ul>}
+      </DashboardCard>
+
       <div className="space-y-5">
-        <DashboardCard title="Investigation status" subtitle="Across your visible records">
-          <DistributionChart rows={[{ name: "Open / in progress", value: inProgress.length }, { name: "Awaiting evidence", value: awaiting.length }, { name: "Completed", value: completed.length }, { name: "Other", value: all.length - inProgress.length - awaiting.length - completed.length }]} unit="investigations" />
+        <DashboardCard title="Follow-up tasks" subtitle="Actions that someone has agreed to complete">
+          {followUps.error ? <p role="alert" className="text-xs text-destructive">{followUps.error.message}</p>
+            : followUps.isLoading ? <p className="text-xs text-muted-foreground">Loading actions…</p>
+            : orderedActions.length ? <ul className="space-y-3">
+                {orderedActions.map(action => <li key={action.id} className="rounded-lg border p-3">
+                  <p className="text-xs font-semibold">{action.title}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{action.owner || "Owner not assigned"} · {action.due_date || "Due date not recorded"}</p>
+                  {day(action.due_date) && action.due_date < today ? <p className="mt-1 flex items-center gap-1 text-xs text-amber-700"><AlertTriangle className="h-3.5 w-3.5"/>Overdue</p> : null}
+                  <Link to="/investigations/$investigationId" params={{investigationId:action.investigation_id}} className="mt-2 inline-flex items-center text-xs font-medium text-primary hover:underline">View investigation <ArrowRight className="ml-1 h-3 w-3"/></Link>
+                </li>)}
+              </ul>
+            : <p className="text-xs leading-relaxed text-muted-foreground">No outstanding follow-up actions. Add one from an investigation when a next step is agreed.</p>}
         </DashboardCard>
-        <DashboardCard title="Before your next visit" subtitle="Keep findings traceable">
-          <ol className="space-y-4">{["Read the original question and evidence.", "Confirm the location, crop and reporting period.", "Record what you observed and what remains unknown.", "Submit findings through the investigation workspace."].map((text, index) => <li key={text} className="flex gap-2.5 text-[11.5px] leading-relaxed text-muted-foreground"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-[10px] font-semibold text-primary">{index + 1}</span>{text}</li>)}</ol>
-          <p className="mt-4 flex items-center gap-1.5 border-t border-border pt-3 text-[10.5px] text-muted-foreground"><MapPin className="h-3 w-3" aria-hidden />An unusual value is a signal to check, not a diagnosis.</p>
+        <DashboardCard title="Helpful evidence" subtitle="Use context, not assumptions">
+          <div className="space-y-3 text-xs text-muted-foreground">
+            <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary"/>Confirm the district, crop, period and original source before making a conclusion.</p>
+            <p className="flex items-start gap-2"><CloudRain className="mt-0.5 h-4 w-4 shrink-0 text-primary"/>Weather can help explain context, but does not establish the cause of a change.</p>
+            <Button asChild size="sm" variant="outline"><Link to="/weather">Explore weather & climate <ArrowRight className="ml-1 h-3.5 w-3.5"/></Link></Button>
+            <button type="button" onClick={() => setShowWeather(value => !value)} aria-expanded={showWeather} className="block text-left text-xs font-medium text-primary underline">{showWeather ? "Hide" : "Load"} seasonal weather context</button>
+          </div>
         </DashboardCard>
       </div>
     </div>
+    {showWeather && <div aria-label="Seasonal weather context"><WeatherContext/></div>}
+    <NewInvestigationDialog open={createOpen} onOpenChange={setCreateOpen} onCreated={created => {
+      queryClient.invalidateQueries({queryKey:["investigations"]});
+      if (created?.id) navigate({to:"/investigations/$investigationId",params:{investigationId:created.id}});
+    }}/>
   </div>;
 }
