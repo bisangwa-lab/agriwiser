@@ -37,7 +37,6 @@ const EDITABLE = [
   "district",
   "indicator",
   "period",
-  "evidence",
   "questions",
   "assignee_name",
   "assignee_email",
@@ -159,12 +158,17 @@ function InvestigationDetailPage() {
         </p>
       ) : null}
 
+      <div className="rounded-xl border bg-muted/35 p-4 text-xs leading-relaxed text-muted-foreground">
+        <p className="font-semibold text-foreground">Work through the investigation</p>
+        <p className="mt-1">1. Confirm the question and assignment → 2. Record dated checks → 3. Assign follow-up work → 4. Summarize the outcome. Save changes when you update the investigation details.</p>
+      </div>
+
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
         <Card className="panel border-0 shadow-none">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base">Details</CardTitle>
+            <CardTitle className="text-base">1. Review the finding and assignment</CardTitle>
             <CardDescription className="text-[12.5px]">
-              Editing these fields does not change the evidence recorded when the investigation was created.
+              Confirm the district, crop, reporting period and who is responsible. Original evidence remains unchanged.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -335,20 +339,16 @@ function InvestigationDetailPage() {
         <div className="space-y-5">
           <Card className="panel border-0 shadow-none">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base">Evidence and source context</CardTitle>
+              <CardTitle className="text-base">Original source evidence</CardTitle>
               <CardDescription className="text-[12.5px]">
                 Preserved from the moment the investigation was created, so the original finding is never lost.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-1.5">
-                <Label htmlFor="d-evidence">Supporting evidence and source references</Label>
-                <Textarea
-                  id="d-evidence"
-                  rows={5}
-                  value={form.evidence}
-                  onChange={(event) => set("evidence", event.target.value)}
-                />
+                <p className="text-xs font-medium text-foreground">Original source notes (read-only)</p>
+                <p className="whitespace-pre-line rounded-lg border border-border bg-muted/40 p-3 text-xs leading-relaxed text-muted-foreground">{investigation.evidence || "No original evidence note was supplied."}</p>
+                <p className="text-[11px] text-muted-foreground">Add new checks below as dated observations. The original evidence is not overwritten.</p>
               </div>
 
               {investigation.alert_id ? (
@@ -382,11 +382,19 @@ function InvestigationDetailPage() {
             </CardContent>
           </Card>
 
+        </div>
+      </div>
+
+      <div className="grid gap-5 xl:grid-cols-2">
+        <ObservationsPanel investigationId={investigationId} />
+        <FollowUpPanel investigationId={investigationId} />
+      </div>
+
           <Card className="panel border-0 shadow-none">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base">Outcome</CardTitle>
+              <CardTitle className="text-base">4. Record the outcome</CardTitle>
               <CardDescription className="text-[12.5px]">
-                Close the investigation with what was found, what remains uncertain, and what should happen next.
+                Write what the evidence establishes, what is still uncertain, and the recommended next step. This does not prove a cause.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -427,13 +435,6 @@ function InvestigationDetailPage() {
               ) : null}
             </CardContent>
           </Card>
-        </div>
-      </div>
-
-      <div className="grid gap-5 xl:grid-cols-2">
-        <ObservationsPanel investigationId={investigationId} />
-        <FollowUpPanel investigationId={investigationId} />
-      </div>
 
       <div className="flex flex-wrap gap-2">
         <Button variant="ghost" size="sm" onClick={() => navigate({ to: "/investigations" })}>
