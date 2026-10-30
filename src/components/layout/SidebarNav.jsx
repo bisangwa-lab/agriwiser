@@ -43,6 +43,7 @@ const NAV_BY_PANEL = {
     { to: "/analytics", label: "Home", icon: LayoutDashboard },
     { to: "/explore", label: "Explore data", icon: TrendingUp },
     { to: "/compare", label: "Compare", icon: ArrowLeftRight },
+    { to: "/agricultural-solutions", label: "Agricultural Solutions", icon: Sprout },
     { to: "/weather", search: { panel: "analytics" }, label: "Weather & climate", icon: CloudRain },
     { to: "/alerts", label: "Alerts", icon: BellRing },
     { to: "/reports", label: "Reports", icon: FileText },

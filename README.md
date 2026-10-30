@@ -1,33 +1,124 @@
 # AgriWiser
 
-Agricultural intelligence for Rwanda, built with React 19, TanStack Start, Cloudflare Workers and Supabase. The existing dashboards, district maps, investigation tools, published NISR datasets and weather analysis share AgriWiser's own authenticated server functions.
+### Agricultural intelligence for Rwanda
 
-## Development
+AgriWiser brings agricultural statistics, climate context, analytical tools and field workflows together in a secure decision-support platform. It helps users move from trusted data to clearer understanding, coordinated investigation and evidence-based reporting.
 
-1. Run `npm ci`.
-2. Copy `.env.example` to `.env.local` for development UI settings.
-3. Copy `.dev.vars.example` to `.dev.vars` and configure your Supabase project URL, publishable key and server secret key. Both files are ignored by Git. Never put private credentials in a variable beginning with `VITE_`.
-4. Apply the versioned SQL under `supabase/migrations/` to your own project. See [SUPABASE_SETUP.md](SUPABASE_SETUP.md).
-5. Start with `npm run dev -- --host 127.0.0.1 --port 5174`.
+## Platform
 
-The development panel badges are limited to loopback hosts, a development build, an explicit flag and the five existing development accounts. They establish real Supabase sessions and never send a login link by email. Production requires normal account sign-in.
+AgriWiser is organized into five connected workspaces:
 
-## Build and deploy
+| Workspace | Purpose |
+| --- | --- |
+| **Administration** | Govern users, datasets and authorized system operations. |
+| **Analytics & Planning** | Explore agricultural indicators, compare crops and districts, and use planning and analytical tools. |
+| **Field Operations** | Coordinate assigned investigations and operational follow-up. |
+| **Community & Business** | Present agricultural information and community services in an accessible, practical context. |
+| **Public Insights** | Explore published information through approachable public-facing views. |
 
-`npm run build` emits `dist/client` and the Worker under `dist/server`. Configure runtime secrets through your hosting platform, then deploy the Worker with the generated Cloudflare configuration. Run `npx wrangler deploy --help` for the installed CLI's deployment options. Do not deploy development account shortcuts or the local database placeholder as production infrastructure.
+Additional capabilities include weather and climate analysis, reports, dataset exploration, maps, and Agricultural Solutions within Analytics & Planning. Available actions depend on account role and the records configured for the deployment.
 
-## Architecture and security
+## Built for evidence-led decisions
 
-- `src/routes/__root.jsx` owns the HTML document and frontend assets. There is no index.html.
-- `src/api/appClient.js` exposes AgriWiser's browser adapter. It calls application server functions; sessions stay in HttpOnly cookies.
-- `src/lib/supabase.server.js` creates request-scoped Supabase clients, validates identity against Auth and reads current roles from `hingasmart_profiles`.
-- `src/lib/supabase-records.js` reads through bounded Postgres RPCs and checks write permissions before using the server-only administrative client.
-- Database RLS independently restricts published indicators, administrative archives and private staff work. Users cannot edit their role or write records directly through the public Data API.
-- Weather caches, API budgets and source metadata live in separate private Supabase tables. External sources are never merged or fabricated.
-- The private local backup and source microdata remain outside Git and outside static file serving. Local database code is retained only for offline development and migration tests; the configured application uses Supabase.
+- Explore published agricultural indicators across available crops, places and reporting periods.
+- Compare production, harvested area and yield where the underlying definitions support those calculations.
+- Review weather information with its source, coverage, resolution and missing values made explicit.
+- Coordinate investigation and follow-up through authenticated field workflows.
+- Use analytical and planning tools with documented inputs, methods and assumptions.
+- Trace information to its dataset and source context.
 
-See [SUPABASE_SETUP.md](SUPABASE_SETUP.md), [LOCAL_DATA.md](LOCAL_DATA.md), [WEATHER.md](WEATHER.md) and [EXPLORE_DATA.md](EXPLORE_DATA.md).
+AgriWiser distinguishes reported observations from estimates and analytical outputs. Missing values remain missing; historical production is not presented as current inventory or market availability.
 
-## Checks
+## Technology
 
-Run `npm run lint`, `npm run build` and `node --test tests/*.test.js`. The source is JavaScript/JSX; the router-generated TypeScript tree is not hand edited or committed.
+The application uses React 19, JavaScript and JSX, TanStack Start, Vite, Cloudflare Workers and Supabase. It uses file-based routing and server-side rendering. The document shell is owned by `src/routes/__root.jsx`.
+
+The browser communicates with authenticated AgriWiser server functions. Supabase provides application authentication and data services. Local SQLite support is retained for offline development and migration testing.
+
+## Run locally
+
+### Prerequisites
+
+- Node.js and npm compatible with the project lockfile.
+- A Supabase project configured for AgriWiser.
+- Cloudflare Worker tooling for deployment tasks.
+
+### Setup
+
+1. Install dependencies:
+
+   ```sh
+   npm ci
+   ```
+
+2. Copy `.env.example` to `.env.local` for non-secret frontend settings.
+3. Copy `.dev.vars.example` to `.dev.vars`. Set `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` and `SUPABASE_SECRET_KEY` for local server use.
+4. Apply the reviewed migrations in `supabase/migrations/` following [Supabase setup](SUPABASE_SETUP.md).
+5. Start the local server:
+
+   ```sh
+   npm run dev -- --host 127.0.0.1 --port 5174
+   ```
+
+Use the configured sign-in flow. Development account shortcuts, when enabled, are restricted to eligible local development sessions.
+
+## Data and interpretation
+
+Agricultural and climate records retain their source context, units, reporting periods and geographic coverage. Dataset availability varies by deployment and selection. Production statistics describe reported production for a defined period; they do not establish current supply, prices, demand, income or an active commercial offer.
+
+Yield is shown only where the measure and its inputs are valid. Comparisons use compatible periods and definitions. Estimated weather products are not direct farm measurements, and statistical association is not evidence of causation.
+
+## Security
+
+- Server functions authenticate requests and enforce permissions for protected operations.
+- The server validates Supabase identity and obtains current roles from `hingasmart_profiles`.
+- Row-level security protects database records, and application workflows mediate writes.
+- Server-secret credentials stay on the server and are used only after authorization and input validation.
+- Session cookies are HttpOnly; cookie-bearing responses are private and non-cacheable.
+- Keep credentials in ignored local settings or hosting secret stores. Never use `VITE_` for secrets.
+- Keep private respondent files, backups and credentials out of Git and static assets.
+
+See [Security and RBAC](docs/SECURITY_AND_RBAC.md) and [Supabase setup](SUPABASE_SETUP.md) for implementation and operational details.
+
+## Project references
+
+- [Complete project documentation](docs/PROJECT_DOCUMENTATION.md)
+- [Supabase configuration and migrations](SUPABASE_SETUP.md)
+- [Local setup](LOCAL_SETUP.md)
+- [Local data workflow](LOCAL_DATA.md)
+- [Dataset exploration](EXPLORE_DATA.md)
+- [Weather and climate](WEATHER.md)
+- [Statistical methods](docs/STATISTICAL_METHODS.md)
+- [Data provenance](docs/DATA_PROVENANCE.md)
+- [Real-data inventory](docs/REAL_DATA_INVENTORY.md)
+- [Security and role-based access](docs/SECURITY_AND_RBAC.md)
+- [Integration test guidance](docs/INTEGRATION_TESTS.md)
+
+## Quality checks
+
+Run the project checks from the repository root:
+
+```sh
+npm run lint
+node --test tests/*.test.js
+npm run build
+```
+
+The production build writes client assets to `dist/client` and Worker output to `dist/server`.
+
+## Deployment
+
+Configure production environment values and secrets in the hosting platform, apply reviewed database migrations through the established release process, then deploy the generated Cloudflare Worker using the target account's deployment procedure. Keep development shortcuts and local database placeholders out of production deployments. See [Supabase setup](SUPABASE_SETUP.md) before changing database infrastructure.
+
+## Development conventions
+
+- Preserve the existing route, SSR and plugin structure.
+- Keep application source in JavaScript and JSX.
+- Treat `src/routeTree.gen.ts` as generated router output; do not edit it manually.
+- Maintain source provenance, server-side authorization and user data protections.
+- Keep changes focused and add relevant regression coverage.
+- Never commit credentials, private source records or local database backups.
+
+## AI Use Disclosure
+
+Our team used OpenAI Codex as an AI-assisted development tool for project documentation and code-lint review. Team members reviewed AI-assisted suggestions before incorporating them. The team is responsible for the project, its data, analysis and final submission.

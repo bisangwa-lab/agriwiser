@@ -86,6 +86,7 @@ const PAGE_PANEL = [
   { prefix: "/analytics", panel: "analytics" },
   { prefix: "/explore", panel: "analytics" },
   { prefix: "/compare", panel: "analytics" },
+  { prefix: "/agricultural-solutions", panel: "analytics" },
   { prefix: "/alerts", panel: "analytics" },
   { prefix: "/reports", panel: "analytics" },
   { prefix: "/field-operations", panel: "field_operations" },
