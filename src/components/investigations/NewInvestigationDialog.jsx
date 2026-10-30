@@ -228,25 +228,21 @@ export function NewInvestigationDialog({ open, onOpenChange, initialValues, aler
 
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="space-y-1.5">
-              <Label htmlFor="inv-assignee">Assigned to</Label>
+              <Label htmlFor="inv-assignee">Assign to officer (email)</Label>
               <Input
                 id="inv-assignee"
-                value={values.assignee_name}
-                onChange={(event) => set("assignee_name", event.target.value)}
-                placeholder="Name"
+                type="email"
+                value={values.assignee_email}
+                onChange={(event) => set("assignee_email", event.target.value)}
+                placeholder="officer@example.com"
               />
-              {user && !values.assignee_name ? (
-                <button
-                  type="button"
-                  className="text-[11.5px] font-medium text-primary hover:underline"
+              {user?.email && values.assignee_email !== user.email ? (
+                <button type="button" className="mt-1 text-[11.5px] font-medium text-primary underline"
                   onClick={() => {
-                    set("assignee_name", user.full_name ?? user.email ?? "");
-                    set("assignee_email", user.email ?? "");
-                  }}
-                >
-                  Assign to me
-                </button>
+                    setValues(prev => ({...prev, assignee_name: user.full_name ?? user.email, assignee_email: user.email}));
+                  }}>Assign to me</button>
               ) : null}
+              {isLocalAuth && <p className="text-[11px] text-muted-foreground">Use an active field account, or leave blank to assign later.</p>}
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="inv-due">Due date</Label>
