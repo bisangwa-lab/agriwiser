@@ -53,6 +53,7 @@ test("officers can open investigations, add dated observations and assign action
   assert.equal(task.status,"pending");
   assert.equal(stored("FollowUpAction",task.id).owner,"District Officer");
   await assert.rejects(mutateFieldWork(db,officer,{entity:"FollowUpAction",operation:"update",id:task.id,data:{status:"completed"}},now),/Record what was done/);
+  await assert.rejects(mutateFieldWork(db,officer,{entity:"FollowUpAction",operation:"update",id:task.id,data:{status:"cancelled"}},now),/Record what was done/);
   const finished=await mutateFieldWork(db,officer,{entity:"FollowUpAction",operation:"update",id:task.id,data:{status:"completed",notes:"Compared the original cells and documented the discrepancy."}},now);
   assert.equal(finished.completion_date,"2026-10-30");
   assert.equal(finished.notes,"Compared the original cells and documented the discrepancy.");
@@ -62,6 +63,7 @@ test("completing an investigation needs a written outcome; evidence never change
   const {db,stored,sqlite} = fixture();
   const created=await mutateFieldWork(db,officer,{entity:"Investigation",operation:"create",data:draft},now);
   await assert.rejects(mutateFieldWork(db,officer,{entity:"Investigation",operation:"update",id:created.id,data:{status:"completed"}},now),/Write an outcome/);
+  await assert.rejects(mutateFieldWork(db,officer,{entity:"Investigation",operation:"update",id:created.id,data:{status:"cancelled"}},now),/Write an outcome/);
   assert.throws(()=>validateFieldMutation({entity:"Investigation",operation:"update",id:created.id,data:{evidence:"replace source"}}),/Unexpected/);
   assert.throws(()=>validateFieldMutation({entity:"Investigation",operation:"update",id:created.id,data:{metric_snapshot:"alter source"}}),/Unexpected/);
   const closed=await mutateFieldWork(db,officer,{entity:"Investigation",operation:"update",id:created.id,data:{
