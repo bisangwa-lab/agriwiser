@@ -1,5 +1,5 @@
 import { localEmptyCollection, localLogin, localLogout, localMe, localQuickLogin, localRegister } from "@/lib/local-auth";
-import { localReadCollection } from "@/lib/local-data";
+import { localReadCollection, localWriteFieldRecord } from "@/lib/local-data";
 
 async function unwrap(promise) {
   const result = await promise;
@@ -9,6 +9,7 @@ async function unwrap(promise) {
 
 const unavailable = async () => { throw new Error("This data operation is not yet available for local accounts."); };
 const DATA_ENTITIES = new Set(["Dataset", "AgriculturalObservation", "ImportLog", "SourceArchive", "SourceTableIndex", "SourceTable", "SourceReportIndex", "SourceReportPage", "SurveyFile", "Alert", "Investigation", "FollowUpAction", "InvestigationNote", "ReportFinding"]);
+const FIELD_ENTITIES = new Set(["Investigation", "FollowUpAction", "InvestigationNote"]);
 const collection = (entity) => ({
   list: (options) => DATA_ENTITIES.has(entity) ? localReadCollection({ data: { entity, options } }) : localEmptyCollection(),
   filter: (query, options) => DATA_ENTITIES.has(entity) ? localReadCollection({ data: { entity, query, options } }) : localEmptyCollection(),
@@ -17,7 +18,9 @@ const collection = (entity) => ({
     if (!result.items.length) throw Object.assign(new Error("No local record was found."), { status: 404 });
     return result.items[0];
   },
-  create: unavailable, update: unavailable, delete: unavailable, bulkCreate: unavailable,
+  create: (data) => FIELD_ENTITIES.has(entity) ? localWriteFieldRecord({ data: { entity, operation: "create", data } }) : unavailable(),
+  update: (id, data) => FIELD_ENTITIES.has(entity) && entity !== "InvestigationNote" ? localWriteFieldRecord({ data: { entity, operation: "update", id, data } }) : unavailable(),
+  delete: unavailable, bulkCreate: unavailable,
 });
 
 export const localClient = {
