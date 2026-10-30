@@ -16,6 +16,7 @@ import { Loader2 } from "lucide-react";
 import { base44, isLocalAuth } from "@/api/base44Client";
 import { CROPS, DISTRICT_NAMES, INDICATORS, INVESTIGATION_PRIORITIES, SEASONS } from "@/lib/constants";
 import { useAuth } from "@/lib/AuthContext";
+import { normalizeRole } from "@/lib/rbac";
 
 const EMPTY = {
   title: "",
@@ -40,6 +41,7 @@ const EMPTY = {
  */
 export function NewInvestigationDialog({ open, onOpenChange, initialValues, alertId, onCreated }) {
   const { user } = useAuth();
+  const canAssignSelf = !isLocalAuth || ["super_admin", "data_manager", "agricultural_officer", "field_investigator", "field_supervisor"].includes(normalizeRole(user));
   const [values, setValues] = useState(EMPTY);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
@@ -236,7 +238,7 @@ export function NewInvestigationDialog({ open, onOpenChange, initialValues, aler
                 onChange={(event) => set("assignee_email", event.target.value)}
                 placeholder="officer@example.com"
               />
-              {user?.email && values.assignee_email !== user.email ? (
+              {canAssignSelf && user?.email && values.assignee_email !== user.email ? (
                 <button type="button" className="mt-1 text-[11.5px] font-medium text-primary underline"
                   onClick={() => {
                     setValues(prev => ({...prev, assignee_name: user.full_name ?? user.email, assignee_email: user.email}));
