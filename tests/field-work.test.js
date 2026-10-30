@@ -8,6 +8,7 @@ const schema = readFileSync(new URL("../migrations/0002_local_data.sql", import.
 const authSchema = readFileSync(new URL("../migrations/0001_local_auth.sql", import.meta.url), "utf8");
 const officer = { id: "officer-1", email: "officer@example.com", full_name: "District Officer", workspace_role: "agricultural_officer" };
 const viewer = { id: "viewer-1", email: "viewer@example.com", workspace_role: "public_viewer" };
+const analyst = { id: "analyst-1", email: "analyst@example.com", workspace_role: "agricultural_analyst" };
 const now = () => "2026-10-30T10:30:00.000Z";
 function fixture() {
   const sqlite = new DatabaseSync(":memory:");
@@ -79,6 +80,14 @@ test("field writes cannot be performed by public viewers or used to invent publi
   assert.throws(()=>validateFieldMutation({entity:"AgriculturalObservation",operation:"create",data:draft}),/not available/);
   assert.throws(()=>validateFieldMutation({entity:"Investigation",operation:"create",data:{...draft,role:"super_admin"}}),/Unexpected/);
   await assert.rejects(mutateFieldWork(db,officer,{entity:"InvestigationNote",operation:"create",data:{investigation_id:"nonexistent",content:"A field observation.",note_type:"note"}},now),/not found/);
+  sqlite.close();
+});
+test("analysts may start evidence checks but cannot change field investigation outcomes", async () => {
+  const {db,sqlite} = fixture();
+  const started=await mutateFieldWork(db,analyst,{entity:"Investigation",operation:"create",data:draft},now);
+  assert.equal(started.requested_by,analyst.email);
+  await assert.rejects(mutateFieldWork(db,analyst,{entity:"Investigation",operation:"update",id:started.id,data:{status:"completed",outcome_summary:"Attempted to close without field access."}},now),/role cannot change/);
+  await assert.rejects(mutateFieldWork(db,analyst,{entity:"InvestigationNote",operation:"create",data:{investigation_id:started.id,note_type:"note",content:"A field note from an analyst."}},now),/role cannot change/);
   sqlite.close();
 });
 test("linked alerts preserve server-stored evidence, not client-supplied claims", async () => {
