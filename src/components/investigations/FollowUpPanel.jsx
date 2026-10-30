@@ -21,6 +21,7 @@ export function FollowUpPanel({ investigationId }) {
   const [saving, setSaving] = useState(false);
   const [busyId, setBusyId] = useState(null);
   const [completionId, setCompletionId] = useState(null);
+  const [resolutionStatus, setResolutionStatus] = useState("completed");
   const [completionNotes, setCompletionNotes] = useState("");
   const [error, setError] = useState("");
 
@@ -97,8 +98,9 @@ export function FollowUpPanel({ investigationId }) {
                   <div className="space-y-2">
                     <ToneTag tone={followUpStatusTone(action.status)}>{followUpStatusLabel(action.status)}</ToneTag>
                     <Select disabled={busyId === action.id} value={action.status} onValueChange={status => {
-                      if (status === "completed" && action.status !== "completed") {
+                      if (["completed", "cancelled"].includes(status) && status !== action.status) {
                         setCompletionId(action.id);
+                        setResolutionStatus(status);
                         setCompletionNotes(action.notes || "");
                       } else changeStatus(action, status);
                     }}>
@@ -108,10 +110,10 @@ export function FollowUpPanel({ investigationId }) {
                   </div>
                 </div>
                 {completionId === action.id && <div className="mt-4 space-y-2 rounded-lg border border-primary/25 bg-accent/30 p-3">
-                  <Label htmlFor={"action-outcome-" + action.id}>What was actually done?</Label>
-                  <Textarea id={"action-outcome-" + action.id} rows={2} value={completionNotes} onChange={event => setCompletionNotes(event.target.value)} placeholder="Describe the action completed and what evidence confirms it."/>
+                  <Label htmlFor={"action-outcome-" + action.id}>{resolutionStatus === "cancelled" ? "Why is this action being cancelled?" : "What was actually done?"}</Label>
+                  <Textarea id={"action-outcome-" + action.id} rows={2} value={completionNotes} onChange={event => setCompletionNotes(event.target.value)} placeholder={resolutionStatus === "cancelled" ? "Record why the action will not be carried out." : "Describe the action completed and what evidence confirms it."}/>
                   <div className="flex flex-wrap gap-2">
-                    <Button size="sm" disabled={busyId === action.id || completionNotes.trim().length < 10} onClick={() => changeStatus(action, "completed", completionNotes.trim())}>{busyId === action.id ? "Saving…" : "Confirm completion"}</Button>
+                    <Button size="sm" disabled={busyId === action.id || completionNotes.trim().length < 10} onClick={() => changeStatus(action, resolutionStatus, completionNotes.trim())}>{busyId === action.id ? "Saving…" : resolutionStatus === "cancelled" ? "Confirm cancellation" : "Confirm completion"}</Button>
                     <Button size="sm" variant="ghost" onClick={() => {setCompletionId(null);setCompletionNotes("");}}>Cancel</Button>
                   </div>
                 </div>}
