@@ -5,12 +5,16 @@ import { readFileSync } from "node:fs";
 import { mutateFieldWork, validateFieldMutation } from "../src/lib/field-work-service.js";
 
 const schema = readFileSync(new URL("../migrations/0002_local_data.sql", import.meta.url), "utf8");
+const authSchema = readFileSync(new URL("../migrations/0001_local_auth.sql", import.meta.url), "utf8");
 const officer = { id: "officer-1", email: "officer@example.com", full_name: "District Officer", workspace_role: "agricultural_officer" };
 const viewer = { id: "viewer-1", email: "viewer@example.com", workspace_role: "public_viewer" };
 const now = () => "2026-10-30T10:30:00.000Z";
 function fixture() {
   const sqlite = new DatabaseSync(":memory:");
+  sqlite.exec(authSchema);
   sqlite.exec(schema);
+  sqlite.prepare("INSERT INTO local_users(id,email,full_name,password_hash,workspace_role,created_date) VALUES(?,?,?,?,?,?)")
+    .run("officer-1", officer.email, officer.full_name, "fixture-only", officer.workspace_role, "2026-01-01T00:00:00Z");
   const db = { prepare: sql => ({ bind: (...args) => ({
     first: async () => sqlite.prepare(sql).get(...args) ?? null,
     run: async () => sqlite.prepare(sql).run(...args),
@@ -34,6 +38,7 @@ test("officers can open investigations, add dated observations and assign action
   const caseFile = await mutateFieldWork(db, officer, {entity:"Investigation",operation:"create",data:draft},now);
   assert.equal(caseFile.status,"open");
   assert.equal(caseFile.requested_by, officer.email);
+  assert.equal(caseFile.assignee_name, officer.full_name);
   assert.equal(caseFile.metric_snapshot, "");
   assert.equal(stored("Investigation",caseFile.id).evidence,draft.evidence);
   const note = await mutateFieldWork(db,officer,{entity:"InvestigationNote",operation:"create",data:{
@@ -70,6 +75,7 @@ test("completing an investigation needs a written outcome; evidence never change
 test("field writes cannot be performed by public viewers or used to invent published measurements", async () => {
   const {db,sqlite} = fixture();
   await assert.rejects(mutateFieldWork(db,viewer,{entity:"Investigation",operation:"create",data:draft},now),/role cannot change/);
+  await assert.rejects(mutateFieldWork(db,officer,{entity:"Investigation",operation:"create",data:{...draft,assignee_email:"unknown@example.com"}},now),/active field-work account/);
   assert.throws(()=>validateFieldMutation({entity:"AgriculturalObservation",operation:"create",data:draft}),/not available/);
   assert.throws(()=>validateFieldMutation({entity:"Investigation",operation:"create",data:{...draft,role:"super_admin"}}),/Unexpected/);
   await assert.rejects(mutateFieldWork(db,officer,{entity:"InvestigationNote",operation:"create",data:{investigation_id:"nonexistent",content:"A field observation.",note_type:"note"}},now),/not found/);
