@@ -94,8 +94,9 @@ test("analysts may start evidence checks but cannot change field investigation o
 });
 test("linked alerts preserve server-stored evidence, not client-supplied claims", async () => {
   const {db,sqlite} = fixture();
-  const alert={id:"alert-42",title:"Maize trend review",dataset_id:"NISR-2026",dataset_name:"NISR",evidence_snapshot:"Actual preserved alert values",is_demo:true};
+  const alert={id:"alert-42",title:"Maize trend review",district:"Gasabo",crop:"Maize",period:"2026 Season B",indicator:"production",dataset_id:"NISR-2026",dataset_name:"NISR",evidence_snapshot:"Actual preserved alert values",is_demo:true};
   sqlite.prepare("INSERT INTO local_records(entity,id,data,published) VALUES(?,?,?,0)").run("Alert",alert.id,JSON.stringify(alert));
+  await assert.rejects(mutateFieldWork(db,officer,{entity:"Investigation",operation:"create",data:{...draft,alert_id:"alert-42",district:"Kirehe"}},now),/source scope cannot be changed/);
   const created=await mutateFieldWork(db,officer,{entity:"Investigation",operation:"create",data:{
     ...draft,alert_id:"alert-42",dataset_name:"Fabricated provider",metric_snapshot:"Fabricated metric",calculation_snapshot:"Fabricated method",is_demo:false,
   }},now);
