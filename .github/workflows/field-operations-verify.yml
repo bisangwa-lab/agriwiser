@@ -1,9 +1,6 @@
 name: Field Operations verification
 
 on:
-  push:
-    branches:
-      - feat/field-operations-action-workflow-20261030
   pull_request:
     paths:
       - "src/**"
