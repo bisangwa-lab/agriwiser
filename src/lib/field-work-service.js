@@ -143,7 +143,7 @@ export async function mutateFieldWork(db, user, input, now = () => new Date().to
   if (entity === "Investigation") {
     const nextStatus = among(data.status ?? stored.status, enumKeys(INVESTIGATION_STATUSES), "investigation status", false);
     const summary = optionalText(data.outcome_summary ?? stored.outcome_summary, "Outcome", 4000);
-    if (nextStatus === "completed" && summary.length < 15) throw fail("Write an outcome of at least 15 characters before completing an investigation.");
+    if (["completed", "cancelled"].includes(nextStatus) && summary.length < 15) throw fail("Write an outcome or cancellation reason of at least 15 characters before closing an investigation.");
     const assignee = await resolveAssignee(db, data.assignee_email ?? stored.assignee_email);
     record = {
       ...stored,
@@ -164,7 +164,7 @@ export async function mutateFieldWork(db, user, input, now = () => new Date().to
   } else {
     const status = among(data.status ?? stored.status, enumKeys(FOLLOWUP_STATUSES), "follow-up status", false);
     const notes = optionalText(data.notes ?? stored.notes, "Action outcome", 2000);
-    if (status === "completed" && notes.length < 10) throw fail("Record what was done (at least 10 characters) before completing an action.");
+    if (["completed", "cancelled"].includes(status) && notes.length < 10) throw fail("Record what was done or why the action was cancelled (at least 10 characters).");
     record = {
       ...stored, status, notes,
       completion_date: status === "completed" ? (stored.completion_date || timestamp.slice(0, 10)) : "",
