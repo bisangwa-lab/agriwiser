@@ -14,7 +14,7 @@ The Field Operations homepage highlights unassigned, overdue and evidence-blocke
 ## Local data and integrity
 
 - The local backend supports creating/updating Investigation and FollowUpAction records and creating InvestigationNote records; unrelated collections remain read-only.
-- Mutations are POST server functions, require a valid local session and approved field-work role, and write to D1 with bound SQL parameters.
+- Mutations are POST server functions, require a valid local session and approved roles, and write to D1 with bound SQL parameters. Analysts and policy makers may initiate a case from Analytics but cannot edit field observations, follow-ups or outcomes; authorized field roles and administrators handle those steps.
 - The authenticated identity, record IDs, creation timestamps and note author are assigned on the server. Assignments must use active local field-work accounts.
 - Existing immutable evidence, source snapshots, dataset references and original creator fields cannot be changed through the local update endpoint.
 - A case linked to an alert copies that alert's existing evidence and dataset metadata from the server rather than trusting source figures typed in the browser.
