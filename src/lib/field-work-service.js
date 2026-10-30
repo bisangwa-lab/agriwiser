@@ -4,6 +4,7 @@ import { normalizeRole } from "./rbac.js";
 // Field work is distinct from published survey observations. These records are
 // attributed to the authenticated officer, and source snapshots are immutable.
 const WRITERS = new Set(["super_admin", "data_manager", "agricultural_officer", "field_investigator", "field_supervisor"]);
+const INITIATORS = new Set([...WRITERS, "agricultural_analyst", "policy_maker"]);
 const ENTITIES = new Set(["Investigation", "FollowUpAction", "InvestigationNote"]);
 const FIELDS = {
   Investigation: {
@@ -52,9 +53,10 @@ export function validateFieldMutation(input) {
   if (operation === "create" && id !== undefined) throw fail("The server assigns record identifiers.");
   return { entity, operation, id, data };
 }
-export function assertFieldWriter(user) {
+export function assertFieldWriter(user, entity, operation) {
   if (!user) throw fail("Sign in to update field work.", 401);
-  if (!WRITERS.has(normalizeRole(user))) throw fail("Your role cannot change field investigations.", 403);
+  const permitted = entity === "Investigation" && operation === "create" ? INITIATORS : WRITERS;
+  if (!permitted.has(normalizeRole(user))) throw fail("Your role cannot change field investigations.", 403);
 }
 const emptyIf = (value) => value ?? "";
 const textFields = (data, names, max = 2000) => Object.fromEntries(names.map(name => [name, optionalText(data[name], name, max)]));
@@ -78,7 +80,7 @@ async function parentRecord(db, id) {
 }
 export async function mutateFieldWork(db, user, input, now = () => new Date().toISOString()) {
   const { entity, operation, id, data } = validateFieldMutation(input);
-  assertFieldWriter(user);
+  assertFieldWriter(user, entity, operation);
   const timestamp = now();
 
   if (operation === "create") {
