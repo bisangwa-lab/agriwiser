@@ -71,7 +71,12 @@ function InvestigationDetailPage() {
     setNotice(null);
     try {
       const payload = { ...form, ...extra };
+      if (["completed", "cancelled"].includes(payload.status) && (payload.outcome_summary?.trim().length ?? 0) < 15) {
+        setSaveError("Describe the outcome or cancellation reason in at least 15 characters before closing this case.");
+        return;
+      }
       if (payload.status === "completed" && !payload.closed_date) payload.closed_date = new Date().toISOString();
+      if (payload.status !== "completed") payload.closed_date = "";
       const savedRecord = await base44.entities.Investigation.update(investigationId, payload);
       await queryClient.invalidateQueries({ queryKey: ["investigation", investigationId] });
       await queryClient.invalidateQueries({ queryKey: ["investigations"] });
