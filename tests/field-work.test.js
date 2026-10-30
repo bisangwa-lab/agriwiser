@@ -35,7 +35,7 @@ const draft = {
   assignee_name: "District Officer", assignee_email: "officer@example.com",
 };
 test("officers can open investigations, add dated observations and assign actions", async () => {
-  const {db,stored} = fixture();
+  const {db,stored,sqlite} = fixture();
   const caseFile = await mutateFieldWork(db, officer, {entity:"Investigation",operation:"create",data:draft},now);
   assert.equal(caseFile.status,"open");
   assert.equal(caseFile.requested_by, officer.email);
