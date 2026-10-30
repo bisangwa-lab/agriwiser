@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { base44, isLocalAuth } from "@/api/base44Client";
+import { appClient, usesAppData } from "@/api/appClient";
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { Button } from "@/components/ui/button";
 import { downloadCsv, toCsv } from "@/lib/csv";
@@ -11,12 +11,12 @@ import {normalizeFindingEvidence} from '@/lib/finding-evidence';
 const parse=value=>{try{return JSON.parse(value);}catch{return null;}};
 const safeText=value=>/^[=+@\-\t\r]/.test(String(value??""))?"'"+value:value;
 export function SavedMapFindings() {
- const {data:findings=[],isLoading,error}=useQuery({queryKey:["report-findings"],enabled:isLocalAuth,queryFn:async()=>(await base44.entities.ReportFinding.list({sort:"-created_date",limit:100})).items,staleTime:30_000});
- if(!isLocalAuth)return null;
+ const {data:findings=[],isLoading,error}=useQuery({queryKey:["report-findings"],enabled:usesAppData,queryFn:async()=>(await appClient.entities.ReportFinding.list({sort:"-created_date",limit:100})).items,staleTime:30_000});
+ if(!usesAppData)return null;
  function exportFinding(item) {
   const metrics=parse(item.metric_snapshot)??{};
   const evidence=normalizeFindingEvidence(parse(item.calculation_snapshot))??{};
-  downloadCsv("hingasmart-map-finding-"+item.district+"-"+item.year+".csv",toCsv([{
+  downloadCsv("agriwiser-map-finding-"+item.district+"-"+item.year+".csv",toCsv([{
    district:item.district,crop:item.crop,current_period:item.period,baseline_period:item.previous_period,
    production_t:metrics.production,baseline_production_t:metrics.previous_production,harvested_area_ha:metrics.harvested_area,baseline_area_ha:metrics.previous_area,yield_t_ha:metrics.yield,baseline_yield_t_ha:metrics.previous_yield,production_change_pct:metrics.production_change_pct,
    analyst_finding:safeText(item.summary),requested_by:safeText(item.requested_by_name),recorded_at:item.created_date,

@@ -21,7 +21,7 @@ export function ExploreWeatherContext({ selection, onChooseDistrict }) {
   const delta = percentageChange(rainNow, rainBefore);
   const loading = requested && (current.isFetching || previous.isFetching);
   const error = current.error ?? previous.error;
-  const href = district === "all" ? "/weather" : `/weather?district=${encodeURIComponent(district)}&year=${toYear}&season=${encodeURIComponent(season)}&dataset=merra2`;
+  const href = district === "all" ? "/weather?panel=analytics" : `/weather?district=${encodeURIComponent(district)}&year=${toYear}&season=${encodeURIComponent(season)}&dataset=merra2&panel=analytics`;
   function load() {
     try {
       validateWeatherRange(currentInput);

@@ -10,11 +10,11 @@ import { districtMapData, mapScale, MAP_MODES } from "@/lib/district-map";
 import { useObservations } from "@/hooks/useObservations";
 import { useDatasets } from "@/hooks/useAgriRecords";
 import { useAuth } from "@/lib/AuthContext";
-import { normalizeRole } from "@/lib/rbac";
+import { normalizeRole, getStoredWorkspace } from "@/lib/rbac";
 import { CROPS, cropLabel, DISTRICT_NAMES, SEASONS, YEARS } from "@/lib/constants";
 import { formatNumber, formatSignedPercent, formatDate } from "@/lib/format";
 import { localCreateDistrictReview, localSaveDistrictFinding } from "@/lib/local-data";
-import { isLocalAuth } from "@/api/base44Client";
+import { usesAppData } from "@/api/appClient";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -73,7 +73,7 @@ export function DistrictMap({crop="Maize",season="Season B",year,onCropChange,on
  const weatherSources=datasets.filter(source=>detail?.rainfallRecords.some(row=>row.dataset_id===source.id));
  const activeSources=mode==="weather"?weatherSources:sources;
  const noWeather=!metrics.some(item=>item.rainfall!==null);
- const canReview=isLocalAuth&&["super_admin","data_manager","agricultural_analyst","policy_maker","agricultural_officer","field_investigator","field_supervisor"].includes(normalizeRole(user));
+ const canReview=usesAppData&&["super_admin","data_manager","agricultural_analyst","policy_maker","agricultural_officer","field_investigator","field_supervisor"].includes(normalizeRole(user));
  const id=useId().replace(/:/g,"");
  const patternId="district-missing-"+id;
  const period=chosenYear+" "+chosenSeason;
@@ -95,7 +95,7 @@ export function DistrictMap({crop="Maize",season="Season B",year,onCropChange,on
   finally {setSaving(false);}
  }
  const changeSelection=(setter,value)=>{setter(value);setSelected(null);setSaved(null);};
- if(mode==="weather")return <div className="space-y-3"><WeatherDistrictMap period={seasonRange(chosenYear,chosenSeason)} autoLoad onAnalyze={district=>navigate({to:'/weather',search:{district,year:chosenYear,season:chosenSeason,dataset:'merra2'}})}/><div className="flex flex-wrap gap-3"><Button size="sm" variant="outline" onClick={()=>setMode('yield')}>Back to crop map</Button><Link to="/weather" className="self-center text-xs font-medium text-primary underline">Open full weather & climate analysis</Link></div></div>;
+ if(mode==="weather")return <div className="space-y-3"><WeatherDistrictMap period={seasonRange(chosenYear,chosenSeason)} autoLoad onAnalyze={district=>navigate({to:'/weather',search:{district,year:chosenYear,season:chosenSeason,dataset:'merra2',...(getStoredWorkspace()?{panel:getStoredWorkspace()}:{})}})}/><div className="flex flex-wrap gap-3"><Button size="sm" variant="outline" onClick={()=>setMode('yield')}>Back to crop map</Button><Link to="/weather" search={getStoredWorkspace()?{panel:getStoredWorkspace()}:undefined} className="self-center text-xs font-medium text-primary underline">Open full weather & climate analysis</Link></div></div>;
  return <>
   <DashboardCard title={large?"Rwanda district map":meta.label+" across Rwanda"} subtitle="Select a district to inspect its evidence and reporting context"
    action={!large?<Link to="/compare" hash="district-map" search={{crop:chosenCrop,season:chosenSeason,year:chosenYear,mapView:mode,compareYear:baselineYear,compareSeason:baselineSeason}} className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:underline">Larger map<ArrowUpRight className="h-3.5 w-3.5" aria-hidden /></Link>:<MapPin className="h-4 w-4 text-primary" aria-hidden />}

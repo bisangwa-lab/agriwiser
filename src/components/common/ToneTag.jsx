@@ -127,3 +127,27 @@ export function observationStatusTone(status) {
 export function observationStatusLabel(status) {
   return OBSERVATION_STATUS_LABEL[status] ?? status ?? "Observed";
 }
+
+const NOTE_TYPE_TONE = {
+  evidence: "primary",
+  field_observation: "info",
+  unresolved_question: "warning",
+  source_check: "neutral",
+  note: "outline",
+};
+
+const NOTE_TYPE_LABEL = {
+  evidence: "Verified evidence",
+  field_observation: "Field observation",
+  unresolved_question: "Unresolved question",
+  source_check: "Source-check note",
+  note: "General note",
+};
+
+export function noteTypeTone(type) {
+  return NOTE_TYPE_TONE[type] ?? "neutral";
+}
+
+export function noteTypeLabel(type) {
+  return NOTE_TYPE_LABEL[type] ?? type ?? "Note";
+}

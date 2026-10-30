@@ -1,0 +1,2658 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Africa/Johannesburg",
+  "method": "Representative static competitor review; deeper project44 review with executed checks. The reviewedFiles inventory records retrieved files, including source needed for building; it does not assert equal line-by-line inspection. SHA256 values hash saved UTF-8 source text, not Git blob objects.",
+  "repositories": [
+    {
+      "id": 1,
+      "repository": "Elthiero/agritwin-rwanda",
+      "commit": "a9d35452ff0e39f658025e5d017a58adf6f016f0",
+      "scope": "Track 1 self-identified",
+      "score": 90,
+      "categoryPoints": [
+        20,
+        20,
+        20,
+        15,
+        15
+      ],
+      "sharedRank": 1,
+      "treeTruncated": false,
+      "treeFileCount": 250,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "c6c7c1d9915fbc2532957b39c8bc36d8d1ef935ccac6b9a7d1aff3775a0613e2",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/README.md"
+        },
+        {
+          "path": "api/app/routers/nowcast.py",
+          "sha256": "cd2bf4334add1f4e523cdf09ee66e6d562a49787016d569cd80d648a080a392c",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/api/app/routers/nowcast.py"
+        },
+        {
+          "path": "api/app/routers/yield_gap.py",
+          "sha256": "b4fed23bf8f248ba2cd53be9ab7b3733229c5b8ca4717976192a3000bf8f376d",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/api/app/routers/yield_gap.py"
+        },
+        {
+          "path": "docs/STATUS.md",
+          "sha256": "8c8afc8384bb2046e4f88c86fc1ac697a69e66d7416570b6900e3a3dc2c4ac42",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/docs/STATUS.md"
+        },
+        {
+          "path": "docs/validation.md",
+          "sha256": "b346ef04a663843816f8aec897a2748d416309b7e25b41e7176aeb7fb488e15f",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/docs/validation.md"
+        },
+        {
+          "path": "src/agritwin/models/attainable.py",
+          "sha256": "7db4ee91e28664a935d5b92128d642a5e18e8d7955871197eb6ef167c70a9556",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/src/agritwin/models/attainable.py"
+        },
+        {
+          "path": "src/agritwin/models/nowcast.py",
+          "sha256": "49c37b87ccc61c56e8ea9025e6b7e65afc9bcb2a0b142d108704f26293cb431a",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/src/agritwin/models/nowcast.py"
+        },
+        {
+          "path": "src/agritwin/survey/core.py",
+          "sha256": "db67a23bb7d42e25f89b6672f7995c8869685184a6bf73f9a1e65769de25e5e3",
+          "url": "https://github.com/Elthiero/agritwin-rwanda/blob/a9d35452ff0e39f658025e5d017a58adf6f016f0/src/agritwin/survey/core.py"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "repository": "ishimweaimecesar/agritwin-rwanda",
+      "commit": "362bd4a4628770e37603086568c38f1009413117",
+      "scope": "Possible duplicate/sibling repository",
+      "score": 45,
+      "categoryPoints": [
+        15,
+        10,
+        10,
+        5,
+        5
+      ],
+      "sharedRank": 28,
+      "treeTruncated": false,
+      "treeFileCount": 69,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "e819bd8c3414b3895ab027aaae9fdb8ef0cd09b5ad0bc82c82fa63d6a35f34bd",
+          "url": "https://github.com/ishimweaimecesar/agritwin-rwanda/blob/362bd4a4628770e37603086568c38f1009413117/README.md"
+        },
+        {
+          "path": "api/app/main.py",
+          "sha256": "c4d182d91d4d50109082302d85ca9dea406b05169b1f3c80859c6d2fb213f473",
+          "url": "https://github.com/ishimweaimecesar/agritwin-rwanda/blob/362bd4a4628770e37603086568c38f1009413117/api/app/main.py"
+        },
+        {
+          "path": "src/agritwin/features/gee_mart.py",
+          "sha256": "691e89a2f03d7f0808f17dfa893b7cdb62a6b04cab3a315435b121068dfe3b26",
+          "url": "https://github.com/ishimweaimecesar/agritwin-rwanda/blob/362bd4a4628770e37603086568c38f1009413117/src/agritwin/features/gee_mart.py"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "repository": "Theophilemaker/hackaton_saip",
+      "commit": "61e73fc878933776bb3e4c801d7e80a0b5e09eff",
+      "scope": "Caution — competition/track mismatch",
+      "score": 60,
+      "categoryPoints": [
+        15,
+        10,
+        15,
+        10,
+        10
+      ],
+      "sharedRank": 21,
+      "treeTruncated": false,
+      "treeFileCount": 322,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "da459c0818ecb3707e3a3d19edcb4f725cd65290b63f00d9853441e4f51c56f0",
+          "url": "https://github.com/Theophilemaker/hackaton_saip/blob/61e73fc878933776bb3e4c801d7e80a0b5e09eff/README.md"
+        },
+        {
+          "path": "app/Controllers/NisrController.php",
+          "sha256": "ebb9a0337fcb17719ded8b569fafa68fbc4b0135fb0749691600d4879ef2448e",
+          "url": "https://github.com/Theophilemaker/hackaton_saip/blob/61e73fc878933776bb3e4c801d7e80a0b5e09eff/app/Controllers/NisrController.php"
+        },
+        {
+          "path": "app/Helpers/NisrEngine.php",
+          "sha256": "2397773a0b92fed3c750dde762572958a404a66386296bc80e837957890429f4",
+          "url": "https://github.com/Theophilemaker/hackaton_saip/blob/61e73fc878933776bb3e4c801d7e80a0b5e09eff/app/Helpers/NisrEngine.php"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "repository": "thepreakerebi/kuhira",
+      "commit": "8075aa943f7ca7358f799b04932d4c30c4ccd510",
+      "scope": "Track 1 self-identified",
+      "score": 85,
+      "categoryPoints": [
+        20,
+        15,
+        20,
+        15,
+        15
+      ],
+      "sharedRank": 2,
+      "treeTruncated": false,
+      "treeFileCount": 510,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "8d269feecad24b5fe846e8130e84b08bd71b73689195c871142126d12b79efee",
+          "url": "https://github.com/thepreakerebi/kuhira/blob/8075aa943f7ca7358f799b04932d4c30c4ccd510/README.md"
+        },
+        {
+          "path": "src/kuhira/plan.py",
+          "sha256": "8ae71ec31f8154ce827139c52a4ad4d3977deb985a7def60142b549e0eaa5bd0",
+          "url": "https://github.com/thepreakerebi/kuhira/blob/8075aa943f7ca7358f799b04932d4c30c4ccd510/src/kuhira/plan.py"
+        },
+        {
+          "path": "src/kuhira/sas.py",
+          "sha256": "262afa8e3331a910317f038dde97068f5f28a9651ed6c24f8d195ef8563a8a0b",
+          "url": "https://github.com/thepreakerebi/kuhira/blob/8075aa943f7ca7358f799b04932d4c30c4ccd510/src/kuhira/sas.py"
+        },
+        {
+          "path": "src/kuhira/water_bonus.py",
+          "sha256": "07e3e31ea1fd4323885aa18f78df0d88c4615e8dc9d6e6bc1ed890b0ccb2c8d6",
+          "url": "https://github.com/thepreakerebi/kuhira/blob/8075aa943f7ca7358f799b04932d4c30c4ccd510/src/kuhira/water_bonus.py"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "repository": "rcyubahiro/NISR-hackathon-food-insecurityKeRW",
+      "commit": "8b7affdb1e375392d9f24383fc20995c9569ca30",
+      "scope": "Track 1 self-identified",
+      "score": 40,
+      "categoryPoints": [
+        15,
+        10,
+        10,
+        0,
+        5
+      ],
+      "sharedRank": 30,
+      "treeTruncated": false,
+      "treeFileCount": 5,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "db3ae8dac2459879235dda010f5016899f5b6454ed62e32e09857d1f452a1562",
+          "url": "https://github.com/rcyubahiro/NISR-hackathon-food-insecurityKeRW/blob/8b7affdb1e375392d9f24383fc20995c9569ca30/README.md"
+        },
+        {
+          "path": "food_insecurity_pipeline.ipynb",
+          "sha256": "3f067baa5f59db1f2351936ee9ebf2fb85aa834d8427834aae2591ce3311d2d9",
+          "url": "https://github.com/rcyubahiro/NISR-hackathon-food-insecurityKeRW/blob/8b7affdb1e375392d9f24383fc20995c9569ca30/food_insecurity_pipeline.ipynb"
+        },
+        {
+          "path": "food_insecurity_pipeline.py",
+          "sha256": "de45b4c7009c72095b272b1076bca20e27fbae0e9f477165f6f90bdfdedf9212",
+          "url": "https://github.com/rcyubahiro/NISR-hackathon-food-insecurityKeRW/blob/8b7affdb1e375392d9f24383fc20995c9569ca30/food_insecurity_pipeline.py"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "repository": "tiradukunda57-cpu/syep-nisr-hackathon-2026",
+      "commit": "81ce3f1faa2bb59f4aa81628fa7adb4d6ad719e4",
+      "scope": "Track 1 self-identified",
+      "score": 70,
+      "categoryPoints": [
+        20,
+        10,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 13,
+      "treeTruncated": false,
+      "treeFileCount": 13,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "660e743f26b48b3d8ef4b786427ea1f7d826a92ddb5714c9761a0258b59d2a33",
+          "url": "https://github.com/tiradukunda57-cpu/syep-nisr-hackathon-2026/blob/81ce3f1faa2bb59f4aa81628fa7adb4d6ad719e4/README.md"
+        },
+        {
+          "path": "app.py",
+          "sha256": "b3ae5568ad1b446bc9fe95201d09564c8e5820f9babdd5f847555b17f2e5fa93",
+          "url": "https://github.com/tiradukunda57-cpu/syep-nisr-hackathon-2026/blob/81ce3f1faa2bb59f4aa81628fa7adb4d6ad719e4/app.py"
+        },
+        {
+          "path": "data/cold_storage.csv",
+          "sha256": "21da4cc14ce2069e3a7d9ab362ebe59eb8b6c51c233bc8bbc40eedfbd5fa1dc7",
+          "url": "https://github.com/tiradukunda57-cpu/syep-nisr-hackathon-2026/blob/81ce3f1faa2bb59f4aa81628fa7adb4d6ad719e4/data/cold_storage.csv"
+        },
+        {
+          "path": "prepare_data.py",
+          "sha256": "f25d8820fba833553c7e2b412378f27a703ee114e20e3aac63e251862771dade",
+          "url": "https://github.com/tiradukunda57-cpu/syep-nisr-hackathon-2026/blob/81ce3f1faa2bb59f4aa81628fa7adb4d6ad719e4/prepare_data.py"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "repository": "sinisalu2007-wq/rwanda-agri-resilience",
+      "commit": "862e4f64429aa3ebbb9683259c9539d67bbbc628",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 55,
+      "categoryPoints": [
+        15,
+        5,
+        15,
+        15,
+        5
+      ],
+      "sharedRank": 26,
+      "treeTruncated": false,
+      "treeFileCount": 21,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "9be62bd517510dc68a6268196634cafdc25e9f1d543b1f5cb382e3d67e3a82a9",
+          "url": "https://github.com/sinisalu2007-wq/rwanda-agri-resilience/blob/862e4f64429aa3ebbb9683259c9539d67bbbc628/README.md"
+        },
+        {
+          "path": "pages/4_Scenario_Simulator.py",
+          "sha256": "7d66cdaaf938d8fa94e13c118e5e0ab5e6370de0e0c65c49d91382a01baac250",
+          "url": "https://github.com/sinisalu2007-wq/rwanda-agri-resilience/blob/862e4f64429aa3ebbb9683259c9539d67bbbc628/pages/4_Scenario_Simulator.py"
+        },
+        {
+          "path": "scripts/make_sample_data.py",
+          "sha256": "c67cd8601fd22cbe1959d5a53aec68f0f68508cdc67a1df4a541d5067812481d",
+          "url": "https://github.com/sinisalu2007-wq/rwanda-agri-resilience/blob/862e4f64429aa3ebbb9683259c9539d67bbbc628/scripts/make_sample_data.py"
+        },
+        {
+          "path": "src/models.py",
+          "sha256": "82a53246b37796a9b3c57159754d19df628976ee6ff6ab9980e006dacaff1a5f",
+          "url": "https://github.com/sinisalu2007-wq/rwanda-agri-resilience/blob/862e4f64429aa3ebbb9683259c9539d67bbbc628/src/models.py"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "repository": "ndolijeandamascene/agrilens",
+      "commit": "664f152cffdfa57454f262e0726032d0e8a36312",
+      "scope": "Track 1 self-identified",
+      "score": 80,
+      "categoryPoints": [
+        15,
+        15,
+        20,
+        15,
+        15
+      ],
+      "sharedRank": 5,
+      "treeTruncated": false,
+      "treeFileCount": 565,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "a5e848ed14cb21d68dd7b940679bc02f2a87910ea46e46f54cd5df5dbd34cc89",
+          "url": "https://github.com/ndolijeandamascene/agrilens/blob/664f152cffdfa57454f262e0726032d0e8a36312/README.md"
+        },
+        {
+          "path": "analytics/pipeline.py",
+          "sha256": "bb8847913b79df6800c170f81ba06a9de6113f1638f4a7be39d816e8e37eea85",
+          "url": "https://github.com/ndolijeandamascene/agrilens/blob/664f152cffdfa57454f262e0726032d0e8a36312/analytics/pipeline.py"
+        },
+        {
+          "path": "apps/accounts/permissions.py",
+          "sha256": "89e0d91aa7cc93cb5ee7a47ba25bebe8e1e2631cfeb9b673ccac895805e16a5a",
+          "url": "https://github.com/ndolijeandamascene/agrilens/blob/664f152cffdfa57454f262e0726032d0e8a36312/apps/accounts/permissions.py"
+        },
+        {
+          "path": "apps/insights/services/engine.py",
+          "sha256": "4a4407389447fe518bcd755f5e36bb1fed63df665e2dd81956bc1c9d64b78cc1",
+          "url": "https://github.com/ndolijeandamascene/agrilens/blob/664f152cffdfa57454f262e0726032d0e8a36312/apps/insights/services/engine.py"
+        },
+        {
+          "path": "apps/ml/services/training.py",
+          "sha256": "4d05ec661b12dc1cf404395b675b63963ea7866fa982a5475fc06a2b5f1c9093",
+          "url": "https://github.com/ndolijeandamascene/agrilens/blob/664f152cffdfa57454f262e0726032d0e8a36312/apps/ml/services/training.py"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "repository": "NickSingizwa/nisr_competition",
+      "commit": "1ee11614ce3d1f529dd394d9898f69d8ed960320",
+      "scope": "Track 1 self-identified",
+      "score": 40,
+      "categoryPoints": [
+        15,
+        10,
+        10,
+        0,
+        5
+      ],
+      "sharedRank": 30,
+      "treeTruncated": false,
+      "treeFileCount": 16,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "a2ab4a9ba29080505bb088356f7d8b3f230b1c15ecd247e8d970567a3439c6d8",
+          "url": "https://github.com/NickSingizwa/nisr_competition/blob/1ee11614ce3d1f529dd394d9898f69d8ed960320/README.md"
+        },
+        {
+          "path": "data/processed/forecast_2026A_placeholder.csv",
+          "sha256": "95164e60496811fefb2b04aea30d084b0bad20bd68e48028f091b7f91d29cad0",
+          "url": "https://github.com/NickSingizwa/nisr_competition/blob/1ee11614ce3d1f529dd394d9898f69d8ed960320/data/processed/forecast_2026A_placeholder.csv"
+        },
+        {
+          "path": "nisr_yield_pipeline.ipynb",
+          "sha256": "09917f083cf42bc0c125383cca273eeaee7bbd2d40350c60c1b69eea79eb9730",
+          "url": "https://github.com/NickSingizwa/nisr_competition/blob/1ee11614ce3d1f529dd394d9898f69d8ed960320/nisr_yield_pipeline.ipynb"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "repository": "PAZZO123/yieldgap-rwanda",
+      "commit": "439e7b4d90f18ac0713661e0c8a066f8f3c53c2b",
+      "scope": "Track 1 self-identified",
+      "score": 85,
+      "categoryPoints": [
+        20,
+        15,
+        15,
+        20,
+        15
+      ],
+      "sharedRank": 2,
+      "treeTruncated": false,
+      "treeFileCount": 50,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "368123035f05612822a94e3c6f7162bba633d21562d0bed47cf21242b16704cc",
+          "url": "https://github.com/PAZZO123/yieldgap-rwanda/blob/439e7b4d90f18ac0713661e0c8a066f8f3c53c2b/README.md"
+        },
+        {
+          "path": "app/app.js",
+          "sha256": "8ed12c23a60aa5c4af955be9f4712a4b67aa3f60b2258fdab9aa75c855addcc0",
+          "url": "https://github.com/PAZZO123/yieldgap-rwanda/blob/439e7b4d90f18ac0713661e0c8a066f8f3c53c2b/app/app.js"
+        },
+        {
+          "path": "src/peer_districts.py",
+          "sha256": "dcea20f2be0856d83ec5e2376e2d9236071d50a3dadf1df940d416a28c3e16af",
+          "url": "https://github.com/PAZZO123/yieldgap-rwanda/blob/439e7b4d90f18ac0713661e0c8a066f8f3c53c2b/src/peer_districts.py"
+        },
+        {
+          "path": "src/yield_gaps.py",
+          "sha256": "a401002e083ffc99b0926e78efb5bed297deb776f33241409aac4dee5369930a",
+          "url": "https://github.com/PAZZO123/yieldgap-rwanda/blob/439e7b4d90f18ac0713661e0c8a066f8f3c53c2b/src/yield_gaps.py"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "repository": "DIVINEakisa/Musaruro",
+      "commit": "86cdadf39b5527a444dd4f918b590fa770b9194a",
+      "scope": "Track 1 self-identified",
+      "score": 80,
+      "categoryPoints": [
+        20,
+        15,
+        15,
+        15,
+        15
+      ],
+      "sharedRank": 5,
+      "treeTruncated": false,
+      "treeFileCount": 225,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "3f039296a97e6702f92f1aee9049b3185bf94bf05aae577804e982179633541f",
+          "url": "https://github.com/DIVINEakisa/Musaruro/blob/86cdadf39b5527a444dd4f918b590fa770b9194a/README.md"
+        },
+        {
+          "path": "app/musaruro_app.py",
+          "sha256": "01b2f2ec16b24071e849f246b10123b330e7e05f0af64c9534a25ec70b273bac",
+          "url": "https://github.com/DIVINEakisa/Musaruro/blob/86cdadf39b5527a444dd4f918b590fa770b9194a/app/musaruro_app.py"
+        },
+        {
+          "path": "src/actions.py",
+          "sha256": "2d12ca5fbefa5309c15da9e6af1aaee37c4ccc3a741bda5794fbf4e06add8393",
+          "url": "https://github.com/DIVINEakisa/Musaruro/blob/86cdadf39b5527a444dd4f918b590fa770b9194a/src/actions.py"
+        },
+        {
+          "path": "src/build_dataset.py",
+          "sha256": "1f48de02307ce40046ad61aa438b4dad57dd173f00144f15beaef209489ca080",
+          "url": "https://github.com/DIVINEakisa/Musaruro/blob/86cdadf39b5527a444dd4f918b590fa770b9194a/src/build_dataset.py"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "repository": "Honore777/Agri_Ai_and-Climate-alert-system",
+      "commit": "fce5ab19068d71d869822da766647f26313b0c0f",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 60,
+      "categoryPoints": [
+        15,
+        5,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 21,
+      "treeTruncated": false,
+      "treeFileCount": 241,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "d6cf6a7cb26dc85da02f0b7375f47c6f009377f48d29d71bb48968df8ab8452f",
+          "url": "https://github.com/Honore777/Agri_Ai_and-Climate-alert-system/blob/fce5ab19068d71d869822da766647f26313b0c0f/README.md"
+        },
+        {
+          "path": "backend/app/api/v1/inference.py",
+          "sha256": "6b7afa6e243a9ca74f063d8c5fea3445aab8ed9592aec8ee519b8fd64ae777e3",
+          "url": "https://github.com/Honore777/Agri_Ai_and-Climate-alert-system/blob/fce5ab19068d71d869822da766647f26313b0c0f/backend/app/api/v1/inference.py"
+        },
+        {
+          "path": "backend/app/ml/model_loader.py",
+          "sha256": "0740d25c1e449fb68d02c4f1ce4a50073d42bae30ed8171ba3925507dad55872",
+          "url": "https://github.com/Honore777/Agri_Ai_and-Climate-alert-system/blob/fce5ab19068d71d869822da766647f26313b0c0f/backend/app/ml/model_loader.py"
+        },
+        {
+          "path": "backend/app/ml/predictor.py",
+          "sha256": "1e6188e037f9222550bfe29d656d8224e44cef6b46ecaa92fedfbe54ca6e36f5",
+          "url": "https://github.com/Honore777/Agri_Ai_and-Climate-alert-system/blob/fce5ab19068d71d869822da766647f26313b0c0f/backend/app/ml/predictor.py"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "repository": "BodeMurairi2/food_supply_earlyWarning",
+      "commit": "2b33bacf487dd5aecbcf415398ec2cf6b9ec13db",
+      "scope": "Track 1 self-identified",
+      "score": 75,
+      "categoryPoints": [
+        20,
+        10,
+        20,
+        15,
+        10
+      ],
+      "sharedRank": 9,
+      "treeTruncated": false,
+      "treeFileCount": 149,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "29a8ae4e96a89b7706ef49636887ad11bb0419c1d6b476210b260b082b3b8be5",
+          "url": "https://github.com/BodeMurairi2/food_supply_earlyWarning/blob/2b33bacf487dd5aecbcf415398ec2cf6b9ec13db/README.md"
+        },
+        {
+          "path": "analysis.ipynb",
+          "sha256": "b8b2bfd149f68fbfe168939df5a58868d156383380cd25d5bfc958832c723ee5",
+          "url": "https://github.com/BodeMurairi2/food_supply_earlyWarning/blob/2b33bacf487dd5aecbcf415398ec2cf6b9ec13db/analysis.ipynb"
+        },
+        {
+          "path": "api/main.py",
+          "sha256": "597fda178e097c61e0ea3763c7857a7575b2ee3d60f8951fde812016de013a2d",
+          "url": "https://github.com/BodeMurairi2/food_supply_earlyWarning/blob/2b33bacf487dd5aecbcf415398ec2cf6b9ec13db/api/main.py"
+        },
+        {
+          "path": "api/services/store.py",
+          "sha256": "7ba059e6607992b87373d32fafed8e51b0cfde18b362fcda10de12d82784fa68",
+          "url": "https://github.com/BodeMurairi2/food_supply_earlyWarning/blob/2b33bacf487dd5aecbcf415398ec2cf6b9ec13db/api/services/store.py"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "repository": "Jacksonsod/post-harvest-loss-tracker",
+      "commit": "b6685f14f2456e28a49796aaba83ca9f9423e4cb",
+      "scope": "Track 1 self-identified",
+      "score": 80,
+      "categoryPoints": [
+        20,
+        15,
+        15,
+        15,
+        15
+      ],
+      "sharedRank": 5,
+      "treeTruncated": false,
+      "treeFileCount": 63,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "d6639b0fde26225ccd13dee9eee2eab7ad5a6cf8d1990af5191baf2ceae19fa0",
+          "url": "https://github.com/Jacksonsod/post-harvest-loss-tracker/blob/b6685f14f2456e28a49796aaba83ca9f9423e4cb/README.md"
+        },
+        {
+          "path": "backend/assessment_service.py",
+          "sha256": "27ba992b9e29f62e7b8af3ec00ea773040b4fed9ee37b6d1d20e6b0993bdbdd6",
+          "url": "https://github.com/Jacksonsod/post-harvest-loss-tracker/blob/b6685f14f2456e28a49796aaba83ca9f9423e4cb/backend/assessment_service.py"
+        },
+        {
+          "path": "backend/benchmark_service.py",
+          "sha256": "4a30719aaa2ab55de032ab1189df4ce20e5d185547e8944e1f2a08bd98118979",
+          "url": "https://github.com/Jacksonsod/post-harvest-loss-tracker/blob/b6685f14f2456e28a49796aaba83ca9f9423e4cb/backend/benchmark_service.py"
+        },
+        {
+          "path": "backend/main.py",
+          "sha256": "aafe786c2f6b055af1fb26a3049cecbcefeafdb7a9870628a122c9d6e8695e46",
+          "url": "https://github.com/Jacksonsod/post-harvest-loss-tracker/blob/b6685f14f2456e28a49796aaba83ca9f9423e4cb/backend/main.py"
+        },
+        {
+          "path": "backend/scoring_service.py",
+          "sha256": "afef497057693e0fdc2d87aa98da31834fe9dd50f42275861f994c7c0eefb22f",
+          "url": "https://github.com/Jacksonsod/post-harvest-loss-tracker/blob/b6685f14f2456e28a49796aaba83ca9f9423e4cb/backend/scoring_service.py"
+        },
+        {
+          "path": "notebooks/predict_loss_risk.py",
+          "sha256": "0b120d233b76a4e4a2e0aa24e4738d29e5781680e72279498d9bb09e06afbfd7",
+          "url": "https://github.com/Jacksonsod/post-harvest-loss-tracker/blob/b6685f14f2456e28a49796aaba83ca9f9423e4cb/notebooks/predict_loss_risk.py"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "repository": "Rulindana/cropguard-rwanda",
+      "commit": "148c05e292cd05637a692388fee48330269e802f",
+      "scope": "Track 1 self-identified",
+      "score": 65,
+      "categoryPoints": [
+        15,
+        10,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 15,
+      "treeTruncated": false,
+      "treeFileCount": 181,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "fe309392943b472c2382479bb0269384e4a956f22f38e60cea6a2b9e3f2168a5",
+          "url": "https://github.com/Rulindana/cropguard-rwanda/blob/148c05e292cd05637a692388fee48330269e802f/README.md"
+        },
+        {
+          "path": "app.py",
+          "sha256": "5c6cb99e0f37ce1df7d39092db71c10e03aca96365497604c3036717c0049e4d",
+          "url": "https://github.com/Rulindana/cropguard-rwanda/blob/148c05e292cd05637a692388fee48330269e802f/app.py"
+        },
+        {
+          "path": "flutter_app/cropguard_app/lib/main.dart",
+          "sha256": "352545841fe29203c1abfcc74d130ec2d70724e5db038c5ec3dc6d6f95389229",
+          "url": "https://github.com/Rulindana/cropguard-rwanda/blob/148c05e292cd05637a692388fee48330269e802f/flutter_app/cropguard_app/lib/main.dart"
+        },
+        {
+          "path": "sync_pipeline/sync_nisr_data.py",
+          "sha256": "6cc476491b745c47c682cc7ff2594890b06d558bf9638c565da959ac80bca345",
+          "url": "https://github.com/Rulindana/cropguard-rwanda/blob/148c05e292cd05637a692388fee48330269e802f/sync_pipeline/sync_nisr_data.py"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "repository": "cracker38/AgriLoss-Value-Intelligence-Rwanda",
+      "commit": "103b65ef0499a4006113d0ef74d9fb342c710608",
+      "scope": "Track 1 self-identified",
+      "score": 75,
+      "categoryPoints": [
+        20,
+        15,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 9,
+      "treeTruncated": false,
+      "treeFileCount": 40,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "399564faa9d83f051ac3cb9c37ca0bee1b19f6d4429cd670603cfcb6b6a693bf",
+          "url": "https://github.com/cracker38/AgriLoss-Value-Intelligence-Rwanda/blob/103b65ef0499a4006113d0ef74d9fb342c710608/README.md"
+        },
+        {
+          "path": "app.py",
+          "sha256": "8cf29ba34d2f8e725a86ad040d8054ee0517b49f1f75bf9f6a64c53332d76ccd",
+          "url": "https://github.com/cracker38/AgriLoss-Value-Intelligence-Rwanda/blob/103b65ef0499a4006113d0ef74d9fb342c710608/app.py"
+        },
+        {
+          "path": "scripts/audit_sas_2024.py",
+          "sha256": "438e1e386ecfa50c19fb72ce51059dad3b4ab0f05c76086c2120e68dd7c16bba",
+          "url": "https://github.com/cracker38/AgriLoss-Value-Intelligence-Rwanda/blob/103b65ef0499a4006113d0ef74d9fb342c710608/scripts/audit_sas_2024.py"
+        },
+        {
+          "path": "scripts/dashboard_data.py",
+          "sha256": "1d98a4b30f2580b5e1c2aa83e8cb4ece8c4349caeaa1af2fb3f38a784d8a5602",
+          "url": "https://github.com/cracker38/AgriLoss-Value-Intelligence-Rwanda/blob/103b65ef0499a4006113d0ef74d9fb342c710608/scripts/dashboard_data.py"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "repository": "rugambacb/AgriPriority-Rwanda",
+      "commit": "8bc1ed7e47f224fa6959498d5725433e1fa7faee",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 65,
+      "categoryPoints": [
+        15,
+        15,
+        10,
+        15,
+        10
+      ],
+      "sharedRank": 15,
+      "treeTruncated": false,
+      "treeFileCount": 10,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "f80dad406ba5f4e55550dc85b92ce74d62fafc64e9c97092019d7e214f29d9dd",
+          "url": "https://github.com/rugambacb/AgriPriority-Rwanda/blob/8bc1ed7e47f224fa6959498d5725433e1fa7faee/README.md"
+        },
+        {
+          "path": "app.py",
+          "sha256": "a153431d2ebebd5d1d01dbb03bc060fd39835ce2cd251cd64d2741dcd0639749",
+          "url": "https://github.com/rugambacb/AgriPriority-Rwanda/blob/8bc1ed7e47f224fa6959498d5725433e1fa7faee/app.py"
+        },
+        {
+          "path": "executive_overview.py",
+          "sha256": "076cc27cb2c565bb0da47346a10660cc456eaf091308f2c63e1e5893c917f311",
+          "url": "https://github.com/rugambacb/AgriPriority-Rwanda/blob/8bc1ed7e47f224fa6959498d5725433e1fa7faee/executive_overview.py"
+        },
+        {
+          "path": "national_insights.py",
+          "sha256": "acc2c7de8f73cc2915623492d370b007f36ddde45e0d9613d74d986314407ecb",
+          "url": "https://github.com/rugambacb/AgriPriority-Rwanda/blob/8bc1ed7e47f224fa6959498d5725433e1fa7faee/national_insights.py"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "repository": "Muhinde234/season-pulse",
+      "commit": "00495ec15cc5efe38efbf1cb9dba062f98c07328",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 75,
+      "categoryPoints": [
+        20,
+        15,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 9,
+      "treeTruncated": false,
+      "treeFileCount": 22,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "045eb4e09ab640679d56b5826d971604fb19c025b764afa8f2b70ebbe38fe992",
+          "url": "https://github.com/Muhinde234/season-pulse/blob/00495ec15cc5efe38efbf1cb9dba062f98c07328/README.md"
+        },
+        {
+          "path": "build_baseline.py",
+          "sha256": "aea260a047a0d11b2436e5abd8b59fed43d5e4edce3c039b803ecb18dc983b43",
+          "url": "https://github.com/Muhinde234/season-pulse/blob/00495ec15cc5efe38efbf1cb9dba062f98c07328/build_baseline.py"
+        },
+        {
+          "path": "core/db.py",
+          "sha256": "24fcad8d5caf45aa7ed2bd9813987ce2a119c1dc9a60fbb46e772e813a809b5b",
+          "url": "https://github.com/Muhinde234/season-pulse/blob/00495ec15cc5efe38efbf1cb9dba062f98c07328/core/db.py"
+        },
+        {
+          "path": "core/risk.py",
+          "sha256": "1a6b7fcb5cacfce1371324c78412944d2944d2cd34ffd985cb054b4ba227dff7",
+          "url": "https://github.com/Muhinde234/season-pulse/blob/00495ec15cc5efe38efbf1cb9dba062f98c07328/core/risk.py"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "repository": "remy-shingiro/aii-agri-intervention",
+      "commit": "efc12c51148521c32085e804314e5294386251b9",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 80,
+      "categoryPoints": [
+        20,
+        15,
+        15,
+        15,
+        15
+      ],
+      "sharedRank": 5,
+      "treeTruncated": false,
+      "treeFileCount": 116,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "b7d412acf39ec7ab233a65419ce1f472dd2dc504404f4a105592dfb4a707b2cf",
+          "url": "https://github.com/remy-shingiro/aii-agri-intervention/blob/efc12c51148521c32085e804314e5294386251b9/README.md"
+        },
+        {
+          "path": "scripts/extract-nisr-agricultural-data.cjs",
+          "sha256": "730641e37559a18b68fe4293a780a0a43a0e665daa8a6d58962bee2905ad01a7",
+          "url": "https://github.com/remy-shingiro/aii-agri-intervention/blob/efc12c51148521c32085e804314e5294386251b9/scripts/extract-nisr-agricultural-data.cjs"
+        },
+        {
+          "path": "src/features/evidence/data/loadAgriculturalEvidence.ts",
+          "sha256": "e275efb0da61ed15154c8c4aee6253bb480f7542728d3f68a1aa2eb9c65509eb",
+          "url": "https://github.com/remy-shingiro/aii-agri-intervention/blob/efc12c51148521c32085e804314e5294386251b9/src/features/evidence/data/loadAgriculturalEvidence.ts"
+        },
+        {
+          "path": "src/features/intelligence/agriculturalSignalEngine.test.ts",
+          "sha256": "85a3bf943b7b99360d915176b291e3f11a46a0adec4112e4466b2d78d7617819",
+          "url": "https://github.com/remy-shingiro/aii-agri-intervention/blob/efc12c51148521c32085e804314e5294386251b9/src/features/intelligence/agriculturalSignalEngine.test.ts"
+        },
+        {
+          "path": "src/features/intelligence/agriculturalSignalEngine.ts",
+          "sha256": "bcd107f5c6df1fce0d5cde0edb31b34d0f8c166b339db2431edca96ddea2a461",
+          "url": "https://github.com/remy-shingiro/aii-agri-intervention/blob/efc12c51148521c32085e804314e5294386251b9/src/features/intelligence/agriculturalSignalEngine.ts"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "repository": "Jonathan2055/nisr-planting-window-advisor",
+      "commit": "d0b894d95ca12a0c984c5b22ef574941377abfbe",
+      "scope": "Not implemented in public repo",
+      "score": 10,
+      "categoryPoints": [
+        10,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sharedRank": 33,
+      "treeTruncated": false,
+      "treeFileCount": 1,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "7d72769f52f24b91ad4da7c46b39982b66f28d30fa64dae7938c428ccca28456",
+          "url": "https://github.com/Jonathan2055/nisr-planting-window-advisor/blob/d0b894d95ca12a0c984c5b22ef574941377abfbe/README.md"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "repository": "UShamila/rwanda-agricultural-productivity",
+      "commit": "61072f5980369cae98bc6705dea41553026e9f51",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 40,
+      "categoryPoints": [
+        15,
+        10,
+        10,
+        0,
+        5
+      ],
+      "sharedRank": 30,
+      "treeTruncated": false,
+      "treeFileCount": 3,
+      "reviewedFiles": [
+        {
+          "path": "Agricultural_Productivity_Classification.ipynb",
+          "sha256": "30f6404dd6bba1de0ad7e701b58c6f7d0acbf87abf0ed7fef8875b1c260df651",
+          "url": "https://github.com/UShamila/rwanda-agricultural-productivity/blob/61072f5980369cae98bc6705dea41553026e9f51/Agricultural_Productivity_Classification.ipynb"
+        },
+        {
+          "path": "README.md",
+          "sha256": "1427f2fb827c132896b46f8e12b5df7267dc242a594a20878c5deb2d15a72166",
+          "url": "https://github.com/UShamila/rwanda-agricultural-productivity/blob/61072f5980369cae98bc6705dea41553026e9f51/README.md"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "repository": "ishimwedieudonne42-eng/agrismart-rwanda",
+      "commit": "1ccd8d2baadc0adc3a9997703f1b05bafbd238f6",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 65,
+      "categoryPoints": [
+        15,
+        15,
+        10,
+        15,
+        10
+      ],
+      "sharedRank": 15,
+      "treeTruncated": false,
+      "treeFileCount": 31,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "b4402c4021c2a78c227e9aca3c10c4ca9153fde5d5fc3d2d9543be56d49b375b",
+          "url": "https://github.com/ishimwedieudonne42-eng/agrismart-rwanda/blob/1ccd8d2baadc0adc3a9997703f1b05bafbd238f6/README.md"
+        },
+        {
+          "path": "backend/analyze_crops.py",
+          "sha256": "df84049d8f2dcc64c7ee17b7482427d5751241aa55995a766c8bec547cba3777",
+          "url": "https://github.com/ishimwedieudonne42-eng/agrismart-rwanda/blob/1ccd8d2baadc0adc3a9997703f1b05bafbd238f6/backend/analyze_crops.py"
+        },
+        {
+          "path": "districts.html",
+          "sha256": "c71d59652327545e0b8be403dee4b415b3c97a2500b11c75e7beb61709683ebc",
+          "url": "https://github.com/ishimwedieudonne42-eng/agrismart-rwanda/blob/1ccd8d2baadc0adc3a9997703f1b05bafbd238f6/districts.html"
+        },
+        {
+          "path": "national-dashboard.html",
+          "sha256": "18e2c8d14d5ecb79edb7a13f72dbafc200eb0bc8cd7e61fd3262275a3b0ff9ca",
+          "url": "https://github.com/ishimwedieudonne42-eng/agrismart-rwanda/blob/1ccd8d2baadc0adc3a9997703f1b05bafbd238f6/national-dashboard.html"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "repository": "nsanzimanaadolphe9-eng/data-driven-agricultural-decision-support-platform-for-Rwanda",
+      "commit": "359218dcfdf57a18fdb095f1e6ed39fe3f45e32e",
+      "scope": "Not implemented in public repo",
+      "score": 0,
+      "categoryPoints": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sharedRank": 34,
+      "treeTruncated": false,
+      "treeFileCount": 2,
+      "reviewedFiles": [
+        {
+          "path": "Project NISR",
+          "sha256": "e9e6d78cbc2d66632c9080a5f861aab2712a394c3362814dba345fa20582f448",
+          "url": "https://github.com/nsanzimanaadolphe9-eng/data-driven-agricultural-decision-support-platform-for-Rwanda/blob/359218dcfdf57a18fdb095f1e6ed39fe3f45e32e/Project%20NISR"
+        },
+        {
+          "path": "README.md",
+          "sha256": "10d20f52f0c95efd8dd13fbc66122cdd06ce112cddf9e2d15f7dfb44544ddf96",
+          "url": "https://github.com/nsanzimanaadolphe9-eng/data-driven-agricultural-decision-support-platform-for-Rwanda/blob/359218dcfdf57a18fdb095f1e6ed39fe3f45e32e/README.md"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "repository": "tumukeshayezudelphine-cmd/ahs-extension-productivity-rwanda",
+      "commit": "8a20e4c3bee8647c839a481e18c40863598a72b2",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 45,
+      "categoryPoints": [
+        15,
+        10,
+        10,
+        5,
+        5
+      ],
+      "sharedRank": 28,
+      "treeTruncated": false,
+      "treeFileCount": 4,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "ec7724d6a4445c40c45ad7f1c0d01c2bac4f7ed74caacdcc93d6819e5add38dd",
+          "url": "https://github.com/tumukeshayezudelphine-cmd/ahs-extension-productivity-rwanda/blob/8a20e4c3bee8647c839a481e18c40863598a72b2/README.md"
+        },
+        {
+          "path": "complete  data analysis.R",
+          "sha256": "2a7f6ce57c47a6eeb9d6d5b959dd6ba0075d87708d010da0f53b5fa5b45b022b",
+          "url": "https://github.com/tumukeshayezudelphine-cmd/ahs-extension-productivity-rwanda/blob/8a20e4c3bee8647c839a481e18c40863598a72b2/complete%20%20data%20analysis.R"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "repository": "sandwich808-yum/AgriGuard",
+      "commit": "576cdd635c63cd20db4cdfdeef360e397548ff81",
+      "scope": "Track 1 self-identified",
+      "score": 75,
+      "categoryPoints": [
+        20,
+        15,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 9,
+      "treeTruncated": false,
+      "treeFileCount": 21,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "1aba106d2424595e49a0912a7a8427812adcab4ed80b94af1261e74437dc0b69",
+          "url": "https://github.com/sandwich808-yum/AgriGuard/blob/576cdd635c63cd20db4cdfdeef360e397548ff81/README.md"
+        },
+        {
+          "path": "agriguard/risk.py",
+          "sha256": "aef6049b70f247918a99fa854aa74df27ec12666ffd02c3b82fea632f885b364",
+          "url": "https://github.com/sandwich808-yum/AgriGuard/blob/576cdd635c63cd20db4cdfdeef360e397548ff81/agriguard/risk.py"
+        },
+        {
+          "path": "agriguard/weather.py",
+          "sha256": "5a31846d4df3aaf26c336cb23879222a427f219469d834cb31881f74309228c6",
+          "url": "https://github.com/sandwich808-yum/AgriGuard/blob/576cdd635c63cd20db4cdfdeef360e397548ff81/agriguard/weather.py"
+        },
+        {
+          "path": "app.py",
+          "sha256": "6c33f8775217079c9f52a9662bafcdf98fc224bbb983ff2f79e1410003927083",
+          "url": "https://github.com/sandwich808-yum/AgriGuard/blob/576cdd635c63cd20db4cdfdeef360e397548ff81/app.py"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "repository": "munezerojd/ireme-pp",
+      "commit": "5514a323021623c7b9c3159785a5ad956b6029d1",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 65,
+      "categoryPoints": [
+        15,
+        10,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 15,
+      "treeTruncated": false,
+      "treeFileCount": 70,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "8caebb1e028742df5355a9c901aaad7b0e49fb848ee02c07cd56532215fc98b7",
+          "url": "https://github.com/munezerojd/ireme-pp/blob/5514a323021623c7b9c3159785a5ad956b6029d1/README.md"
+        },
+        {
+          "path": "backend/app/main.py",
+          "sha256": "0998461e7cdd861aa356d70efa4c712a4b2c8a8301c8effbfd82ea78784defc6",
+          "url": "https://github.com/munezerojd/ireme-pp/blob/5514a323021623c7b9c3159785a5ad956b6029d1/backend/app/main.py"
+        },
+        {
+          "path": "backend/app/nisr_advisor.py",
+          "sha256": "e444d04c5d512caedb28c85bb91ae11ffa80ca7ea48282e80f4047a12e1576e3",
+          "url": "https://github.com/munezerojd/ireme-pp/blob/5514a323021623c7b9c3159785a5ad956b6029d1/backend/app/nisr_advisor.py"
+        },
+        {
+          "path": "frontend/src/nisr/engine.js",
+          "sha256": "e14c98c784814c7aa38282edd82b3bf4e3c01b1a8dbd227fd60ff3808b37cf35",
+          "url": "https://github.com/munezerojd/ireme-pp/blob/5514a323021623c7b9c3159785a5ad956b6029d1/frontend/src/nisr/engine.js"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "repository": "tnkurunziza300-developer/croppulse-rwanda",
+      "commit": "dd856522a32ec410363e7a383781ed7faf68b88d",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 65,
+      "categoryPoints": [
+        15,
+        10,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 15,
+      "treeTruncated": false,
+      "treeFileCount": 256,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "e20d9661e7b0f80186258e592f28bf5aed141abe70b2aad69c393ce21cb8eaa1",
+          "url": "https://github.com/tnkurunziza300-developer/croppulse-rwanda/blob/dd856522a32ec410363e7a383781ed7faf68b88d/README.md"
+        },
+        {
+          "path": "backend/crop_disease_model.py",
+          "sha256": "d043a13beef2ab0736cbe4561e3044400159df30a28b78457713c859cbc670ed",
+          "url": "https://github.com/tnkurunziza300-developer/croppulse-rwanda/blob/dd856522a32ec410363e7a383781ed7faf68b88d/backend/crop_disease_model.py"
+        },
+        {
+          "path": "data/verified/MANIFEST.json",
+          "sha256": "a1220c3d3ce0d1ac4c867d2594259424d3e477281ef6c0a7549d37df808eed73",
+          "url": "https://github.com/tnkurunziza300-developer/croppulse-rwanda/blob/dd856522a32ec410363e7a383781ed7faf68b88d/data/verified/MANIFEST.json"
+        },
+        {
+          "path": "utils/recommender.py",
+          "sha256": "0599d9671eb169f24299d303dda6da8e752c022d59cbefde1312e6701539d8e7",
+          "url": "https://github.com/tnkurunziza300-developer/croppulse-rwanda/blob/dd856522a32ec410363e7a383781ed7faf68b88d/utils/recommender.py"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "repository": "iiradukunda-dev/agrimenya",
+      "commit": "df4f82243467c68207f62686a61230c2fb1bc025",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 85,
+      "categoryPoints": [
+        20,
+        15,
+        20,
+        15,
+        15
+      ],
+      "sharedRank": 2,
+      "treeTruncated": false,
+      "treeFileCount": 307,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "283f3c032b8e2591f95df6a57ab211ec0d03a3e706c153a77f020faa13c690b7",
+          "url": "https://github.com/iiradukunda-dev/agrimenya/blob/df4f82243467c68207f62686a61230c2fb1bc025/README.md"
+        },
+        {
+          "path": "backend/app/db/migrations/0007_nisr_imports.sql",
+          "sha256": "12f3e00a113428c97e2697b09aff833549c596b6e39be9547a3c8c7ec0ad13c1",
+          "url": "https://github.com/iiradukunda-dev/agrimenya/blob/df4f82243467c68207f62686a61230c2fb1bc025/backend/app/db/migrations/0007_nisr_imports.sql"
+        },
+        {
+          "path": "backend/app/main.py",
+          "sha256": "68c5cff9f7457fcd7b97a951318ea947a7390113c4ac8bc8b63f19f84ef33b44",
+          "url": "https://github.com/iiradukunda-dev/agrimenya/blob/df4f82243467c68207f62686a61230c2fb1bc025/backend/app/main.py"
+        },
+        {
+          "path": "backend/app/ml/predict.py",
+          "sha256": "4cd8f6fb2c23d2a6b2c9afabc22ec4d3fd4d2be90116f4f8ad7c626a52035bd6",
+          "url": "https://github.com/iiradukunda-dev/agrimenya/blob/df4f82243467c68207f62686a61230c2fb1bc025/backend/app/ml/predict.py"
+        },
+        {
+          "path": "backend/app/services/seasonal_planner.py",
+          "sha256": "8d7b1a8281add2f804aefec0fe22ef28caf3cdc4c076bbdcf13108c475bc2fcd",
+          "url": "https://github.com/iiradukunda-dev/agrimenya/blob/df4f82243467c68207f62686a61230c2fb1bc025/backend/app/services/seasonal_planner.py"
+        },
+        {
+          "path": "backend/app/services/whatsapp/dispatcher.py",
+          "sha256": "cfa9f36f9e76d303986fcd354179be5116bd5f183cad9c390337bc3fad834175",
+          "url": "https://github.com/iiradukunda-dev/agrimenya/blob/df4f82243467c68207f62686a61230c2fb1bc025/backend/app/services/whatsapp/dispatcher.py"
+        },
+        {
+          "path": "frontend/utils/i18n.py",
+          "sha256": "c55a2c1f5790d59636a9fb2aab550b68d26f5ffda22f4f886d0c90af64e9004d",
+          "url": "https://github.com/iiradukunda-dev/agrimenya/blob/df4f82243467c68207f62686a61230c2fb1bc025/frontend/utils/i18n.py"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "repository": "Dawit-Getachew/umurima",
+      "commit": "9a119ace8274327e3dd779d0288a00d2f35947b9",
+      "scope": "Caution — competition/track mismatch",
+      "score": 60,
+      "categoryPoints": [
+        15,
+        5,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 21,
+      "treeTruncated": false,
+      "treeFileCount": 231,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "c9ac1d4b75b7fd6eedd0e426b37742236c4b0c0828bd20133f71920d263ad265",
+          "url": "https://github.com/Dawit-Getachew/umurima/blob/9a119ace8274327e3dd779d0288a00d2f35947b9/README.md"
+        },
+        {
+          "path": "backend/app/advisor.py",
+          "sha256": "3aa4e9e18d830615f6cd7a96526e060a6624aeb16bc5300ea42789961b739ae8",
+          "url": "https://github.com/Dawit-Getachew/umurima/blob/9a119ace8274327e3dd779d0288a00d2f35947b9/backend/app/advisor.py"
+        },
+        {
+          "path": "sms-gateway/lib/services/sms_service.dart",
+          "sha256": "ee008ef2e2d5ddb61e2a62f76df4ce01fc866b8e157f467ff43ad56626cd8be9",
+          "url": "https://github.com/Dawit-Getachew/umurima/blob/9a119ace8274327e3dd779d0288a00d2f35947b9/sms-gateway/lib/services/sms_service.dart"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "repository": "GQueen160/umusaruro",
+      "commit": "9b87469efff8233150740a6b7320dc2d8e1dec7a",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 70,
+      "categoryPoints": [
+        15,
+        15,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 13,
+      "treeTruncated": false,
+      "treeFileCount": 131,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "b7006ea2868f40d1e93f733ad5a494dd4d2963cbcf7193ba700b670fd26a5213",
+          "url": "https://github.com/GQueen160/umusaruro/blob/9b87469efff8233150740a6b7320dc2d8e1dec7a/README.md"
+        },
+        {
+          "path": "engine/ingest.py",
+          "sha256": "78af484454b43bedd6f5b5f3867271e336f694db1c82e6eee4c5b102cf9705cd",
+          "url": "https://github.com/GQueen160/umusaruro/blob/9b87469efff8233150740a6b7320dc2d8e1dec7a/engine/ingest.py"
+        },
+        {
+          "path": "sheet/stats.py",
+          "sha256": "c663a723835ddc981f9a6dfce9d8d8f1e7524c863c76cd9478fcf55190e61bc9",
+          "url": "https://github.com/GQueen160/umusaruro/blob/9b87469efff8233150740a6b7320dc2d8e1dec7a/sheet/stats.py"
+        },
+        {
+          "path": "sheet/views.py",
+          "sha256": "3a3989e3782ce7e03caa6bdfbde0c963f2395b2ab921549a18abad9148cc4dd7",
+          "url": "https://github.com/GQueen160/umusaruro/blob/9b87469efff8233150740a6b7320dc2d8e1dec7a/sheet/views.py"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "repository": "ngabodaniel1000/Agripulse-ai",
+      "commit": "c6e52a294f9038c3f2124c3fc19bfe80906556d4",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 55,
+      "categoryPoints": [
+        15,
+        5,
+        15,
+        15,
+        5
+      ],
+      "sharedRank": 26,
+      "treeTruncated": false,
+      "treeFileCount": 189,
+      "reviewedFiles": [
+        {
+          "path": "README.md",
+          "sha256": "6805a716bbf38d0792ddaa712a3dbfa50582f50381fb4f8c73a5afa02558a091",
+          "url": "https://github.com/ngabodaniel1000/Agripulse-ai/blob/c6e52a294f9038c3f2124c3fc19bfe80906556d4/README.md"
+        },
+        {
+          "path": "ai/ml/data_generator.py",
+          "sha256": "1888ea28f009642fdf328427be0e93df5f28d9fe11850119c0e5e16a62969a46",
+          "url": "https://github.com/ngabodaniel1000/Agripulse-ai/blob/c6e52a294f9038c3f2124c3fc19bfe80906556d4/ai/ml/data_generator.py"
+        },
+        {
+          "path": "ai/ml/train_all.py",
+          "sha256": "acb54bace8c78314ec7db279e259ddad256b81cc4d1e029bd234346f40558df7",
+          "url": "https://github.com/ngabodaniel1000/Agripulse-ai/blob/c6e52a294f9038c3f2124c3fc19bfe80906556d4/ai/ml/train_all.py"
+        },
+        {
+          "path": "client/app/page.tsx",
+          "sha256": "d7600b91a3b4fd16a91725f3c9fd2b8af13ed7a88e921b437e6ee0d1a49815e2",
+          "url": "https://github.com/ngabodaniel1000/Agripulse-ai/blob/c6e52a294f9038c3f2124c3fc19bfe80906556d4/client/app/page.tsx"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "repository": "Sengwamana/Rwanda-Beyond-Project",
+      "commit": "08e8f660579814edab94aba6f5b5908853bd2d13",
+      "scope": "Track 1 candidate; verify submission",
+      "score": 60,
+      "categoryPoints": [
+        15,
+        5,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 21,
+      "treeTruncated": false,
+      "treeFileCount": 232,
+      "reviewedFiles": [
+        {
+          "path": "Backend/README.md",
+          "sha256": "7f836699ed78335f1cc464b358330d8aca356b112e83a2c23656b2f9ebe1e14b",
+          "url": "https://github.com/Sengwamana/Rwanda-Beyond-Project/blob/08e8f660579814edab94aba6f5b5908853bd2d13/Backend/README.md"
+        },
+        {
+          "path": "Backend/src/routes/sensors.js",
+          "sha256": "632a2eb13156993a88aa04e6c29527bc45a24c8c5a15ef84f51ceee84b0b8e06",
+          "url": "https://github.com/Sengwamana/Rwanda-Beyond-Project/blob/08e8f660579814edab94aba6f5b5908853bd2d13/Backend/src/routes/sensors.js"
+        },
+        {
+          "path": "Backend/src/services/aiService.js",
+          "sha256": "52920ed6b635e9adcd3a16cbf0b0a3289bba4843455697d1eb1bcf76c4d5adcf",
+          "url": "https://github.com/Sengwamana/Rwanda-Beyond-Project/blob/08e8f660579814edab94aba6f5b5908853bd2d13/Backend/src/services/aiService.js"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "repository": "DamourDev/nisr-agri-engine",
+      "commit": "0c78ee20f2f3acfc4e3bc14aa685c3ff72464a74",
+      "scope": "Track 1 self-identified",
+      "score": 60,
+      "categoryPoints": [
+        15,
+        5,
+        15,
+        15,
+        10
+      ],
+      "sharedRank": 21,
+      "treeTruncated": false,
+      "treeFileCount": 34,
+      "reviewedFiles": [
+        {
+          "path": "app.py",
+          "sha256": "3d8fe2a0e09d9dbbe86357e3dfd9be1de98f08098857ce633edddf484b6d9823",
+          "url": "https://github.com/DamourDev/nisr-agri-engine/blob/0c78ee20f2f3acfc4e3bc14aa685c3ff72464a74/app.py"
+        },
+        {
+          "path": "data/df_master_phase4_predictions.csv",
+          "sha256": "72b28be6e09b8c1b4a21b2bf27f9d54d662470faf34efa167236fea2edb3d742",
+          "url": "https://github.com/DamourDev/nisr-agri-engine/blob/0c78ee20f2f3acfc4e3bc14aa685c3ff72464a74/data/df_master_phase4_predictions.csv"
+        },
+        {
+          "path": "notebooks/03_ml_yield_models.ipynb",
+          "sha256": "869aae2ef5d29bdbe7f3ce535c1ea2e6582657ddd49f22b25e340cbc2e1a291d",
+          "url": "https://github.com/DamourDev/nisr-agri-engine/blob/0c78ee20f2f3acfc4e3bc14aa685c3ff72464a74/notebooks/03_ml_yield_models.ipynb"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "repository": "bisangwa-lab/project44",
+      "commit": "c80d0a7415ea1add6a23f7eb273b32b0baa12e0e",
+      "scope": "Subject; agricultural candidate; private at audit",
+      "score": 65,
+      "categoryPoints": [
+        15,
+        15,
+        10,
+        15,
+        10
+      ],
+      "sharedRank": 15,
+      "treeTruncated": false,
+      "treeFileCount": 346,
+      "reviewedFiles": [
+        {
+          "path": ".env.example",
+          "sha256": "48863cc01927809c525ccc6f1e8a0a771570910ad65937c355aa4b3caaba7797",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/.env.example"
+        },
+        {
+          "path": ".npmrc",
+          "sha256": "9e107e5ac03f0da6453f0fdfc06a3057fb8cf9a6bc0748428060d3058e6294fa",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/.npmrc"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "d415020986e8711135b972086646b2a09ee96c7bd7de4d1f9b9d048dc3b51b6c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/AGENTS.md"
+        },
+        {
+          "path": "CLAUDE.md",
+          "sha256": "c3ee99c525cdacb9bcac78d86985e861389eff379aa36d7b5b95cc87ca4162e8",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/CLAUDE.md"
+        },
+        {
+          "path": "EXPLORE_DATA.md",
+          "sha256": "19e8e728e3a178533b98c80bd22d6770179be8144721fb8493e175c05d3997de",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/EXPLORE_DATA.md"
+        },
+        {
+          "path": "LOCAL_DATA.md",
+          "sha256": "6cd114aaac9e84260b366e672dfaad0a777f87d1a77394f6fdd4a546203d8908",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/LOCAL_DATA.md"
+        },
+        {
+          "path": "LOCAL_SETUP.md",
+          "sha256": "885d02872bbb9b6076c118ea02643355a33bf276701296ece99ce17300d85a8d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/LOCAL_SETUP.md"
+        },
+        {
+          "path": "README.md",
+          "sha256": "eaf32e4491812fd4afd4734a6cd72dbd07a866cd0cbffe9abafdf46689564267",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/README.md"
+        },
+        {
+          "path": "WEATHER.md",
+          "sha256": "c9140ce8efacf8c4e6791b59707007601e977bdf9af3a8b57bb170b0d36ca608",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/WEATHER.md"
+        },
+        {
+          "path": "base44/config.jsonc",
+          "sha256": "290079b0dc1601570736395c3747c41fb0070341f540e1f8f55170297b81f12e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/config.jsonc"
+        },
+        {
+          "path": "base44/entities/AgriculturalObservation.jsonc",
+          "sha256": "0e8712232de510c7e3d37811a449745ec7e4b2e9f6d4f1aed63cfc537f3325a2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/AgriculturalObservation.jsonc"
+        },
+        {
+          "path": "base44/entities/Alert.jsonc",
+          "sha256": "d80f32d453ef760b12e756a235c2e2cf3a00523f0701e2b8eb26a9efb447ad65",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/Alert.jsonc"
+        },
+        {
+          "path": "base44/entities/Dataset.jsonc",
+          "sha256": "fb35825ebb76ae4872e950e4f99b090d1ff032fcd96e713f7de1975742a2a96d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/Dataset.jsonc"
+        },
+        {
+          "path": "base44/entities/FollowUpAction.jsonc",
+          "sha256": "5e5605b311fc8b7aae48fae03b0ae66382b9af05d1919c51bef455bc4e5b4f0c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/FollowUpAction.jsonc"
+        },
+        {
+          "path": "base44/entities/ImportLog.jsonc",
+          "sha256": "9cc67ceb43e76c7a8de122f0c8919eb03c6a9ff6df9b672519bdc56c577b92d9",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/ImportLog.jsonc"
+        },
+        {
+          "path": "base44/entities/Investigation.jsonc",
+          "sha256": "ff23b623be46010f552f3f36f2cf8525f848c5ae396f8122259f0a8f0e10f5cc",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/Investigation.jsonc"
+        },
+        {
+          "path": "base44/entities/InvestigationNote.jsonc",
+          "sha256": "2122176e6d1c601892a831e98bebf2820195d81091091eec0b2836d6ae99cb77",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/InvestigationNote.jsonc"
+        },
+        {
+          "path": "base44/entities/User.jsonc",
+          "sha256": "d2e598d65d8e21efc10e81271d17feae074121063c65a44d105784ec901f27cf",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/base44/entities/User.jsonc"
+        },
+        {
+          "path": "components.json",
+          "sha256": "68e51d78fc5ab7c4e282a83ef27c796dffbecd4c7d22ed14b171813ab8d6a6e0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/components.json"
+        },
+        {
+          "path": "eslint.config.js",
+          "sha256": "4d415e3eaddbb86dc4dbe15a5757cb2e79b4e6c19b46509300496b0b0adbf8f0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/eslint.config.js"
+        },
+        {
+          "path": "jsconfig.json",
+          "sha256": "c2733559c2d691b907dbfad7229656a90ab57b1eafb98bff97a589b0863e2dbd",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/jsconfig.json"
+        },
+        {
+          "path": "migration/base44-source-manifest.json",
+          "sha256": "4f4160ab47d8bfe5765afeb45183f1a827b7759a8eb0ec79c166e704d1e3a6c8",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migration/base44-source-manifest.json"
+        },
+        {
+          "path": "migration/nisr-report-manifest.json",
+          "sha256": "2b881bc37ae870e9cd19328dcbbb3ff7746ad246c81cd037c6180818f22ad8cc",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migration/nisr-report-manifest.json"
+        },
+        {
+          "path": "migration/nisr-source-manifest.json",
+          "sha256": "421f39f172c935266196adb57a20f125eb9a1c966756cd42c077639e389a4413",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migration/nisr-source-manifest.json"
+        },
+        {
+          "path": "migration/npm-audit.json",
+          "sha256": "8175d37d1f4f079fa3e64e81b5003384f8319df06e0a7bd1c094194ec62f6a82",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migration/npm-audit.json"
+        },
+        {
+          "path": "migration/real-data-import-report.json",
+          "sha256": "3f66e11f9c91db5e5ff482031b889f9ce378cf1416910ba5403f925d1f9a3029",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migration/real-data-import-report.json"
+        },
+        {
+          "path": "migration/rwanda-boundaries-source.json",
+          "sha256": "b0319b501338f7781e769dff71998ff74b7db59ddf933d1115b5b51a76b7378a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migration/rwanda-boundaries-source.json"
+        },
+        {
+          "path": "migration/source-discovery-report.json",
+          "sha256": "4ccf58d746d0f248a3f7cb3a5de2420f257267274b9e53830585e2e70faf20da",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migration/source-discovery-report.json"
+        },
+        {
+          "path": "migrations/0001_local_auth.sql",
+          "sha256": "9d71fc8a1487f6cc427cda11e440bcc8efcd21c69feaf28ad134887506ee7c9e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migrations/0001_local_auth.sql"
+        },
+        {
+          "path": "migrations/0002_local_data.sql",
+          "sha256": "06e38fa76da6ce5fc0de1d163750b35267dc3f0502a50f4383db07dbb99ea66e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migrations/0002_local_data.sql"
+        },
+        {
+          "path": "migrations/0003_weather.sql",
+          "sha256": "4d7a8413702b9a3da2ac893b11ca11d386dce7bd2cacfd5079451eacb8848905",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/migrations/0003_weather.sql"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "01e703e2889cb99d58551ab00e76b444a9cfc1db3a2fb78cb15f81ddc724b24e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/package-lock.json"
+        },
+        {
+          "path": "package.json",
+          "sha256": "79bde3174b39ef1a6c931e254ee8a1bb802c7ac1dd9d38f9a770d9458f068aec",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/package.json"
+        },
+        {
+          "path": "postcss.config.js",
+          "sha256": "f0156321fafa19749b38a82ea29e7b1786a1f727b67372ef40cc66de0ed898fb",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/postcss.config.js"
+        },
+        {
+          "path": "scripts/check-climate-analysis.js",
+          "sha256": "906ba0ed70e58cf48ae373fe2e36ef03e259448a594d16d51db5b24c5167e3c9",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/check-climate-analysis.js"
+        },
+        {
+          "path": "scripts/check-local-auth.js",
+          "sha256": "1b87ebff6ce701cf1af46ab42e531e4d24e2bca142a2600da44ec0e7f0f6e2e0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/check-local-auth.js"
+        },
+        {
+          "path": "scripts/check-real-data.js",
+          "sha256": "06e909cb418c6e9b7daf90f8e2bb0e1db2f9545790ef514790d35ca6b85eae5c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/check-real-data.js"
+        },
+        {
+          "path": "scripts/check-weather.js",
+          "sha256": "bbe4ba4f9ba8ed52df56bc28bbad6002dd01dbfb18683689d853863afaa38285",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/check-weather.js"
+        },
+        {
+          "path": "scripts/discover-nisr-sources.py",
+          "sha256": "bb847eb50e0ccc2ab52b400ab01dddb5da13ac10fc141da6dc23ed21d37f163f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/discover-nisr-sources.py"
+        },
+        {
+          "path": "scripts/download-nisr-data.py",
+          "sha256": "fde79bc8728341dc047057a4461d9edab7437ee0926a380bf1bb922ff502773d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/download-nisr-data.py"
+        },
+        {
+          "path": "scripts/download-rwanda-boundaries.py",
+          "sha256": "341b9f8504e5634782c16ae1d1f222b1e474fedeb9d6abce8b76d8c76d288c0a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/download-rwanda-boundaries.py"
+        },
+        {
+          "path": "scripts/import-local-data.js",
+          "sha256": "47540dfc7d6afc79e166b857901091958c70f52a06cf4df9ce6e5e2aeb7cdba5",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/import-local-data.js"
+        },
+        {
+          "path": "scripts/index-published-reports.py",
+          "sha256": "7f02d4a27fdc821442645c55e41f381eb9b2a6c40e7cb65d569ab23ae6bfc8da",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/index-published-reports.py"
+        },
+        {
+          "path": "scripts/inspect-surveys.py",
+          "sha256": "0801f07d4a0b9b2f251bfeff09d887761989950e811760464f7cc92ab8d75a6c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/inspect-surveys.py"
+        },
+        {
+          "path": "scripts/local-account.js",
+          "sha256": "bb761074c8e96ec7efbc2c010df0efa604bacbc0acae360b5a38ff8dfcfb2f2d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/local-account.js"
+        },
+        {
+          "path": "scripts/prepare-full-data.py",
+          "sha256": "b348461d3c22c25492447a8987db3322b30b8c054d58e1c018521e5700881fb1",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/prepare-full-data.py"
+        },
+        {
+          "path": "scripts/prepare-real-data.py",
+          "sha256": "651d1f8f1b259baede418b77f405f1fcebb5821d4291272824a9d80efafa8eef",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/prepare-real-data.py"
+        },
+        {
+          "path": "scripts/prepare-weather-locations.js",
+          "sha256": "cca5a585a1e2631013428e6688e37a86ce84d17ace2aa55a15eaccb3236ecaa7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/prepare-weather-locations.js"
+        },
+        {
+          "path": "scripts/prepare-weather-overlaps.js",
+          "sha256": "c7676ab58b899198c3e5042c30ecdf34314c1be649bcb207b0db1f326a2ca262",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/prepare-weather-overlaps.js"
+        },
+        {
+          "path": "scripts/profile-survey-archives.py",
+          "sha256": "7418c6ac5c13eb3295064f95a7753689903e47c2437ed34cca87a90b63f844f0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/scripts/profile-survey-archives.py"
+        },
+        {
+          "path": "skills-lock.json",
+          "sha256": "76c0cd537e4b9503673c7cac19cbeb724334bf5ff4684f84a6b8a343a84e200e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/skills-lock.json"
+        },
+        {
+          "path": "src/api/base44Client.js",
+          "sha256": "1277b7367250d0c9c9bedbf43c82d1d38fbd7ec5f5da8448977575d7f69b85b6",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/api/base44Client.js"
+        },
+        {
+          "path": "src/api/localClient.js",
+          "sha256": "f38012beedb62ed5737b6f74d34a33d851e9688c36e909a417dc54355ca9144e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/api/localClient.js"
+        },
+        {
+          "path": "src/components/DefaultCatchBoundary.jsx",
+          "sha256": "ace8555c7c492ea108dc93cda286068bb79d76fc3fa03fee06c21f5ea6b9c219",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/DefaultCatchBoundary.jsx"
+        },
+        {
+          "path": "src/components/NotFound.jsx",
+          "sha256": "ea5f66f5a19d453566d2b7cd701021c246778224ae1554331f6ec1d7b1aba31a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/NotFound.jsx"
+        },
+        {
+          "path": "src/components/alerts/AlertCard.jsx",
+          "sha256": "01d884e5bb8ff70cbad910fd116ccdba4c75a5ad10ca5c7c84cb3856e8989e41",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/alerts/AlertCard.jsx"
+        },
+        {
+          "path": "src/components/auth/AuthGate.jsx",
+          "sha256": "ec6bf8c5a431cb36aa47c7671c23b6a54d64a78f15beb9668ad8a927f2d4d14e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/AuthGate.jsx"
+        },
+        {
+          "path": "src/components/auth/AuthLayout.jsx",
+          "sha256": "95221e3c8507d96cde0d26c9ef0c59a7b172a9936011e08b35ccd1b63f853274",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/AuthLayout.jsx"
+        },
+        {
+          "path": "src/components/auth/ConsentPage.jsx",
+          "sha256": "75df07ebe4e5b2d86555774d1ce7f6a97471d71639bb83a44d9e9b2c5806de8c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/ConsentPage.jsx"
+        },
+        {
+          "path": "src/components/auth/DemoCredentials.jsx",
+          "sha256": "6e8bf2843408a48b480cff005792ec67c070a702ce45fe543e6e031a66f427fa",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/DemoCredentials.jsx"
+        },
+        {
+          "path": "src/components/auth/ForgotPasswordPage.jsx",
+          "sha256": "0465840e95202000c44802996e4259e1f9939af05380c3db77391c6f51a783b0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/ForgotPasswordPage.jsx"
+        },
+        {
+          "path": "src/components/auth/GoogleIcon.jsx",
+          "sha256": "cea9663d2c83af5d52b7e4d302bd3ced577e6b3cad848dac7c4add8a9cf6e3a7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/GoogleIcon.jsx"
+        },
+        {
+          "path": "src/components/auth/LoginPage.jsx",
+          "sha256": "680116c9000bc251d9b622978f4b66efbe25af8d83feed4f17b57f0e7a4d813e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/LoginPage.jsx"
+        },
+        {
+          "path": "src/components/auth/RegisterPage.jsx",
+          "sha256": "d2ae73b5355e1a08be72c5c3010f7007e2153cd6e81e8f3f1457950289e171bf",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/RegisterPage.jsx"
+        },
+        {
+          "path": "src/components/auth/ResetPasswordPage.jsx",
+          "sha256": "7c52b28ad2003ea36af19b93dbb74ce6d3aee4358121ae0be452d630dcc00dba",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/ResetPasswordPage.jsx"
+        },
+        {
+          "path": "src/components/auth/UserNotRegistered.jsx",
+          "sha256": "7bbc531c97d879c605fd4de23569a2b15f3057328bc0d1f4c2442c67996644e3",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/UserNotRegistered.jsx"
+        },
+        {
+          "path": "src/components/auth/parts.jsx",
+          "sha256": "4d49ecf7434c0f765ae66de2d89675c907fad7683f80c9d61f3ff87577ca269d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/auth/parts.jsx"
+        },
+        {
+          "path": "src/components/charts/ChartTooltip.jsx",
+          "sha256": "dc9b74c2a88bd218a05f1af0f57052b2a350ad092c3e51bd58dab6487983a110",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/charts/ChartTooltip.jsx"
+        },
+        {
+          "path": "src/components/charts/ComparisonBarChart.jsx",
+          "sha256": "ccb6a206e42a872fe8c67edd1ddc747689d766d3bafc7167f06df282ec7df875",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/charts/ComparisonBarChart.jsx"
+        },
+        {
+          "path": "src/components/charts/TrendChart.jsx",
+          "sha256": "3e9b0c966cce89bd8481ed58c56bf2b6a4dbbb7c83686e7a4300e79cc3a7385c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/charts/TrendChart.jsx"
+        },
+        {
+          "path": "src/components/common/DemoNotice.jsx",
+          "sha256": "cb3865f9d940f751e5cf33db2c82504a29509d6f0b826cf6000fc4176efc20c1",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/common/DemoNotice.jsx"
+        },
+        {
+          "path": "src/components/common/EmptyState.jsx",
+          "sha256": "ed41c99ecd1218e8bc4b30cbf7d451231b1f19ebd0681634d5a492f81f6c9a7b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/common/EmptyState.jsx"
+        },
+        {
+          "path": "src/components/common/FilterBar.jsx",
+          "sha256": "5d8038475e7a6d43813509c5fbcec3b1cac0b58f513303ad449c3f9992577dc3",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/common/FilterBar.jsx"
+        },
+        {
+          "path": "src/components/common/PageHeader.jsx",
+          "sha256": "0bf0bb21a89723290256957f1c87ff61259125c9c3de4c0d6c7a6953ff81f606",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/common/PageHeader.jsx"
+        },
+        {
+          "path": "src/components/common/SourceNote.jsx",
+          "sha256": "9022eafbbff8c46208c741050f219d52d552bfdc7a4264ba251c025efc07ec7a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/common/SourceNote.jsx"
+        },
+        {
+          "path": "src/components/common/StatCard.jsx",
+          "sha256": "2a61028cff41f7b9b83f6c77a66dd3b5993bd62fa0df126d6e84995e4b4fd660",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/common/StatCard.jsx"
+        },
+        {
+          "path": "src/components/common/ToneTag.jsx",
+          "sha256": "31aacc87e251239e536f692e2a2ed0ecf712c0d61dd5fa45d07f1c9df0ad224f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/common/ToneTag.jsx"
+        },
+        {
+          "path": "src/components/dashboard/AdministrationDashboard.jsx",
+          "sha256": "2b0e2e390c943696f28f26be49405bf829aa35022d52c20e7c969cbbd49f527a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/dashboard/AdministrationDashboard.jsx"
+        },
+        {
+          "path": "src/components/dashboard/AnalyticsDashboard.jsx",
+          "sha256": "203a8d9204e7513cb4a6b72c420a657d567ad4d2b3e225027d3c5ce1777e09b2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/dashboard/AnalyticsDashboard.jsx"
+        },
+        {
+          "path": "src/components/dashboard/ChartPlaceholder.jsx",
+          "sha256": "3401f4ad98dd5fdd8ca1c14c19f7e6402395e7f262fdaff3da4d26a31a606349",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/dashboard/ChartPlaceholder.jsx"
+        },
+        {
+          "path": "src/components/dashboard/DashboardCard.jsx",
+          "sha256": "9bce170a3640cb83e1aa0ddf98a4109a86356c27dcd903d46d93c63d98698f15",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/dashboard/DashboardCard.jsx"
+        },
+        {
+          "path": "src/components/dashboard/DistributionChart.jsx",
+          "sha256": "b560b7594c031796ee4d425faf3124debc0b219c3377e54b16e5da0d8301f53e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/dashboard/DistributionChart.jsx"
+        },
+        {
+          "path": "src/components/dashboard/FieldDashboard.jsx",
+          "sha256": "5c03eeaeb32e31a41e4f0eaca658c9b195c025872e8febc2091d1aa0d6fc9e10",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/dashboard/FieldDashboard.jsx"
+        },
+        {
+          "path": "src/components/dashboard/SourcePublications.jsx",
+          "sha256": "1844f7a6c828a97d081489fdd559be41d17cae4877c151c04f4c86216bbe1b57",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/dashboard/SourcePublications.jsx"
+        },
+        {
+          "path": "src/components/data/CsvImportPanel.jsx",
+          "sha256": "46acf582d31cba709401b15464642a5c6abf5122d3b214152260a9176cf57035",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/CsvImportPanel.jsx"
+        },
+        {
+          "path": "src/components/data/DatasetCard.jsx",
+          "sha256": "399c1bea3b07a3139b986ca29a4f327451c5078cbe91af89a150c432d257b118",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/DatasetCard.jsx"
+        },
+        {
+          "path": "src/components/data/DatasetDetailDialog.jsx",
+          "sha256": "58122d013835abae86a2b00342780b2fe881b48878f5c7d0478883497c43303a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/DatasetDetailDialog.jsx"
+        },
+        {
+          "path": "src/components/data/DemoDataPanel.jsx",
+          "sha256": "5d0444c734bdea259f72b17548faf3c2bc77b9881554a93fce70677ffc2884de",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/DemoDataPanel.jsx"
+        },
+        {
+          "path": "src/components/data/ExploreWeatherContext.jsx",
+          "sha256": "2577942ffb0ee26b759784766f1a892152560995e0ed09fc2adec130cc6b10f9",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/ExploreWeatherContext.jsx"
+        },
+        {
+          "path": "src/components/data/SourceArchiveCatalogue.jsx",
+          "sha256": "e603336d8dc2d7e5db2eaf01dcf3db8e6c0a54a85544b45889c776aa8d355ae6",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/SourceArchiveCatalogue.jsx"
+        },
+        {
+          "path": "src/components/data/SourceReports.jsx",
+          "sha256": "b4e88d3350653a942e1115ca8aec7c30c6d6ed5bda215ef9640bdf0dfbec2ecb",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/SourceReports.jsx"
+        },
+        {
+          "path": "src/components/data/SourceTableLibrary.jsx",
+          "sha256": "914c218f20642ede8c1788841917320a1dd54a4d7690d60bdb3cb14814f7c7f5",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/data/SourceTableLibrary.jsx"
+        },
+        {
+          "path": "src/components/explain/ExplainChangeDialog.jsx",
+          "sha256": "93c20d2269749238fa1b266b39fadcb61b3de44eac1c659b0c42d41817e63704",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/explain/ExplainChangeDialog.jsx"
+        },
+        {
+          "path": "src/components/investigations/FollowUpPanel.jsx",
+          "sha256": "de8b8c82b1edbe19e712b9a8b7c1a191d32133b79c631c7f2e642e3ff6875e20",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/investigations/FollowUpPanel.jsx"
+        },
+        {
+          "path": "src/components/investigations/NewInvestigationDialog.jsx",
+          "sha256": "a79b818d9e8848e8837daddbc1b43c749de9a689aa4a508b0cdc87cad0448adb",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/investigations/NewInvestigationDialog.jsx"
+        },
+        {
+          "path": "src/components/investigations/ObservationsPanel.jsx",
+          "sha256": "f8ddc729b0ec4a1624e26f94cd12b160c197b3d93b38528bf8b9f6e101b704e2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/investigations/ObservationsPanel.jsx"
+        },
+        {
+          "path": "src/components/layout/AppShell.jsx",
+          "sha256": "33c21d0b639cbb66b63224e0a46d8429824e6a58d64db565730810eb974fe306",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/layout/AppShell.jsx"
+        },
+        {
+          "path": "src/components/layout/BrandMark.jsx",
+          "sha256": "e4eea71045e3c4b2341ad5c74264ea045abac4fc144f8c0cdd8a43d6bc799090",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/layout/BrandMark.jsx"
+        },
+        {
+          "path": "src/components/layout/SidebarNav.jsx",
+          "sha256": "a16b6bdd22dc5da5d07ab04ca57958d18858f9700709eae18047293cf5341950",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/layout/SidebarNav.jsx"
+        },
+        {
+          "path": "src/components/maps/DistrictMap.jsx",
+          "sha256": "4df393eceac7098c7ad1709b49366a7d43e0c38a19823a66e81964c3158d6bae",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/maps/DistrictMap.jsx"
+        },
+        {
+          "path": "src/components/maps/SavedMapFindings.jsx",
+          "sha256": "5a49848fbb7d83ad82da0aed6a8003f04b571c2bfd3aa10827f5ad5e134df1c7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/maps/SavedMapFindings.jsx"
+        },
+        {
+          "path": "src/components/panels/CommunityBusinessPanel.jsx",
+          "sha256": "23ab411016eec3f38dfbea78d3c2dd7589a8b605d4f50bc03de3cdac90e1bcdc",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/panels/CommunityBusinessPanel.jsx"
+        },
+        {
+          "path": "src/components/panels/DataManagerPanel.jsx",
+          "sha256": "4dbe2106cfa0231fb785cf14e187244f6251e3721bb97c61897b16be2e63e85a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/panels/DataManagerPanel.jsx"
+        },
+        {
+          "path": "src/components/panels/FutureWorkspaceNotice.jsx",
+          "sha256": "c5d3ff826705d5278cabd598ef5f00bc89d19827ee218507617212e5b86148ee",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/panels/FutureWorkspaceNotice.jsx"
+        },
+        {
+          "path": "src/components/panels/OfficerPanel.jsx",
+          "sha256": "8646f2a8c178e8535c1219789edc886187c87359ec766b5bd1978f89151b1199",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/panels/OfficerPanel.jsx"
+        },
+        {
+          "path": "src/components/panels/OverviewPanel.jsx",
+          "sha256": "5165e52592b8838431105758cd44233eabbeaa8be29363f2b9f9b0398d89789f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/panels/OverviewPanel.jsx"
+        },
+        {
+          "path": "src/components/panels/PublicInsightsPanel.jsx",
+          "sha256": "b8bfefbce8e81db9b35fc3ccbc7ab7dd8a2233a0317c800f8b9ff9599a1b5938",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/panels/PublicInsightsPanel.jsx"
+        },
+        {
+          "path": "src/components/ui/accordion.jsx",
+          "sha256": "64773c614590a6e067b729b0ffa6ff480f53049056f3e0fa05ca801e59fddbaa",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/accordion.jsx"
+        },
+        {
+          "path": "src/components/ui/alert-dialog.jsx",
+          "sha256": "59952ce8b25c4435dbeb37dbc33f5dfb6fff5512d5e08330fe3984a1853df10e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/alert-dialog.jsx"
+        },
+        {
+          "path": "src/components/ui/alert.jsx",
+          "sha256": "5613117dff80a20c9a3dd3f7bbe2d83bf61daeb28965fb8d58f21c798696a994",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/alert.jsx"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio.jsx",
+          "sha256": "c5ddf929087325ab7e907c67ab1f3149c18a45ee4d2ebd7cf4bb8117c6b7f1fc",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/aspect-ratio.jsx"
+        },
+        {
+          "path": "src/components/ui/avatar.jsx",
+          "sha256": "ca3ca17296cba58cc0d1f6defa80c053e4bbd0f339c5d681d225ecf8b0d99c33",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/avatar.jsx"
+        },
+        {
+          "path": "src/components/ui/badge.jsx",
+          "sha256": "03c67563bb3c5211969a3607350cfe8c5f51185123cd1aec4fa8e866abdb3490",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/badge.jsx"
+        },
+        {
+          "path": "src/components/ui/breadcrumb.jsx",
+          "sha256": "a4a0185266dd07352c59eaf50e60379d504092d866aadaeb74cbb167bc7e15fe",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/breadcrumb.jsx"
+        },
+        {
+          "path": "src/components/ui/button.jsx",
+          "sha256": "a7e62fcbf89ad056b7692102076af003275d6df536fe2d4a438ef5a94ecc7f8e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/button.jsx"
+        },
+        {
+          "path": "src/components/ui/calendar.jsx",
+          "sha256": "c1df2d8d3e13548e258c7d140f42d7f0862911599e4c6f497ffd4bd02dd7e473",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/calendar.jsx"
+        },
+        {
+          "path": "src/components/ui/card.jsx",
+          "sha256": "01c44c6ba9cd5cfe2e3fb076861ac09209db1e1d7d7ee82cc187a969540650d2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/card.jsx"
+        },
+        {
+          "path": "src/components/ui/carousel.jsx",
+          "sha256": "e1277484135e5516d8cf98c762bbc78ee5b8d5feb9fad078ee2b42ff8af9fe20",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/carousel.jsx"
+        },
+        {
+          "path": "src/components/ui/chart.jsx",
+          "sha256": "43338df898302d6fe41ab93a9f7a2d7add4bbbf1b89de4034a45fd6668814706",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/chart.jsx"
+        },
+        {
+          "path": "src/components/ui/checkbox.jsx",
+          "sha256": "92a7d16ab9a2f70df78a95618abee77dbdd196a5182537c7e0b0f6ca609b28b8",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/checkbox.jsx"
+        },
+        {
+          "path": "src/components/ui/collapsible.jsx",
+          "sha256": "3353791845ef232d19ca18e3319a97192493caedcb604209c875f2e239d531f3",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/collapsible.jsx"
+        },
+        {
+          "path": "src/components/ui/command.jsx",
+          "sha256": "36083ed1eb448838ef2dc22eb58db47c92929978c780bae23a7cafcaf99823ac",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/command.jsx"
+        },
+        {
+          "path": "src/components/ui/context-menu.jsx",
+          "sha256": "0904760f086981acc708aa9154b7301eed577b17aba0d7752ce1e5659de7460e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/context-menu.jsx"
+        },
+        {
+          "path": "src/components/ui/dialog.jsx",
+          "sha256": "fa7dc051257ae71f99b58ef692429dac479de1a02cac063931550687403af2a5",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/dialog.jsx"
+        },
+        {
+          "path": "src/components/ui/drawer.jsx",
+          "sha256": "1b48f8eadb79d68726c6a32323a4b71cadd223cf40cb53d40fe40adfef57cdd5",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/drawer.jsx"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu.jsx",
+          "sha256": "ee662262aca618c956431c69c8d58d368f5383ea577946c9a789279005ecf4ae",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/dropdown-menu.jsx"
+        },
+        {
+          "path": "src/components/ui/form.jsx",
+          "sha256": "2116ab3182497b75f1a7f822a5576fa407d9554716be6072e077035f662006e7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/form.jsx"
+        },
+        {
+          "path": "src/components/ui/hover-card.jsx",
+          "sha256": "8b4abe667f8fbc2d15f6caf4ccdb4466287f766b5f24e153c81199df3417c672",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/hover-card.jsx"
+        },
+        {
+          "path": "src/components/ui/image-helpers.js",
+          "sha256": "2224a23e7c24196b000dd035d0f2f6411890124100eaf098201c47ffcae5c8bc",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/image-helpers.js"
+        },
+        {
+          "path": "src/components/ui/image.jsx",
+          "sha256": "48f2ce392dff69179be416cc4957ca859ac3d3362b32470da88056daafe916dd",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/image.jsx"
+        },
+        {
+          "path": "src/components/ui/input-otp.jsx",
+          "sha256": "a11f055ce2d022b856741625275c2965fc4c931419fa1194afceb24c0b8fe4d5",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/input-otp.jsx"
+        },
+        {
+          "path": "src/components/ui/input.jsx",
+          "sha256": "942125045d555d5b92046c477f2c0809d055001f0815d57be0cbd4ab29597f64",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/input.jsx"
+        },
+        {
+          "path": "src/components/ui/label.jsx",
+          "sha256": "17c1f692bb296f802bd2f628ff1a38b1d43c482d1baa66527e4a6f90d4f39639",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/label.jsx"
+        },
+        {
+          "path": "src/components/ui/menubar.jsx",
+          "sha256": "aa2dee3e1173341d36ad50ab34b0a0d63814c9c2a8c1d219a316ceec160ba5d8",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/menubar.jsx"
+        },
+        {
+          "path": "src/components/ui/navigation-menu.jsx",
+          "sha256": "ba078c856220220b6dc3a87b51abe7a7fe634be51090dd835ab6b4d61415c28f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/navigation-menu.jsx"
+        },
+        {
+          "path": "src/components/ui/pagination.jsx",
+          "sha256": "a846f83e97ecd3ffa73146daeb5729351cc739caa64b5fee987004ec0a100fa2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/pagination.jsx"
+        },
+        {
+          "path": "src/components/ui/popover.jsx",
+          "sha256": "cea8fde7370274c5cc1c32d0605f9d7a1e75aeb5194d9be9d0d7e368f0c086bb",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/popover.jsx"
+        },
+        {
+          "path": "src/components/ui/progress.jsx",
+          "sha256": "d6bd33a31e0f46202ae77e46d789adc27364d379367986ab3fcf146e67a1f4a4",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/progress.jsx"
+        },
+        {
+          "path": "src/components/ui/radio-group.jsx",
+          "sha256": "f94ffef0a63c912d941f154a7daa99131bdf1548b791bd5407978b3c307ac056",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/radio-group.jsx"
+        },
+        {
+          "path": "src/components/ui/resizable.jsx",
+          "sha256": "be4469a017568057329e305500e8c44590b6ef655816dea1756676a4e4f7244b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/resizable.jsx"
+        },
+        {
+          "path": "src/components/ui/responsive-image.jsx",
+          "sha256": "5d6beda3ef34f8271b93d0726c74b98fb3104d0c1bb9b8466bf19097bf5ae57d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/responsive-image.jsx"
+        },
+        {
+          "path": "src/components/ui/scroll-area.jsx",
+          "sha256": "8c84dd399deadb52024522bf01f0a2a71fb952261d9f8d071771fa9406032776",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/scroll-area.jsx"
+        },
+        {
+          "path": "src/components/ui/select.jsx",
+          "sha256": "62e40c90f477f252b08717e4724a3d35b9b88b783fdf1c7d458fbbcc2ffd0fd8",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/select.jsx"
+        },
+        {
+          "path": "src/components/ui/separator.jsx",
+          "sha256": "2ab4e3893d143a7900bbae1b2ea0d8232428b710ea9fbdf80c7332127009051a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/separator.jsx"
+        },
+        {
+          "path": "src/components/ui/sheet.jsx",
+          "sha256": "147b591671c45fce75dacb739aa5a5ba8dc88bc9b5a0f4a0f2b748dd1815fc65",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/sheet.jsx"
+        },
+        {
+          "path": "src/components/ui/sidebar.jsx",
+          "sha256": "a0812559a4d8f698805f1d72936339ac900fb9443fc92f202d941aaebcbb3d80",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/sidebar.jsx"
+        },
+        {
+          "path": "src/components/ui/skeleton.jsx",
+          "sha256": "a58fed695741a75ba0accb7b277a34b1db368bc20b8772b614ba3cd4494a1451",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/skeleton.jsx"
+        },
+        {
+          "path": "src/components/ui/slider.jsx",
+          "sha256": "07e9e5ee07f63478023f85f9f7a40b4154df2be69c91d19aa3200b415dc80f84",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/slider.jsx"
+        },
+        {
+          "path": "src/components/ui/sonner.jsx",
+          "sha256": "a473173e18f018a64da1a8741e59ddd69389d3f84d1d0eb65affa7102cdd7124",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/sonner.jsx"
+        },
+        {
+          "path": "src/components/ui/switch.jsx",
+          "sha256": "6501445e960dd1388280c65f58b6db67f736654458d249e1c3763c0ff6a6265c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/switch.jsx"
+        },
+        {
+          "path": "src/components/ui/table.jsx",
+          "sha256": "f2f48df2faeb7f5f22f601d59f3d1a432254b30bf2f5af424c48d20ccc52a5ed",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/table.jsx"
+        },
+        {
+          "path": "src/components/ui/tabs.jsx",
+          "sha256": "9d651522b8ab5ad1a88356f42030270acf93ca74c2517b1451cacdfa149e0d08",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/tabs.jsx"
+        },
+        {
+          "path": "src/components/ui/textarea.jsx",
+          "sha256": "d645812ad21138655ce5cde7dff313f3b695bdef39f90a68b1f438e5fb6ac1c5",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/textarea.jsx"
+        },
+        {
+          "path": "src/components/ui/toast.jsx",
+          "sha256": "fc01bb6ee82dec6587debdcb71f374febce42c67e024c0691dc25c77cdce59b7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/toast.jsx"
+        },
+        {
+          "path": "src/components/ui/toaster.jsx",
+          "sha256": "cad02e906e79a4f3a2f6cea4038d67ddbe045b92d1b6cc80e7db0ed0df14d0c8",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/toaster.jsx"
+        },
+        {
+          "path": "src/components/ui/toggle-group.jsx",
+          "sha256": "d5dc3551fcfc19fcf515617ac664aee8a230468aef485764077aa48fa2ada84f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/toggle-group.jsx"
+        },
+        {
+          "path": "src/components/ui/toggle.jsx",
+          "sha256": "2fd5080275c6f908621d36ad189e580160eef2ccdd4738177a6da71ab053e5bc",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/toggle.jsx"
+        },
+        {
+          "path": "src/components/ui/tooltip.jsx",
+          "sha256": "1f331a5f0c8873bef2961003bff3bb6828d3fd78aa8c63eea4f0940b94f75ca9",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/tooltip.jsx"
+        },
+        {
+          "path": "src/components/ui/use-responsive-image.jsx",
+          "sha256": "297727d5a1845a59f4629d98900f8e87c8643c359742bc301b3423203e55830a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/use-responsive-image.jsx"
+        },
+        {
+          "path": "src/components/ui/use-toast.jsx",
+          "sha256": "23f9e045f24952631a85d7d85dc060d69ae5d14b8f80d988ffec5c96ab82860c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/ui/use-toast.jsx"
+        },
+        {
+          "path": "src/components/weather/MeteoRwandaPanel.jsx",
+          "sha256": "7bd6cb1943e07a6ec97d6ab2e0408f3b562e18cbcae931b07a49c14f9ee62b32",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/MeteoRwandaPanel.jsx"
+        },
+        {
+          "path": "src/components/weather/WeatherAnalysisPanel.jsx",
+          "sha256": "1e6998d553dc42035d108165e632210e1306adb2209971e49da96945221637e2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/WeatherAnalysisPanel.jsx"
+        },
+        {
+          "path": "src/components/weather/WeatherCharts.jsx",
+          "sha256": "9448efe99b1fb1242b273701f1f9fd988c1a145b76329a0e21225dc9cefa6600",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/WeatherCharts.jsx"
+        },
+        {
+          "path": "src/components/weather/WeatherContext.jsx",
+          "sha256": "c013b626fc77d198689b28cf6e05a7a3f3f1ec3d2c9c4655f5c665442ede87b6",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/WeatherContext.jsx"
+        },
+        {
+          "path": "src/components/weather/WeatherDashboard.jsx",
+          "sha256": "69f4d989946cb41b8908f52c491318ca7a74ad8f6a457ddbd4e891d7e551e1ed",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/WeatherDashboard.jsx"
+        },
+        {
+          "path": "src/components/weather/WeatherDistrictMap.jsx",
+          "sha256": "b26a58d40f6b9ce60741795f5e5d8350d8d1313c756622f0c0b4c33670c18bfa",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/WeatherDistrictMap.jsx"
+        },
+        {
+          "path": "src/components/weather/WeatherIntegrationStatus.jsx",
+          "sha256": "7622bcbf9b2519be2438e46ee0c44d992fa29b9894e9ab1b92139a2ec3b14354",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/WeatherIntegrationStatus.jsx"
+        },
+        {
+          "path": "src/components/weather/WeatherSpatialDetails.jsx",
+          "sha256": "8c5508a112038e7a05235765c714275448d306904da8e67c2ccf0d57bca79a4f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/components/weather/WeatherSpatialDetails.jsx"
+        },
+        {
+          "path": "src/data/data-coverage.json",
+          "sha256": "f4da1901f8cc7990f37b74010f0ec03e0e5b11dad87bd8007907c49b5f9d130b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/data/data-coverage.json"
+        },
+        {
+          "path": "src/data/rwanda-districts.geojson",
+          "sha256": "fa96d3c362e8d7224784e12ab7ab21f87a7f04d3300139ac533af3b9be1de217",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/data/rwanda-districts.geojson"
+        },
+        {
+          "path": "src/data/weather-locations.json",
+          "sha256": "94098105362bfba0dd9ee22748a6cc47c81a41d2d35225d5e4f91122cc0cb200",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/data/weather-locations.json"
+        },
+        {
+          "path": "src/data/weather-overlaps.json",
+          "sha256": "25127a7da098f158da8e6f9aa360c40a67f93bc74220166a110c5e94d4f8881b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/data/weather-overlaps.json"
+        },
+        {
+          "path": "src/hooks/use-mobile.jsx",
+          "sha256": "8e631e68c1be39aeb3dcf6efd8908db17bf4fcc3dcd1e5667ef5b81cf61056c1",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/hooks/use-mobile.jsx"
+        },
+        {
+          "path": "src/hooks/use-size.jsx",
+          "sha256": "398e55bfc6d27df89cf3eda51faa9b744d2dfbe3534aa8724243087479bb331d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/hooks/use-size.jsx"
+        },
+        {
+          "path": "src/hooks/useAgriRecords.js",
+          "sha256": "f2cc52583032e9819924a1bf62f2988620ea14b85f64391261eba07046bb11ed",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/hooks/useAgriRecords.js"
+        },
+        {
+          "path": "src/hooks/useObservations.js",
+          "sha256": "c81a2bdd41a536718914eec74229645347905835b533359634d05e35de950b4f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/hooks/useObservations.js"
+        },
+        {
+          "path": "src/hooks/useOverviewData.js",
+          "sha256": "b8ad77539912dddcda7ec3a8d23109f6c0a11d0ebff142ca8e6e9395866f6908",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/hooks/useOverviewData.js"
+        },
+        {
+          "path": "src/hooks/useWeather.js",
+          "sha256": "c9ac14e82f57f9229e2b0c0d27c68312c1d44be563e66ff02c43ff7f6c8eb2ae",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/hooks/useWeather.js"
+        },
+        {
+          "path": "src/index.css",
+          "sha256": "2578c4c17abe9a3234c20c8e4bc6621d95c0990283cdfd78e6c8bef20416eb9d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/index.css"
+        },
+        {
+          "path": "src/lib/AuthContext.jsx",
+          "sha256": "d21b6eb0adf2099382e7f542df3f7b224c4c0c58a63f1c402f2ed080fc5360d3",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/AuthContext.jsx"
+        },
+        {
+          "path": "src/lib/ai.server.js",
+          "sha256": "211ab2573a53dfa4e1b8f78a59c4ce4a70628b7d0a3ad99144fa2eaca483ec3a",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/ai.server.js"
+        },
+        {
+          "path": "src/lib/alert-rules.js",
+          "sha256": "8e7ac30875b97b9f0efcbfbe4a0a4b0e7a3eaa3c8ea60e03c5676f28e87dc7b2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/alert-rules.js"
+        },
+        {
+          "path": "src/lib/app-params.js",
+          "sha256": "e4c533f57c0afe89b4a68b867add2576157ee5addd011607606de831db24262b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/app-params.js"
+        },
+        {
+          "path": "src/lib/auth-middleware.js",
+          "sha256": "fcf8d2750214092c584947b051d2c93a85f6514cdaa101f4172ff559f03acef1",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/auth-middleware.js"
+        },
+        {
+          "path": "src/lib/authReturnTo.js",
+          "sha256": "ae80de26e897f3ffad81d4afae01954a2a30b2b86c981407517ef206f5d4c8e1",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/authReturnTo.js"
+        },
+        {
+          "path": "src/lib/climate-analysis-model.js",
+          "sha256": "1cda5d75bd0887f90f003f8be1dc52ed46f511553569f133bd22ab9ef116aee1",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/climate-analysis-model.js"
+        },
+        {
+          "path": "src/lib/climate-analysis.server.js",
+          "sha256": "419178c3398b3f7ea5b83284d2ace5bc4e3cea6076eaa7e185b87d208bdc244f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/climate-analysis.server.js"
+        },
+        {
+          "path": "src/lib/climate-finding.js",
+          "sha256": "d8832d8010c714018deccb00f303e047c3c3918fbd0270b9b683e3279ea19445",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/climate-finding.js"
+        },
+        {
+          "path": "src/lib/constants.js",
+          "sha256": "7a38050113a6ec7be19bd5fc7a1e1de56b0a7b5a0dd09bd681d53398e5f82775",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/constants.js"
+        },
+        {
+          "path": "src/lib/csv.js",
+          "sha256": "2fa9a454aa47af8f0e41342a64f9651a94fa2b01c00f51b4acc3a6fc83ae677b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/csv.js"
+        },
+        {
+          "path": "src/lib/demo-data.js",
+          "sha256": "0684e00ef3f0ea354b07e68b1112512607d1b5847a7678087dd4716ca7be92d0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/demo-data.js"
+        },
+        {
+          "path": "src/lib/district-map.js",
+          "sha256": "2493efae000b0f8417221c11d06aa17a162d442dfa073664d177761eacaaff3d",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/district-map.js"
+        },
+        {
+          "path": "src/lib/district-review-service.js",
+          "sha256": "a5a0dc84ceca96ce6a576fb9fc797e1c9d6d115fa54635938411ef432d0475f7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/district-review-service.js"
+        },
+        {
+          "path": "src/lib/error-capture.js",
+          "sha256": "d79b2da2be397017340f3d96816703cc68c229ce2a1fdde2320fb6213eb1320f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/error-capture.js"
+        },
+        {
+          "path": "src/lib/error-capture.server.js",
+          "sha256": "2f277ceecf7ece2f7dbbd444b6dfef8ca2ef62ce63d08c1c6a67e116e13701c0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/error-capture.server.js"
+        },
+        {
+          "path": "src/lib/explain.js",
+          "sha256": "2b162d3b865af73968f53b89aca27163319ef321279dca4e5cf1dfa9f9932e36",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/explain.js"
+        },
+        {
+          "path": "src/lib/explore-data.js",
+          "sha256": "df510359ca11327296a9cb781bb995cb86452d1b5c134a8d6b4aa32e63213515",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/explore-data.js"
+        },
+        {
+          "path": "src/lib/fetch-all.js",
+          "sha256": "0b9ba4f3ba5d2355934e68bf4034ab9f94d92403b3ccc9f3767bbc282dbdbac6",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/fetch-all.js"
+        },
+        {
+          "path": "src/lib/finding-evidence.js",
+          "sha256": "367402b41977109f4d7368015a4ec98aec56cd360e3f2ce5d16611101bb862ac",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/finding-evidence.js"
+        },
+        {
+          "path": "src/lib/format.js",
+          "sha256": "4b07a01117f86e90764a726ac0f07faf585df6d08c6baa6a9094045ca5d5efcb",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/format.js"
+        },
+        {
+          "path": "src/lib/local-auth-service.js",
+          "sha256": "ae0f3a2b9408e0892a1fcec0ebc9ffa73d2759016d5b9674231f3a6372322303",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-auth-service.js"
+        },
+        {
+          "path": "src/lib/local-auth.js",
+          "sha256": "28b2dde87ca9fbc429ac52dd5516741dd1fdb76e8130dfa2bf60a0601e4cb539",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-auth.js"
+        },
+        {
+          "path": "src/lib/local-auth.server.js",
+          "sha256": "e2d7e551d9600872beda46117180599c6c1bfdd1e725e76579ddd2749da11af0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-auth.server.js"
+        },
+        {
+          "path": "src/lib/local-data-service.js",
+          "sha256": "9ad6dcfd32c5d0b2b65df230adb42bbf00a62fca8156705bc33aac2d96c176ec",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-data-service.js"
+        },
+        {
+          "path": "src/lib/local-data.js",
+          "sha256": "5c611bb896d589072b32c3b0c61fb93e587499c63c32c4d79497cd831d7fdcab",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-data.js"
+        },
+        {
+          "path": "src/lib/local-data.server.js",
+          "sha256": "9b6225ac0ec4e78e2cff7dbf6e59e40000a1ea059b7b31a00a085cdf5b8664da",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-data.server.js"
+        },
+        {
+          "path": "src/lib/local-password.js",
+          "sha256": "c68d050a7457870272cc257b618f4b1bd8f8e56cc52e6fb5c3a1800763d491c3",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-password.js"
+        },
+        {
+          "path": "src/lib/local-quick-login.js",
+          "sha256": "d631bc78fef68f8698e4c1d7a1917b4c1a63ba385ac41e1ecd45bb6b18a2e1b6",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/local-quick-login.js"
+        },
+        {
+          "path": "src/lib/map-geometry.js",
+          "sha256": "5a759c1276b422783ac9178896ff358f541ab0d031f04b99ec2127eb6b368719",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/map-geometry.js"
+        },
+        {
+          "path": "src/lib/meteo-rwanda-provider.js",
+          "sha256": "5ebe4419a07b9656360d2d98794e6480f7c3a7965c80c06fc1bbcfff0b2af528",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/meteo-rwanda-provider.js"
+        },
+        {
+          "path": "src/lib/metrics.js",
+          "sha256": "1bf7e07662fc0d4fb43f6a0d20cc89ac54fea52081237ecea3418df87fcdf718",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/metrics.js"
+        },
+        {
+          "path": "src/lib/query-client.js",
+          "sha256": "0854cf19db3355f4a0328fcc6b4b710f3d9ae2781bac7e9d6c196ef4fd99aa02",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/query-client.js"
+        },
+        {
+          "path": "src/lib/rbac.js",
+          "sha256": "dbb05a81bec05c4100c184104540765bcf4ada28bcad6657062f98812f774b88",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/rbac.js"
+        },
+        {
+          "path": "src/lib/roles.js",
+          "sha256": "a696620d5121d68594095a37162db346c823f3196bb3e9d989985b5fbc091d63",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/roles.js"
+        },
+        {
+          "path": "src/lib/route-access.js",
+          "sha256": "89c06b453629a0b16d81f158f0903db331400c1426dff9c7e63d046cc89c6c17",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/route-access.js"
+        },
+        {
+          "path": "src/lib/sample-overview.js",
+          "sha256": "137a81d1350415c34b592ba6f3188fa2c443af0dc73bdd308a4394930cf26894",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/sample-overview.js"
+        },
+        {
+          "path": "src/lib/server-fns.js",
+          "sha256": "eefdf320257525ccd275ebbf1a0b3c37cd38b8ccfb642aeafc386b8b2e431961",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/server-fns.js"
+        },
+        {
+          "path": "src/lib/sign-in.js",
+          "sha256": "8554579fcec60144b9cc01bdb54f496a59bb3259e22467baf1b582f8b23a0a59",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/sign-in.js"
+        },
+        {
+          "path": "src/lib/source-provenance.js",
+          "sha256": "45f095fec0858ea58346b2b3dec78d25a8c2448c6fa9c678fdb311db728a9914",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/source-provenance.js"
+        },
+        {
+          "path": "src/lib/source-table-view.js",
+          "sha256": "79e297ee9c149bf20ded414738f34973e7a938e74169788a01b50f2a356bb417",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/source-table-view.js"
+        },
+        {
+          "path": "src/lib/utils.js",
+          "sha256": "97981a6ca8443005f99c3f04874878223b64e0269f390db8d65ce786dbfaf63b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/utils.js"
+        },
+        {
+          "path": "src/lib/validation.js",
+          "sha256": "6f51906ac41dcc44a9d2d56d6480b6a03070220fa9344336691b7f27e2bcb6f0",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/validation.js"
+        },
+        {
+          "path": "src/lib/weather-agriculture.js",
+          "sha256": "ae1a7d12ef28834957cb38a1ce77f24ce2d5cc049be15680a3212334d3755332",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-agriculture.js"
+        },
+        {
+          "path": "src/lib/weather-datasets.js",
+          "sha256": "dfaabd6ceea6671bcd0e093ea7325754a354061b8f7d98b87b109375b147333e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-datasets.js"
+        },
+        {
+          "path": "src/lib/weather-era5-provider.js",
+          "sha256": "0dcc005937e8bcc79727ba5f7a2289f8d00617abd728cda95367f6c733a4df32",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-era5-provider.js"
+        },
+        {
+          "path": "src/lib/weather-geometry.js",
+          "sha256": "2826e8820d0586077ac4a6f960c0f86161670ac6d142147746421a92e3a34a9e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-geometry.js"
+        },
+        {
+          "path": "src/lib/weather-model.js",
+          "sha256": "e2825105a5d9b237229188dfc8b8014213e7f9be05d6a7bfeb1c229b88c6f50e",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-model.js"
+        },
+        {
+          "path": "src/lib/weather-overlap.js",
+          "sha256": "a4e067749fa02a3f07ab1c7b2805b635d182d78570f76687f7b7eccb12e2257b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-overlap.js"
+        },
+        {
+          "path": "src/lib/weather-provider.js",
+          "sha256": "d8521c07712461c59c4bb29d74be550ab8d5e0e16bc33e3d9e86ecd1ea7babdb",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-provider.js"
+        },
+        {
+          "path": "src/lib/weather-report.js",
+          "sha256": "1799e2248cdf911d8b0b3d07d3363f7444c4b6fab0949a72d5232faa06d1abb8",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-report.js"
+        },
+        {
+          "path": "src/lib/weather-service.js",
+          "sha256": "68e6e522f1ca2db1e6a3de8f96b7ef1ea68358e5afb56afc9817f0f2269738b6",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-service.js"
+        },
+        {
+          "path": "src/lib/weather-spatial.js",
+          "sha256": "170582c72f447298bb720fa7b5acf63dfd854049b657538eda5a8f8b6f38e679",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-spatial.js"
+        },
+        {
+          "path": "src/lib/weather-store.js",
+          "sha256": "57dcbaf38f3c7b35ecbf0af6ff68805e49a3eeb4b66b3248b20ef3c0474caf84",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather-store.js"
+        },
+        {
+          "path": "src/lib/weather.js",
+          "sha256": "0f8c7a7ddb5ce9eb0201a68d440c73fe79f35a0c54bf9cf70da5bbb194ff2f57",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather.js"
+        },
+        {
+          "path": "src/lib/weather.server.js",
+          "sha256": "aa30616761e461c38f9892b28d4ee392358090f7f36e4abbd0677b05500361f3",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/lib/weather.server.js"
+        },
+        {
+          "path": "src/router.jsx",
+          "sha256": "b11eccfb683af0d03da6c1693161b016c056af983ae8d66f4367a449dcc5ab51",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/router.jsx"
+        },
+        {
+          "path": "src/routes/__root.jsx",
+          "sha256": "6ca075eaa595fd5cc3e4388269ab6a92a01fcdedd26030d9b466d84022d45889",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/__root.jsx"
+        },
+        {
+          "path": "src/routes/_authed.jsx",
+          "sha256": "7a44f18cd7bc6685c76066b498f0e533f41a5de09aa1254f09ba38e55a9a0a46",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed.jsx"
+        },
+        {
+          "path": "src/routes/_authed/admin.jsx",
+          "sha256": "9b7ca38661673ecb41c661bd2811a1b05df5b3f464609f4d0c225ba29dd146e4",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/admin.jsx"
+        },
+        {
+          "path": "src/routes/_authed/alerts.jsx",
+          "sha256": "dbfbc9b205285d368de3379d76a62f2d89748e91526f8947bebbeb597bad1240",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/alerts.jsx"
+        },
+        {
+          "path": "src/routes/_authed/analytics.jsx",
+          "sha256": "55c0b85c680ecb50e1a4a1751c4e0812e2d2cba7776b928c206722d1ec97f0a2",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/analytics.jsx"
+        },
+        {
+          "path": "src/routes/_authed/community-business.jsx",
+          "sha256": "b4266653aa8cf0628c65704dd6c26e532da200f159e2fecf506c448b56a2ecc5",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/community-business.jsx"
+        },
+        {
+          "path": "src/routes/_authed/compare.jsx",
+          "sha256": "cec79c5f5037679bdcb4f55008915787323ea9e37fda76c64e6590177e168699",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/compare.jsx"
+        },
+        {
+          "path": "src/routes/_authed/data-sources.jsx",
+          "sha256": "145eff5ab085994cf50032de94389d6c69bfe46ce3813ac03803ab045d74365b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/data-sources.jsx"
+        },
+        {
+          "path": "src/routes/_authed/explore.jsx",
+          "sha256": "f3dd005ca44d63d6ee604ebbc80f963ab8f40ce68487b29ccd7cb490ed55e017",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/explore.jsx"
+        },
+        {
+          "path": "src/routes/_authed/field-operations.jsx",
+          "sha256": "07aecec2a4a601306052876d17eb0bf813370e4583725ed3db3d406460af31ae",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/field-operations.jsx"
+        },
+        {
+          "path": "src/routes/_authed/index.jsx",
+          "sha256": "b7cab5258d32bb9c6c38975e1e60a6f6b574b3fa5f0425e9580fef00d194b5fa",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/index.jsx"
+        },
+        {
+          "path": "src/routes/_authed/investigations.$investigationId.jsx",
+          "sha256": "9f3ebd18f580406d25e81b193a8e5f7636eb587374558f4b375f75e803bc23aa",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/investigations.%24investigationId.jsx"
+        },
+        {
+          "path": "src/routes/_authed/investigations.index.jsx",
+          "sha256": "78b217b673a795e469d4cb14dd679371b500b710ab7f6548a1ac51b60667cdb7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/investigations.index.jsx"
+        },
+        {
+          "path": "src/routes/_authed/public-insights.jsx",
+          "sha256": "f07086deb2d7e3f81e0df8f46527c9538861144947f0f768e522df1f546d731c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/public-insights.jsx"
+        },
+        {
+          "path": "src/routes/_authed/reports.jsx",
+          "sha256": "b2379e248c186e5877c5e65b7e134daadc7e25773f3a6232d6c0444906b91418",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/reports.jsx"
+        },
+        {
+          "path": "src/routes/_authed/settings.jsx",
+          "sha256": "d2b25d9f6ab6578587f617502c613e4ccfa3b22c7847c497f32e703d4e368467",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/settings.jsx"
+        },
+        {
+          "path": "src/routes/_authed/weather.jsx",
+          "sha256": "9ecfa1ae2a4cc5b659112744c627be94008e722fedc7758ae923c95ad0000c44",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/_authed/weather.jsx"
+        },
+        {
+          "path": "src/routes/api/demo-data.js",
+          "sha256": "df15ffb69058ab4001c2a986ea22fd788bcb08bc4b0c1da2a885772d9c752db1",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/api/demo-data.js"
+        },
+        {
+          "path": "src/routes/api/time.js",
+          "sha256": "ee2b24ff5e18c72427533fa1452de44434a5f3452979864cfa7886dfd6396aa7",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/api/time.js"
+        },
+        {
+          "path": "src/routes/forgot-password.jsx",
+          "sha256": "833be093f18c440cc4ee4a1108d75e82cc426bd9639459917c5fa4c6c4c49024",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/forgot-password.jsx"
+        },
+        {
+          "path": "src/routes/login.jsx",
+          "sha256": "3f5f4837c7a47c36ff9b33ab5157bafda7fae30a31ea01da9eb92a59f3ae61ca",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/login.jsx"
+        },
+        {
+          "path": "src/routes/register.jsx",
+          "sha256": "b5179232ffd0c71a7412069ee3bc46b0abe700edab62560e541df98c86d252a9",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/register.jsx"
+        },
+        {
+          "path": "src/routes/reset-password.jsx",
+          "sha256": "da29825c877848bc2d7a457e14eb1f92a583fbe4e763c7924db5d2caf77bcb75",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/routes/reset-password.jsx"
+        },
+        {
+          "path": "src/server.js",
+          "sha256": "3b526351afabae70f16578dabbff5cbd170eee50ecdf026d765053579d3112be",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/server.js"
+        },
+        {
+          "path": "src/start.js",
+          "sha256": "b4b9b33fe03c08e2e7e64694306fd5f33c880af492cc292434a5040272ecfc55",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/src/start.js"
+        },
+        {
+          "path": "tailwind.config.js",
+          "sha256": "c72b5bd5e0c414932a7962fe087c798964f6a157721b93b07c5b81cecd3e50cd",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tailwind.config.js"
+        },
+        {
+          "path": "tests/climate-analysis.test.js",
+          "sha256": "479f7a24b9703d406ad290f74bcfe7aaa9357b409ebe3f0c09dcb9a0cef9e783",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/climate-analysis.test.js"
+        },
+        {
+          "path": "tests/district-map.test.js",
+          "sha256": "61057013c05815b4b234c7dc97a12f0aa9fbaa2b9eddef2100f913e16641eae3",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/district-map.test.js"
+        },
+        {
+          "path": "tests/explore-data.test.js",
+          "sha256": "b0a2372a4006f86605b95c1feda8709cba260b1aba5e1c3c259947dc8e841cde",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/explore-data.test.js"
+        },
+        {
+          "path": "tests/full-data.test.js",
+          "sha256": "ce711b5f07d0cc35e8914daabf8d6b52b4e5198f7319dd1adb8d040697ceca0f",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/full-data.test.js"
+        },
+        {
+          "path": "tests/local-auth.test.js",
+          "sha256": "2ed94f0aaf6563b8951ebd1ec5690dd2d1af8d71ac50f7aa26b8e67bdb1620c9",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/local-auth.test.js"
+        },
+        {
+          "path": "tests/local-data.test.js",
+          "sha256": "bf89d831b5afeba84769a299ad0bdbbf370c3f3fa00fd8041c5b6477a90d14bb",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/local-data.test.js"
+        },
+        {
+          "path": "tests/sign-in.test.js",
+          "sha256": "910c1a98ccc7ea8fb4228dc3f812c84331dafae7d0f46921c4394e8a9859f60b",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/sign-in.test.js"
+        },
+        {
+          "path": "tests/weather-integration.test.js",
+          "sha256": "42a1d24660bc2455cf0f89b77a5366446608bf932f54b0605affdab19ea0766c",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/weather-integration.test.js"
+        },
+        {
+          "path": "tests/weather-spatial.test.js",
+          "sha256": "dc019b6368242fa6cc8a4c3daf47e31842f2c3257b6ed097feacbfd4de038804",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/weather-spatial.test.js"
+        },
+        {
+          "path": "tests/weather.test.js",
+          "sha256": "2975a677a49d245f1b5e85013056e4102f853f22762029148de223e7eaec4c34",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/tests/weather.test.js"
+        },
+        {
+          "path": "vite.config.js",
+          "sha256": "d6549ac033d303623bc2908130230500ab74f2aa7f30c4a9355ae13570f793fc",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/vite.config.js"
+        },
+        {
+          "path": "wrangler.jsonc",
+          "sha256": "0e68267a607621278249b2cdd679be01346a77303cd3a85f646a2a3ccbd46cd9",
+          "url": "https://github.com/bisangwa-lab/project44/blob/c80d0a7415ea1add6a23f7eb273b32b0baa12e0e/wrangler.jsonc"
+        }
+      ]
+    }
+  ]
+}

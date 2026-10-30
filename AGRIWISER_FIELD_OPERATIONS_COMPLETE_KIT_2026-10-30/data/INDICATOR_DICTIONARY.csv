@@ -1,0 +1,8 @@
+indicator_key,display_label,units,source_class,calculation,quality_constraint
+production,Crop production,metric tonnes,NISR published reported value,source reported,match district crop season year release and definitions
+harvested_area,Harvested area,hectares,NISR published reported value,source reported,do not substitute cultivated area
+cultivated_area,Cultivated area,hectares,NISR published reported value,source reported,not equivalent to harvested area
+reported_yield,Published yield,source unit may be kg/ha,NISR published reported value,source reported,do not silently replace with derived yield
+derived_yield,Derived yield,tonnes per hectare,calculated from aligned NISR published values,production_tonnes / harvested_area_ha,finite compatible pair same release and area > 0
+rainfall_mm,Seasonal estimated rainfall,millimetres,model climate estimate,sum complete daily estimates,keep source and grid resolution separate from NISR
+mean_temperature,Estimated mean temperature,degrees Celsius,model climate estimate,average eligible daily estimates,display valid day counts and spatial limits

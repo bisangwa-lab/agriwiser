@@ -19,7 +19,7 @@ import { BellRing, Loader2, RefreshCw } from "lucide-react";
 
 export const Route = createFileRoute("/_authed/alerts")({
   beforeLoad: requireWorkspace(["planner", "officer", "data_manager"]),
-  head: () => ({ meta: [{ title: "Alerts · HingaSmart Rwanda" }] }),
+  head: () => ({ meta: [{ title: "Alerts · AgriWiser" }] }),
   component: AlertsPage,
 });
 

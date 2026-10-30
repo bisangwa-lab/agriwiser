@@ -33,7 +33,7 @@ export const Route = createFileRoute("/_authed/compare")({
     ...(["production", "yield", "trend", "quality", "weather"].includes(search.mapView) ? { mapView: search.mapView } : {}),
   }),
   beforeLoad: requireWorkspace(["planner", "data_manager"]),
-  head: () => ({ meta: [{ title: "Compare · HingaSmart Rwanda" }] }),
+  head: () => ({ meta: [{ title: "Compare · AgriWiser" }] }),
   component: ComparePage,
 });
 
@@ -182,7 +182,7 @@ function ComparePage() {
         "generated_at",
       ],
     );
-    downloadCsv(`hingasmart-comparison-${mode}-${indicator}.csv`, csv);
+    downloadCsv(`agriwiser-comparison-${mode}-${indicator}.csv`, csv);
   }
 
   return (

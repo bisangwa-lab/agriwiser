@@ -188,8 +188,10 @@ export const FOLLOWUP_STATUSES = [
 
 export const NOTE_TYPES = [
   { key: "field_observation", label: "Field observation" },
-  { key: "note", label: "Note" },
-  { key: "evidence", label: "Evidence" },
+  { key: "evidence", label: "Verified evidence" },
+  { key: "unresolved_question", label: "Unresolved question" },
+  { key: "source_check", label: "Source-check note" },
+  { key: "note", label: "General note" },
 ];
 
 /**

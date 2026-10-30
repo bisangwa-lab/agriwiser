@@ -24,7 +24,6 @@ Selecting a district enables an explicit **Load matching rainfall** action. It u
 
 The original worksheet library supports topic shortcuts, publication-year/survey/topic filters, row search, and an explicit action to apply the trend's publication years. Its filters are independent of the crop chart. Readable mode hides empty rows/columns and takes labels only from source cells in the same column; merged headings are never inferred. Original worksheet view retains every row/column. Original source coordinates and all columns remain in exports. Reports and methodology remain searchable through the report browser.
 
-The worksheet/report catalogue is available in local data mode. Connected Base44 mode states that limitation explicitly instead of displaying an empty library as though no source tables exist.
 
 ## Verification
 

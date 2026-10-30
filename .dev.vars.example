@@ -1,0 +1,8 @@
+APP_BACKEND=supabase
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_PUBLISHABLE_KEY=sb_publishable_replace_me
+SUPABASE_SECRET_KEY=sb_secret_replace_me
+# Management scripts only; never prefix private keys with VITE_.
+SUPABASE_ACCESS_TOKEN=
+# Optional: authorized Meteo Rwanda JSON in the private hingasmart-weather bucket.
+METEO_RWANDA_OBJECT=

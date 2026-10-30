@@ -1,0 +1,121 @@
+[
+  {
+    "filename": "SAS_2024_Annual_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2024,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-02/SAS%202024_Annual%20Tables.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2025_Annual_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2025,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-12/SAS%202025_Annual%20Tables.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "Tables_2026_Season_A.xlsx",
+    "family": "SAS",
+    "reference_year": 2026,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2026-04/Tables_2026%20Season%20A.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "Tables_2026_Season_B.xlsx",
+    "family": "SAS",
+    "reference_year": 2026,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2026-09/Tables_2026%20Season%20B.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2015_Tables.xls",
+    "family": "SAS",
+    "reference_year": 2015,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/2015_Tables%20_ABC.xls",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2016_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2016,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/SAS-2016%20Final%20Report.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2017_Tables.xls",
+    "family": "SAS",
+    "reference_year": 2017,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/USAS%202017%20Tables.xls",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2018_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2018,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-06/2018%20Annual%20Tables_Final%20%281%29.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2019_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2019,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202019%20_Annual%20report%20_Tables.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2020_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2020,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/USAS%202020%20_Final_Tables.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2021_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2021,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202021_Tables.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2022_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2022,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2026-09/SAS%202022_Tables_0.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "SAS_2023_Tables.xlsx",
+    "family": "SAS",
+    "reference_year": 2023,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2024-10/SAS%202023_Annual%20Tables%20%283%29.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "AHS_2017_Tables.xlsx",
+    "family": "AHS",
+    "reference_year": 2017,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/Agricultural_Household_Survey_2017.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "AHS_2020_Tables.xlsx",
+    "family": "AHS",
+    "reference_year": 2020,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/AHS_2020%20Tables%20%281%29.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "AHS_2024_Tables.xlsx",
+    "family": "AHS",
+    "reference_year": 2024,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-10/AHS_2024%20Tables.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  },
+  {
+    "filename": "CFSVA_2018_Tables_1.xlsx",
+    "family": "CFSVA",
+    "reference_year": 2018,
+    "url": "https://statistics.gov.rw/sites/default/files/documents/2025-01/CFSVA_2018.xlsx",
+    "status": "repository manifest reference; live access not verified"
+  }
+]

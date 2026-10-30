@@ -1,6 +1,7 @@
 import { ArrowLeft, Mail } from "lucide-react";
 import { useState } from "react";
-import { base44, isLocalAuth } from "@/api/base44Client";
+import {useAccountConfiguration} from "@/hooks/useAccountConfiguration";
+import { appClient } from "@/api/appClient";
 import { AuthLayout } from "@/components/auth/AuthLayout";
 import { AuthLink, SubmitButton } from "@/components/auth/parts";
 import { Input } from "@/components/ui/input";
@@ -11,11 +12,12 @@ import { safeReturnTo } from "@/lib/authReturnTo";
 // message: the API does not reveal whether the email is registered, and neither should the UI.
 export function ForgotPasswordPage() {
   const returnTo = safeReturnTo();
+  const configuration=useAccountConfiguration();
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
 
-  if (isLocalAuth) return (
+  if (configuration.data?.backend==='local') return (
     <AuthLayout icon={Mail} title="Local account help" subtitle="Accounts on this computer">
       <p className="text-sm text-muted-foreground">Email recovery is not configured for local accounts. Ask the person managing this computer to reset your local password.</p>
       <p className="mt-5 text-center"><AuthLink to="/login" returnTo={returnTo}>Back to log in</AuthLink></p>
@@ -26,7 +28,7 @@ export function ForgotPasswordPage() {
     e.preventDefault();
     setBusy(true);
     try {
-      await base44.auth.resetPasswordRequest(email);
+      await appClient.auth.resetPasswordRequest(email);
     } catch {
       // Same outcome either way.
     } finally {

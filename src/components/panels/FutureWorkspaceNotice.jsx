@@ -16,7 +16,7 @@ export function FutureWorkspaceNotice({ description }) {
         </div>
         <p className="text-[13px] leading-relaxed text-muted-foreground">
           {description ??
-            "This workspace is part of the HingaSmart roadmap. Its requirements, data sources and safeguards will be validated before it is built. The layout below shows the pages planned for it."}
+            "This workspace is part of the AgriWiser roadmap. Its requirements, data sources and safeguards will be validated before it is built. The layout below shows the pages planned for it."}
         </p>
       </div>
     </div>

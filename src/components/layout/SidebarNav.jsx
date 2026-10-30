@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import {
   ArrowLeftRight,
   BellRing,
@@ -27,7 +27,7 @@ import { BrandMark } from "@/components/layout/BrandMark";
 import { useAuth } from "@/lib/AuthContext";
 import { cn } from "@/lib/utils";
 import { displayName, initials } from "@/lib/roles";
-import { PANELS, PANEL_ORDER, ROLE_BY_KEY, normalizeRole, panelForPath, roleLabel } from "@/lib/rbac";
+import { PANELS, PANEL_ORDER, ROLE_BY_KEY, normalizeRole, panelForPath, resolveWorkspacePanel, roleLabel } from "@/lib/rbac";
 
 // Each panel's own navigation. A signed-in user sees only the pages of the
 // panel they are in — so each panel is a separate experience, not one merged
@@ -36,20 +36,20 @@ const NAV_BY_PANEL = {
   admin: [
     { to: "/admin", label: "Administration", icon: ShieldCheck },
     { to: "/data-sources", label: "Data management", icon: Database },
-    { to: "/weather", label: "Weather & climate", icon: CloudRain },
+    { to: "/weather", search: { panel: "admin" }, label: "Weather & climate", icon: CloudRain },
     { to: "/settings", label: "Account settings", icon: Settings },
   ],
   analytics: [
     { to: "/analytics", label: "Home", icon: LayoutDashboard },
     { to: "/explore", label: "Explore data", icon: TrendingUp },
     { to: "/compare", label: "Compare", icon: ArrowLeftRight },
-    { to: "/weather", label: "Weather & climate", icon: CloudRain },
+    { to: "/weather", search: { panel: "analytics" }, label: "Weather & climate", icon: CloudRain },
     { to: "/alerts", label: "Alerts", icon: BellRing },
     { to: "/reports", label: "Reports", icon: FileText },
   ],
   field_operations: [
     { to: "/field-operations", label: "Field operations", icon: ClipboardCheck },
-    { to: "/weather", label: "Weather & climate", icon: CloudRain },
+    { to: "/weather", search: { panel: "field_operations" }, label: "Weather & climate", icon: CloudRain },
     { to: "/investigations", label: "Investigations", icon: ClipboardList },
   ],
   community_business: [{ to: "/community-business", label: "Community & business", icon: Sprout }],
@@ -59,9 +59,10 @@ const NAV_BY_PANEL = {
 /** The primary navigation. `pathname` is resolved once by the shell and shared. */
 export function SidebarNav({ user, pathname }) {
   const { logout } = useAuth();
+  const search = useRouterState({ select: (state) => state.location.search });
   const role = normalizeRole(user);
   const isSuperAdmin = role === "super_admin";
-  const currentPanel = pathname === "/weather" ? ROLE_BY_KEY[role]?.panel : panelForPath(pathname);
+  const currentPanel = resolveWorkspacePanel(user, pathname, search);
   const items = currentPanel ? NAV_BY_PANEL[currentPanel] ?? [] : [];
 
   return (
@@ -80,8 +81,9 @@ export function SidebarNav({ user, pathname }) {
           const Icon = item.icon;
           return (
             <Link
-              key={item.to}
+              key={item.to + (item.search?.panel ?? "")}
               to={item.to}
+              {...(item.search ? { search: item.search } : {})}
               className={cn(
                 "group flex items-center gap-3 rounded-lg px-3 py-2 text-[13.5px] font-medium transition-colors",
                 active

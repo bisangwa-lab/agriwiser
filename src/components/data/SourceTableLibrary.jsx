@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { base44, isLocalAuth } from "@/api/base44Client";
+import { appClient, usesAppData } from "@/api/appClient";
 import { fetchAll } from "@/lib/fetch-all";
 import { downloadCsv, toCsv } from "@/lib/csv";
 import { sourceTableView, sourceColumnName } from "@/lib/source-table-view";
@@ -19,8 +19,8 @@ export function SourceTableLibrary({ trendSelection }) {
   const [year, setYear] = useState("all"), [topic, setTopic] = useState("all"), [family, setFamily] = useState("all");
   const [search, setSearch] = useState(""), [selection, setSelection] = useState(""), [rowSearch, setRowSearch] = useState("");
   const [page, setPage] = useState(0), [original, setOriginal] = useState(false);
-  const catalogue = useQuery({ queryKey: ["source-table-index"], enabled: isLocalAuth,
-    queryFn: () => fetchAll(base44.entities.SourceTableIndex), staleTime: 120_000 });
+  const catalogue = useQuery({ queryKey: ["source-table-index"], enabled: usesAppData,
+    queryFn: () => fetchAll(appClient.entities.SourceTableIndex), staleTime: 120_000 });
   const all = catalogue.data ?? [];
   const matches = useMemo(() => all.filter(item =>
     (year === "all" || (year === "trend" ? item.year >= trendSelection.fromYear && item.year <= trendSelection.toYear : item.year === Number(year))) &&
@@ -28,8 +28,8 @@ export function SourceTableLibrary({ trendSelection }) {
     search.trim().toLowerCase().split(/\s+/).every(term => [item.name, item.sheet, item.dataset_name, item.topic].join(" ").toLowerCase().includes(term)))
     .sort((a, b) => b.year - a.year || a.dataset_name.localeCompare(b.dataset_name) || a.sheet.localeCompare(b.sheet, "en", { numeric: true })), [all, year, topic, family, search, trendSelection]);
   const selected = matches.find(item => item.id === selection) ?? matches[0];
-  const detail = useQuery({ queryKey: ["source-table", selected?.id], enabled: isLocalAuth && Boolean(selected),
-    queryFn: () => base44.entities.SourceTable.get(selected.id), staleTime: 120_000 });
+  const detail = useQuery({ queryKey: ["source-table", selected?.id], enabled: usesAppData && Boolean(selected),
+    queryFn: () => appClient.entities.SourceTable.get(selected.id), staleTime: 120_000 });
   const { rows, columns } = useMemo(() => sourceTableView(detail.data, { original, search: rowSearch }), [detail.data, original, rowSearch]);
   const lastPage = Math.max(0, Math.ceil(rows.length / 100) - 1), shownPage = Math.min(page, lastPage);
   const change = setter => value => { setter(value); setPage(0); };
@@ -38,9 +38,9 @@ export function SourceTableLibrary({ trendSelection }) {
     const keys = Array.from({ length: detail.data.column_count }, (_, index) => sourceColumnName(index));
     const safe = value => typeof value === "string" && /^[=+\-@\t\r]/.test(value) ? "'" + value : value;
     const values = rows.map(item => Object.fromEntries([["Source URL", selected.source_url], ["Source reference", selected.source_reference], ["Source row", item.row], ...keys.map((key, i) => [key, safe(item.cells[i])])]));
-    downloadCsv(`hingasmart-${selected.id}.csv`, toCsv(values, ["Source URL", "Source reference", "Source row", ...keys]));
+    downloadCsv(`agriwiser-${selected.id}.csv`, toCsv(values, ["Source URL", "Source reference", "Source row", ...keys]));
   }
-  if (!isLocalAuth) return <DashboardCard title="Published tables & reports"><p className="text-sm text-muted-foreground">The worksheet catalogue is available with the local NISR collection. Connected crop observations remain available in Crop trends.</p></DashboardCard>;
+  if (!usesAppData) return <DashboardCard title="Published tables & reports"><p className="text-sm text-muted-foreground">The worksheet catalogue is available with the local NISR collection. Connected crop observations remain available in Crop trends.</p></DashboardCard>;
   return <div id="published-tables" className="scroll-mt-24"><DashboardCard title="Published tables & reports" subtitle={`${all.length.toLocaleString("en-GB")} original worksheets · inputs, irrigation, livestock, households, land use and survey quality`}>
     <p className="mb-4 text-xs leading-relaxed text-muted-foreground">Find a topic, open a table, then search its rows. These filters apply to original publications; crop-trend filters stay in the other tab. Original headings, units and source coordinates remain visible.</p>
     <div className="mb-4 flex flex-wrap gap-2">{["Irrigation", "Fertilizer", "Livestock", "Household"].map(value => <Button key={value} size="sm" variant="outline" onClick={() => { reset(); setSearch(value); }}>{value}</Button>)}{trendSelection && <Button size="sm" variant="outline" onClick={() => change(setYear)("trend")}>Use trend years ({trendSelection.fromYear}–{trendSelection.toYear})</Button>}</div>

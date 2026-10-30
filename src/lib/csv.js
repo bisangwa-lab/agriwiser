@@ -1,4 +1,4 @@
-import { CSV_TEMPLATE_HEADER } from "@/lib/constants";
+import { CSV_TEMPLATE_HEADER } from "./constants.js";
 
 /** Minimal RFC 4180 style CSV reader: handles quoted fields and escaped quotes. */
 export function parseCsv(text) {

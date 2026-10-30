@@ -21,7 +21,7 @@ export async function signIn(auth, { email, password, returnTo }) {
 
 export function signInError(error) {
   if (/invalid email or password/i.test(error?.message ?? "")) {
-    return "Email or password not recognized. Use your registered HingaSmart account, create an account, or reset your password.";
+    return "Email or password not recognized. Use your registered AgriWiser account, create an account, or reset your password.";
   }
   return error?.message || "Sign-in could not be completed. Please try again.";
 }

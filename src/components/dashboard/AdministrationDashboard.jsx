@@ -10,7 +10,7 @@ import { DistributionChart } from "./DistributionChart";
 import { useDatasets, useImportLogs } from "@/hooks/useAgriRecords";
 import { useAuth } from "@/lib/AuthContext";
 import { normalizeRole, roleLabel } from "@/lib/rbac";
-import { isLocalAuth } from "@/api/base44Client";
+import { usesAppData } from "@/api/appClient";
 import { formatNumber } from "@/lib/format";
 
 const IMPORT_STATUS = { completed: { tone: "primary", label: "Completed" }, completed_with_warnings: { tone: "warning", label: "Review needed" }, failed: { tone: "danger", label: "Failed" } };
@@ -70,9 +70,9 @@ export default function AdministrationDashboard() {
         </DashboardCard>
         <DashboardCard title="Account access" subtitle="Your assigned responsibilities" action={<Users className="h-4 w-4 text-primary" aria-hidden />}>
           <ToneTag tone="primary">{roleLabel(user)}</ToneTag>
-          <p className="mt-3 text-[12px] leading-relaxed text-muted-foreground">{isLocalAuth
-            ? "Local accounts are stored on this computer. The person managing it assigns roles; account management from this panel is planned."
-            : superAdmin ? "Manage account roles in the Base44 workspace under App Users. Use the panel switcher for oversight." : "Look after datasets and data quality within your assigned permissions."}</p>
+          <p className="mt-3 text-[12px] leading-relaxed text-muted-foreground">{usesAppData
+            ? "AgriWiser accounts are managed in Account settings. Super administrators assign roles; each request enforces the current account permissions."
+            : superAdmin ? "Manage AgriWiser account roles in Account settings. Use the panel switcher for oversight." : "Look after datasets and data quality within your assigned permissions."}</p>
           <div className="mt-4 border-t border-border/70 pt-3"><DashboardLink to="/settings">Account settings</DashboardLink></div>
         </DashboardCard>
       </div>

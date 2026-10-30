@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { base44 } from "@/api/base44Client";
+import { appClient } from "@/api/appClient";
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
 import { ToneTag } from "@/components/common/ToneTag";
 import { formatNumber } from "@/lib/format";
@@ -12,11 +12,11 @@ export function SourceArchiveCatalogue() {
   const [search, setSearch] = useState("");
   const { data: archives = [], error } = useQuery({
     queryKey: ["source-archives"],
-    queryFn: async () => (await base44.entities.SourceArchive.list({ sort: "-year", limit: 100 })).items,
+    queryFn: async () => (await appClient.entities.SourceArchive.list({ sort: "-year", limit: 100 })).items,
     staleTime: 120_000,
   });
   const files = useQuery({ queryKey: ["survey-files", archive], enabled: Boolean(archive), staleTime: 120_000,
-    queryFn: async () => (await base44.entities.SurveyFile.filter({ archive }, { limit: 1000 })).items });
+    queryFn: async () => (await appClient.entities.SurveyFile.filter({ archive }, { limit: 1000 })).items });
   const file = files.data?.find(item => item.id === fileId) ?? files.data?.[0];
   const variables = (file?.variables ?? []).filter(item => [item.name,item.label].join(" ").toLowerCase().includes(search.toLowerCase()));
   return <DashboardCard title="Your supplied survey archives" subtitle={archives.length + " archives · " + formatNumber(archives.reduce((sum, item) => sum + item.file_count, 0)) + " source files"} contentClassName="p-0">

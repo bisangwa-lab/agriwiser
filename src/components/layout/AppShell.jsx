@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { BrandMark } from "@/components/layout/BrandMark";
 import { SidebarNav } from "@/components/layout/SidebarNav";
-import { isLocalAuth } from "@/api/base44Client";
-import { PANELS, panelForPath, roleLabel } from "@/lib/rbac";
+import { usesAppData } from "@/api/appClient";
+import { PANELS, panelForPath, resolveWorkspacePanel, roleLabel } from "@/lib/rbac";
 import { displayName, initials } from "@/lib/roles";
 import { useDatasets } from "@/hooks/useAgriRecords";
 
@@ -17,9 +17,11 @@ import { useDatasets } from "@/hooks/useAgriRecords";
 export function AppShell({ user, children }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = useRouterState({ select: (state) => state.location.pathname });
-  const panel = pathname === "/weather" ? {label:"Weather & climate"} : PANELS[panelForPath(pathname)];
+  const search = useRouterState({ select: (state) => state.location.search });
+  const activePanelKey = resolveWorkspacePanel(user, pathname, search);
+  const panel = PANELS[activePanelKey];
   const { data: datasets = [], isLoading: loadingDatasets, error: datasetError } = useDatasets();
-  const quickEntry = isLocalAuth && import.meta.env.DEV && import.meta.env.VITE_LOCAL_QUICK_LOGIN === "true";
+  const quickEntry = usesAppData && import.meta.env.DEV && import.meta.env.VITE_LOCAL_QUICK_LOGIN === "true";
 
   useEffect(() => {
     setMenuOpen(false);
@@ -44,7 +46,7 @@ export function AppShell({ user, children }) {
             <Menu className="h-5 w-5" />
           </Button>
           <div className="lg:hidden"><BrandMark compact /></div>
-          <div className="hidden items-center gap-2 text-xs sm:flex"><Sprout className="h-4 w-4 text-primary" aria-hidden /><span className="text-muted-foreground">Workspace</span><ChevronRight className="h-3 w-3 text-muted-foreground/50" aria-hidden /><span className="font-medium">{panel?.label ?? "HingaSmart"}</span></div>
+          <div className="hidden items-center gap-2 text-xs sm:flex"><Sprout className="h-4 w-4 text-primary" aria-hidden /><span className="text-muted-foreground">Workspace</span><ChevronRight className="h-3 w-3 text-muted-foreground/50" aria-hidden /><span className="font-medium">{panel?.label ?? "AgriWiser"}</span>{pathname === "/weather" && (<><ChevronRight className="h-3 w-3 text-muted-foreground/50" aria-hidden /><span className="text-muted-foreground font-medium">Weather & climate</span></>)}</div>
           </div>
           <div className="flex shrink-0 items-center gap-3 sm:gap-5">
             {quickEntry && <Link to="/login" className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground transition-colors hover:text-primary"><Grid2X2 className="h-4 w-4" aria-hidden /><span className="hidden sm:inline">Workspaces</span><span className="sr-only sm:hidden">Choose workspace</span></Link>}
@@ -54,13 +56,13 @@ export function AppShell({ user, children }) {
             </div>
           </div>
         </header>
-        {isLocalAuth && <p className="border-b border-border/60 bg-accent/40 px-4 py-1.5 text-[10px] text-accent-foreground/75 sm:px-6 lg:px-8">Local workspace · {loadingDatasets ? "Loading source catalogue…" : datasetError ? "Source catalogue unavailable" : datasets.length ? `NISR published statistics · ${datasets.length} releases · all available crop categories · coverage varies by period` : "No agricultural datasets imported yet"}</p>}
+        {usesAppData && <p className="border-b border-border/60 bg-accent/40 px-4 py-1.5 text-[10px] text-accent-foreground/75 sm:px-6 lg:px-8">AgriWiser workspace · {loadingDatasets ? "Loading source catalogue…" : datasetError ? "Source catalogue unavailable" : datasets.length ? `NISR published statistics · ${datasets.length} releases · all available crop categories · coverage varies by period` : "No agricultural datasets imported yet"}</p>}
 
         <main className="mx-auto w-full max-w-[1536px] flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-7">{children}</main>
 
         <footer className="no-print border-t border-border/70 px-4 py-5 sm:px-6 lg:px-9">
           <p className="text-[11.5px] leading-relaxed text-muted-foreground">
-            HingaSmart Rwanda — agricultural intelligence and decision support. Findings, alerts and
+            AgriWiser — agricultural intelligence and decision support. Findings, alerts and
             reports are evidence for review by people, not conclusions about cause.
           </p>
         </footer>

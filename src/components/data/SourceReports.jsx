@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { base44, isLocalAuth } from "@/api/base44Client";
+import { appClient, usesAppData } from "@/api/appClient";
 import { fetchAll } from "@/lib/fetch-all";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function SourceReports() {
   const [open,setOpen]=useState(false),[reportId,setReportId]=useState(""),[query,setQuery]=useState(""),[page,setPage]=useState(0);
-  const reports=useQuery({queryKey:["source-reports"],enabled:isLocalAuth&&open,queryFn:async()=> (await fetchAll(base44.entities.SourceReportIndex)).sort((a,b)=>b.year-a.year||a.family.localeCompare(b.family)||a.name.localeCompare(b.name)),staleTime:120_000});
+  const reports=useQuery({queryKey:["source-reports"],enabled:usesAppData&&open,queryFn:async()=> (await fetchAll(appClient.entities.SourceReportIndex)).sort((a,b)=>b.year-a.year||a.family.localeCompare(b.family)||a.name.localeCompare(b.name)),staleTime:120_000});
   const selected=reports.data?.find(item=>item.id===reportId)??reports.data?.[0];
-  const content=useQuery({queryKey:["source-report-pages",selected?.id],enabled:Boolean(selected)&&open,queryFn:()=>fetchAll(base44.entities.SourceReportPage,{report_id:selected.id}),staleTime:120_000});
+  const content=useQuery({queryKey:["source-report-pages",selected?.id],enabled:Boolean(selected)&&open,queryFn:()=>fetchAll(appClient.entities.SourceReportPage,{report_id:selected.id}),staleTime:120_000});
   const pages=(content.data??[]).filter(item=>item.text.toLowerCase().includes(query.toLowerCase())).sort((a,b)=>a.page-b.page);
   const current=pages[page];
   return <details className="mt-6 rounded-xl border border-border p-4" open={open} onToggle={event=>setOpen(event.currentTarget.open)}><summary className="cursor-pointer text-sm font-semibold">Published reports & methodology, including food security</summary>

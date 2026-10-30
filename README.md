@@ -1,40 +1,33 @@
-# Base44 App — TanStack Start
+# AgriWiser
 
-A full-stack Base44 app: [TanStack Start](https://tanstack.com/start) (React 19, plain JavaScript) with file-based routes, server functions and server routes, server-rendered and hosted by Base44.
+Agricultural intelligence for Rwanda, built with React 19, TanStack Start, Cloudflare Workers and Supabase. The existing dashboards, district maps, investigation tools, published NISR datasets and weather analysis share AgriWiser's own authenticated server functions.
 
-## What is in the starter
+## Development
 
-| Route | File |
-| --- | --- |
-| `/` | `src/routes/index.jsx` — a server-rendered page whose loader calls a server function |
-| `GET /api/time` | `src/routes/api/time.js` — a server route: a raw HTTP endpoint next to the pages |
+1. Run `npm ci`.
+2. Copy `.env.example` to `.env.local` for development UI settings.
+3. Copy `.dev.vars.example` to `.dev.vars` and configure your Supabase project URL, publishable key and server secret key. Both files are ignored by Git. Never put private credentials in a variable beginning with `VITE_`.
+4. Apply the versioned SQL under `supabase/migrations/` to your own project. See [SUPABASE_SETUP.md](SUPABASE_SETUP.md).
+5. Start with `npm run dev -- --host 127.0.0.1 --port 5174`.
 
-## Run locally
+The development panel badges are limited to loopback hosts, a development build, an explicit flag and the five existing development accounts. They establish real Supabase sessions and never send a login link by email. Production requires normal account sign-in.
 
-```bash
-npm ci
-base44 login   # one-time per machine
-base44 link    # one-time per clone
-base44 dev     # local backend + app together
-```
+## Build and deploy
 
-## Build and publish
+`npm run build` emits `dist/client` and the Worker under `dist/server`. Configure runtime secrets through your hosting platform, then deploy the Worker with the generated Cloudflare configuration. Run `npx wrangler deploy --help` for the installed CLI's deployment options. Do not deploy development account shortcuts or the local database placeholder as production infrastructure.
 
-```bash
-npm run build         # -> dist/client (assets) + dist/server (the Worker)
-base44 deploy         # or publish from the Base44 builder
-```
+## Architecture and security
 
-There is no `index.html`: the HTML document is rendered on the server from `src/routes/__root.jsx`. The build runs through the [Cloudflare Vite plugin](https://developers.cloudflare.com/workers/vite-plugin/), so dev and build both execute server code in `workerd`.
+- `src/routes/__root.jsx` owns the HTML document and frontend assets. There is no index.html.
+- `src/api/appClient.js` exposes AgriWiser's browser adapter. It calls application server functions; sessions stay in HttpOnly cookies.
+- `src/lib/supabase.server.js` creates request-scoped Supabase clients, validates identity against Auth and reads current roles from `hingasmart_profiles`.
+- `src/lib/supabase-records.js` reads through bounded Postgres RPCs and checks write permissions before using the server-only administrative client.
+- Database RLS independently restricts published indicators, administrative archives and private staff work. Users cannot edit their role or write records directly through the public Data API.
+- Weather caches, API budgets and source metadata live in separate private Supabase tables. External sources are never merged or fabricated.
+- The private local backup and source microdata remain outside Git and outside static file serving. Local database code is retained only for offline development and migration tests; the configured application uses Supabase.
 
-## How the pieces fit
+See [SUPABASE_SETUP.md](SUPABASE_SETUP.md), [LOCAL_DATA.md](LOCAL_DATA.md), [WEATHER.md](WEATHER.md) and [EXPLORE_DATA.md](EXPLORE_DATA.md).
 
-- **Pages** are files in `src/routes/`. A route's `loader` runs on the server for a document request and in the browser for a client navigation; `Route.useLoaderData()` gives the component the resolved data.
-- **Server functions** (`src/lib/server-fns.js`) are RPCs created with `createServerFn`. `src/start.js` runs every one of them through `authMiddleware`, which sends the visitor's token along, so `context.getBase44()` returns a client acting as that visitor and entity access rules apply. `context.getBase44().asServiceRole` bypasses them, so use it only after authenticating the caller (`.middleware([requireUser])`) and checking they may access the records involved: server functions and server routes are public endpoints anyone can call with any input. See **Server Security** in `AGENTS.md`. Call it only in handlers that need Base44: it reads the platform headers, and a handler that never calls it works without them.
-- **Secrets** are read in server code with `import { secrets } from "base44:runtime"` → `secrets.get("NAME")`, inside a handler. Never `process.env`.
-- **Server routes** (`src/routes/api/*.js`) are raw HTTP endpoints for URLs something other than the app's own code requests (webhooks, downloads, feeds); the app's pages call server functions. `src/start.js` runs every request through `base44RequestMiddleware`, so their `server.handlers` receive the same `context.getBase44()` (`({ request, params, context }) => …`).
-- **Server-only code** lives in `*.server.js` files (TanStack refuses to bundle them for the browser).
-- **Auth** is resolved client-side after hydration (`useAuth()`); the server is anonymous on a document request, so give per-user pages `ssr: false`.
-- **Sign-in and gated pages** are not wired in the starter: `src/components/auth/` holds the pages (login, register, password reset, MCP consent) and a login gate for `src/routes/_authed/`, to add when the app needs them. See **Adding Authentication** in `AGENTS.md`.
-- **AI**: TanStack AI is installed and runs on the Base44 AI gateway, with no API key and usage billed to the app's AI credits. `gatewayModel(context.getBase44())` in `src/lib/ai.server.js` builds the adapter; `AGENTS.md` has a streaming chat example (a server route plus `useChat`).
-- **Caching**: the platform caches only what a route opts into via `headers()` (`Cache-Control: public, s-maxage=…`). Everything else is served fresh.
+## Checks
+
+Run `npm run lint`, `npm run build` and `node --test tests/*.test.js`. The source is JavaScript/JSX; the router-generated TypeScript tree is not hand edited or committed.

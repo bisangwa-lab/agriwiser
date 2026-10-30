@@ -3,6 +3,7 @@ import { ChartTooltip } from "@/components/charts/ChartTooltip";
 import { ChartPlaceholder } from "@/components/dashboard/ChartPlaceholder";
 import { TrendingUp } from "lucide-react";
 import { formatNumber } from "@/lib/format";
+import { ChartExplanationButton } from "@/components/charts/ChartExplanationButton";
 
 const CHART_COLORS = ["hsl(var(--chart-1))", "hsl(var(--chart-4))", "hsl(var(--chart-3))"];
 
@@ -10,7 +11,15 @@ const CHART_COLORS = ["hsl(var(--chart-1))", "hsl(var(--chart-4))", "hsl(var(--c
  * Time-series chart. `series` is [{ key, label, digits }]; the first series is
  * drawn as a filled area and any further series as lines on the same axis.
  */
-export function TrendChart({ data, xKey = "label", series, unitShort, height = 300, emptyMessage }) {
+export function TrendChart({
+  data,
+  xKey = "label",
+  series,
+  unitShort,
+  height = 300,
+  emptyMessage,
+  explanationProps,
+}) {
   const rows = Array.isArray(data) ? data : [];
   const hasValues = rows.some((row) => series.some((s) => typeof row[s.key] === "number"));
 
@@ -31,7 +40,12 @@ export function TrendChart({ data, xKey = "label", series, unitShort, height = 3
   }, {});
 
   return (
-    <div style={{ width: "100%", height }}>
+    <div className="relative group" style={{ width: "100%", height }}>
+      {explanationProps ? (
+        <div className="absolute right-1 top-1 z-10 opacity-70 group-hover:opacity-100 transition-opacity">
+          <ChartExplanationButton {...explanationProps} data={rows} series={series} />
+        </div>
+      ) : null}
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={rows} margin={{ top: 8, right: 12, left: 4, bottom: 4 }}>
           <defs>

@@ -23,7 +23,7 @@ const control="mt-1.5 h-10 w-full min-w-0 rounded-lg border border-input bg-back
 function SelectField({label,value,onChange,options}){return <label className="min-w-0 text-[11px] text-muted-foreground">{label}<select aria-label={label} className={control} value={value} onChange={event=>onChange(event.target.value)}>{options.map(([key,name])=><option key={key} value={key}>{name}</option>)}</select></label>;}
 function NumberField({label,value,onChange,min,max,step=1}){return <label className="min-w-0 text-[11px] text-muted-foreground">{label}<Input aria-label={label} type="number" className="mt-1.5" value={value} min={min} max={max} step={step} onChange={event=>onChange(event.target.value)}/></label>;}
 function QueryStatus({query}){return query.isFetching?<p role="status" className="py-3 text-xs text-muted-foreground">Retrieving and validating weather cells…</p>:query.error?<div role="alert" className="my-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-xs text-amber-950"><p>{query.error.message}{query.error.retryAfter?` Retry after about ${query.error.retryAfter} seconds.`:''}</p><Button className="mt-2" size="sm" variant="outline" onClick={()=>query.refetch()}>Retry weather request</Button></div>:null;}
-export default function WeatherDashboard({initialSelection={district:'Gasabo',year:2025,season:'Season B'}}){
+export default function WeatherDashboard({initialSelection={district:'Gasabo',year:2025,season:'Season B'}, panel}){
  const [provider,setProvider]=useState(initialSelection.dataset==='merra2'?'nasa':'era5');
  const dataset=provider==='era5'?'era5':'merra2',spec=WEATHER_DATASETS[dataset];
  function changeProvider(value){setProvider(value);setReferenceRequest(null);setBaselineRequest(null);setRecordPage(0);}
@@ -54,11 +54,18 @@ export default function WeatherDashboard({initialSelection={district:'Gasabo',ye
  function calculateBaseline(){try{setBaselineRequest(validateBaseline({location:request.location,...period,baselineStart:Number(baselineStart),baselineEnd:Number(baselineEnd)}));setError('');}catch(error){setError(error.message);}}
  function exportData(){
   const records=weatherDailyRecords(data);
-  downloadCsv(`hingasmart-weather-${request.location.district??'point'}-${request.start}-${request.end}.csv`,toCsv(records,Object.keys(records[0]??{})));
+  downloadCsv(`agriwiser-weather-${request.location.district??'point'}-${request.start}-${request.end}.csv`,toCsv(records,Object.keys(records[0]??{})));
  }
  if(provider==='meteo')return <MeteoRwandaPanel onSourceChange={changeProvider}/>;
+ const eyebrow = panel === 'field_operations'
+  ? 'Panel 3 · Field Operations · Climate analysis'
+  : panel === 'analytics'
+  ? 'Panel 2 · Analytics & planning · Climate analysis'
+  : panel === 'admin'
+  ? 'Panel 1 · Administration · Climate analysis'
+  : 'Climate analysis';
  return <div className="space-y-5">
-  <PageHeader eyebrow="Climate analysis" title="Weather & climate" description="Trace rainfall and temperature, compare agricultural seasons, and investigate climate context with documented limits." actions={<Button size="sm" variant="outline" disabled={!rows.length} onClick={exportData}><Download className="mr-2 h-3.5 w-3.5"/>Export daily data</Button>}/>
+  <PageHeader eyebrow={eyebrow} title="Weather & climate" description="Trace rainfall and temperature, compare agricultural seasons, and investigate climate context with documented limits." actions={<Button size="sm" variant="outline" disabled={!rows.length} onClick={exportData}><Download className="mr-2 h-3.5 w-3.5"/>Export daily data</Button>}/>
   <WeatherSourceSelect value={provider} onChange={changeProvider}/>
   <div className="rounded-xl border border-primary/15 bg-accent/50 p-4 text-xs leading-relaxed text-muted-foreground"><strong className="text-foreground">{spec.label} · model-estimated.</strong> Daily UTC data on a {spec.resolution} native grid. District results use all overlapping cells, weighted by district area. Custom coordinates return one native cell. Sources are selected explicitly and kept separate. {dataset==='era5'&&<>ERA5 is finer than MERRA-2 and has about a five-day reporting delay. The Open-Meteo free endpoint is for non-commercial use; <a className="underline" href="https://open-meteo.com/en/pricing" target="_blank" rel="noreferrer">commercial access requires a subscription</a>. Weather data attribution: Open-Meteo / Copernicus ECMWF, CC BY 4.0.</>}</div>
   <DashboardCard title="Choose location & reporting period" subtitle="Apply filters to load real provider data. Five years maximum per daily request; longer history is available through repeated ranges and climate baselines.">

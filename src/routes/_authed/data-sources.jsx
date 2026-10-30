@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { WeatherIntegrationStatus } from '@/components/weather/WeatherIntegrationStatus';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { createFileRoute } from "@tanstack/react-router";
@@ -9,10 +8,9 @@ import { EmptyState } from "@/components/common/EmptyState";
 import { ToneTag } from "@/components/common/ToneTag";
 import { DatasetCard } from "@/components/data/DatasetCard";
 import { CsvImportPanel } from "@/components/data/CsvImportPanel";
-import { DemoDataPanel } from "@/components/data/DemoDataPanel";
 import { SourceArchiveCatalogue } from "@/components/data/SourceArchiveCatalogue";
 import { SourceTableLibrary } from "@/components/data/SourceTableLibrary";
-import { isLocalAuth } from "@/api/base44Client";
+import { usesAppData } from "@/api/appClient";
 import { useDatasets } from "@/hooks/useAgriRecords";
 import { useAuth } from "@/lib/AuthContext";
 import { isAdmin } from "@/lib/roles";
@@ -22,7 +20,7 @@ import { CloudSun, Database, ShieldCheck } from "lucide-react";
 export const Route = createFileRoute("/_authed/data-sources")({
   validateSearch: search => ({ ...(search.tab === 'weather' ? { tab: 'weather' } : {}) }),
   beforeLoad: requireWorkspace(["data_manager"]),
-  head: () => ({ meta: [{ title: "Data management · HingaSmart Rwanda" }] }),
+  head: () => ({ meta: [{ title: "Data management · AgriWiser" }] }),
   component: DataSourcesPage,
 });
 
@@ -55,21 +53,7 @@ function DataSourcesPage() {
   const { user } = useAuth();
   const admin = isAdmin(user);
   const { data: datasets = [], isLoading, error, refetch } = useDatasets();
-  const [counts, setCounts] = useState(null);
-
-  useEffect(() => {
-    if (isLocalAuth) return;
-    let cancelled = false;
-    fetch("/api/demo-data")
-      .then((response) => (response.ok ? response.json() : null))
-      .then((result) => {
-        if (!cancelled && result) setCounts(result);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  const counts = null;
 
   return (
     <div className="space-y-6">
@@ -90,18 +74,18 @@ function DataSourcesPage() {
         <CardContent className="space-y-3 pt-5">
           <div className="flex flex-wrap items-center gap-2">
             <ToneTag tone="outline">{datasets.length} dataset records</ToneTag>
-            {isLocalAuth ? <ToneTag tone="outline">{datasets.reduce((sum, item) => sum + (item.row_count ?? 0), 0).toLocaleString("en-GB")} published observations stored</ToneTag> : counts ? <ToneTag tone="outline">{counts.observations} observations stored</ToneTag> : null}
+            {usesAppData ? <ToneTag tone="outline">{datasets.reduce((sum, item) => sum + (item.row_count ?? 0), 0).toLocaleString("en-GB")} published observations stored</ToneTag> : counts ? <ToneTag tone="outline">{counts.observations} observations stored</ToneTag> : null}
             {admin ? (
               <ToneTag tone="primary">
                 <ShieldCheck className="h-3 w-3" aria-hidden />
-                {isLocalAuth ? "Local data catalogue" : "Administrator: import and dataset management available"}
+                {usesAppData ? "AgriWiser data catalogue" : "Administrator: import and dataset management available"}
               </ToneTag>
             ) : (
               <ToneTag tone="neutral">Read-only view of datasets</ToneTag>
             )}
           </div>
           <p className="text-[12px] leading-relaxed text-muted-foreground">
-            {isLocalAuth ? "Published NISR tables feed the live dashboard. Source files, exact table references, units and limitations are retained. Original respondent microdata stays outside the published collections." : <>Access is enforced on the stored records, not by hiding buttons: only administrators can create,
+            {usesAppData ? "Published NISR tables feed the live dashboard. Source files, exact table references, units and limitations are retained. Original respondent microdata stays outside the published collections." : <>Access is enforced on the stored records, not by hiding buttons: only administrators can create,
             change or delete dataset and observation records, or import a file. Every account can read the
             approved indicators and their provenance.</>}
           </p>
@@ -136,30 +120,10 @@ function DataSourcesPage() {
         </div>
       )}
 
-      {admin && !isLocalAuth ? (
-        <>
-          <DemoDataPanel
-            counts={counts}
-            onLoaded={async (result) => {
-              await refetch();
-              const response = await fetch("/api/demo-data");
-              if (response.ok) setCounts(await response.json());
-              return result;
-            }}
-          />
-          <CsvImportPanel
-            datasets={datasets}
-            onImported={async () => {
-              await refetch();
-              const response = await fetch("/api/demo-data");
-              if (response.ok) setCounts(await response.json());
-            }}
-          />
-        </>
-      ) : null}
+      {admin && <CsvImportPanel datasets={datasets} onImported={refetch} />}
 
       <SourceTableLibrary />
-      {isLocalAuth && admin && <SourceArchiveCatalogue />}
+      {usesAppData && admin && <SourceArchiveCatalogue />}
 
       <div className="grid gap-5 xl:grid-cols-2">
         <Card className="panel border-0 shadow-none">
@@ -204,7 +168,7 @@ function DataSourcesPage() {
               </div>
             ))}
             <p className="text-[11.5px] leading-relaxed text-muted-foreground">
-              {isLocalAuth ? "All populated worksheets from the imported NISR workbooks are available in the published data library. Crop charts use district records with resolved geography, period and units. Availability varies by crop and season. The supplied survey files and their data dictionaries are indexed separately below." : "Until an official release is imported and its licence confirmed, the platform runs on the clearly labelled demonstration dataset and says so on every screen that shows a value."}
+              {usesAppData ? "All populated worksheets from the imported NISR workbooks are available in the published data library. Crop charts use district records with resolved geography, period and units. Availability varies by crop and season. The supplied survey files and their data dictionaries are indexed separately below." : "Until an official release is imported and its licence confirmed, the platform runs on the clearly labelled demonstration dataset and says so on every screen that shows a value."}
             </p>
           </CardContent>
         </Card>

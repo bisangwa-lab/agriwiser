@@ -1,0 +1,30 @@
+{
+  "prepared_at": "2026-10-29T17:34:39.668057+00:00",
+  "report_type": "repository import PREPARATION snapshot, not a live dashboard query",
+  "observation_count": 55394,
+  "datasets": 17,
+  "table_count": 1161,
+  "archive_count": 32,
+  "archive_files": 845,
+  "profiled_files": 837,
+  "years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "seasons": [
+    "Season A",
+    "Season B",
+    "Season C"
+  ],
+  "report_count": 30,
+  "report_pages": 2403,
+  "missing_observations": 2563,
+  "privacy_note": "Only approved published aggregates visible; microdata is private and not packaged."
+}

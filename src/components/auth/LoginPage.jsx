@@ -1,6 +1,7 @@
 import { ArrowRight, ClipboardCheck, Eye, Loader2, Lock, LogIn, Mail, ShieldCheck, Sprout, TrendingUp } from "lucide-react";
 import { useState } from "react";
-import { base44, isLocalAuth } from "@/api/base44Client";
+import {useAccountConfiguration} from "@/hooks/useAccountConfiguration";
+import { appClient } from "@/api/appClient";
 import { AuthLayout } from "@/components/auth/AuthLayout";
 import { AuthError, AuthLink, GoogleButton, OrDivider, SubmitButton } from "@/components/auth/parts";
 import { Input } from "@/components/ui/input";
@@ -9,13 +10,14 @@ import { safeReturnTo } from "@/lib/authReturnTo";
 import { destinationAfterSignIn, signIn, signInError } from "@/lib/sign-in";
 import { QUICK_LOCAL_ACCOUNTS } from "@/lib/local-quick-login";
 
-const quickLoginEnabled = isLocalAuth && import.meta.env.DEV && import.meta.env.VITE_LOCAL_QUICK_LOGIN === "true";
 const PANEL_ICONS = { admin: ShieldCheck, analytics: TrendingUp, field_operations: ClipboardCheck, community_business: Sprout, public_insights: Eye };
 
 // The /login page. ?returnTo= (or the platform's ?from_url=) is where the visitor
 // goes after signing in — the login gate and the MCP consent page send people here with it.
 export function LoginPage() {
   const returnTo = safeReturnTo();
+  const configuration=useAccountConfiguration();
+  const quickLoginEnabled=configuration.data?.quickLogin===true;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -27,8 +29,8 @@ export function LoginPage() {
     setBusy(true);
     setQuickAccount(account);
     try {
-      await base44.auth.quickLogin(account);
-      const user = await base44.auth.me();
+      await appClient.auth.quickLogin(account);
+      const user = await appClient.auth.me();
       if (!user?.id) throw new Error("Your session could not be verified. Please try again.");
       window.location.assign(destinationAfterSignIn(user, QUICK_LOCAL_ACCOUNTS[account].path));
     } catch (err) {
@@ -43,18 +45,16 @@ export function LoginPage() {
     setError("");
     setBusy(true);
     try {
-      const { destination } = await signIn(base44.auth, { email, password, returnTo });
+      const { destination } = await signIn(appClient.auth, { email, password, returnTo });
       window.location.assign(destination);
     } catch (err) {
-      setError(isLocalAuth && /invalid email or password/i.test(err?.message ?? "")
-        ? "Email or password not recognized. Check your local account details, or create an account."
-        : signInError(err));
+      setError(signInError(err));
       setBusy(false);
     }
   }
 
   return (
-    <AuthLayout icon={LogIn} title="Welcome to HingaSmart" subtitle={quickLoginEnabled ? "Choose one of the five panels to start" : "Sign in to your assigned workspace"} wide={quickLoginEnabled}>
+    <AuthLayout icon={LogIn} title="Welcome to AgriWiser" subtitle={quickLoginEnabled ? "Choose one of the five panels to start" : "Sign in to your assigned workspace"} wide={quickLoginEnabled}>
       <GoogleButton returnTo={returnTo} />
       <OrDivider />
       <AuthError>{error}</AuthError>
@@ -90,7 +90,7 @@ export function LoginPage() {
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <Label htmlFor="login-password">Password</Label>
-            {!isLocalAuth && <AuthLink to="/forgot-password" returnTo={returnTo} className="text-xs text-primary hover:underline">
+            {<AuthLink to="/forgot-password" returnTo={returnTo} className="text-xs text-primary hover:underline">
               Forgot password?
             </AuthLink>}
           </div>
@@ -105,9 +105,7 @@ export function LoginPage() {
       </form>
       </details>
       <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-        {isLocalAuth
-          ? "Local accounts are stored on this computer. Use your local account; your assigned role determines which workspace opens."
-          : "Use the same account as the published HingaSmart app. Your assigned role determines which workspace opens."}
+        Your AgriWiser account determines which workspace opens.
       </p>
       <p className="mt-6 text-center text-sm text-muted-foreground">
         Don't have an account?{" "}

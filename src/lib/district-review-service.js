@@ -17,8 +17,9 @@ export function validateDistrictReview(input) {
 async function persistDistrictRecord(db,user,input,entity) {
  const data=validateDistrictReview(input);
  if(!["super_admin","data_manager","agricultural_analyst","policy_maker","agricultural_officer","field_investigator","field_supervisor"].includes(normalizeRole(user))) throw Object.assign(new Error("Your role cannot create an investigation."),{status:403});
- const page=await readLocalRecords(db,user,{entity:"AgriculturalObservation",query:{domain:"crop",crop:data.crop,geography:data.district},options:{limit:1000}});
- const climate=data.mode==="weather" ? await readLocalRecords(db,user,{entity:"AgriculturalObservation",query:{domain:"climate",geography:data.district},options:{limit:1000}}) : {items:[]};
+ const read=input=>db.readRecords?db.readRecords(input):readLocalRecords(db,user,input);
+ const page=await read({entity:"AgriculturalObservation",query:{domain:"crop",crop:data.crop,geography:data.district},options:{limit:1000}});
+ const climate=data.mode==="weather" ? await read({entity:"AgriculturalObservation",query:{domain:"climate",geography:data.district},options:{limit:1000}}) : {items:[]};
  const detail=districtMapData(page.items,data,climate.items).find(item=>item.name===data.district);
  if(data.mode==="weather"&&detail.rainfall===null) throw new Error("No compatible rainfall source exists for this period.");
  const id=[entity==="ReportFinding"?"map-finding":"district-review",data.district,data.crop,data.season,data.year,data.compareSeason,data.compareYear,data.mode,entity==="ReportFinding"?user.id??user.email:""].join("-").replaceAll(" ","-").toLowerCase();
@@ -35,6 +36,7 @@ async function persistDistrictRecord(db,user,input,entity) {
   calculation_snapshot:JSON.stringify({method:"Production change compares the selected current and baseline periods for the same district and crop. Different seasons are explicitly labelled. Yield uses compatible production / positive harvested area.",current_period:data.year+" "+data.season,baseline_period:data.compareYear+" "+data.compareSeason,current:detail.records,previous:detail.previousRecords,rainfall:detail.rainfallRecords,warnings:detail.warnings}),
   is_demo:false,created_date:now,updated_date:now,
  };
+ if(db.insertOnce)return db.insertOnce(entity,record);
  const inserted=await db.prepare("INSERT OR IGNORE INTO local_records(entity,id,data,published) VALUES(?,?,?,0)").bind(entity,id,JSON.stringify(record)).run();
  const saved=await db.prepare("SELECT data FROM local_records WHERE entity=? AND id=?").bind(entity,id).first();
  return {record:JSON.parse(saved.data),kind:entity,alreadyExists:(inserted.meta?.changes??inserted.changes)===0};

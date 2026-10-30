@@ -7,7 +7,7 @@ import { ExplainChangeButton } from "@/components/explain/ExplainChangeDialog";
 import { formatDateTime, formatValue } from "@/lib/format";
 import { INDICATORS, RULE_BY_ID } from "@/lib/constants";
 import { ClipboardList, Loader2 } from "lucide-react";
-import { base44 } from "@/api/base44Client";
+import { appClient } from "@/api/appClient";
 import { useAuth } from "@/lib/AuthContext";
 import { canAccess } from "@/lib/route-access";
 
@@ -30,7 +30,7 @@ export function AlertCard({ alert, datasets = [], onCreateInvestigation, onChang
   async function changeStatus(status) {
     setSaving(true);
     try {
-      await base44.entities.Alert.update(alert.id, { status });
+      await appClient.entities.Alert.update(alert.id, { status });
       onChanged?.();
     } finally {
       setSaving(false);

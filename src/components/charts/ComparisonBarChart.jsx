@@ -3,6 +3,7 @@ import { ChartTooltip } from "@/components/charts/ChartTooltip";
 import { ChartPlaceholder } from "@/components/dashboard/ChartPlaceholder";
 import { ArrowLeftRight } from "lucide-react";
 import { formatNumber } from "@/lib/format";
+import { ChartExplanationButton } from "@/components/charts/ChartExplanationButton";
 
 /**
  * Ranked bar chart for comparing entities (districts, crops) on one indicator.
@@ -17,6 +18,7 @@ export function ComparisonBarChart({
   height,
   highlightKeys = [],
   emptyMessage,
+  explanationProps,
 }) {
   const data = (Array.isArray(rows) ? rows : []).filter((r) => typeof r[valueKey] === "number");
 
@@ -36,7 +38,12 @@ export function ComparisonBarChart({
   const highlight = new Set(highlightKeys);
 
   return (
-    <div style={{ width: "100%", height: resolvedHeight }}>
+    <div className="relative group" style={{ width: "100%", height: resolvedHeight }}>
+      {explanationProps ? (
+        <div className="absolute right-1 top-1 z-10 opacity-70 group-hover:opacity-100 transition-opacity">
+          <ChartExplanationButton {...explanationProps} data={data} />
+        </div>
+      ) : null}
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} layout="vertical" margin={{ top: 4, right: 24, left: 8, bottom: 4 }}>
           <CartesianGrid stroke="hsl(var(--border))" strokeDasharray="3 4" horizontal={false} />

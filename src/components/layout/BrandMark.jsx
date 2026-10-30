@@ -11,7 +11,7 @@ export function BrandMark({ className, compact = false }) {
       {compact ? null : (
         <span className="min-w-0">
           <span className="brand-serif block text-[15px] font-semibold leading-tight text-sidebar-foreground">
-            HingaSmart
+            AgriWiser
           </span>
           <span className="block text-[10.5px] font-medium uppercase tracking-[0.22em] text-sidebar-foreground/55">
             Rwanda

@@ -1,0 +1,23 @@
+{
+  "id": "<server-issued-id>",
+  "source_class": "NISR_published_aggregate",
+  "dataset_id": "<verified-source-id>",
+  "district": "<verified-district>",
+  "crop": "<source-defined-crop>",
+  "season": "<source-season>",
+  "year": null,
+  "indicator": "production",
+  "unit": "tonnes",
+  "current_value": null,
+  "baseline_value": null,
+  "change_pct": null,
+  "quality_status": "unverified",
+  "quality_flags": [
+    "source_not_loaded"
+  ],
+  "rule_id": "YOY-CHANGE",
+  "rule_version": 1,
+  "status": "not_evaluated",
+  "source_url": null,
+  "note": "Contract sample only. NOT a production record or a NISR statistic."
+}

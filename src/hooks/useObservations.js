@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { base44, isLocalAuth } from "@/api/base44Client";
+import { appClient, usesAppData } from "@/api/appClient";
 import { fetchAll } from "@/lib/fetch-all";
 
 /**
@@ -11,12 +11,12 @@ export function buildObservationQuery({ domain, crop, district, season, year, in
   const query = {};
   if (domain) query.domain = domain;
   if (crop) query.crop = crop;
-  if (isLocalAuth && domain === "crop" && !crop && !includeSubtypes) query.aggregation_level = "main";
+  if (usesAppData && domain === "crop" && !crop && !includeSubtypes) query.aggregation_level = "main";
   if (district) query.geography = district;
   if (season) query.season = season;
   if (year !== undefined && year !== null && year !== "all") query.year = Number(year);
   if (indicator) query.indicator = indicator;
-  if (isLocalAuth && coreMeasures) query.measure_group = "production_area";
+  if (usesAppData && coreMeasures) query.measure_group = "production_area";
   return query;
 }
 
@@ -26,7 +26,7 @@ export function useObservations(params = {}) {
   return useQuery({
     queryKey: ["observations", key, params.view ?? "full"],
     enabled: params.enabled !== false,
-    queryFn: () => fetchAll(base44.entities.AgriculturalObservation, query, isLocalAuth ? {view: params.view} : {}),
+    queryFn: () => fetchAll(appClient.entities.AgriculturalObservation, query, usesAppData ? {view: params.view} : {}),
     staleTime: 60_000,
   });
 }

@@ -52,6 +52,6 @@ test("roles retain separate landing panels", () => {
 });
 
 test("unrecognized credentials receive actionable feedback", () => {
-  assert.match(signInError(new Error("Invalid email or password")), /registered HingaSmart account/);
+  assert.match(signInError(new Error("Invalid email or password")), /registered AgriWiser account/);
   assert.equal(signInError(new Error("Service unavailable")), "Service unavailable");
 });

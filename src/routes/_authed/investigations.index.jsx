@@ -18,7 +18,7 @@ import { ArrowRight, ClipboardList, Plus, Search } from "lucide-react";
 
 export const Route = createFileRoute("/_authed/investigations/")({
   beforeLoad: requireWorkspace(["officer", "data_manager"]),
-  head: () => ({ meta: [{ title: "Investigations · HingaSmart Rwanda" }] }),
+  head: () => ({ meta: [{ title: "Investigations · AgriWiser" }] }),
   component: InvestigationsPage,
 });
 
@@ -64,8 +64,11 @@ function InvestigationsPage() {
       if (filters.status !== "all" && item.status !== filters.status) return false;
       if (filters.crop !== "all" && item.crop !== filters.crop) return false;
       if (filters.district !== "all" && item.district !== filters.district) return false;
-      if (filters.assignment === "mine" && (item.assignee_email || "") !== (user?.email || "")) return false;
-      if (filters.assignment === "unassigned" && item.assignee_name) return false;
+      const isMine =
+        (item.assignee_email && user?.email && item.assignee_email.toLowerCase() === user.email.toLowerCase()) ||
+        (item.assignee_name && user?.full_name && item.assignee_name.toLowerCase() === user.full_name.toLowerCase());
+      if (filters.assignment === "mine" && !isMine) return false;
+      if (filters.assignment === "unassigned" && (item.assignee_name || item.assignee_email)) return false;
       if (!term) return true;
       return [item.title, item.description, item.reason, item.district, item.crop]
         .filter(Boolean)
@@ -78,7 +81,11 @@ function InvestigationsPage() {
       open: investigations.filter((item) => item.status === "open" || item.status === "in_progress").length,
       awaiting: investigations.filter((item) => item.status === "awaiting_evidence").length,
       completed: investigations.filter((item) => item.status === "completed").length,
-      mine: investigations.filter((item) => (item.assignee_email || "") === (user?.email || "")).length,
+      mine: investigations.filter(
+        (item) =>
+          (item.assignee_email && user?.email && item.assignee_email.toLowerCase() === user.email.toLowerCase()) ||
+          (item.assignee_name && user?.full_name && item.assignee_name.toLowerCase() === user.full_name.toLowerCase()),
+      ).length,
     }),
     [investigations, user],
   );
@@ -172,6 +179,11 @@ function InvestigationsPage() {
                         </Link>
                         {item.reason ? (
                           <p className="mt-0.5 line-clamp-2 text-[11.5px] text-muted-foreground">{item.reason}</p>
+                        ) : null}
+                        {item.dataset_name ? (
+                          <span className="mt-1 inline-block rounded bg-muted/60 px-1.5 py-0.5 text-[10px] text-muted-foreground">
+                            {item.dataset_name}
+                          </span>
                         ) : null}
                       </TableCell>
                       <TableCell>

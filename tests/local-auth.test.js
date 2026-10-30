@@ -114,13 +114,13 @@ test("quick login requires development, explicit enablement, local auth and a lo
   const allowed = { development: true, authMode: "local", enabled: "true", hostname: "127.0.0.1" };
   assert.equal(quickLoginAllowed(allowed), true);
   assert.equal(quickLoginAllowed({ ...allowed, development: false }), false);
-  assert.equal(quickLoginAllowed({ ...allowed, authMode: "base44" }), false);
+  assert.equal(quickLoginAllowed({ ...allowed, authMode: "appClient" }), false);
   assert.equal(quickLoginAllowed({ ...allowed, enabled: "false" }), false);
   assert.equal(quickLoginAllowed({ ...allowed, enabled: undefined }), false);
   assert.equal(quickLoginAllowed({ ...allowed, hostname: "example.com" }), false);
 });
 
-test("all five Base44 panels have separate accounts, assigned landing pages and panel access", async () => {
+test("all five AgriWiser panels have separate accounts, assigned landing pages and panel access", async () => {
   const { auth, sqlite } = fixture();
   assert.deepEqual(Object.values(QUICK_LOCAL_ACCOUNTS).map((account) => account.key), PANEL_ORDER);
   assert.equal(new Set(Object.values(QUICK_LOCAL_ACCOUNTS).map((account) => account.email)).size, 5);

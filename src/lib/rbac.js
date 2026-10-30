@@ -1,4 +1,4 @@
-// Central Role-Based Access Control for HingaSmart Rwanda.
+// Central Role-Based Access Control for AgriWiser.
 //
 // One source of truth for the five panels, the roles that map to each, and the
 // page-to-panel mapping used by the route guard. Panel access is enforced in
@@ -42,7 +42,7 @@ const LEGACY_ROLE_MAP = {
 };
 
 /**
- * The canonical role for a signed-in user. A Base44 admin is a super admin.
+ * The canonical role for a signed-in user. An AgriWiser admin is a super admin.
  * An unset or unknown role gets the least-privilege, read-only role — never a
  * privileged one. The role is read from the trusted session (`/me`), never from
  * the browser or a form.
@@ -101,3 +101,66 @@ export function panelForPath(pathname) {
   }
   return null;
 }
+
+const WORKSPACE_STORAGE_KEY = "hingasmart_active_workspace";
+let memoryWorkspace = null;
+
+export function getStoredWorkspace() {
+  if (typeof window !== "undefined") {
+    try {
+      return sessionStorage.getItem(WORKSPACE_STORAGE_KEY) || memoryWorkspace;
+    } catch {
+      return memoryWorkspace;
+    }
+  }
+  return memoryWorkspace;
+}
+
+export function setStoredWorkspace(panelKey) {
+  memoryWorkspace = panelKey;
+  if (typeof window !== "undefined") {
+    try {
+      if (panelKey) {
+        sessionStorage.setItem(WORKSPACE_STORAGE_KEY, panelKey);
+      }
+    } catch {
+      // ignore storage access restrictions
+    }
+  }
+}
+
+/**
+ * Resolves the active workspace panel for a given user, pathname, and optional search params.
+ * Shared features like /weather remain anchored in the user's active workspace
+ * (Administration, Field operations, or Analytics & planning) rather than switching panels.
+ */
+export function resolveWorkspacePanel(user, pathname, search) {
+  const direct = panelForPath(pathname);
+  if (direct) {
+    setStoredWorkspace(direct);
+    return direct;
+  }
+
+  // 1. Explicit search param (e.g. /weather?panel=field_operations)
+  const searchPanel = search?.panel;
+  if (searchPanel && PANELS[searchPanel] && canOpenPanel(user, searchPanel)) {
+    setStoredWorkspace(searchPanel);
+    return searchPanel;
+  }
+
+  // 2. Previously active workspace
+  const stored = getStoredWorkspace();
+  if (stored && PANELS[stored] && canOpenPanel(user, stored)) {
+    return stored;
+  }
+
+  // 3. Fallback to user's assigned role panel
+  const role = normalizeRole(user);
+  const rolePanel = ROLE_BY_KEY[role]?.panel;
+  if (rolePanel && canOpenPanel(user, rolePanel)) {
+    return rolePanel;
+  }
+
+  return "field_operations";
+}
+

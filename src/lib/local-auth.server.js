@@ -2,15 +2,15 @@ import { env } from "cloudflare:workers";
 import { deleteCookie, getCookie, getRequest, setCookie, setResponseHeader, setResponseStatus } from "@tanstack/react-start/server";
 import schema from "../../migrations/0001_local_auth.sql?raw";
 import { createLocalAuthService, SESSION_SECONDS } from "./local-auth-service.js";
+import {backendMode,runSupabaseAuth,supabaseSessionUser} from './supabase.server.js';
 import { quickLoginAllowed } from "./local-quick-login.js";
-
 const COOKIE = "hingasmart_local_session";
 let initialized;
 
 async function service() {
   const request = getRequest();
   const url = new URL(request.url);
-  if (import.meta.env.VITE_AUTH_MODE !== "local" || !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname)) {
+  if (!import.meta.env.DEV || backendMode()!=='local' || !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname)) {
     throw Object.assign(new Error("Local accounts are available only on this computer."), { status: 403 });
   }
   if (request.method !== "GET") {
@@ -27,6 +27,7 @@ async function service() {
 
 export async function runLocalAuth(action, data) {
   try {
+    if(backendMode()==='supabase')return await runSupabaseAuth(action,data);
     const auth = await service();
     if (action === "me") return { user: await auth.me(getCookie(COOKIE)) };
     if (action === "logout") {
@@ -37,7 +38,7 @@ export async function runLocalAuth(action, data) {
     const { user, token } = action === "quickLogin"
       ? await auth.quickLogin(data, { enabled: quickLoginAllowed({
         development: import.meta.env.DEV,
-        authMode: import.meta.env.VITE_AUTH_MODE,
+        authMode: 'local',
         enabled: import.meta.env.VITE_LOCAL_QUICK_LOGIN,
         hostname: new URL(getRequest().url).hostname,
       }) })
@@ -55,13 +56,8 @@ export async function runLocalAuth(action, data) {
 }
 
 export async function localSessionUser() {
+  if(backendMode()==='supabase')return supabaseSessionUser();
   const auth = await service();
   return auth.me(getCookie(COOKIE));
 }
 
-export function localServerClient() {
-  return {
-    auth: { me: localSessionUser },
-    get asServiceRole() { throw new Error("Base44 service operations are unavailable in local account mode."); },
-  };
-}

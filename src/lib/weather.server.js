@@ -9,6 +9,8 @@ import { normalizeRole } from './rbac.js';
 import { normalizeMeteoDelivery,meteoCatalogue,meteoRange } from './meteo-rwanda-provider.js';
 import { aggregateWeather,assertWeatherAccess,climateBaseline,failure,seasonRange,WEATHER_LOCATIONS } from "./weather-model.js";
 import {WEATHER_OVERLAPS,spatialLocation,spatialWeatherRange,loadWeatherCells,weightedDistrictWeather} from './weather-spatial.js';
+import {backendMode,supabaseAdminClient} from './supabase.server.js';
+import {createSupabaseWeatherStore} from './supabase-weather-store.js';
 const boundaries=JSON.parse(boundariesText);
 let setup,service,store;
 const transientLimits=new Map();
@@ -16,8 +18,9 @@ let transientEvents=[];
 async function storage(){
  if(setup)return setup;
  setup=(async()=>{
-  const db=env.WEATHER_DB??(import.meta.env.VITE_AUTH_MODE==='local'?env.LOCAL_AUTH_DB:null);
-  if(db){await db.batch(schema.split(';').map(sql=>sql.trim()).filter(Boolean).map(sql=>db.prepare(sql)));store=createD1WeatherStore(db);}
+  const db=env.WEATHER_DB??env.LOCAL_AUTH_DB;
+  if(backendMode()==='supabase')store=createSupabaseWeatherStore(supabaseAdminClient());
+  else if(db){await db.batch(schema.split(';').map(sql=>sql.trim()).filter(Boolean).map(sql=>db.prepare(sql)));store=createD1WeatherStore(db);}
   else{
    if(typeof caches==='undefined'||!caches.default)throw failure('CACHE_NOT_CONFIGURED','Configure a WEATHER_DB D1 binding or Cloudflare Cache API for weather caching.',503);
    const edge=caches.default;
@@ -28,6 +31,14 @@ async function storage(){
  })().catch(error=>{setup=undefined;throw error;});return setup;
 }
 async function meteoDelivery(){
+ if(backendMode()==='supabase'){
+  if(!env.METEO_RWANDA_OBJECT)return null;
+  const response=await supabaseAdminClient().storage.from('hingasmart-weather').download(env.METEO_RWANDA_OBJECT);
+  if(response.error)throw failure('METEO_DELIVERY_UNAVAILABLE','The authorized Meteo Rwanda delivery could not be read from private storage.',503);
+  if(response.data.size>8*1024*1024)throw failure('INVALID_METEO_DELIVERY','The delivery exceeds the supported 8 MiB size.',503);
+  let body;try{body=JSON.parse(await response.data.text());}catch{throw failure('INVALID_METEO_DELIVERY','The approved delivery is not valid JSON.',503);}
+  return normalizeMeteoDelivery(body,(lat,lon)=>insideRwanda(lat,lon,boundaries),new Date().toISOString());
+ }
  if(!env.METEO_RWANDA_DATA)return null;
  let object;try{object=await env.METEO_RWANDA_DATA.get('approved-delivery.json');}catch{throw failure('METEO_DELIVERY_UNAVAILABLE','The authorized Meteo Rwanda delivery could not be read.',503);}
  if(!object)throw failure('METEO_DELIVERY_UNAVAILABLE','Meteo Rwanda storage is configured, but no approved delivery is available.',503);

@@ -10,7 +10,7 @@ import {
 } from "@/lib/metrics";
 import { useAuth } from "@/lib/AuthContext";
 import { normalizeRole } from "@/lib/rbac";
-import { isLocalAuth } from "@/api/base44Client";
+import { usesAppData } from "@/api/appClient";
 
 
 /**
@@ -20,7 +20,7 @@ import { isLocalAuth } from "@/api/base44Client";
  */
 export function useOverviewData(filters) {
   const { user } = useAuth();
-  const canReadReviews = !isLocalAuth || ["super_admin", "data_manager", "agricultural_analyst", "policy_maker", "agricultural_officer", "field_investigator", "field_supervisor"].includes(normalizeRole(user));
+  const canReadReviews = !usesAppData || ["super_admin", "data_manager", "agricultural_analyst", "policy_maker", "agricultural_officer", "field_investigator", "field_supervisor"].includes(normalizeRole(user));
   const crop = filters.crop !== "all" ? filters.crop : undefined;
   const district = filters.district !== "all" ? filters.district : undefined;
   const season = filters.season !== "all" ? filters.season : undefined;
@@ -60,8 +60,10 @@ export function useOverviewData(filters) {
       ? totalsForPeriod(rows, { year: previousYear, season, indicator: "yield" }).value
       : null;
 
-    const expected = rows.length;
-    const scope = coverage(rows, expected);
+    // The observations endpoint does not provide a source-backed catalogue of
+    // expected district/crop/season cells. Do not infer completeness from the
+    // rows returned: absent categories are invisible in this response.
+    const scope = coverage(rows, null);
 
     const districtRows = groupByDimension(rows, {
       dimension: "geography",
@@ -102,12 +104,12 @@ export function useOverviewData(filters) {
         },
         districts: { value: scope.districts },
         completeness: {
-          value: Math.round(scope.completeness ?? 0),
+          value: null,
           unitShort: "%",
         },
       },
       observationCount: scope.present,
-      expectedObservationCount: expected,
+      expectedObservationCount: null,
       districtRows,
     };
   }, [rows, crop, district, season, indicator]);
@@ -125,6 +127,7 @@ export function useOverviewData(filters) {
   return {
     isLoading: observations.isLoading,
     isFetching: observations.isFetching,
+    isError: observations.isError || datasets.isError || alerts.isError || investigations.isError,
     error: observations.error ?? datasets.error ?? null,
     isSample: !observations.isLoading && !loaded,
     // Alerts and investigations are read separately from the observations, so

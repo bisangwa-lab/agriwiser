@@ -8,7 +8,7 @@ import { EmptyState } from "@/components/common/EmptyState";
 import { parseCsv, templateCsv } from "@/lib/csv";
 import { validateObservationRows } from "@/lib/validation";
 import { formatDateTime } from "@/lib/format";
-import { base44 } from "@/api/base44Client";
+import { appClient } from "@/api/appClient";
 import { useImportLogs } from "@/hooks/useAgriRecords";
 import { CheckCircle2, FileSpreadsheet, History, Loader2, TriangleAlert, Upload } from "lucide-react";
 
@@ -74,10 +74,10 @@ export function CsvImportPanel({ datasets = [], onImported }) {
       }));
 
       for (let index = 0; index < payload.length; index += 250) {
-        await base44.entities.AgriculturalObservation.bulkCreate(payload.slice(index, index + 250));
+        await appClient.entities.AgriculturalObservation.bulkCreate(payload.slice(index, index + 250));
       }
 
-      await base44.entities.ImportLog.create({
+      await appClient.entities.ImportLog.create({
         file_name: fileName || "untitled.csv",
         dataset_id: selectedDataset?.id ?? "",
         dataset_name: selectedDataset?.name ?? "Imported table",

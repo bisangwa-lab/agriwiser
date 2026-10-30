@@ -1,6 +1,6 @@
 import { queryOptions, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext, useContext, useMemo } from "react";
-import { base44 } from "@/api/base44Client";
+import { appClient } from "@/api/appClient";
 import { currentPath } from "@/lib/authReturnTo";
 
 /**
@@ -15,9 +15,9 @@ export const authQuery = queryOptions({
   queryKey: ["auth", "me"],
   queryFn: async () => {
     // No token means no session; /me could only answer 401.
-    if (!base44.auth.hasToken()) return { user: null, error: null };
+    if (!appClient.auth.hasToken()) return { user: null, error: null };
     try {
-      return { user: await base44.auth.me(), error: null };
+      return { user: await appClient.auth.me(), error: null };
     } catch (err) {
       if (err?.data?.extra_data?.reason === "user_not_registered") {
         return { user: null, error: { type: "user_not_registered", message: "Not registered" } };
@@ -50,7 +50,7 @@ export function AuthProvider({ children }) {
       refresh: () => queryClient.fetchQuery({ ...authQuery, staleTime: 0 }),
       logout: () => {
         queryClient.setQueryData(authQuery.queryKey, { user: null, error: null });
-        base44.auth.logout(window.location.origin);
+        appClient.auth.logout(window.location.origin);
       },
       navigateToLogin: () => window.location.assign(`/login?returnTo=${encodeURIComponent(currentPath())}`),
     }),

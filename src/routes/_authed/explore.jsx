@@ -28,7 +28,7 @@ import { ExploreWeatherContext } from "@/components/data/ExploreWeatherContext";
 export const Route = createFileRoute("/_authed/explore")({
   beforeLoad: requireWorkspace(["planner", "data_manager"]),
   validateSearch: validateExploreSearch,
-  head: () => ({ meta: [{ title: "Explore data · HingaSmart Rwanda" }] }),
+  head: () => ({ meta: [{ title: "Explore data · AgriWiser" }] }),
   component: ExplorePage,
 });
 
@@ -94,7 +94,7 @@ function ExplorePage() {
     catch { setCopyMessage("Copy this page’s URL from your address bar; it includes the selection."); }
   }
   function exportRecords() {
-    downloadCsv(`hingasmart-${indicator}-${crop}-${district}-${season.replaceAll(" ", "-")}-${fromYear}-${toYear}.csv`, toCsv(exploreExportRows(recordRows)));
+    downloadCsv(`agriwiser-${indicator}-${crop}-${district}-${season.replaceAll(" ", "-")}-${fromYear}-${toYear}.csv`, toCsv(exploreExportRows(recordRows)));
   }
   const explainPayload = !pending && !observations.error && !comparisonReason ? {
     indicator, current: current.value, previous: previous.value, currentPeriod: period, previousPeriod: baselinePeriod,

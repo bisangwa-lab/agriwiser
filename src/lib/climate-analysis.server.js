@@ -5,12 +5,12 @@ import {WEATHER_LOCATIONS,seasonRange,aggregateWeather,climateBaseline,weatherSe
 import {readLocalRecords} from './local-data-service.js';
 import {cropComparison,cropSeason,rankDistricts,fullTemperature,difference} from './climate-analysis-model.js';
 import {saveClimateFindingEvidence} from './climate-finding.js';
+import {recordsForUser} from './local-data.server.js';
 const owner=user=>String(user.id??user.email);
 async function cropRecords(context,scope,all=false){
- const query={domain:'crop',crop:scope.crop,season:scope.season,...(all?{}:{geography:scope.district})},rows=[];
+ const query={domain:'crop',crop:scope.crop,season:scope.season,...(all?{}:{geography:scope.district})},rows=[],repository=await recordsForUser(context.user);
  for(let offset=0;offset<10000;offset+=1000){
-  if(import.meta.env.VITE_AUTH_MODE==='local'){const page=await readLocalRecords(env.LOCAL_AUTH_DB,context.user,{entity:'AgriculturalObservation',query:{...query,measure_group:'production_area'},options:{limit:1000,cursor:String(offset)}});rows.push(...page.items);if(!page.has_more)return rows;}
-  else{const page=await context.getBase44().entities.AgriculturalObservation.filter(query,'id',1000,offset),items=Array.isArray(page)?page:page.items??[];rows.push(...items);if(items.length<1000)return rows;}
+  const page=await repository.read({entity:'AgriculturalObservation',query:{...query,measure_group:'production_area'},options:{limit:1000,cursor:String(offset)}});rows.push(...page.items);if(!page.has_more)return rows;
  }
  throw failure('TOO_MANY_RECORDS','Narrow the selected crop records before running this analysis.',400);
 }
@@ -31,7 +31,6 @@ export async function runClimateRanking(context,scope){await authorizeClimateAna
 export async function runSaveClimateFinding(context,input){
  const {store}=await authorizeClimateAnalysis(context.user);
  return saveClimateFindingEvidence({cache:store.cache,write:async record=>{
-  if(import.meta.env.VITE_AUTH_MODE==='local'){await env.LOCAL_AUTH_DB.prepare('INSERT OR IGNORE INTO local_records(entity,id,data,published) VALUES(?,?,?,0)').bind('ReportFinding',record.id,JSON.stringify(record)).run();const saved=await env.LOCAL_AUTH_DB.prepare('SELECT data FROM local_records WHERE entity=? AND id=?').bind('ReportFinding',record.id).first();return JSON.parse(saved.data);}
-  return context.getBase44().entities.ReportFinding.create(record);
+  return (await recordsForUser(context.user)).create({entity:'ReportFinding',record});
  }},context.user,input);
 }
