@@ -90,14 +90,22 @@ export async function mutateFieldWork(db, user, input, now = () => new Date().to
       const reason = requiredText(data.reason, "Reason for investigation", 2000, 10);
       const alert = data.alert_id ? (await getStored(db, "Alert", requiredText(data.alert_id, "Alert reference", 240))).record : null;
       if (data.status && data.status !== "open") throw fail("New investigations begin as open.");
+      if (alert) {
+        for (const field of ["crop", "district", "indicator", "period"]) {
+          if (alert[field] && data[field] && alert[field] !== data[field]) {
+            throw fail("The linked alert's source scope cannot be changed. Open a separate investigation for a different scope.");
+          }
+        }
+      }
       const assignee = await resolveAssignee(db, data.assignee_email);
       record = {
         id: crypto.randomUUID(), title, reason,
         ...textFields(data, ["description", "questions", "evidence"], 4000),
-        ...textFields(data, ["period"], 180), ...assignee,
-        crop: among(data.crop, CROPS, "crop"),
-        district: among(data.district, DISTRICT_NAMES, "district"),
-        indicator: among(data.indicator, ["production", "harvested_area", "yield"], "indicator"),
+        ...assignee,
+        crop: among(alert?.crop ?? data.crop, CROPS, "crop"),
+        district: among(alert?.district ?? data.district, DISTRICT_NAMES, "district"),
+        indicator: among(alert?.indicator ?? data.indicator, ["production", "harvested_area", "yield"], "indicator"),
+        period: optionalText(alert?.period ?? data.period, "Reporting period", 180),
         priority: among(data.priority ?? "standard", enumKeys(INVESTIGATION_PRIORITIES), "priority", false),
         due_date: validDate(data.due_date, "due date"),
         status: "open", outcome_summary: "", closed_date: "",
@@ -105,7 +113,7 @@ export async function mutateFieldWork(db, user, input, now = () => new Date().to
         dataset_id: alert?.dataset_id ?? "", dataset_name: alert?.dataset_name ?? "",
         metric_snapshot: alert?.evidence_snapshot ?? "",
         calculation_snapshot: alert ? "Source alert values and rule are preserved in metric_snapshot." : "",
-        is_demo: Boolean(alert?.is_demo) || (data.is_demo === true && !alert),
+        is_demo: Boolean(alert?.is_demo || alert?.quality_status === "demonstration") || (data.is_demo === true && !alert),
         requested_by: user.email, requested_by_name: user.full_name || user.email,
         created_date: timestamp, updated_date: timestamp,
       };
