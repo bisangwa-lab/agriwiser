@@ -13,7 +13,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Loader2 } from "lucide-react";
-import { base44 } from "@/api/base44Client";
+import { base44, isLocalAuth } from "@/api/base44Client";
 import { CROPS, DISTRICT_NAMES, INDICATORS, INVESTIGATION_PRIORITIES, SEASONS } from "@/lib/constants";
 import { useAuth } from "@/lib/AuthContext";
 
@@ -55,8 +55,8 @@ export function NewInvestigationDialog({ open, onOpenChange, initialValues, aler
 
   async function submit(event) {
     event.preventDefault();
-    if (!values.title.trim()) {
-      setError("A title is required so the investigation can be found again.");
+    if (values.title.trim().length < 5 || values.reason.trim().length < 10) {
+      setError("Enter a clear title (at least 5 characters) and why the finding needs checking (at least 10 characters).");
       return;
     }
     setSaving(true);
@@ -72,10 +72,10 @@ export function NewInvestigationDialog({ open, onOpenChange, initialValues, aler
         dataset_name: initialValues?.dataset_name ?? "",
         metric_snapshot: initialValues?.metric_snapshot ?? "",
         calculation_snapshot: initialValues?.calculation_snapshot ?? "",
-        is_demo: true,
+        is_demo: Boolean(initialValues?.is_demo),
       });
 
-      if (alertId) {
+      if (alertId && !isLocalAuth) {
         await base44.entities.Alert.update(alertId, {
           status: "investigating",
           investigation_id: created.id,
@@ -97,8 +97,7 @@ export function NewInvestigationDialog({ open, onOpenChange, initialValues, aler
         <DialogHeader>
           <DialogTitle className="brand-serif text-xl">New investigation</DialogTitle>
           <DialogDescription className="text-[12.5px]">
-            Record what prompted the review and what a person should check. Evidence and calculation details
-            are preserved on the record and are not overwritten by later edits.
+            Describe the problem, choose the district and who should check it. Linked alert evidence is preserved from the source; manually entered notes are identified as user evidence.
           </DialogDescription>
         </DialogHeader>
 
@@ -111,6 +110,7 @@ export function NewInvestigationDialog({ open, onOpenChange, initialValues, aler
               onChange={(event) => set("title", event.target.value)}
               placeholder="Maize production drop in Kirehe, 2024 Season A"
               required
+              minLength={5}
             />
           </div>
 
@@ -122,7 +122,9 @@ export function NewInvestigationDialog({ open, onOpenChange, initialValues, aler
                 rows={3}
                 value={values.reason}
                 onChange={(event) => set("reason", event.target.value)}
-                placeholder="What makes this worth a person's time?"
+                placeholder="What was reported, what is uncertain and why should someone check it?"
+                required
+                minLength={10}
               />
             </div>
             <div className="space-y-1.5">
