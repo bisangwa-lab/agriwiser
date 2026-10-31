@@ -19,6 +19,11 @@ export const localQuickLogin = createServerFn({ method: "POST" }).validator((dat
   return data.account;
 }).handler(({ data }) => runLocalAuth("quickLogin", data));
 
+export const demoQuickLogin = createServerFn({ method: "POST" }).validator((data) => {
+  if (!data || Object.keys(data).length !== 1 || typeof data.account !== "string" || data.account.length > 32) throw new Error("Choose a listed demo panel.");
+  return data.account;
+}).handler(({ data }) => runLocalAuth("demoPanelLogin", data));
+
 export const accountConfiguration=createServerFn({method:'GET'}).handler(()=>({backend:backendMode(),quickLogin:import.meta.env.DEV&&import.meta.env.VITE_LOCAL_QUICK_LOGIN==='true'&&['localhost','127.0.0.1','[::1]'].includes(new URL(getRequest().url).hostname)}));
 export const requestPasswordReset=createServerFn({method:'POST'}).validator(input=>{if(!input||typeof input.email!=='string'||input.email.length>254)throw new Error('Enter a valid email.');return {email:input.email};}).handler(({data})=>runLocalAuth('requestReset',data));
 export const resetAccountPassword=createServerFn({method:'POST'}).validator(input=>{if(!input||typeof input.password!=='string'||input.password.length<12||input.password.length>128)throw new Error('Use 12–128 characters.');return {password:input.password};}).handler(({data})=>runLocalAuth('resetPassword',data));

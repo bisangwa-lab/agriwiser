@@ -1,4 +1,4 @@
-import { localEmptyCollection, localLogin, localLogout, localMe, localQuickLogin, localRegister,requestPasswordReset,resetAccountPassword } from "@/lib/local-auth";
+import { localEmptyCollection, localLogin, localLogout, localMe, localQuickLogin, demoQuickLogin as localDemoQuickLogin, localRegister, requestPasswordReset, resetAccountPassword } from "@/lib/local-auth";
 import {
   localReadCollection,
   localCreateRecord,
@@ -63,6 +63,7 @@ export const localClient = {
     hasToken: () => true, // The HttpOnly cookie is resolved only by the server.
     loginViaEmailPassword: (email, password) => unwrap(localLogin({ data: { email, password } })),
     quickLogin: (account) => unwrap(localQuickLogin({ data: { account } })),
+    demoQuickLogin: (account) => unwrap(localDemoQuickLogin({ data: { account } })),
     register: (data) => unwrap(localRegister({ data })),
     resetPasswordRequest:email=>unwrap(requestPasswordReset({data:{email}})),
     resetPassword:({newPassword})=>unwrap(resetAccountPassword({data:{password:newPassword}})),

@@ -35,7 +35,7 @@ export async function runLocalAuth(action, data) {
       deleteCookie(COOKIE, { path: "/" });
       return { ok: true };
     }
-    const { user, token } = action === "quickLogin"
+    const { user, token } = action === "quickLogin" || action === "demoPanelLogin"
       ? await auth.quickLogin(data, { enabled: quickLoginAllowed({
         development: import.meta.env.DEV,
         authMode: 'local',

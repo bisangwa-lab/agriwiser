@@ -42,25 +42,35 @@ export async function supabaseSessionUser(){
  if(!profile.active)throw Object.assign(new Error('This account has been disabled.'),{status:403});
  return {id:data.user.id,email:data.user.email,full_name:profile.full_name||data.user.email,workspace_role:profile.workspace_role,role:profile.workspace_role==='super_admin'?'admin':'user',created_date:profile.created_at};
 }
+
+// One-click demo panel access for competition judging. Uses Supabase admin magic
+// links entirely server-side — no passwords or tokens are exposed to the browser.
+// The established session is an HttpOnly cookie, same as normal sign-in.
+async function demoPanelLogin(accountKey){
+ if(!Object.hasOwn(QUICK_LOCAL_ACCOUNTS,accountKey))throw Object.assign(new Error('Choose a listed demo panel.'),{status:403});
+ const account=QUICK_LOCAL_ACCOUNTS[accountKey],admin=supabaseAdminClient();
+ const listed=await admin.auth.admin.listUsers({page:1,perPage:1000});
+ const existing=listed.data?.users.find(user=>user.email===account.email);
+ if(listed.error||!existing)throw Object.assign(new Error('This demo account is unavailable.'),{status:403});
+ const profile=await admin.from('hingasmart_profiles').select('workspace_role,active').eq('id',existing.id).single();
+ if(profile.error||!profile.data.active||profile.data.workspace_role!==account.role)throw Object.assign(new Error('The demo account is disabled or has a different assigned role.'),{status:403});
+ const {data,error}=await admin.auth.admin.generateLink({type:'magiclink',email:account.email});
+ if(error||!data.properties?.hashed_token)throw Object.assign(new Error('This demo account is unavailable.'),{status:403});
+ const verified=await client.auth.verifyOtp({type:'magiclink',token_hash:data.properties.hashed_token});
+ if(verified.error)throw Object.assign(new Error('The demo session could not be established.'),{status:401});
+ const user=await supabaseSessionUser();if(user.workspace_role!==account.role){await client.auth.signOut({scope:'local'});throw Object.assign(new Error('The demo account does not have the expected assigned role.'),{status:403});}
+ return {user};
+}
+
 export async function runSupabaseAuth(action,input){
  const client=supabaseRequestClient(),origin=new URL(getRequest().url).origin;
  if(action==='me')return {user:await supabaseSessionUser()};
  if(action==='logout'){const result=await client.auth.signOut({scope:'local'});if(result.error)throw unavailable();return {ok:true};}
  if(action==='quickLogin'){
   if(!quickLoginAllowed({development:import.meta.env.DEV,authMode:'local',enabled:import.meta.env.VITE_LOCAL_QUICK_LOGIN,hostname:new URL(getRequest().url).hostname})||!Object.hasOwn(QUICK_LOCAL_ACCOUNTS,input))throw Object.assign(new Error('Quick sign-in is available only during loopback development.'),{status:403});
-  const account=QUICK_LOCAL_ACCOUNTS[input],admin=supabaseAdminClient();
-  const listed=await admin.auth.admin.listUsers({page:1,perPage:1000});
-  const existing=listed.data?.users.find(user=>user.email===account.email);
-  if(listed.error||!existing)throw Object.assign(new Error('This pre-provisioned development account is unavailable.'),{status:403});
-  const profile=await admin.from('hingasmart_profiles').select('workspace_role,active').eq('id',existing.id).single();
-  if(profile.error||!profile.data.active||profile.data.workspace_role!==account.role)throw Object.assign(new Error('The development account is disabled or has a different assigned role.'),{status:403});
-  const {data,error}=await admin.auth.admin.generateLink({type:'magiclink',email:account.email});
-  if(error||!data.properties?.hashed_token)throw Object.assign(new Error('This development account is unavailable.'),{status:403});
-  const verified=await client.auth.verifyOtp({type:'magiclink',token_hash:data.properties.hashed_token});
-  if(verified.error)throw Object.assign(new Error('The development session could not be established.'),{status:401});
-  const user=await supabaseSessionUser();if(user.workspace_role!==account.role){await client.auth.signOut({scope:'local'});throw Object.assign(new Error('The development account does not have the expected assigned role.'),{status:403});}
-  return {user};
+  return demoPanelLogin(input);
  }
+ if(action==='demoPanelLogin')return demoPanelLogin(input);
  let result;
  if(action==='login')result=await client.auth.signInWithPassword({email:input.email.trim(),password:input.password});
  else if(action==='register')result=await client.auth.signUp({email:input.email.trim(),password:input.password,options:{data:{full_name:input.full_name??''},emailRedirectTo:origin+'/auth/callback'}});

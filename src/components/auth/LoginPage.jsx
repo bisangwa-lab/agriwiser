@@ -13,14 +13,14 @@ import { useLanguage } from "@/lib/LanguageContext";
 
 const PANEL_ICONS = { admin: ShieldCheck, analytics: TrendingUp, field_operations: ClipboardCheck, community_business: Sprout, public_insights: Phone };
 
-// Demo account credentials for competition access. Informational only — users
-// still enter email and password manually below. No autologin shortcuts.
-const DEMO_CREDENTIALS = [
-  { email: "admin@hingasmart.local", role: "Super Admin", panel: "Administration", icon: ShieldCheck },
-  { email: "analyst@hingasmart.local", role: "Agricultural Analyst", panel: "Analytics & Planning", icon: TrendingUp },
-  { email: "officer@hingasmart.local", role: "Agricultural Officer", panel: "Field Operations", icon: ClipboardCheck },
-  { email: "community@hingasmart.local", role: "Farmer", panel: "Community & Business", icon: Sprout },
-  { email: "viewer@hingasmart.local", role: "Public Viewer", panel: "Public Insights", icon: Phone },
+// Demo panel access for competition judging. One click signs in with a
+// pre-provisioned Supabase account and opens that panel — no password needed.
+const DEMO_PANELS = [
+  { key: "administrator", email: "admin@hingasmart.local", role: "Super Admin", panel: "Administration", icon: ShieldCheck, path: "/admin" },
+  { key: "analytics", email: "analyst@hingasmart.local", role: "Agricultural Analyst", panel: "Analytics & Planning", icon: TrendingUp, path: "/analytics" },
+  { key: "field_operations", email: "officer@hingasmart.local", role: "Agricultural Officer", panel: "Field Operations", icon: ClipboardCheck, path: "/field-operations" },
+  { key: "community_business", email: "community@hingasmart.local", role: "Farmer", panel: "Community & Business", icon: Sprout, path: "/community-business" },
+  { key: "viewer", email: "viewer@hingasmart.local", role: "Public Viewer", panel: "Public Insights / USSD", icon: Phone, path: "/public-insights" },
 ];
 
 // The /login page. ?returnTo= (or the platform's ?from_url=) is where the visitor
@@ -41,10 +41,11 @@ export function LoginPage() {
     setBusy(true);
     setQuickAccount(account);
     try {
-      await appClient.auth.quickLogin(account);
+      await appClient.auth.demoQuickLogin(account);
       const user = await appClient.auth.me();
       if (!user?.id) throw new Error("Your session could not be verified. Please try again.");
-      window.location.assign(destinationAfterSignIn(user, QUICK_LOCAL_ACCOUNTS[account].path));
+      const panel = DEMO_PANELS.find((p) => p.key === account);
+      window.location.assign(destinationAfterSignIn(user, panel?.path));
     } catch (err) {
       setError(signInError(err));
       setBusy(false);
@@ -89,22 +90,21 @@ export function LoginPage() {
           })}
         </div>
       </section>}
-      <section aria-label="Demo account credentials" className="mb-6 space-y-3">
-        <h2 className="text-sm font-semibold">{t("demoCredentialsHeading")}</h2>
-        <p className="text-xs text-muted-foreground">{t("demoCredentialsDescription")}</p>
-        <div className="grid gap-2 sm:grid-cols-3">
-          {DEMO_CREDENTIALS.map((cred) => {
-            const Icon = cred.icon;
-            return (
-              <div key={cred.email} className="rounded-xl border border-primary/20 bg-accent/40 p-3 text-left">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"><Icon className="h-4 w-4" aria-hidden /></span>
-                <span className="block text-xs font-semibold text-primary">{cred.email}</span>
-                <span className="block text-[10px] text-muted-foreground">{cred.role} · {cred.panel}</span>
-              </div>
-            );
+      <section aria-label="Demo panel access" className="mb-6 space-y-3">
+        <h2 className="text-sm font-semibold">{t("demoPanelHeading")}</h2>
+        <p className="text-xs text-muted-foreground">{t("demoPanelDescription")}</p>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {DEMO_PANELS.map((panel) => {
+            const Icon = panel.icon;
+            return <button key={panel.key} type="button" onClick={() => quickSignIn(panel.key)} disabled={busy}
+              aria-label={`Open ${panel.panel} panel`}
+              className={`group flex w-full items-center gap-3 rounded-xl border border-primary/20 bg-accent/40 p-3.5 text-left transition-colors hover:border-primary/50 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-wait disabled:opacity-60`}>
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"><Icon className="h-5 w-5" aria-hidden /></span>
+              <span className="flex-1"><span className="block text-sm font-semibold">{panel.role}</span><span className="block text-xs text-muted-foreground">{panel.panel}</span></span>
+              {quickAccount === panel.key ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <ArrowRight className="h-4 w-4 text-primary" aria-hidden />}
+            </button>;
           })}
         </div>
-        <p className="text-[10px] text-muted-foreground">{t("demoPasswordNote")}</p>
       </section>
       <details open={!quickLoginEnabled}>
       <summary className={quickLoginEnabled ? "mb-4 cursor-pointer text-xs font-medium text-primary" : "hidden"}>{t("useEmailPassword")}</summary>
