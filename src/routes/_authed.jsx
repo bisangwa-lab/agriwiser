@@ -5,10 +5,8 @@ import { canOpenPanel, normalizeRole, panelForPath, panelForRole } from "@/lib/r
 
 export const Route = createFileRoute("/_authed")({
   ssr: false,
-  // Central route guard. First resolve the session (throws to /login if not
-  // signed in), then deny access to any panel the user is not assigned to,
-  // redirecting them to their own panel. This runs for every _authed route, so
-  // a direct URL is blocked too — not just the sidebar link.
+  // Require a verified session, then enforce the account's assigned workspace.
+  // Protected data and operations also enforce permissions in server functions.
   beforeLoad: async ({ context, location }) => {
     const { user } = await requireSignedIn({ context, location });
     const panel = panelForPath(location.pathname);

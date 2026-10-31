@@ -5,7 +5,7 @@ const LanguageContext = createContext(null);
 const messages = {
   en: {
     language: "Language", english: "English", kinyarwanda: "Kinyarwanda",
-    workspace: "Workspace", workspaceNavigation: "Workspace navigation", mainNavigation: "Main navigation",
+    workspace: "Workspace", workspaceNavigation: "Workspace navigation", switchWorkspace: "Switch workspace", current: "Current", mainNavigation: "Main navigation",
     administration: "Administration", dataManagement: "Data management", weatherClimate: "Weather & climate",
     accountSettings: "Account settings", home: "Home", exploreData: "Explore data", compare: "Compare",
     agriculturalPlanningTools: "Agricultural Planning Tools", agriculturalSolutions: "Agricultural Solutions",
@@ -30,7 +30,7 @@ const messages = {
   },
   rw: {
     language: "Ururimi", english: "Icyongereza", kinyarwanda: "Ikinyarwanda",
-    workspace: "Aho ukorera", workspaceNavigation: "Ibice by’akazi", mainNavigation: "Ibice nyamukuru",
+    workspace: "Aho ukorera", workspaceNavigation: "Ibice by’akazi", switchWorkspace: "Hindura aho ukorera", current: "Ubu", mainNavigation: "Ibice nyamukuru",
     administration: "Ubuyobozi", dataManagement: "Imicungire y’amakuru", weatherClimate: "Ikirere n’imihindagurikire yacyo",
     accountSettings: "Igenamiterere rya konti", home: "Ahabanza", exploreData: "Shakisha amakuru", compare: "Gereranya",
     agriculturalPlanningTools: "Ibikoresho byo gutegura ubuhinzi", agriculturalSolutions: "Ibisubizo mu buhinzi",

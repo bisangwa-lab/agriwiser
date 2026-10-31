@@ -9,6 +9,19 @@
 import { DATA_CLASSIFICATIONS, tagEvidence } from './classification.js';
 import { toNumber, computeYield } from './statistical-engine.js';
 
+const RISK_UNITS = Object.freeze({ production: 'metric tonnes', harvested_area: 'hectares' });
+
+export function isUsableRiskRecord(row, indicator, { requireExplicitObserved = false } = {}) {
+  if (!row || row.is_demo === true || row.is_forecast === true) return false;
+  const status = String(row.observation_status ?? '').trim().toLowerCase();
+  if (['forecast', 'missing', 'provisional'].includes(status)) return false;
+  if (requireExplicitObserved && status !== 'observed') return false;
+  if (/demo|forecast|model|scenario/i.test(String(row.quality_status ?? ''))) return false;
+  if (row.unit !== RISK_UNITS[indicator] || !row.dataset_id || !row.source_reference) return false;
+  const value = toNumber(row.value);
+  return value !== null && value >= 0;
+}
+
 export async function fetchAllPages(repository, entity, query = {}, limitPerRequest = 2000, maxTotal = 50000) {
   const rows = [];
   for (let offset = 0; offset < maxTotal; offset += limitPerRequest) {
@@ -74,49 +87,43 @@ export class EvidenceService {
   async getSeries(district, crop, season) {
     const rows = await this.queryObservations({ crop, district, season });
     const byYear = new Map();
-
     for (const row of rows) {
       const year = Number(row.year);
-      if (!Number.isFinite(year)) continue;
-
-      if (!byYear.has(year)) {
-        byYear.set(year, {
-          year,
-          district,
-          crop,
-          season,
-          production: null,
-          harvestedArea: null,
-          cultivatedArea: null,
-          reportedYield: null,
-          derivedYield: null,
-          datasetId: row.dataset_id,
-          sourceReference: row.source_reference,
-          sources: {},
-        });
-      }
-
-      const entry = byYear.get(year);
-      const val = toNumber(row.value);
-
-      if (row.indicator === 'production') {
-        entry.production = val;
-        entry.sources.production = sourceDetails(row);
-      }
-      if (row.indicator === 'harvested_area') {
-        entry.harvestedArea = val;
-        entry.sources.harvested_area = sourceDetails(row);
-      }
-      if (row.indicator === 'cultivated_area') entry.cultivatedArea = val;
-      if (row.indicator === 'reported_yield') entry.reportedYield = val;
+      if (!Number.isInteger(year) || !['production', 'harvested_area'].includes(row.indicator)) continue;
+      if (!byYear.has(year)) byYear.set(year, { production: [], harvested_area: [] });
+      const indicator = row.indicator === 'production' ? 'production' : 'harvested_area';
+      if (isUsableRiskRecord(row, indicator)) byYear.get(year)[indicator].push(row);
     }
 
-    const series = [...byYear.values()].sort((a, b) => a.year - b.year);
-    for (const point of series) {
-      point.derivedYield = computeYield(point.production, point.harvestedArea);
-    }
-
-    return series;
+    return [...byYear.entries()].sort(([a], [b]) => a - b).map(([year, records]) => {
+      const productionRow = records.production.length === 1 ? records.production[0] : null;
+      const areaRow = records.harvested_area.length === 1 ? records.harvested_area[0] : null;
+      const compatiblePair = productionRow && areaRow && productionRow.dataset_id === areaRow.dataset_id;
+      const production = productionRow ? toNumber(productionRow.value) : null;
+      const harvestedArea = areaRow ? toNumber(areaRow.value) : null;
+      const warnings = [];
+      if (records.production.length > 1) warnings.push('Production has multiple compatible source records; the value was withheld.');
+      if (records.harvested_area.length > 1) warnings.push('Harvested area has multiple compatible source records; the value was withheld.');
+      if (productionRow && areaRow && !compatiblePair) warnings.push('Production and harvested area use different source releases; derived yield was withheld.');
+      return {
+        year,
+        district,
+        crop,
+        season,
+        production,
+        harvestedArea,
+        cultivatedArea: null,
+        reportedYield: null,
+        derivedYield: compatiblePair ? computeYield(production, harvestedArea) : null,
+        datasetId: productionRow?.dataset_id ?? areaRow?.dataset_id ?? null,
+        sourceReference: productionRow?.source_reference ?? areaRow?.source_reference ?? null,
+        sources: {
+          ...(productionRow ? { production: sourceDetails(productionRow) } : {}),
+          ...(areaRow ? { harvested_area: sourceDetails(areaRow) } : {}),
+        },
+        sourceWarnings: warnings,
+      };
+    });
   }
 
   /**
@@ -148,9 +155,13 @@ export class EvidenceService {
 
 function sourceDetails(row) {
   return {
+    observationId: row.id ?? null,
     datasetId: row.dataset_id ?? null,
+    datasetName: row.dataset_name ?? null,
     sourceReference: row.source_reference ?? null,
     sourceUrl: row.source_url ?? null,
     unit: row.unit ?? null,
+    observationStatus: row.observation_status ?? 'legacy status unavailable',
+    qualityFlags: Array.isArray(row.quality_flags) ? row.quality_flags : [],
   };
 }

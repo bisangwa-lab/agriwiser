@@ -41,16 +41,19 @@ test("Officer navigation preserves field_operations workspace for /weather and /
   assert.equal(panelForPath("/field-operations"), "field_operations");
   assert.equal(panelForPath("/investigations"), "field_operations");
   assert.equal(panelForPath("/investigations/123"), "field_operations");
+  assert.ok(!canOpenPanel(officerUser, "analytics"));
 
   // Weather is accessible from field operations without redirecting out
   assert.equal(panelForPath("/weather"), null);
   assert.ok(canOpenPanel(officerUser, "field_operations"));
 
   // Weather is shared across panels without switching workspaces
+  setStoredWorkspace("field_operations");
   assert.equal(resolveWorkspacePanel(officerUser, "/weather"), "field_operations");
   assert.equal(resolveWorkspacePanel(officerUser, "/weather", { panel: "field_operations" }), "field_operations");
 
   const analystUser = { role: "user", workspace_role: "agricultural_analyst" };
+  setStoredWorkspace("analytics");
   assert.equal(resolveWorkspacePanel(analystUser, "/weather"), "analytics");
   assert.equal(resolveWorkspacePanel(analystUser, "/weather", { panel: "analytics" }), "analytics");
 
@@ -69,7 +72,7 @@ test("Officer navigation preserves field_operations workspace for /weather and /
   setStoredWorkspace("admin");
   assert.equal(resolveWorkspacePanel(adminUser, "/weather"), "admin");
 
-  // Unauthorized panel parameter is safely rejected and falls back
+  // Users cannot select another role's workspace through shared weather routes
   assert.equal(resolveWorkspacePanel(officerUser, "/weather", { panel: "admin" }), "field_operations");
 });
 

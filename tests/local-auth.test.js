@@ -5,7 +5,7 @@ import { DatabaseSync } from "node:sqlite";
 import { createLocalAuthService, SESSION_SECONDS } from "../src/lib/local-auth-service.js";
 import { tokenHash } from "../src/lib/local-password.js";
 import { QUICK_LOCAL_ACCOUNTS, quickLoginAllowed } from "../src/lib/local-quick-login.js";
-import { PANEL_ORDER, canOpenPanel } from "../src/lib/rbac.js";
+import { PANEL_ORDER, PANELS, canOpenPanel, resolveWorkspacePanel } from "../src/lib/rbac.js";
 import { destinationAfterSignIn } from "../src/lib/sign-in.js";
 
 const schema = readFileSync(new URL("../migrations/0001_local_auth.sql", import.meta.url), "utf8");
@@ -120,7 +120,7 @@ test("quick login requires development, explicit enablement, local auth and a lo
   assert.equal(quickLoginAllowed({ ...allowed, hostname: "example.com" }), false);
 });
 
-test("all five AgriWiser panels have separate accounts, assigned landing pages and panel access", async () => {
+test("all five AgriWiser panels have assigned landing pages and role-limited workspace access", async () => {
   const { auth, sqlite } = fixture();
   assert.deepEqual(Object.values(QUICK_LOCAL_ACCOUNTS).map((account) => account.key), PANEL_ORDER);
   assert.equal(new Set(Object.values(QUICK_LOCAL_ACCOUNTS).map((account) => account.email)).size, 5);
@@ -129,6 +129,10 @@ test("all five AgriWiser panels have separate accounts, assigned landing pages a
     sqlite.prepare("UPDATE local_users SET workspace_role=? WHERE email=?").run(account.role, account.email);
     const { user } = await auth.quickLogin(key, { enabled: true });
     assert.equal(destinationAfterSignIn(user, account.path), account.path);
-    for (const panel of PANEL_ORDER) assert.equal(canOpenPanel(user, panel), key === "administrator" || panel === account.key);
+    for (const panel of PANEL_ORDER) {
+      const allowed = key === "administrator" || panel === account.key;
+      assert.equal(canOpenPanel(user, panel), allowed);
+      if (allowed) assert.equal(resolveWorkspacePanel(user, PANELS[panel].path, {}), panel);
+    }
   }
 });

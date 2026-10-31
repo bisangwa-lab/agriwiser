@@ -8,8 +8,9 @@
 import { createServerFn } from '@tanstack/react-start';
 import { requireUser } from '@/lib/auth-middleware';
 import { recordsForUser } from '@/lib/local-data.server';
-import { EvidenceService } from './evidence-service.js';
+import { EvidenceService, isUsableRiskRecord } from './evidence-service.js';
 import { evaluateDistrictCropRisk, buildInvestigationProposal } from './risk-engine.js';
+import { buildPeerYieldBenchmark } from './action-brief.js';
 import { runDigitalTwinSimulation } from './digital-twin.js';
 import { AIAnalystEngine } from './ai-analyst.js';
 import { listModels, getModelInfo } from './model-registry.js';
@@ -56,10 +57,11 @@ export const getDistrictRiskAssessment = createServerFn({ method: 'GET' })
  */
 export const getNationalRiskMap = createServerFn({ method: 'GET' })
   .middleware([requireUser])
-  .validator((d) => ({
-    crop: String(d.crop || 'Maize'),
-    season: String(d.season || 'Season A'),
-  }))
+  .validator((d) => {
+    if (!d || !CROPS.includes(d.crop) || !SEASONS.includes(d.season))
+      throw Object.assign(new Error('Choose a supported crop and reporting season.'), { status: 400 });
+    return { crop: d.crop, season: d.season };
+  })
   .handler(async ({ context, data }) => {
     const cacheKey = `${context.user.id ?? context.user.email}:${data.crop}:${data.season}`;
     const cached = riskMapCache.get(cacheKey);
@@ -77,43 +79,58 @@ export const getNationalRiskMap = createServerFn({ method: 'GET' })
       if (!byDistrict.has(dist)) byDistrict.set(dist, new Map());
       const yearMap = byDistrict.get(dist);
       const year = Number(obs.year);
+      if (!Number.isInteger(year) || !DISTRICT_NAMES.includes(dist)) continue;
       if (!yearMap.has(year)) {
         yearMap.set(year, {
           year,
           district: dist,
           crop: data.crop,
           season: data.season,
-          production: null,
-          harvestedArea: null,
+          productionRows: [],
+          harvestedAreaRows: [],
           datasetId: obs.dataset_id,
           sourceReference: obs.source_reference,
         });
       }
       const entry = yearMap.get(year);
-      if (obs.indicator === 'production') {
-        const value = Number(obs.value);
-        entry.production = Number.isFinite(value) ? value : null;
-        entry.sources = {
-          ...(entry.sources ?? {}),
-          production: { unit: obs.unit ?? null, sourceReference: obs.source_reference ?? null, datasetId: obs.dataset_id ?? null },
-        };
-      }
-      if (obs.indicator === 'harvested_area') {
-        const value = Number(obs.value);
-        entry.harvestedArea = Number.isFinite(value) ? value : null;
-        entry.sources = {
-          ...(entry.sources ?? {}),
-          harvested_area: { unit: obs.unit ?? null, sourceReference: obs.source_reference ?? null, datasetId: obs.dataset_id ?? null },
-        };
-      }
+      if (obs.indicator === 'production' && isUsableRiskRecord(obs, 'production')) entry.productionRows.push(obs);
+      if (obs.indicator === 'harvested_area' && isUsableRiskRecord(obs, 'harvested_area')) entry.harvestedAreaRows.push(obs);
     }
 
     const assessments = {};
     const districtAssessments = DISTRICT_NAMES.map((dist) => {
       const yearMap = byDistrict.get(dist) ?? new Map();
-      const series = [...yearMap.values()].sort((a, b) => a.year - b.year);
-      for (const point of series) point.derivedYield = computeYield(point.production, point.harvestedArea);
+      const series = [...yearMap.values()].sort((a, b) => a.year - b.year).map((entry) => {
+        const productionRow = entry.productionRows.length === 1 ? entry.productionRows[0] : null;
+        const areaRow = entry.harvestedAreaRows.length === 1 ? entry.harvestedAreaRows[0] : null;
+        const compatible = productionRow && areaRow && productionRow.dataset_id === areaRow.dataset_id;
+        const production = productionRow ? Number(productionRow.value) : null;
+        const harvestedArea = areaRow ? Number(areaRow.value) : null;
+        return {
+          year: entry.year,
+          district: dist,
+          crop: data.crop,
+          season: data.season,
+          production,
+          harvestedArea,
+          derivedYield: compatible ? computeYield(production, harvestedArea) : null,
+          datasetId: productionRow?.dataset_id ?? null,
+          sources: {
+            ...(productionRow ? { production: sourceDetails(productionRow) } : {}),
+            ...(areaRow ? { harvested_area: sourceDetails(areaRow) } : {}),
+          },
+          sourceWarnings: [
+            ...(entry.productionRows.length > 1 ? ['Multiple production records; value withheld.'] : []),
+            ...(entry.harvestedAreaRows.length > 1 ? ['Multiple harvested-area records; value withheld.'] : []),
+            ...(productionRow && areaRow && !compatible ? ['Production and harvested area are from different source releases; derived yield withheld.'] : []),
+          ],
+        };
+      });
       const assessment = evaluateDistrictCropRisk(series);
+      const peerBenchmark = assessment.currentYear
+        ? buildPeerYieldBenchmark(allObservations, dist, { crop: data.crop, season: data.season, year: assessment.currentYear })
+        : { status: 'unavailable', reason: 'A current comparable reporting year is unavailable.', minimumPeerDistricts: 8, peerDistrictCount: 0 };
+      assessment.peerBenchmark = peerBenchmark;
       assessments[dist] = assessment;
       return {
         district: dist,
@@ -124,6 +141,7 @@ export const getNationalRiskMap = createServerFn({ method: 'GET' })
         signals: assessment.signals ?? [],
         currentYear: assessment.currentYear ?? null,
         message: assessment.message ?? null,
+        peerBenchmark,
       };
     });
 
@@ -253,10 +271,14 @@ export const dispatchRiskInvestigation = createServerFn({ method: 'POST' })
     const repository = await recordsForUser(context.user);
     const service = new EvidenceService(repository, context.user);
     const series = await service.getSeries(data.district, data.crop, data.season);
+    const comparisonRows = await service.queryObservations({ crop: data.crop, season: data.season, coreMeasures: true });
     const riskAssessment = evaluateDistrictCropRisk(series);
     riskAssessment.district = data.district;
     riskAssessment.crop = data.crop;
     riskAssessment.season = data.season;
+    riskAssessment.peerBenchmark = riskAssessment.currentYear
+      ? buildPeerYieldBenchmark(comparisonRows, data.district, { crop: data.crop, season: data.season, year: riskAssessment.currentYear })
+      : { status: 'unavailable', reason: 'A current comparable reporting year is unavailable.', minimumPeerDistricts: 8, peerDistrictCount: 0 };
     if (!riskAssessment.signals?.length)
       throw Object.assign(new Error('No current risk signals are available for field follow-up.'), { status: 409 });
     const proposal = buildInvestigationProposal(riskAssessment);
@@ -286,3 +308,16 @@ export const dispatchRiskInvestigation = createServerFn({ method: 'POST' })
       status: investigation.status,
     };
   });
+
+function sourceDetails(row) {
+  return {
+    observationId: row.id ?? null,
+    datasetId: row.dataset_id ?? null,
+    datasetName: row.dataset_name ?? null,
+    sourceReference: row.source_reference ?? null,
+    sourceUrl: row.source_url ?? null,
+    unit: row.unit ?? null,
+    observationStatus: row.observation_status ?? 'legacy status unavailable',
+    qualityFlags: Array.isArray(row.quality_flags) ? row.quality_flags : [],
+  };
+}

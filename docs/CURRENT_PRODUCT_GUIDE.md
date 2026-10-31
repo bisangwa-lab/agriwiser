@@ -1,22 +1,25 @@
 # AgriWiser Current Product Guide
 
 **Product:** Agricultural intelligence and decision support for Rwanda
-**Audience:** Analysts, policy makers, field teams, administrators and community-facing users
+**Primary user:** Agricultural analysts<br />
+**Supporting users:** Policy makers, field teams, administrators and community-facing users
 **Implementation reference:** Read alongside the source and the linked technical documents. Available data and permitted actions depend on the deployment and the signed-in user's current role.
 
 ## Product purpose
 
-AgriWiser connects agricultural statistics, climate context, analysis, reporting and field workflows. The product supports a continuous path from discovering a source-backed observation to understanding its limits, examining a signal, documenting a field investigation where authorized, and communicating findings.
+Agricultural analysts work with evidence that can differ by source, indicator, unit, geography, reporting period and quality. The analytical challenge is to compare only compatible data, keep its context attached, explain what a result supports, and carry a relevant finding into a brief or field-verification request.
+
+AgriWiser supports that analyst task in one role-aware application. Its primary workflow is to discover agricultural evidence, check its provenance and limits, compare and investigate patterns, prepare a source-backed report, and request authorized field follow-up when appropriate. Policy makers use the resulting analysis; field teams record what they can verify. Community-facing and public-insight tools serve separate supporting purposes.
 
 The system is designed to support decisions, not replace source verification or professional judgment. It makes the origin and status of information visible so users can distinguish published statistics, external estimates, demonstrations and model-generated scenarios.
 
 ## How the system works
 
-1. **Sign in and enter a workspace.** The application authenticates the user and resolves the current role from the trusted server-side profile. Signed-in users can move between workspace views; server functions and database policies still restrict protected data and actions by role.
-2. **Select evidence.** Users choose from the datasets and reporting periods available to the deployment. Views retain useful context such as source, indicator, unit, district, season and date.
-3. **Explore and interpret.** Charts, maps, comparisons and analysis tools present only calculations supported by compatible observations. Gaps and limitations remain visible.
-4. **Investigate where appropriate.** Authorized analysts can review risk signals and request a field handoff. The server derives the handoff from current evidence rather than trusting a client-supplied risk result.
-5. **Follow up and report.** Field staff work assigned investigations through documented status, evidence, review and follow-up steps. Analytics users can prepare reports and exports from selected evidence.
+1. **Select evidence.** Analysts choose from the datasets and periods available to the deployment. Views retain context such as source, indicator, unit, district, season and date.
+2. **Check comparability.** The analysis tools preserve gaps and withhold calculations when source, unit, geography, period or definition does not support a valid comparison.
+3. **Explore and interpret.** Analysts use charts, maps, comparisons, climate context, risk review, scenarios and research tools to examine the evidence. Outputs retain limitations and distinguish observed data from estimates and scenarios.
+4. **Explain the finding.** Analysts prepare reports and exports from selected evidence with calculations and source context.
+5. **Request field verification when warranted.** The server recomputes the risk assessment from current evidence. Authorized Field Operations staff then assign the case and record evidence, review and follow-up.
 
 ## Workspaces and capabilities
 

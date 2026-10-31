@@ -1,12 +1,24 @@
 # AgriWiser
 
-### Agricultural intelligence and decision support for Rwanda
+### Evidence-to-decision support for Rwanda's agricultural analysts
 
-AgriWiser brings official agricultural statistics, climate context, analytical tools, reporting and authorized field workflows into one role-aware application. It helps teams move from published evidence to clearer analysis, documented investigation and practical follow-up.
+**The problem:** Agricultural analysts need to turn official statistics and related climate evidence into valid comparisons and findings they can explain, cite and act on. Those sources differ in indicator, unit, geography, reporting period and quality. If this context is lost, a comparison can mislead; if evidence is separated from its interpretation, it is harder to brief decision-makers or request field verification.
+
+**AgriWiser helps analysts follow one evidence trail:** find the relevant observations, check their context and quality, compare compatible data, investigate patterns, prepare a source-backed report, and route a supported signal for authorized field follow-up. Its primary user is the **Agricultural Analyst**. Policy makers use the resulting analysis; field teams verify questions raised by it. Other workspaces provide supporting services for distinct users.
 
 The platform is designed around a simple principle: every figure should retain its source, unit, period and geographic context. Missing values stay missing, estimates are identified as estimates, and analytical scenarios are not presented as observed outcomes.
 
-## What the platform provides
+## The analyst workflow
+
+1. **Find evidence:** select available datasets and observations by crop, district, season, indicator and period.
+2. **Check context:** inspect source, unit, geography, reporting period, missing values and quality notes before interpreting a figure.
+3. **Analyze:** compare compatible observations, review maps and risk signals, examine climate context, and run explicitly labeled scenarios or research queries.
+4. **Explain:** prepare reports and exports with calculations, source references and limitations attached.
+5. **Request verification:** when evidence supports it, create a source-linked field case. Authorized Field Operations staff assign the case and record field evidence and follow-up.
+
+AgriWiser supports analysis; it does not establish why an agricultural outcome changed or turn a statistical signal into a confirmed field incident.
+
+## Supporting workspaces
 
 | Workspace | What users can do |
 | --- | --- |
@@ -15,6 +27,14 @@ The platform is designed around a simple principle: every figure should retain i
 | **Field Operations** | Review investigations, assignments and follow-up work; record evidence and outcomes through controlled workflows. |
 | **Community & Business** | Browse community agricultural information, compare seasons, save interests, review Rwanda’s published agriculture snapshot, explore historical market-price context, and find listed cooperatives and opportunities. |
 | **Public Insights** | Preview a basic-phone USSD menu experience in English or Kinyarwanda. It is a simulator, not a live telecom service. |
+
+### Evidence-to-Field-Action Brief
+
+The district risk review can create a field case with a source-linked brief containing the selected crop, season and district; current and baseline observations; rule-triggered signals; a descriptive yield comparison with other districts in the same source release when support is sufficient; and questions for field verification. The handoff stores the referenced published records with the case evidence snapshot. Field Operations staff assign an officer and record follow-ups with an owner and due date through the existing workflow.
+
+The score is a review-priority aid, not a probability or confirmed diagnosis. The peer comparison is the median yield among other districts with complete production and harvested-area values from the same crop, season, year and dataset release. AgriWiser suppresses the comparison unless at least eight other districts have explicitly observed, unit-compatible values. This is a product support rule, not an NISR statistical threshold. The comparison does not establish causation or statistical significance. Survey precision is shown as unavailable where source records do not provide design-based uncertainty.
+
+Demo path: open Analytics, choose a district/crop/season with review signals, inspect the source references and evidence brief, and create a field case. In the authorized Field Operations workflow, assign the case and create an owned, dated follow-up; then review the captured source evidence and verification result.
 
 ### Community and public information tools
 

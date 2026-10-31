@@ -1,6 +1,7 @@
 import { normalizeRole } from './rbac.js';
 import { CROPS, DISTRICT_NAMES, NOTE_TYPES } from './constants.js';
 import { paginateDatasetFindings } from './dataset-findings.js';
+import { isUsableRiskRecord } from './intelligence/evidence-service.js';
 
 export const WORK_ENTITIES = new Set([
   'Investigation',
@@ -266,6 +267,54 @@ export function createFieldWorkflow(repo, user, { now = () => new Date().toISOSt
       };
       if (JSON.stringify(snapshot).length > 1000000) fail('The finding evidence is too large to attach.');
       return { snapshot, alert: null, finding };
+    }
+
+    if (input.source === 'risk_engine') {
+      let evidence;
+      try {
+        evidence = JSON.parse(input.evidence);
+      } catch {
+        fail('The risk brief evidence is invalid. Re-run the assessment before dispatch.');
+      }
+      const brief = evidence?.actionBrief;
+      const current = brief?.evidence?.current;
+      const baseline = brief?.evidence?.baseline;
+      const sourceRows = [current, baseline].flatMap((point) => Object.values(point?.sources ?? {}));
+      const targetReferences = new Set(sourceRows.map((source) => source?.sourceReference).filter(Boolean));
+      const targetYears = new Set([current?.year, baseline?.year].filter(Number.isInteger));
+      const targetDatasetIds = new Set(sourceRows.map((source) => source?.datasetId).filter(Boolean));
+      const peer = brief?.peerBenchmark;
+      if (!targetReferences.size || !targetYears.size || !targetDatasetIds.size)
+        fail('No source-linked current and baseline records are available for this field handoff.');
+
+      const peerDistricts = new Set(peer?.status === 'available' ? peer.peerDistricts ?? [] : []);
+      const peerYear = peer?.status === 'available' ? Number(peer.year) : null;
+      const peerDatasetId = peer?.status === 'available' ? peer.datasetId : null;
+      const season = input.period.match(/Season [ABC]/)?.[0];
+      const candidates = await all('AgriculturalObservation', { domain: 'crop', crop: input.crop, season });
+      const records = candidates.filter((row) => {
+        if (row.is_demo === true || row.is_forecast === true || /demo|forecast|model|scenario/i.test(String(row.quality_status ?? ''))) return false;
+        if (row.geography === input.district && targetYears.has(Number(row.year)) && targetDatasetIds.has(row.dataset_id) && targetReferences.has(row.source_reference) &&
+          ['production', 'harvested_area'].includes(row.indicator) && isUsableRiskRecord(row, row.indicator)) return true;
+        return Boolean(peerDatasetId) && Number(row.year) === peerYear && row.dataset_id === peerDatasetId && peerDistricts.has(row.geography) &&
+          ['production', 'harvested_area'].includes(row.indicator) && isUsableRiskRecord(row, row.indicator, { requireExplicitObserved: true });
+      });
+      if (!records.some((row) => row.geography === input.district))
+        fail('The selected source observations are no longer available. Refresh the brief before dispatch.');
+      const datasetIds = new Set(records.map((row) => row.dataset_id).filter(Boolean));
+      const datasets = (await all('Dataset')).filter((row) => datasetIds.has(row.id));
+      const snapshot = {
+        schema_version: 3,
+        captured_at: now(),
+        source_class: 'published_statistics',
+        action_brief: brief,
+        records,
+        sources: datasets,
+        period: `${season ?? ''} ${[...targetYears].sort().at(-1) ?? ''}`.trim(),
+        limitations: [...(brief.limitations ?? []), 'Field verification is required; this screening signal does not establish a cause or confirmed incident.'],
+      };
+      if (JSON.stringify(snapshot).length > 1000000) fail('Narrow the field brief before saving its source snapshot.');
+      return { snapshot, alert: null, finding: null };
     }
 
     if (input.alert_id) {

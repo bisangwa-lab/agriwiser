@@ -11,27 +11,27 @@ function makeMockIntegrationRepo() {
     // Bugesera Maize Time Series 2022 - 2024
     {
       id: 'bg-2022-p', domain: 'crop', crop: 'Maize', geography: 'Bugesera', season: 'Season A', year: 2022,
-      indicator: 'production', value: 16000, unit: 'tonnes', is_demo: false, dataset_id: 'nisr-sas-2022-ab', source_reference: 'SAS 2022, Table 3!D10'
+      indicator: 'production', value: 16000, unit: 'metric tonnes', observation_status: 'observed', is_demo: false, dataset_id: 'nisr-sas-2022-ab', source_reference: 'SAS 2022, Table 3!D10'
     },
     {
       id: 'bg-2022-a', domain: 'crop', crop: 'Maize', geography: 'Bugesera', season: 'Season A', year: 2022,
-      indicator: 'harvested_area', value: 8000, unit: 'hectares', is_demo: false, dataset_id: 'nisr-sas-2022-ab', source_reference: 'SAS 2022, Table 3!E10'
+      indicator: 'harvested_area', value: 8000, unit: 'hectares', observation_status: 'observed', is_demo: false, dataset_id: 'nisr-sas-2022-ab', source_reference: 'SAS 2022, Table 3!E10'
     },
     {
       id: 'bg-2023-p', domain: 'crop', crop: 'Maize', geography: 'Bugesera', season: 'Season A', year: 2023,
-      indicator: 'production', value: 15500, unit: 'tonnes', is_demo: false, dataset_id: 'nisr-sas-2023-ab', source_reference: 'SAS 2023, Table 4!D10'
+      indicator: 'production', value: 15500, unit: 'metric tonnes', observation_status: 'observed', is_demo: false, dataset_id: 'nisr-sas-2023-ab', source_reference: 'SAS 2023, Table 4!D10'
     },
     {
       id: 'bg-2023-a', domain: 'crop', crop: 'Maize', geography: 'Bugesera', season: 'Season A', year: 2023,
-      indicator: 'harvested_area', value: 7800, unit: 'hectares', is_demo: false, dataset_id: 'nisr-sas-2023-ab', source_reference: 'SAS 2023, Table 4!E10'
+      indicator: 'harvested_area', value: 7800, unit: 'hectares', observation_status: 'observed', is_demo: false, dataset_id: 'nisr-sas-2023-ab', source_reference: 'SAS 2023, Table 4!E10'
     },
     {
       id: 'bg-2024-p', domain: 'crop', crop: 'Maize', geography: 'Bugesera', season: 'Season A', year: 2024,
-      indicator: 'production', value: 9200, unit: 'tonnes', is_demo: false, dataset_id: 'nisr-sas-2024-ab', source_reference: 'SAS 2024, Table 5!D10'
+      indicator: 'production', value: 9200, unit: 'metric tonnes', observation_status: 'observed', is_demo: false, dataset_id: 'nisr-sas-2024-ab', source_reference: 'SAS 2024, Table 5!D10'
     },
     {
       id: 'bg-2024-a', domain: 'crop', crop: 'Maize', geography: 'Bugesera', season: 'Season A', year: 2024,
-      indicator: 'harvested_area', value: 6500, unit: 'hectares', is_demo: false, dataset_id: 'nisr-sas-2024-ab', source_reference: 'SAS 2024, Table 5!E10'
+      indicator: 'harvested_area', value: 6500, unit: 'hectares', observation_status: 'observed', is_demo: false, dataset_id: 'nisr-sas-2024-ab', source_reference: 'SAS 2024, Table 5!E10'
     },
   ];
 

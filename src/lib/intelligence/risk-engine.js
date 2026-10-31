@@ -19,6 +19,7 @@ import {
   linearRegression,
 } from './statistical-engine.js';
 import { getModelInfo } from './model-registry.js';
+import { buildEvidenceActionBrief } from './action-brief.js';
 
 export const RISK_LEVELS = Object.freeze({
   LOW: 'LOW',
@@ -337,6 +338,7 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         harvestedArea: point.harvestedArea,
         derivedYield: point.derivedYield,
         sources: point.sources ?? {},
+        sourceWarnings: point.sourceWarnings ?? [],
       })),
       observationSources: {
         current: currentPoint.sources ?? {},
@@ -362,6 +364,7 @@ export function buildInvestigationProposal(riskAssessment) {
 
   const { district, crop, season, currentYear, riskLevel, compositeScore, signals } = riskAssessment;
 
+  const actionBrief = buildEvidenceActionBrief(riskAssessment, riskAssessment.peerBenchmark);
   const topSignals = (signals ?? []).map((s) => s.description).join('; ');
 
   return {
@@ -379,13 +382,9 @@ export function buildInvestigationProposal(riskAssessment) {
       riskLevel,
       signals,
       evaluationTimestamp: riskAssessment.evaluationTimestamp,
+      actionBrief,
     },
-    initialNotes: `Automated Risk Engine identified ${signals.length} alert signal(s) with composite vulnerability score of ${compositeScore}/100. Key findings: ${topSignals}`,
-    suggestedVerificationTasks: [
-      `Conduct transect walk in ${district} major ${crop} producing sectors.`,
-      'Survey local agricultural extension officers (AEOs) regarding input distribution timing and local drought incidence.',
-      'Check pest/disease surveillance reports with RAB (Rwanda Agriculture Board) district agronomist.',
-      'Verify farmer post-harvest storage conditions and preliminary grain moisture levels.',
-    ],
+    initialNotes: `AgriWiser rule-based screening identified ${signals.length} signal(s) with a triage score of ${compositeScore}/100. The score is not a probability or confirmed harm. Findings: ${topSignals}`,
+    suggestedVerificationTasks: actionBrief.verificationQuestions,
   };
 }

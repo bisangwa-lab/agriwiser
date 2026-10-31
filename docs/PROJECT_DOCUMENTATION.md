@@ -17,7 +17,13 @@ AgriWiser is an agricultural intelligence and decision-support application focus
 
 ## Product overview
 
-AgriWiser connects published agricultural statistics, climate context, maps, analytical tools, reports and authorized field workflows. Its central journey is to discover relevant information, understand its context, investigate patterns, coordinate follow-up where permitted, and communicate findings with their evidence.
+### Primary user and problem
+
+The primary user is the **Agricultural Analyst**. Analysts need to turn agricultural statistics and related climate evidence into comparisons and findings that can be checked, explained and communicated. Sources may differ in indicator definitions, units, geography, reporting period and quality; analysis is only useful when those differences remain visible and incompatible values are not treated as comparable.
+
+AgriWiser's central analyst workflow is to discover relevant observations, check source and data-quality context, analyze supported comparisons and patterns, prepare a source-backed report, and request field verification where appropriate. Policy makers are key consumers of the resulting analysis. Field Operations staff carry out authorized verification and follow-up; administration and community-facing features support separate operational needs.
+
+AgriWiser is decision support. It does not establish causal explanations for agricultural outcomes or confirm local field conditions from published aggregates.
 
 The application is built for users who need to explore agricultural conditions and make informed decisions. Access to protected actions and records is governed by server-side authorization and the signed-in user's current role. Data availability depends on the deployment and configured sources.
 

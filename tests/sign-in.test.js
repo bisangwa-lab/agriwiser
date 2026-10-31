@@ -34,7 +34,7 @@ test("session verification failure does not produce a successful redirect", asyn
     { email: "analyst@example.com", password: "password" }), /could not be verified/);
 });
 
-test("post-login navigation honors only permitted destinations", () => {
+test("post-login navigation accepts workspace destinations and rejects unsafe return paths", () => {
   assert.equal(destinationAfterSignIn(analyst, "/compare?crop=maize"), "/compare?crop=maize");
   assert.equal(destinationAfterSignIn(analyst, "/admin"), "/analytics");
   assert.equal(destinationAfterSignIn(analyst, "/login"), "/analytics");

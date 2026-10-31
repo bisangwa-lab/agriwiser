@@ -2,7 +2,7 @@
 
 ## 1. Security Architecture Principles
 
-1. **Server-Side Enforcement**: All application access goes through authenticated server functions in `src/lib/intelligence/server-fns.js`. Client-side route guards and hidden buttons are UI conveniences, not authorization barriers.
+1. **Server-Side Enforcement**: Workspace navigation follows the account's assigned role. Data access and privileged operations are enforced by authenticated server functions in `src/lib/intelligence/server-fns.js`; client-side route guards and hidden buttons are UI conveniences, not authorization barriers.
 2. **Supabase Verification**: User identities are verified against Supabase auth tokens on the server, and roles are read from `hingasmart_profiles`. Client `user_metadata` is never trusted for authorization.
 3. **No Secret Leaks**: Server secrets, private service keys, and database credentials are kept on the server and never exposed via `VITE_` variables or HTTP response bodies.
 

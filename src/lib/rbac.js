@@ -66,15 +66,12 @@ export function panelForRole(role) {
   return r ? PANELS[r.panel].path : PANELS.public_insights.path;
 }
 
-/**
- * Super admins oversee the whole platform and may open any panel. Every other
- * role may open only the panel assigned to it.
- */
+/** Only super admins may enter every workspace; other roles stay assigned. */
 export function canOpenPanel(user, panelKey) {
   const role = normalizeRole(user);
-  if (!role) return false;
+  if (!user || !ROLE_BY_KEY[role] || !PANELS[panelKey]) return false;
   if (role === "super_admin") return true;
-  return ROLE_BY_KEY[role]?.panel === panelKey;
+  return ROLE_BY_KEY[role].panel === panelKey;
 }
 
 // Which panel a path belongs to. Order matters: longer/more specific prefixes

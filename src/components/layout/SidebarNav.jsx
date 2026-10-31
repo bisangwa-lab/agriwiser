@@ -1,4 +1,4 @@
-import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import {
   ArrowLeftRight,
   BellRing,
@@ -17,24 +17,16 @@ import {
   CloudRain,
   Phone,
 } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { BrandMark } from "@/components/layout/BrandMark";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useAuth } from "@/lib/AuthContext";
 import { cn } from "@/lib/utils";
 import { displayName, initials } from "@/lib/roles";
-import { PANELS, PANEL_ORDER, ROLE_BY_KEY, normalizeRole, panelForPath, resolveWorkspacePanel, roleLabel } from "@/lib/rbac";
+import { PANELS, normalizeRole, resolveWorkspacePanel, roleLabel } from "@/lib/rbac";
 
 // Each panel's own navigation. A signed-in user sees only the pages of the
 // panel they are in — so each panel is a separate experience, not one merged
-// view. Super admins get a panel switcher (below) to oversee every panel.
+// view. Super admins get a panel switcher in the header.
 const NAV_BY_PANEL = {
   admin: [
     { to: "/admin", label: "Administration", icon: ShieldCheck },
@@ -81,8 +73,6 @@ export function SidebarNav({ user, pathname }) {
       <div className="px-5 pb-3 pt-6">
         <BrandMark />
       </div>
-
-      {isSuperAdmin ? <PanelSwitcher current={currentPanel} /> : null}
 
       <div className="px-5 pt-3">
         <label htmlFor="sidebar-language" className="mb-1 block text-[10px] text-sidebar-foreground/55">{t("language")}</label>
@@ -150,50 +140,6 @@ export function SidebarNav({ user, pathname }) {
           {t("signOut")}
         </button>
       </div>
-    </div>
-  );
-}
-
-// Super admins oversee every panel. This switcher moves between the five
-// separate panels; the sidebar then shows only that panel's pages, so each
-// panel stays a distinct experience.
-function PanelSwitcher({ current }) {
-  const navigate = useNavigate();
-  const currentLabel = current ? PANELS[current].label : "Choose panel";
-
-  return (
-    <div className="px-3 pb-2">
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <button
-            type="button"
-            aria-label={`Switch panel: ${currentLabel}`}
-            className="flex w-full items-center justify-between gap-2 rounded-lg border border-sidebar-border bg-sidebar-accent/40 px-3 py-2 text-[12.5px] font-medium text-sidebar-foreground transition-colors hover:bg-sidebar-accent/70"
-          >
-            <span className="flex items-center gap-2">
-              <ShieldCheck className="h-3.5 w-3.5 text-sidebar-primary" aria-hidden />
-              <span className="truncate">{currentLabel}</span>
-            </span>
-            <span className="text-[10px] text-sidebar-foreground/50">switch</span>
-          </button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="w-[240px]">
-          <DropdownMenuLabel>Oversee a panel</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          {PANEL_ORDER.map((key) => {
-            const panel = PANELS[key];
-            return (
-              <DropdownMenuItem
-                key={key}
-                onSelect={() => navigate({ to: panel.path })}
-                className={cn(key === current && "bg-accent text-accent-foreground")}
-              >
-                {panel.label}
-              </DropdownMenuItem>
-            );
-          })}
-        </DropdownMenuContent>
-      </DropdownMenu>
     </div>
   );
 }

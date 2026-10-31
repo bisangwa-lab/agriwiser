@@ -1,4 +1,4 @@
-# Innovation One: Predictive Agricultural Risk & Response Engine
+# Agricultural Risk & Response Engine
 
 ## 1. Engine Objectives & Philosophy
 
@@ -64,3 +64,11 @@ When risk is evaluated, the `buildInvestigationProposal(riskAssessment)` method 
   2. Survey Agricultural Extension Officers (AEOs) regarding seed distribution timing.
   3. Inspect RAB pest surveillance bulletins.
   4. Measure farm-gate grain moisture levels.
+
+## 6. Evidence-to-Field-Action Brief
+
+The district risk review presents current and baseline published values, source references, triggered review signals and verification questions before a case is dispatched. The handoff snapshot retains the linked target observations and source dataset metadata. When comparable data are available, it also contains the selected district's derived yield and the median for other districts in the same crop, season, year and dataset release.
+
+The peer summary is descriptive. It is withheld unless at least eight other districts have complete production and harvested-area observations, explicitly marked observed, with compatible units and the same release. Eight is an application support rule, not an NISR quality threshold or a claim of statistical representativeness. The comparison is not a target, causal estimate or significance test. Survey design standard errors and confidence intervals are not carried into this feature; precision is reported as unavailable.
+
+The composite score is a rule-based screening aid for prioritizing review, not a probability of harm or a confirmed diagnosis. A field case records verification questions and evidence; operational staff assign the officer and follow-up owner/date in the existing Field Operations workflow. Field verification is required before treating a signal as a confirmed incident.

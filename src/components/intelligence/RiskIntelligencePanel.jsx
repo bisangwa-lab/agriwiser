@@ -17,6 +17,7 @@ import { getNationalRiskMap, dispatchRiskInvestigation } from '@/lib/intelligenc
 import { toast } from 'sonner';
 import { useAuth } from '@/lib/AuthContext';
 import { useLanguage } from '@/lib/LanguageContext';
+import { buildEvidenceActionBrief } from '@/lib/intelligence/action-brief.js';
 
 export function RiskIntelligencePanel() {
   const { user } = useAuth();
@@ -26,6 +27,7 @@ export function RiskIntelligencePanel() {
   const [season, setSeason] = useState('Season A');
 
   const [investigating, setInvestigating] = useState(false);
+  const [lastHandoff, setLastHandoff] = useState(null);
 
   const riskQuery = useQuery({
     queryKey: ['risk-overview', user?.id ?? user?.email ?? 'current-user', crop, season],
@@ -47,8 +49,10 @@ export function RiskIntelligencePanel() {
   const handleLaunchInvestigation = async () => {
     if (!assessment) return;
     setInvestigating(true);
+    setLastHandoff(null);
     try {
       const res = await dispatchRiskInvestigation({ data: { riskAssessment: assessment } });
+      setLastHandoff(res);
       toast.success(`Field investigation launched: ${res.title}`);
     } catch (err) {
       toast.error('Investigation creation failed: ' + err.message);
@@ -123,17 +127,6 @@ export function RiskIntelligencePanel() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Button
-            size="sm"
-            onClick={handleLaunchInvestigation}
-            disabled={investigating || !assessment?.signals?.length}
-            className="gap-1.5 text-xs font-medium bg-emerald-700 hover:bg-emerald-800 text-white"
-          >
-            {investigating ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <ClipboardList className="h-3.5 w-3.5" />}
-            {t("Send for field follow-up")}
-          </Button>
-        </div>
       </div>
 
       {loading ? (
@@ -164,6 +157,60 @@ export function RiskIntelligencePanel() {
               {assessment.status === 'insufficient_history' ? t('Insufficient history') : assessment.signalCount ? `${t(assessment.riskLevel)} ${t("risk")}` : t('No active signals')}
             </ToneTag>
           </div>
+
+          {(() => {
+            const brief = buildEvidenceActionBrief(assessment, assessment.peerBenchmark);
+            return (
+              <section className="rounded-xl border border-primary/20 bg-primary/[0.025] p-5 shadow-sm" aria-labelledby="action-brief-title">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <h3 id="action-brief-title" className="text-sm font-semibold tracking-tight">Evidence-to-Field-Action Brief</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">A source-linked review summary for {district} · {crop} · {season}.</p>
+                  </div>
+                  <ToneTag tone={brief.screening.signalCount ? getBadgeColor(brief.screening.riskLevel) : 'outline'}>
+                    {brief.screening.score === null ? 'Score unavailable' : `Screening score ${brief.screening.score}/100 · triage only`}
+                  </ToneTag>
+                </div>
+
+                <div className="mt-4 grid gap-3 md:grid-cols-2">
+                  <div className="rounded-lg border bg-background p-3">
+                    <h4 className="text-xs font-semibold">Observed evidence</h4>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {brief.evidence.current ? `${brief.evidence.current.year}: production ${formatMetric(brief.evidence.current.production)} t; harvested area ${formatMetric(brief.evidence.current.harvestedArea)} ha; derived yield ${formatMetric(brief.evidence.current.derivedYield)} t/ha.` : 'Current comparable production and area values are unavailable.'}
+                      {brief.evidence.baseline ? ` Baseline ${brief.evidence.baseline.year}: production ${formatMetric(brief.evidence.baseline.production)} t; area ${formatMetric(brief.evidence.baseline.harvestedArea)} ha.` : ' No earlier comparable baseline is available.'}
+                    </p>
+                    <p className="mt-2 break-words text-[10px] text-muted-foreground">Source references: {brief.evidence.sourceReferences.length ? brief.evidence.sourceReferences.join(' · ') : 'unavailable'}</p>
+                  </div>
+                  <div className="rounded-lg border bg-background p-3">
+                    <h4 className="text-xs font-semibold">Same-release district comparison</h4>
+                    {brief.peerBenchmark.status === 'available' ? (
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">This district: {formatMetric(brief.peerBenchmark.districtYield)} t/ha; median of {brief.peerBenchmark.peerDistrictCount} other districts: {formatMetric(brief.peerBenchmark.peerMedianYield)} t/ha ({brief.peerBenchmark.differencePct === null ? 'difference unavailable' : `${brief.peerBenchmark.differencePct > 0 ? '+' : ''}${brief.peerBenchmark.differencePct.toFixed(1)}%`}). {brief.peerBenchmark.interpretation}</p>
+                    ) : (
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Comparison suppressed: {brief.peerBenchmark.reason ?? 'compatible observed peer data are unavailable'} This benchmark requires at least {brief.peerBenchmark.minimumPeerDistricts ?? 8} other districts in the same source release.</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-3 rounded-lg border bg-background p-3">
+                  <h4 className="text-xs font-semibold">Verify before acting</h4>
+                  <ul className="mt-2 list-disc space-y-1 pl-4 text-xs leading-relaxed text-muted-foreground">
+                    {brief.verificationQuestions.map((question) => <li key={question}>{question}</li>)}
+                  </ul>
+                  <p className="mt-3 border-t pt-2 text-[10px] leading-relaxed text-muted-foreground">{brief.limitations.join(' ')} Precision: {brief.sourcePrecision}</p>
+                </div>
+
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t pt-3">
+                  <p className="max-w-2xl text-xs text-muted-foreground">A handoff creates a field case with linked source evidence. Field Operations assigns an officer and records each follow-up with an owner and due date.</p>
+                  <Button size="sm" onClick={handleLaunchInvestigation} disabled={investigating || !assessment.signals?.length} className="gap-1.5 text-xs font-medium bg-emerald-700 hover:bg-emerald-800 text-white">
+                    {investigating ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <ClipboardList className="h-3.5 w-3.5" />}
+                    {investigating ? 'Creating field case…' : 'Create field case'}
+                  </Button>
+                </div>
+                {!assessment.signals?.length && <p className="mt-2 text-xs text-muted-foreground">A case is available only when this assessment contains review signals.</p>}
+                {lastHandoff && <p role="status" className="mt-3 rounded-lg border border-emerald-300 bg-emerald-50 p-3 text-xs text-emerald-950">Field case created: {lastHandoff.title} (#{lastHandoff.investigationId}). Field Operations can now assign an officer and set follow-up ownership and due dates.</p>}
+              </section>
+            );
+          })()}
 
           {/* Active Risk Signals */}
           <div className="rounded-xl border bg-card p-5 shadow-sm">

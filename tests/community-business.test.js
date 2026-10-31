@@ -149,13 +149,11 @@ test("Community & Business — Role-Based Access Control and Panel Mapping", () 
     const user = { workspace_role: roleKey };
     assert.equal(normalizeRole(user), roleKey);
     assert.equal(panelForRole(roleKey), "/community-business");
-    assert.ok(canOpenPanel(user, "community_business"), `Role ${roleKey} should be able to open community_business`);
-    assert.ok(!canOpenPanel(user, "admin"), `Role ${roleKey} should not be able to open admin`);
-    assert.ok(!canOpenPanel(user, "analytics"), `Role ${roleKey} should not be able to open analytics`);
-    assert.ok(!canOpenPanel(user, "field_operations"), `Role ${roleKey} should not be able to open field_operations`);
+    assert.ok(canOpenPanel(user, "community_business"), `Role ${roleKey} should be able to open its assigned workspace`);
+    for (const panel of ["admin", "analytics", "field_operations", "public_insights"]) assert.ok(!canOpenPanel(user, panel));
   }
 
   // Super Admin can open any panel including community_business
   const superAdmin = { workspace_role: "super_admin" };
-  assert.ok(canOpenPanel(superAdmin, "community_business"));
+  for (const panel of ["admin", "analytics", "field_operations", "community_business", "public_insights"]) assert.ok(canOpenPanel(superAdmin, panel));
 });
