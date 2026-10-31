@@ -3,29 +3,30 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useObservations } from "@/hooks/useObservations";
 import { useOverviewData } from "@/hooks/useOverviewData";
 import { useCommunityInterests } from "@/hooks/useCommunityInterests";
+import { useLanguage } from "@/lib/LanguageContext";
 import { CommunityHeader } from "@/components/community/CommunityHeader";
 import { MyAgricultureTab } from "@/components/community/MyAgricultureTab";
 import { AgriInfoTab } from "@/components/community/AgriInfoTab";
 import { CompareSeasonsTab } from "@/components/community/CompareSeasonsTab";
 import { GuidanceTab } from "@/components/community/GuidanceTab";
-import { DirectoryTab } from "@/components/community/DirectoryTab";
 import { SavedInterestsTab } from "@/components/community/SavedInterestsTab";
 import {
   Sprout,
   TrendingUp,
   BarChart2,
   BookOpen,
-  Users,
   Bookmark,
 } from "lucide-react";
 
 export default function CommunityBusinessPanel() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("home");
   const [selectedCrop, setSelectedCrop] = useState("Maize");
   const [selectedDistrict, setSelectedDistrict] = useState("all");
+  const [selectedSeason, setSelectedSeason] = useState("all");
 
   // Query real NISR observations for chosen crop and district
-  const { data: rawObservations = [], isLoading: isLoadingObservations } =
+  const { data: rawObservations = [], isLoading: isLoadingObservations, isError: observationsError, error: observationsErrorDetails } =
     useObservations({
       domain: "crop",
       crop: selectedCrop,
@@ -33,15 +34,22 @@ export default function CommunityBusinessPanel() {
       view: "metrics",
     });
 
+  const { data: statisticsObservations = [], isLoading: isLoadingStatistics } = useObservations({
+    domain: "crop",
+    crop: selectedCrop,
+    season: selectedSeason !== "all" ? selectedSeason : undefined,
+    view: "metrics",
+  });
+
   // Calculate high-level summary overview cards and trends using the shared metric engine
   const overviewFilters = useMemo(
     () => ({
       crop: selectedCrop,
       district: selectedDistrict,
-      season: "all",
+      season: selectedSeason,
       indicator: "production",
     }),
-    [selectedCrop, selectedDistrict]
+    [selectedCrop, selectedDistrict, selectedSeason]
   );
 
   const overviewData = useOverviewData(overviewFilters);
@@ -90,13 +98,13 @@ export default function CommunityBusinessPanel() {
       <CommunityHeader />
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3 sm:grid-cols-6 h-auto p-1 bg-muted/70 gap-1 rounded-xl">
+        <TabsList className="grid w-full grid-cols-3 sm:grid-cols-5 h-auto p-1 bg-muted/70 gap-1 rounded-xl">
           <TabsTrigger
             value="home"
             className="flex items-center gap-1.5 py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm rounded-lg"
           >
             <Sprout className="h-3.5 w-3.5" aria-hidden />
-            <span>My Agriculture</span>
+            <span>{t("myAgriculture")}</span>
           </TabsTrigger>
 
           <TabsTrigger
@@ -104,7 +112,7 @@ export default function CommunityBusinessPanel() {
             className="flex items-center gap-1.5 py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm rounded-lg"
           >
             <TrendingUp className="h-3.5 w-3.5" aria-hidden />
-            <span>What the Data Says</span>
+            <span>{t("agricultureStatistics")}</span>
           </TabsTrigger>
 
           <TabsTrigger
@@ -112,7 +120,7 @@ export default function CommunityBusinessPanel() {
             className="flex items-center gap-1.5 py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm rounded-lg"
           >
             <BarChart2 className="h-3.5 w-3.5" aria-hidden />
-            <span>Compare Seasons</span>
+            <span>{t("compareSeasons")}</span>
           </TabsTrigger>
 
           <TabsTrigger
@@ -120,15 +128,7 @@ export default function CommunityBusinessPanel() {
             className="flex items-center gap-1.5 py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm rounded-lg"
           >
             <BookOpen className="h-3.5 w-3.5" aria-hidden />
-            <span>Useful Guidance</span>
-          </TabsTrigger>
-
-          <TabsTrigger
-            value="directory"
-            className="flex items-center gap-1.5 py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm rounded-lg"
-          >
-            <Users className="h-3.5 w-3.5" aria-hidden />
-            <span>Directory & Services</span>
+            <span>{t("usefulGuidance")}</span>
           </TabsTrigger>
 
           <TabsTrigger
@@ -136,7 +136,7 @@ export default function CommunityBusinessPanel() {
             className="flex items-center gap-1.5 py-2 text-xs font-semibold data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm rounded-lg"
           >
             <Bookmark className="h-3.5 w-3.5" aria-hidden />
-            <span>Saved Interests ({savedInterests.length})</span>
+            <span>{t("savedInterests")} ({savedInterests.length})</span>
           </TabsTrigger>
         </TabsList>
 
@@ -144,11 +144,15 @@ export default function CommunityBusinessPanel() {
           <MyAgricultureTab
             selectedCrop={selectedCrop}
             selectedDistrict={selectedDistrict}
+            selectedSeason={selectedSeason}
             onSelectCrop={setSelectedCrop}
             onSelectDistrict={setSelectedDistrict}
+            onSelectSeason={setSelectedSeason}
             onNavigateTab={setActiveTab}
             overviewData={overviewData}
-            isLoadingObservations={isLoadingObservations}
+            isLoadingObservations={overviewData.isLoading}
+            observationsError={overviewData.isError}
+            observationsErrorMessage={overviewData.error?.message}
             savedCrops={savedCrops}
             savedDistricts={savedDistricts}
           />
@@ -161,12 +165,16 @@ export default function CommunityBusinessPanel() {
             onSelectCrop={setSelectedCrop}
             onSelectDistrict={setSelectedDistrict}
             overviewData={overviewData}
-            isLoadingObservations={isLoadingObservations}
+            isLoadingObservations={overviewData.isLoading}
+            observationsError={observationsError || overviewData.isError}
+            observationsErrorMessage={(observationsErrorDetails || overviewData.error)?.message}
             isCropSaved={isCropSaved}
             isDistrictSaved={isDistrictSaved}
             onToggleSaveCrop={handleToggleSaveCrop}
             onToggleSaveDistrict={handleToggleSaveDistrict}
-            observationsData={rawObservations}
+            observationsData={statisticsObservations}
+            isLoading={isLoadingStatistics}
+            error={observationsError ? observationsErrorDetails?.message : null}
           />
         </TabsContent>
 
@@ -182,13 +190,6 @@ export default function CommunityBusinessPanel() {
           <GuidanceTab
             selectedCrop={selectedCrop}
             onSelectCrop={setSelectedCrop}
-          />
-        </TabsContent>
-
-        <TabsContent value="directory" className="focus-visible:outline-none">
-          <DirectoryTab
-            selectedCrop={selectedCrop}
-            selectedDistrict={selectedDistrict}
           />
         </TabsContent>
 

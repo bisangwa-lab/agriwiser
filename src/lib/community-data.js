@@ -282,7 +282,7 @@ export const VERIFIED_OPPORTUNITIES = [
     districts: ["All Districts"],
     eligibility: "Registered farmers with land registered in Smart Nkunganire System (SNS). Must plant in consolidated sites.",
     deadline: "Seasonal enrollment annually before September rains",
-    contactInstructions: "Register through your local Sector Agronomist or authorized agro-dealer via the Smart Nkunganire System (*777#).",
+    contactInstructions: "Register through your local Sector Agronomist or authorized agro-dealer via the Smart Nkunganire System (*774#).",
     verificationStatus: "Verified Official Program",
     summary: "Subsidized certified hybrid seeds (up to 50% discount) and mineral fertilizers (DAP, NPK, Urea) under the National Crop Intensification Programme.",
   },

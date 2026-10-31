@@ -2,18 +2,20 @@ import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import {
   ArrowLeftRight,
   BellRing,
+  BarChart3,
   ClipboardCheck,
   ClipboardList,
   Database,
-  Eye,
   FileText,
   LayoutDashboard,
   LogOut,
   Settings,
   ShieldCheck,
   Sprout,
+  Users,
   TrendingUp,
   CloudRain,
+  Phone,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -24,6 +26,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { BrandMark } from "@/components/layout/BrandMark";
+import { useLanguage } from "@/lib/LanguageContext";
 import { useAuth } from "@/lib/AuthContext";
 import { cn } from "@/lib/utils";
 import { displayName, initials } from "@/lib/roles";
@@ -40,9 +43,10 @@ const NAV_BY_PANEL = {
     { to: "/settings", label: "Account settings", icon: Settings },
   ],
   analytics: [
-    { to: "/analytics", label: "Home", icon: LayoutDashboard },
+    { to: "/analytics", search: { view: "overview" }, label: "Home", icon: LayoutDashboard },
     { to: "/explore", label: "Explore data", icon: TrendingUp },
     { to: "/compare", label: "Compare", icon: ArrowLeftRight },
+    { to: "/analytics", search: { view: "planning-tools" }, label: "Agricultural Planning Tools", icon: ClipboardCheck },
     { to: "/agricultural-solutions", label: "Agricultural Solutions", icon: Sprout },
     { to: "/weather", search: { panel: "analytics" }, label: "Weather & climate", icon: CloudRain },
     { to: "/alerts", label: "Alerts", icon: BellRing },
@@ -53,12 +57,18 @@ const NAV_BY_PANEL = {
     { to: "/weather", search: { panel: "field_operations" }, label: "Weather & climate", icon: CloudRain },
     { to: "/investigations", label: "Investigations", icon: ClipboardList },
   ],
-  community_business: [{ to: "/community-business", label: "Community & business", icon: Sprout }],
-  public_insights: [{ to: "/public-insights", label: "Public insights", icon: Eye }],
+  community_business: [
+    { to: "/community-business", label: "Community & business", icon: Sprout },
+    { to: "/agriculture-snapshot", label: "Rwanda Agriculture Snapshot", icon: BarChart3 },
+    { to: "/market-prices", label: "Market Prices & Trends", icon: TrendingUp },
+    { to: "/directory-services", label: "Directory & Services", icon: Users },
+  ],
+  public_insights: [{ to: "/public-insights", label: "USSD Simulator", icon: Phone }],
 };
 
 /** The primary navigation. `pathname` is resolved once by the shell and shared. */
 export function SidebarNav({ user, pathname }) {
+  const { language, setLanguage, t } = useLanguage();
   const { logout } = useAuth();
   const search = useRouterState({ select: (state) => state.location.search });
   const role = normalizeRole(user);
@@ -74,15 +84,24 @@ export function SidebarNav({ user, pathname }) {
 
       {isSuperAdmin ? <PanelSwitcher current={currentPanel} /> : null}
 
-      <p className="px-6 pb-3 pt-5 text-[9px] font-semibold uppercase tracking-[0.2em] text-sidebar-foreground/40">Workspace navigation</p>
+      <div className="px-5 pt-3">
+        <label htmlFor="sidebar-language" className="mb-1 block text-[10px] text-sidebar-foreground/55">{t("language")}</label>
+        <select id="sidebar-language" value={language} onChange={(event) => setLanguage(event.target.value)} className="w-full rounded-md border border-sidebar-border bg-sidebar-accent/40 px-2 py-1.5 text-xs text-sidebar-foreground">
+          <option value="en">{t("english")}</option><option value="rw">{t("kinyarwanda")}</option>
+        </select>
+      </div>
 
-      <nav className="flex-1 space-y-0.5 px-3" aria-label="Main">
+      <p className="px-6 pb-3 pt-5 text-[9px] font-semibold uppercase tracking-[0.2em] text-sidebar-foreground/40">{t("workspaceNavigation")}</p>
+
+      <nav className="flex-1 space-y-0.5 px-3" aria-label={t("mainNavigation")}>
         {items.map((item) => {
-          const active = pathname === item.to || pathname.startsWith(item.to + "/");
+          const active = item.to === "/analytics"
+            ? pathname === item.to && (search.view === item.search?.view || (!search.view && item.search?.view === "overview"))
+            : pathname === item.to || pathname.startsWith(item.to + "/");
           const Icon = item.icon;
           return (
             <Link
-              key={item.to + (item.search?.panel ?? "")}
+              key={item.to + (item.search?.panel ?? item.search?.view ?? "")}
               to={item.to}
               {...(item.search ? { search: item.search } : {})}
               className={cn(
@@ -100,7 +119,7 @@ export function SidebarNav({ user, pathname }) {
                 )}
                 aria-hidden
               />
-              {item.label}
+              {t(({ "Account settings": "accountSettings", Administration: "administration", "Data management": "dataManagement", "Weather & climate": "weatherClimate", Home: "home", "Explore data": "exploreData", Compare: "compare", "Agricultural Planning Tools": "agriculturalPlanningTools", "Agricultural Solutions": "agriculturalSolutions", Alerts: "alerts", Reports: "reports", "Field operations": "fieldOperations", Investigations: "investigations", "Community & business": "communityBusiness", "Rwanda Agriculture Snapshot": "rwandaAgricultureSnapshot", "Market Prices & Trends": "marketPricesTrends", "Directory & Services": "directoryServices", "USSD Simulator": "ussdSimulator" })[item.label] ?? item.label)}
             </Link>
           );
         })}
@@ -110,7 +129,7 @@ export function SidebarNav({ user, pathname }) {
         {isSuperAdmin ? (
           <p className="mb-3 flex items-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-sidebar-primary">
             <ShieldCheck className="h-3.5 w-3.5" aria-hidden />
-            Super admin
+            {language === "rw" ? "Umuyobozi mukuru" : "Super admin"}
           </p>
         ) : null}
         <div className="flex items-start gap-2.5">
@@ -128,7 +147,7 @@ export function SidebarNav({ user, pathname }) {
           className="mt-3 flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-[12.5px] text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent/60 hover:text-sidebar-accent-foreground"
         >
           <LogOut className="h-3.5 w-3.5" aria-hidden />
-          Sign out
+          {t("signOut")}
         </button>
       </div>
     </div>

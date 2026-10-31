@@ -10,7 +10,7 @@ export const PANELS = {
   analytics: { key: "analytics", path: "/analytics", label: "Analytics & planning" },
   field_operations: { key: "field_operations", path: "/field-operations", label: "Field operations" },
   community_business: { key: "community_business", path: "/community-business", label: "Community & business" },
-  public_insights: { key: "public_insights", path: "/public-insights", label: "Public insights" },
+  public_insights: { key: "public_insights", path: "/public-insights", label: "USSD Simulator" },
 };
 
 export const PANEL_ORDER = ["admin", "analytics", "field_operations", "community_business", "public_insights"];
@@ -92,6 +92,9 @@ const PAGE_PANEL = [
   { prefix: "/field-operations", panel: "field_operations" },
   { prefix: "/investigations", panel: "field_operations" },
   { prefix: "/community-business", panel: "community_business" },
+  { prefix: "/agriculture-snapshot", panel: "community_business" },
+  { prefix: "/market-prices", panel: "community_business" },
+  { prefix: "/directory-services", panel: "community_business" },
   { prefix: "/public-insights", panel: "public_insights" },
 ];
 

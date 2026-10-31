@@ -1,7 +1,14 @@
 import { workflowError } from './field-workflow.js';
 
 function checked(result) {
-  if(result.error)throw workflowError(result.error.code==='40001'||result.error.code==='23505'?'This record changed. Reload before saving.':'Workflow storage is unavailable.',result.error.code==='40001'||result.error.code==='23505'?409:503);
+  if(result.error){
+    const {code,message}=result.error;
+    // Keep backend details in server logs; never send SQL or provider errors to the browser.
+    console.error('[field-workflow] Supabase operation failed', {code, message: typeof message==='string'?message.slice(0,300):undefined});
+    if(code==='40001'||code==='23505')throw workflowError('This record changed. Reload before saving.',409);
+    if(code==='42501')throw workflowError('Your current role cannot save this field-workflow action.',403);
+    throw workflowError('Workflow storage is unavailable.',503);
+  }
   return result.data;
 }
 
@@ -29,16 +36,55 @@ function localWhere(entity,query){
 }
 
 export function supabaseFieldRepository(client, admin) {
+  const fieldDirectory = async () => {
+    // Keep the profile as the authority for active status and role. Auth's
+    // users endpoint is server-only and supplies the matching email address;
+    // the service_role cannot read auth.users through the Data API.
+    const server = admin();
+    const profiles = checked(await server
+      .from('hingasmart_profiles')
+      .select('id,full_name,workspace_role')
+      .eq('active', true)
+      .in('workspace_role', ['super_admin','field_supervisor','agricultural_officer','field_investigator'])
+      .limit(1000));
+    if (!profiles.length) return [];
+
+    const users = [];
+    for (let page = 1; page <= 10; page += 1) {
+      const { data, error } = await server.auth.admin.listUsers({ page, perPage: 1000 });
+      if (error) {
+        console.error('[field-workflow] Supabase account directory failed', {
+          code: error.code,
+          status: error.status,
+        });
+        throw workflowError('Field account directory is unavailable.', 503);
+      }
+      users.push(...(data?.users ?? []));
+      if ((data?.users?.length ?? 0) < 1000) break;
+      if (page === 10) throw workflowError('Field account directory exceeds its safe query limit.', 503);
+    }
+
+    const usersById = new Map(users.map((user) => [user.id, user]));
+    return profiles.flatMap((profile) => {
+      const authUser = usersById.get(profile.id);
+      return authUser ? [{
+        id: profile.id,
+        full_name: profile.full_name,
+        workspace_role: profile.workspace_role,
+        email: authUser.email ?? '',
+      }] : [];
+    });
+  };
   return {
     cacheKey:'supabase',
     get:async(entity,id)=>checked(await client.from('hingasmart_records').select('data').eq('entity',entity).eq('id',id).maybeSingle())?.data??null,
     list:async(entity,query,cursor)=>checked(await client.rpc('hs_read_records',{p_entity:entity,p_query:query,p_limit:1000,p_offset:Number(cursor)})),
     account:async identity=>{
       // Called only after workflow role and assignment checks.
-      const accounts=checked(await admin().rpc('hs_field_directory'));
+      const accounts=await fieldDirectory();
       return accounts.find(item=>item.id===identity||item.email?.toLowerCase()===identity.toLowerCase())??null;
     },
-    directory:async()=>checked(await admin().rpc('hs_field_directory')),
+    directory:fieldDirectory,
     commit:async(changes,actor)=>checked(await admin().rpc('hs_commit_field_work',{p_changes:changes,p_actor:actor})),
   };
 }

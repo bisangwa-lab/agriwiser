@@ -46,8 +46,9 @@ export function getRiskLevel(score) {
 export function evaluateDistrictCropRisk(historySeries, climateContext = null, options = {}) {
   const model = getModelInfo('RISK-MULTI-SIGNAL-V1');
   const series = (historySeries ?? []).filter((p) => p && Number.isFinite(p.year)).sort((a, b) => a.year - b.year);
+  const productionSeries = series.filter((point) => Number.isFinite(point.production));
 
-  if (series.length < 2) {
+  if (productionSeries.length < 2) {
     return tagEvidence(
       {
         status: 'insufficient_history',
@@ -56,14 +57,14 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         confidence: 0.1,
         signals: [],
         prediction: null,
-        message: 'At least two verified seasons are required to compute agricultural risk signals.',
+        message: 'At least two reporting periods with comparable production values are required to evaluate this crop risk.',
       },
       DATA_CLASSIFICATIONS.DERIVED_STATISTIC
     );
   }
 
-  const currentPoint = series[series.length - 1];
-  const previousPoint = series[series.length - 2];
+  const currentPoint = productionSeries[productionSeries.length - 1];
+  const previousPoint = productionSeries[productionSeries.length - 2];
 
   const signals = [];
 
@@ -100,6 +101,7 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         percentChange: prodChange.percentChange,
         currentYear: currentPoint.year,
         baselineYear: previousPoint.year,
+        triggerRule: 'Production declines by at least 10% and 50 tonnes; severity increases at 20% and 35%.',
         description: `Production fell by ${Math.abs(prodChange.percentChange).toFixed(1)}% (${Math.abs(prodChange.absoluteChange).toFixed(1)} tonnes) compared to previous season.`,
       });
     }
@@ -123,6 +125,9 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         metric: 'harvested_area',
         observedChangeHectares: areaChange.absoluteChange,
         percentChange: areaChange.percentChange,
+        currentYear: currentPoint.year,
+        baselineYear: previousPoint.year,
+        triggerRule: 'Harvested area declines by at least 15% and 20 hectares; high severity at 30%.',
         description: `Harvested area contracted by ${Math.abs(areaChange.percentChange).toFixed(1)}% (${Math.abs(areaChange.absoluteChange).toFixed(1)} ha).`,
       });
     }
@@ -144,25 +149,60 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
       severity: decomp.deltaYield < -0.5 ? 'high' : 'moderate',
       score: decomp.deltaYield < -0.5 ? 70 : 40,
       deltaYield: decomp.deltaYield,
+      metric: 'yield',
+      percentChange: previousPoint.derivedYield > 0 ? (decomp.deltaYield / previousPoint.derivedYield) * 100 : null,
+      currentYear: currentPoint.year,
+      baselineYear: previousPoint.year,
       yieldContributionTonnes: decomp.yieldContribution,
+      triggerRule: 'Derived yield decrease greater than 0.2 t/ha; high severity below −0.5 t/ha.',
       description: `Derived crop yield declined by ${Math.abs(decomp.deltaYield).toFixed(2)} t/ha, accounting for ${Math.abs(decomp.yieldContribution).toFixed(1)} tonnes of output loss.`,
     });
   }
 
   // --- 4. PERSISTENT HISTORICAL TREND (3+ seasons) ---
   let persistentDecline = false;
-  if (series.length >= 3) {
-    const pPrev2 = series[series.length - 3];
-    const prevChange = computeChange(previousPoint.production, pPrev2.production);
-    if (prodChange.status === 'decline' && prevChange.status === 'decline') {
+  if (productionSeries.length >= 3) {
+    const pPrev2 = productionSeries[productionSeries.length - 3];
+    const pPrev1 = productionSeries[productionSeries.length - 2];
+    const pCurrent = productionSeries[productionSeries.length - 1];
+    const firstYearChange = computeChange(pPrev1.production, pPrev2.production, {
+      materialityThreshold: options.productionMateriality ?? 50,
+    });
+    const secondYearChange = computeChange(pCurrent.production, pPrev1.production, {
+      materialityThreshold: options.productionMateriality ?? 50,
+    });
+    const consecutiveYears = pPrev1.year === pPrev2.year + 1 && pCurrent.year === pPrev1.year + 1;
+    const sameKnownUnit = !pPrev2.sources?.production?.unit || !pPrev1.sources?.production?.unit || !pCurrent.sources?.production?.unit
+      ? false
+      : pPrev2.sources.production.unit === pPrev1.sources.production.unit && pPrev1.sources.production.unit === pCurrent.sources.production.unit;
+    const cumulativeChange = computeChange(pCurrent.production, pPrev2.production, {
+      materialityThreshold: options.productionMateriality ?? 50,
+    });
+
+    if (consecutiveYears && sameKnownUnit && firstYearChange.status === 'decline' && firstYearChange.isMaterial
+      && secondYearChange.status === 'decline' && secondYearChange.isMaterial
+      && cumulativeChange.percentChange !== null && cumulativeChange.percentChange <= -10) {
       persistentDecline = true;
+      const cumulativeDeclinePct = Math.abs(cumulativeChange.percentChange);
+      const severity = cumulativeDeclinePct >= 35 ? 'critical' : cumulativeDeclinePct >= 20 ? 'high' : 'moderate';
+      const score = cumulativeDeclinePct >= 35 ? 100 : cumulativeDeclinePct >= 20 ? 75 : 45;
       signals.push({
         id: 'SIG-PERSISTENT-DECLINE',
         category: 'agricultural',
         type: 'multi_season_decline',
-        severity: 'critical',
-        score: 95,
-        description: `Consecutive production decline confirmed across ${pPrev2.year}, ${previousPoint.year}, and ${currentPoint.year}.`,
+        severity,
+        score,
+        metric: 'production',
+        percentChange: cumulativeChange.percentChange,
+        currentYear: pCurrent.year,
+        baselineYear: pPrev2.year,
+        comparisonValues: [pPrev2, pPrev1, pCurrent].map((point) => ({ year: point.year, value: point.production })),
+        yearToYearChanges: [
+          { fromYear: pPrev2.year, toYear: pPrev1.year, absoluteChange: firstYearChange.absoluteChange, percentChange: firstYearChange.percentChange },
+          { fromYear: pPrev1.year, toYear: pCurrent.year, absoluteChange: secondYearChange.absoluteChange, percentChange: secondYearChange.percentChange },
+        ],
+        triggerRule: 'Production declines by at least 50 tonnes in each of two consecutive years, with a combined decline of at least 10%; severity increases at 20% and 35%.',
+        description: `Production declined in both consecutive years from ${pPrev2.year} to ${pCurrent.year}, falling ${cumulativeDeclinePct.toFixed(1)}% overall.`,
       });
     }
   }
@@ -180,6 +220,8 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         severity: rainAnomaly <= -35 ? 'critical' : 'high',
         score: rainAnomaly <= -35 ? 90 : 65,
         anomalyPct: rainAnomaly,
+        metric: 'rainfall',
+        triggerRule: 'Rainfall at least 20% below the selected climate baseline.',
         description: `Seasonal rainfall was ${Math.abs(rainAnomaly).toFixed(1)}% below the 30-year climate baseline.`,
       });
     } else if (rainAnomaly !== null && rainAnomaly >= 40) {
@@ -190,6 +232,8 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         severity: rainAnomaly >= 60 ? 'high' : 'moderate',
         score: rainAnomaly >= 60 ? 70 : 45,
         anomalyPct: rainAnomaly,
+        metric: 'rainfall',
+        triggerRule: 'Rainfall at least 40% above the selected climate baseline.',
         description: `Excess seasonal rainfall of +${rainAnomaly.toFixed(1)}% poses soil waterlogging or erosion hazards.`,
       });
     }
@@ -202,6 +246,8 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         severity: tempAnomaly >= 2.0 ? 'high' : 'moderate',
         score: tempAnomaly >= 2.0 ? 75 : 40,
         anomalyC: tempAnomaly,
+        metric: 'temperature',
+        triggerRule: 'Temperature at least 1.2°C above the selected historical baseline.',
         description: `Average seasonal temperature departed by +${tempAnomaly.toFixed(1)}°C above the historical baseline.`,
       });
     }
@@ -264,6 +310,7 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
       crop: currentPoint.crop,
       season: currentPoint.season,
       currentYear: currentPoint.year,
+      status: signals.length ? 'signals_found' : 'no_signals',
       riskLevel: getRiskLevel(compositeScore),
       compositeScore,
       confidence: Math.round(confidence * 100) / 100,
@@ -283,6 +330,17 @@ export function evaluateDistrictCropRisk(historySeries, climateContext = null, o
         production: previousPoint.production,
         harvestedArea: previousPoint.harvestedArea,
         derivedYield: previousPoint.derivedYield,
+      },
+      history: series.map((point) => ({
+        year: point.year,
+        production: point.production,
+        harvestedArea: point.harvestedArea,
+        derivedYield: point.derivedYield,
+        sources: point.sources ?? {},
+      })),
+      observationSources: {
+        current: currentPoint.sources ?? {},
+        baseline: previousPoint.sources ?? {},
       },
       evaluationTimestamp: new Date().toISOString(),
       modelMetadata: {

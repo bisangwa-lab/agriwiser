@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { DashboardCard } from "@/components/dashboard/DashboardCard";
+import { SourcePublications } from "@/components/dashboard/SourcePublications";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -10,8 +11,10 @@ import {
   PROVINCES,
   DISTRICT_PROVINCE,
   cropLabel,
+  SEASONS,
 } from "@/lib/constants";
 import { formatNumber, formatSignedPercent } from "@/lib/format";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   Sprout,
   MapPin,
@@ -40,16 +43,21 @@ const POPULAR_CROPS = ["Maize", "Beans", "Irish Potato", "Rice", "Cassava", "Soy
 export function AgriInfoTab({
   selectedCrop,
   selectedDistrict,
+  selectedSeason,
   onSelectCrop,
   onSelectDistrict,
+  onSelectSeason,
   overviewData,
   isLoadingObservations,
+  observationsError = false,
+  observationsErrorMessage,
   isCropSaved,
   isDistrictSaved,
   onToggleSaveCrop,
   onToggleSaveDistrict,
   observationsData,
 }) {
+  const { t } = useLanguage();
   const [cropSearch, setCropSearch] = useState("");
   const [districtSearch, setDistrictSearch] = useState("");
 
@@ -121,6 +129,7 @@ export function AgriInfoTab({
 
   return (
     <div className="space-y-6">
+      {observationsError && <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/5 p-4 text-sm text-destructive">{t("We couldn’t load the published figures.")} {t(observationsErrorMessage || "Please retry in a moment.")}</div>}
       {/* Top Filter Selection Grid */}
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Feature 1: Choose Your Crop */}
@@ -132,7 +141,7 @@ export function AgriInfoTab({
             {/* Quick popular crops buttons */}
             <div>
               <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                Common Crops
+                {t("Common Crops")}
               </span>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {POPULAR_CROPS.map((crop) => (
@@ -145,7 +154,7 @@ export function AgriInfoTab({
                         : "bg-muted/50 text-foreground hover:bg-muted"
                     }`}
                   >
-                    {crop}
+                    {t(crop)}
                     {selectedCrop === crop && <Check className="h-3 w-3" />}
                   </button>
                 ))}
@@ -158,7 +167,7 @@ export function AgriInfoTab({
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="text"
-                  placeholder="Search all 26 crops (e.g. Maize, Climbing Beans, Coffee)..."
+                  placeholder={t("Search all 26 crops (e.g. Maize, Climbing Beans, Coffee)...")}
                   value={cropSearch}
                   onChange={(e) => setCropSearch(e.target.value)}
                   className="h-9 pl-9 text-xs"
@@ -168,7 +177,7 @@ export function AgriInfoTab({
               <div className="mt-2 max-h-48 overflow-y-auto rounded-lg border border-border bg-card p-1">
                 {filteredCrops.length === 0 ? (
                   <p className="p-3 text-center text-xs text-muted-foreground">
-                    No crops matching “{cropSearch}”
+                    {t("No crops matching “")}{cropSearch}”
                   </p>
                 ) : (
                   <div className="grid gap-1 sm:grid-cols-2">
@@ -189,11 +198,11 @@ export function AgriInfoTab({
                           <span className="flex items-center gap-1">
                             {isMain ? (
                               <span className="rounded bg-muted px-1 text-[9px] text-muted-foreground">
-                                Main
+                                {t("Main")}
                               </span>
                             ) : (
                               <span className="rounded bg-muted px-1 text-[9px] text-muted-foreground">
-                                Subtype
+                                {t("Subtype")}
                               </span>
                             )}
                             {isSelected && <Check className="h-3 w-3 text-primary" />}
@@ -210,12 +219,12 @@ export function AgriInfoTab({
             <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-muted/20 p-3">
               <div>
                 <p className="text-xs font-semibold text-foreground">
-                  Selected: {cropLabel(selectedCrop)}
+                  {t("Selected")}: {t(cropLabel(selectedCrop))}
                 </p>
                 <p className="text-[11px] text-muted-foreground">
                   {MAIN_CROPS.includes(selectedCrop)
-                    ? "Official primary aggregate crop category in NISR Seasonal Agricultural Surveys."
-                    : "Published crop sub-classification with distinct agronomic characteristics."}
+                    ? t("Official primary aggregate crop category in NISR Seasonal Agricultural Surveys.")
+                    : t("Published crop sub-classification with distinct agronomic characteristics.")}
                 </p>
               </div>
               <Button
@@ -227,12 +236,12 @@ export function AgriInfoTab({
                 {isCropSaved ? (
                   <>
                     <BookmarkCheck className="h-3.5 w-3.5 text-primary" />
-                    Saved in Interests
+                    {t("Saved in Interests")}
                   </>
                 ) : (
                   <>
                     <Bookmark className="h-3.5 w-3.5" />
-                    Save Crop as Interest
+                    {t("Save Crop as Interest")}
                   </>
                 )}
               </Button>
@@ -249,7 +258,7 @@ export function AgriInfoTab({
             {/* National view button */}
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                Geographic Scope
+                {t("Geographic Scope")}
               </span>
               <button
                 onClick={() => onSelectDistrict("all")}
@@ -259,7 +268,7 @@ export function AgriInfoTab({
                     : "bg-muted/50 text-foreground hover:bg-muted"
                 }`}
               >
-                All Rwanda (National Aggregate)
+                {t("All Rwanda (National Aggregate)")}
                 {selectedDistrict === "all" && <Check className="h-3 w-3" />}
               </button>
             </div>
@@ -270,7 +279,7 @@ export function AgriInfoTab({
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="text"
-                  placeholder="Search 30 districts (e.g. Musanze, Nyagatare, Huye)..."
+                  placeholder={t("Search 30 districts (e.g. Musanze, Nyagatare, Huye)...")}
                   value={districtSearch}
                   onChange={(e) => setDistrictSearch(e.target.value)}
                   className="h-9 pl-9 text-xs"
@@ -280,7 +289,7 @@ export function AgriInfoTab({
               <div className="mt-2 max-h-48 overflow-y-auto rounded-lg border border-border bg-card p-1">
                 {filteredDistricts.length === 0 ? (
                   <p className="p-3 text-center text-xs text-muted-foreground">
-                    No districts matching “{districtSearch}”
+                    {t("No districts matching “")}{districtSearch}”
                   </p>
                 ) : (
                   <div className="space-y-2 p-1">
@@ -292,7 +301,7 @@ export function AgriInfoTab({
                       return (
                         <div key={province} className="space-y-1">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                            {province} Province
+                            {t(province)} {t("Province")}
                           </span>
                           <div className="grid grid-cols-2 gap-1 sm:grid-cols-3">
                             {provinceDistricts.map((d) => {
@@ -325,13 +334,13 @@ export function AgriInfoTab({
             <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-muted/20 p-3">
               <div>
                 <p className="text-xs font-semibold text-foreground">
-                  Selected Area:{" "}
-                  {selectedDistrict === "all" ? "All Rwanda" : `${selectedDistrict} District`}
+                  {t("Selected Area:")}{" "}
+                  {selectedDistrict === "all" ? t("All Rwanda") : `${t(selectedDistrict)} ${t("District")}`}
                 </p>
                 <p className="text-[11px] text-muted-foreground">
                   {selectedDistrict === "all"
-                    ? "Aggregated across all reporting districts in the survey."
-                    : `${DISTRICT_PROVINCE[selectedDistrict]} Province · District-level NISR survey statistics.`}
+                    ? t("Aggregated across all reporting districts in the survey.")
+                    : `${t(DISTRICT_PROVINCE[selectedDistrict])} ${t("Province")} · ${t("District-level NISR survey statistics.")}`}
                 </p>
               </div>
               {selectedDistrict !== "all" && (
@@ -344,12 +353,12 @@ export function AgriInfoTab({
                   {isDistrictSaved ? (
                     <>
                       <BookmarkCheck className="h-3.5 w-3.5 text-primary" />
-                      Saved in Interests
+                      {t("Saved in Interests")}
                     </>
                   ) : (
                     <>
                       <Bookmark className="h-3.5 w-3.5" />
-                      Save District as Interest
+                      {t("Save District as Interest")}
                     </>
                   )}
                 </Button>
@@ -364,16 +373,30 @@ export function AgriInfoTab({
         <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
           <div>
             <h2 className="text-lg font-bold text-foreground">
-              What the Data Says: {selectedCrop} in{" "}
-              {selectedDistrict === "all" ? "Rwanda" : `${selectedDistrict} District`}
+              {t("Agriculture Statistics:")} {t(selectedCrop)} {t("in")}{" "}
+              {selectedDistrict === "all" ? t("Rwanda") : `${t(selectedDistrict)} ${t("District")}`}
             </h2>
             <p className="text-xs text-muted-foreground">
-              Published production, harvested area, and yield metrics with transparent data provenance.
+              {t("Published production, harvested area, and yield metrics with transparent data provenance.")}
             </p>
           </div>
           <Badge variant="outline" className="text-xs">
-            Period: {latestPeriod}
+            {selectedSeason === "all" ? t("All seasons") : t(selectedSeason)} · {t(latestPeriod)}
           </Badge>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 rounded-xl border border-border bg-card p-4">
+          <label htmlFor="agriculture-statistics-season" className="text-xs font-medium">{t("Survey season")}</label>
+          <select
+            id="agriculture-statistics-season"
+            value={selectedSeason}
+            onChange={(event) => onSelectSeason(event.target.value)}
+            className="h-9 min-w-40 rounded-lg border border-input bg-background px-3 text-xs"
+          >
+            <option value="all">{t("All available seasons")}</option>
+            {SEASONS.map((season) => <option key={season} value={season}>{season}</option>)}
+          </select>
+          <p className="text-[11px] text-muted-foreground">{t("Season availability varies by crop, district, and publication.")}</p>
         </div>
 
         {/* 3 Metric Cards */}
@@ -381,20 +404,20 @@ export function AgriInfoTab({
           {/* Production Card */}
           <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
             <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-              Reported Production
+              {t("Reported Production")}
             </span>
             <div className="mt-2">
-              {isLoadingObservations ? (
-                <p className="text-sm text-muted-foreground">Loading production data…</p>
+              {observationsError ? <p role="status" className="text-sm text-muted-foreground">{t("Production unavailable because the data request failed.")}</p> : isLoadingObservations ? (
+                <p className="text-sm text-muted-foreground">{t("Loading production data…")}</p>
               ) : productionValue != null ? (
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-2xl font-bold text-foreground">
                     {formatNumber(productionValue)}
                   </span>
-                  <span className="text-xs font-medium text-muted-foreground">tonnes (t)</span>
+                  <span className="text-xs font-medium text-muted-foreground">{t("tonnes (t)")}</span>
                 </div>
               ) : (
-                <p className="text-sm font-medium text-muted-foreground">Data unavailable</p>
+                <p className="text-sm font-medium text-muted-foreground">{t("Data unavailable")}</p>
               )}
               {prodDelta != null && (
                 <p className="mt-1 text-xs text-muted-foreground">
@@ -405,32 +428,32 @@ export function AgriInfoTab({
                   >
                     {formatSignedPercent(prodDelta)}
                   </span>{" "}
-                  change from prior year
+                  {t("change from prior year")}
                 </p>
               )}
             </div>
             <p className="mt-3 border-t border-border pt-2 text-[10.5px] text-muted-foreground">
-              Total volume harvested in metric tonnes
+              {t("Total volume harvested in metric tonnes")}
             </p>
           </div>
 
           {/* Harvested Area Card */}
           <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
             <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-              Harvested Area
+              {t("Harvested Area")}
             </span>
             <div className="mt-2">
-              {isLoadingObservations ? (
-                <p className="text-sm text-muted-foreground">Loading area data…</p>
+              {observationsError ? <p role="status" className="text-sm text-muted-foreground">{t("Harvested area unavailable because the data request failed.")}</p> : isLoadingObservations ? (
+                <p className="text-sm text-muted-foreground">{t("Loading area data…")}</p>
               ) : areaValue != null ? (
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-2xl font-bold text-foreground">
                     {formatNumber(areaValue)}
                   </span>
-                  <span className="text-xs font-medium text-muted-foreground">hectares (ha)</span>
+                  <span className="text-xs font-medium text-muted-foreground">{t("hectares (ha)")}</span>
                 </div>
               ) : (
-                <p className="text-sm font-medium text-muted-foreground">Data unavailable</p>
+                <p className="text-sm font-medium text-muted-foreground">{t("Data unavailable")}</p>
               )}
               {areaDelta != null && (
                 <p className="mt-1 text-xs text-muted-foreground">
@@ -441,23 +464,23 @@ export function AgriInfoTab({
                   >
                     {formatSignedPercent(areaDelta)}
                   </span>{" "}
-                  change from prior year
+                  {t("change from prior year")}
                 </p>
               )}
             </div>
             <p className="mt-3 border-t border-border pt-2 text-[10.5px] text-muted-foreground">
-              Area actually harvested during season
+              {t("Area actually harvested during season")}
             </p>
           </div>
 
           {/* Yield Card */}
           <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
             <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-              Average Yield
+              {t("Average Yield")}
             </span>
             <div className="mt-2">
-              {isLoadingObservations ? (
-                <p className="text-sm text-muted-foreground">Calculating yield…</p>
+              {observationsError ? <p role="status" className="text-sm text-muted-foreground">{t("Yield unavailable because the data request failed.")}</p> : isLoadingObservations ? (
+                <p className="text-sm text-muted-foreground">{t("Calculating yield…")}</p>
               ) : yieldValue != null ? (
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-2xl font-bold text-foreground">
@@ -466,7 +489,7 @@ export function AgriInfoTab({
                   <span className="text-xs font-medium text-muted-foreground">t/ha</span>
                 </div>
               ) : (
-                <p className="text-sm font-medium text-muted-foreground">Yield unavailable</p>
+                <p className="text-sm font-medium text-muted-foreground">{t("Yield unavailable")}</p>
               )}
               {yieldDelta != null && (
                 <p className="mt-1 text-xs text-muted-foreground">
@@ -477,12 +500,12 @@ export function AgriInfoTab({
                   >
                     {formatSignedPercent(yieldDelta)}
                   </span>{" "}
-                  change from prior year
+                  {t("change from prior year")}
                 </p>
               )}
             </div>
             <p className="mt-3 border-t border-border pt-2 text-[10.5px] text-muted-foreground">
-              Derived: production divided by harvested area
+              {t("Derived: production divided by harvested area")}
             </p>
           </div>
         </div>
@@ -497,7 +520,7 @@ export function AgriInfoTab({
             {chartData.length === 0 ? (
               <div className="flex h-56 items-center justify-center rounded-lg border border-dashed border-border p-6 text-center">
                 <p className="text-xs text-muted-foreground">
-                  No multi-year historical trend data available for {selectedCrop} in this area.
+                  {t(`No multi-year historical trend data available for ${selectedCrop} in this area.`)}
                 </p>
               </div>
             ) : (
@@ -515,9 +538,9 @@ export function AgriInfoTab({
                     <RechartsTooltip
                       formatter={(value, name) => [
                         `${formatNumber(value)} ${name === "production" ? "tonnes" : name === "area" ? "ha" : "t/ha"}`,
-                        name === "production" ? "Production" : name === "area" ? "Harvested Area" : "Yield",
+                        t(name === "production" ? "Production" : name === "area" ? "Harvested Area" : "Yield"),
                       ]}
-                      labelFormatter={(label) => `Survey Year: ${label}`}
+                      labelFormatter={(label) => `${t("Survey Year:")} ${label}`}
                       contentStyle={{ borderRadius: "8px", fontSize: "12px" }}
                     />
                     <Line
@@ -538,12 +561,12 @@ export function AgriInfoTab({
           {/* District Comparison Chart */}
           <DashboardCard
             title={`${selectedCrop} Production Across Districts`}
-            subtitle={`Comparative output in metric tonnes for ${overviewData?.latestYear || "latest year"}`}
+            subtitle={`${t("Comparative output in metric tonnes for")} ${overviewData?.latestYear || t("latest year")}`}
           >
             {districtComparisonData.length === 0 ? (
               <div className="flex h-56 items-center justify-center rounded-lg border border-dashed border-border p-6 text-center">
                 <p className="text-xs text-muted-foreground">
-                  District comparison data for {selectedCrop} is not available for this period.
+                  {t(`District comparison data for ${selectedCrop} is not available for this period.`)}
                 </p>
               </div>
             ) : (
@@ -585,31 +608,33 @@ export function AgriInfoTab({
           </DashboardCard>
         </div>
 
+        <SourcePublications sources={overviewData?.data?.sources ?? []} />
+
         {/* Source Provenance & Methodological Caveats */}
         <div className="rounded-xl border border-border bg-card p-5">
           <div className="flex items-center gap-2">
             <Layers className="h-4 w-4 text-primary" aria-hidden />
             <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
-              Official Source Provenance & Methodological Notes
+              {t("Official Source Provenance & Methodological Notes")}
             </h3>
           </div>
           <div className="mt-3 grid gap-4 text-xs text-muted-foreground sm:grid-cols-3">
             <div>
-              <p className="font-semibold text-foreground">Source Publication</p>
+              <p className="font-semibold text-foreground">{t("Source Publication")}</p>
               <p className="mt-1 leading-relaxed">
-                National Institute of Statistics of Rwanda (NISR) — Seasonal Agricultural Survey (SAS). Survey samples rural agricultural holdings across Rwanda.
+                {t("National Institute of Statistics of Rwanda (NISR) — Seasonal Agricultural Survey (SAS). Survey samples rural agricultural holdings across Rwanda.")}
               </p>
             </div>
             <div>
-              <p className="font-semibold text-foreground">Measurement Definitions</p>
+              <p className="font-semibold text-foreground">{t("Measurement Definitions")}</p>
               <p className="mt-1 leading-relaxed">
-                Production is measured in metric tonnes (t). Harvested area represents physical area harvested (ha). Yield is derived as production divided by harvested area.
+                {t("Production is measured in metric tonnes (t). Harvested area represents physical area harvested (ha). Yield is derived as production divided by harvested area.")}
               </p>
             </div>
             <div>
-              <p className="font-semibold text-foreground">Operational Interpretation</p>
+              <p className="font-semibold text-foreground">{t("Operational Interpretation")}</p>
               <p className="mt-1 leading-relaxed">
-                Statistics represent retrospective seasonal production totals. They do not indicate live market availability, stock currently in storage, or forward price guarantees.
+                {t("Statistics represent retrospective seasonal production totals. They do not indicate live market availability, stock currently in storage, or forward price guarantees.")}
               </p>
             </div>
           </div>

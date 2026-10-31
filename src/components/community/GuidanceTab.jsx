@@ -26,8 +26,25 @@ import {
   MapPin,
   ShieldCheck,
 } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
+
+const GUIDANCE_ART = {
+  crop_management: { label: "Rows of growing crops", src: "/images/guidance/crop-management.jpg" },
+  seasonal_prep: { label: "Open farmland in the growing season", src: "/images/guidance/seasonal-planning.jpg" },
+  soil_water: { label: "Watering cultivated crop rows", src: "/images/guidance/soil-water.jpg" },
+  post_harvest: { label: "Harvest grain drying in the sun", src: "/images/guidance/post-harvest.jpg" },
+  cooperative_practice: { label: "Farmers gathered in a field", src: "/images/guidance/cooperative.jpg" },
+};
+
+function GuidanceIllustration({ category }) {
+  const art = GUIDANCE_ART[category] || GUIDANCE_ART.crop_management;
+  return (
+    <img src={art.src} alt={art.label} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+  );
+}
 
 export function GuidanceTab({ selectedCrop, onSelectCrop }) {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [activeItem, setActiveItem] = useState(null);
@@ -60,7 +77,7 @@ export function GuidanceTab({ selectedCrop, onSelectCrop }) {
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Search guidance by crop (e.g. Maize, Potatoes), practice (e.g. storage, spacing, fertilizer)..."
+              placeholder={t("Search guidance by crop (e.g. Maize, Potatoes), practice (e.g. storage, spacing, fertilizer)...")}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="h-10 pl-9 text-xs"
@@ -90,7 +107,7 @@ export function GuidanceTab({ selectedCrop, onSelectCrop }) {
       {filteredGuidance.length === 0 ? (
         <div className="rounded-xl border border-dashed border-border p-12 text-center">
           <BookOpen className="mx-auto h-8 w-8 text-muted-foreground/60" aria-hidden />
-          <h3 className="mt-2 text-sm font-semibold text-foreground">No guidance articles match your search</h3>
+          <h3 className="mt-2 text-sm font-semibold text-foreground">{t("No guidance articles match your search")}</h3>
           <p className="mt-1 text-xs text-muted-foreground">
             Try adjusting your search keywords or switching categories.
           </p>
@@ -111,19 +128,26 @@ export function GuidanceTab({ selectedCrop, onSelectCrop }) {
           {filteredGuidance.map((item) => (
             <article
               key={item.id}
-              className="flex flex-col justify-between rounded-xl border border-border bg-card p-4 shadow-sm hover:shadow-md transition-shadow"
+              className="group flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className="space-y-2.5">
+              <div className="relative flex min-h-[132px] items-start justify-between overflow-hidden bg-emerald-950 px-4 py-3 sm:min-h-[144px] sm:px-5">
+                <GuidanceIllustration category={item.category} />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-transparent" />
+                <div className="relative z-10 flex min-w-0 flex-1 items-start justify-between gap-2">
                 <div className="flex items-start justify-between gap-2">
-                  <Badge variant="outline" className="text-[10px] uppercase font-semibold text-primary">
+                  <Badge variant="outline" className="border-white/70 bg-white/90 text-[10px] font-semibold uppercase text-emerald-900 shadow-sm">
                     {item.categoryLabel}
                   </Badge>
-                  <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
+                  <span className="flex shrink-0 items-center gap-1 rounded-full bg-black/35 px-2 py-1 text-[10px] text-white shadow-sm backdrop-blur-sm">
                     <Calendar className="h-3 w-3" />
                     {item.publishedDate}
                   </span>
                 </div>
+                </div>
+              </div>
 
+              <div className="flex flex-1 flex-col justify-between p-4 sm:p-5">
+                <div className="space-y-2.5">
                 <h3 className="font-serif text-sm font-bold text-foreground leading-snug">
                   {item.title}
                 </h3>
@@ -144,8 +168,9 @@ export function GuidanceTab({ selectedCrop, onSelectCrop }) {
                   ))}
                 </div>
               </div>
+                </div>
 
-              <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
+              <div className="mt-4 flex items-center justify-between gap-2 border-t border-border pt-3">
                 <span className="truncate text-[10.5px] text-muted-foreground">
                   {item.source.split("/")[0]}
                 </span>
@@ -201,18 +226,18 @@ export function GuidanceTab({ selectedCrop, onSelectCrop }) {
 
               <div className="grid grid-cols-2 gap-3 pt-3 border-t border-border text-xs text-muted-foreground">
                 <div>
-                  <span className="font-medium text-foreground block">Applicable Crops</span>
+                  <span className="font-medium text-foreground block">{t("Applicable Crops")}</span>
                   <span>{activeItem.crops.join(", ")}</span>
                 </div>
                 <div>
-                  <span className="font-medium text-foreground block">Geographic Scope</span>
+                  <span className="font-medium text-foreground block">{t("Geographic Scope")}</span>
                   <span>{activeItem.districts.join(", ")}</span>
                 </div>
               </div>
 
               <div className="rounded-lg border border-border p-3 flex items-center justify-between text-xs">
                 <div>
-                  <span className="font-semibold text-foreground block">Official Source</span>
+                  <span className="font-semibold text-foreground block">{t("Official Source")}</span>
                   <span className="text-muted-foreground">{activeItem.source}</span>
                 </div>
                 {activeItem.sourceUrl && (

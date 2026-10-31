@@ -10,6 +10,7 @@ import {
 import { HelpCircle, Copy, Check, FileText } from "lucide-react";
 import { explainChart } from "@/lib/explain";
 import { useNavigate } from "@tanstack/react-router";
+import { useLanguage } from "@/lib/LanguageContext";
 
 /**
  * Unobtrusive eye/help icon for charts throughout the platform.
@@ -34,6 +35,7 @@ export function ChartExplanationButton({
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const explanation = explainChart({
     chartType,
@@ -83,8 +85,8 @@ export function ChartExplanationButton({
         size="icon"
         className="h-6 w-6 text-muted-foreground/70 hover:text-foreground"
         onClick={() => setOpen(true)}
-        title="Explain this chart"
-        aria-label="Explain this chart"
+        title={t("Explain this chart")}
+        aria-label={t("Explain this chart")}
       >
         <HelpCircle className="h-3.5 w-3.5" />
       </Button>
@@ -93,48 +95,48 @@ export function ChartExplanationButton({
         <DialogContent className="max-h-[85vh] max-w-xl overflow-y-auto">
           <DialogHeader>
             <div className="flex items-center justify-between pr-6">
-              <DialogTitle className="brand-serif text-lg">{title}</DialogTitle>
+              <DialogTitle className="brand-serif text-lg">{t(title)}</DialogTitle>
               <div className="flex items-center gap-1.5">
                 <Button size="sm" variant="ghost" className="h-7 gap-1 text-xs" onClick={copyExplanation}>
                   {copied ? <Check className="h-3 w-3 text-emerald-600" /> : <Copy className="h-3 w-3" />}
-                  {copied ? "Copied" : "Copy"}
+                  {copied ? t("Copied") : t("Copy")}
                 </Button>
                 <Button size="sm" variant="outline" className="h-7 gap-1 text-xs" onClick={includeInReport}>
                   <FileText className="h-3 w-3" />
-                  Include in Report
+                  {t("Include in Report")}
                 </Button>
               </div>
             </div>
             <DialogDescription className="text-xs text-muted-foreground">
-              Statistical interpretation grounded in validated observations.
+              {t("Statistical interpretation grounded in validated observations.")}
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-3.5 pt-2 text-xs">
             <section className="space-y-1 rounded-md border border-border/60 bg-muted/30 p-2.5">
               <h4 className="font-semibold uppercase tracking-wider text-primary text-[11px]">
-                1. What this chart shows
+                {t("1. What this chart shows")}
               </h4>
               <p className="leading-relaxed text-foreground/90">{explanation.whatItShows}</p>
             </section>
 
             <section className="space-y-1 rounded-md border border-border/60 bg-muted/30 p-2.5">
               <h4 className="font-semibold uppercase tracking-wider text-primary text-[11px]">
-                2. What changed or differs
+                {t("2. What changed or differs")}
               </h4>
               <p className="leading-relaxed text-foreground/90">{explanation.whatChanged}</p>
             </section>
 
             <section className="space-y-1 rounded-md border border-border/60 bg-muted/30 p-2.5">
               <h4 className="font-semibold uppercase tracking-wider text-primary text-[11px]">
-                3. Source and evidence
+                {t("3. Source and evidence")}
               </h4>
               <p className="leading-relaxed text-foreground/90">{explanation.evidenceAndSource}</p>
             </section>
 
             <section className="space-y-1 rounded-md border border-border/60 bg-muted/30 p-2.5">
               <h4 className="font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400 text-[11px]">
-                4. What cannot be concluded
+                {t("4. What cannot be concluded")}
               </h4>
               <p className="leading-relaxed text-muted-foreground">{explanation.limitations}</p>
             </section>

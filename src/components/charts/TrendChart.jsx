@@ -4,6 +4,7 @@ import { ChartPlaceholder } from "@/components/dashboard/ChartPlaceholder";
 import { TrendingUp } from "lucide-react";
 import { formatNumber } from "@/lib/format";
 import { ChartExplanationButton } from "@/components/charts/ChartExplanationButton";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const CHART_COLORS = ["hsl(var(--chart-1))", "hsl(var(--chart-4))", "hsl(var(--chart-3))"];
 
@@ -20,6 +21,7 @@ export function TrendChart({
   emptyMessage,
   explanationProps,
 }) {
+  const { t } = useLanguage();
   const rows = Array.isArray(data) ? data : [];
   const hasValues = rows.some((row) => series.some((s) => typeof row[s.key] === "number"));
 
@@ -27,15 +29,15 @@ export function TrendChart({
     return (
       <ChartPlaceholder
         icon={TrendingUp}
-        title="No trend available yet"
-        description={emptyMessage ?? "No compatible observations match the current filters."}
+        title={t("No trend available yet")}
+        description={t(emptyMessage ?? "No compatible observations match the current filters.")}
         height={height}
       />
     );
   }
 
   const labels = series.reduce((acc, s) => {
-    acc[s.key] = s.label;
+    acc[s.key] = t(s.label);
     return acc;
   }, {});
 

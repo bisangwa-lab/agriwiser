@@ -18,6 +18,12 @@ const baselineNyagatareMaize = {
   sourceReference: 'SAS 2024 Tables, Table 10!D4',
 };
 
+function assertSensitivityCenterMatches(result) {
+  const center = result.sensitivityAnalysis.find((point) => point.variationPct === 0);
+  assert.ok(center, 'sensitivity analysis includes the selected input value');
+  assert.equal(center.simulatedProductionTonnes, result.simulated.productionTonnes);
+}
+
 test('Digital Twin - throws on missing or invalid baseline', () => {
   assert.throws(() => runDigitalTwinSimulation(null, {}), /valid, verified baseline/);
   assert.throws(() => runDigitalTwinSimulation({ production: null }, {}), /valid, verified baseline/);
@@ -44,6 +50,7 @@ test('Digital Twin - rainfall shock scenario computes deterministic yield change
   assert.equal(result.comparison.absoluteProductionDifference, -2793.6);
   assert.equal(result.comparison.percentProductionDifference, -14);
   assert.ok(result.sensitivityAnalysis.length >= 5);
+  assertSensitivityCenterMatches(result);
 });
 
 test('Digital Twin - irrigation expansion scenario models yield uplift on expanded area', () => {
@@ -62,6 +69,7 @@ test('Digital Twin - irrigation expansion scenario models yield uplift on expand
   assert.equal(result.simulated.derivedYieldTonnesPerHa, 2.26);
   assert.equal(result.comparison.absoluteProductionDifference, 2600);
   assert.equal(result.comparison.percentProductionDifference, 13);
+  assertSensitivityCenterMatches(result);
 });
 
 test('Digital Twin - agronomic productivity scenario elevates crop yield directly', () => {
@@ -77,6 +85,7 @@ test('Digital Twin - agronomic productivity scenario elevates crop yield directl
   assert.equal(result.simulated.productionTonnes, 25000);
   assert.equal(result.comparison.absoluteProductionDifference, 5000);
   assert.equal(result.comparison.percentProductionDifference, 25);
+  assertSensitivityCenterMatches(result);
 });
 
 test('Digital Twin - harvested land reallocation scenario', () => {
@@ -91,6 +100,7 @@ test('Digital Twin - harvested land reallocation scenario', () => {
   assert.equal(result.simulated.productionTonnes, 22000);
   assert.equal(result.comparison.absoluteAreaDifference, 1000);
   assert.equal(result.comparison.absoluteProductionDifference, 2000);
+  assertSensitivityCenterMatches(result);
 });
 
 test('Digital Twin - combined multi-factor scenario accounts for area & yield interaction', () => {
@@ -104,6 +114,7 @@ test('Digital Twin - combined multi-factor scenario accounts for area & yield in
   assert.ok(result.simulated.productionTonnes > 20000);
   assert.ok(result.comparison.absoluteProductionDifference > 0);
   assert.ok(result.assumptions.length >= 2);
+  assertSensitivityCenterMatches(result);
 });
 
 test('Digital Twin - budget allocation scenario computes intervention portfolio impact', () => {
@@ -125,4 +136,5 @@ test('Digital Twin - budget allocation scenario computes intervention portfolio 
   assert.equal(result.comparison.absoluteProductionDifference, 260);
   assert.ok(result.assumptions.length >= 1);
   assert.ok(result.scientificCaveat.includes('not an empirical observation'));
+  assertSensitivityCenterMatches(result);
 });

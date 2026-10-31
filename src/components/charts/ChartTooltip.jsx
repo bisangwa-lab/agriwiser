@@ -1,7 +1,9 @@
 import { formatNumber } from "@/lib/format";
+import { useLanguage } from "@/lib/LanguageContext";
 
 /** Shared tooltip: label, then each series with its unit. */
 export function ChartTooltip({ active, payload, label, unitShort, digits = 0, seriesLabels }) {
+  const { t } = useLanguage();
   if (!active || !payload?.length) return null;
   return (
     <div className="rounded-lg border border-border bg-popover px-3 py-2 shadow-md">
@@ -17,7 +19,7 @@ export function ChartTooltip({ active, payload, label, unitShort, digits = 0, se
                   style={{ background: entry.color ?? entry.stroke ?? entry.fill }}
                   aria-hidden
                 />
-                {name}
+                {t(name)}
               </span>
               <span className="num font-medium text-foreground">
                 {formatNumber(entry.value, digits)}

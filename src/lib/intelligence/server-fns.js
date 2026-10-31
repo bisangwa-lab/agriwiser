@@ -14,6 +14,13 @@ import { runDigitalTwinSimulation } from './digital-twin.js';
 import { AIAnalystEngine } from './ai-analyst.js';
 import { listModels, getModelInfo } from './model-registry.js';
 import { workflowForUser } from '@/lib/field-workflow.server';
+import { CROPS, DISTRICT_NAMES, SEASONS } from '@/lib/constants';
+import { computeYield } from './statistical-engine.js';
+
+// Warm-isolate cache for the read-only district risk matrix. Keyed by account
+// and filters so one user's data can never be served to another user.
+const riskMapCache = new Map();
+const RISK_MAP_CACHE_TTL_MS = 120_000;
 
 /**
  * Retrieves the Model Registry catalog and governance information.
@@ -54,9 +61,13 @@ export const getNationalRiskMap = createServerFn({ method: 'GET' })
     season: String(d.season || 'Season A'),
   }))
   .handler(async ({ context, data }) => {
+    const cacheKey = `${context.user.id ?? context.user.email}:${data.crop}:${data.season}`;
+    const cached = riskMapCache.get(cacheKey);
+    if (cached && cached.expiresAt > Date.now()) return cached.value;
+
     const repository = await recordsForUser(context.user);
     const service = new EvidenceService(repository, context.user);
-    const allObservations = await service.queryObservations({ crop: data.crop, season: data.season });
+    const allObservations = await service.queryObservations({ crop: data.crop, season: data.season, coreMeasures: true });
 
     // Group observations by district
     const byDistrict = new Map();
@@ -79,33 +90,57 @@ export const getNationalRiskMap = createServerFn({ method: 'GET' })
         });
       }
       const entry = yearMap.get(year);
-      if (obs.indicator === 'production') entry.production = Number(obs.value);
-      if (obs.indicator === 'harvested_area') entry.harvestedArea = Number(obs.value);
-    }
-
-    const districtAssessments = [];
-    for (const [dist, yearMap] of byDistrict.entries()) {
-      const series = [...yearMap.values()].sort((a, b) => a.year - b.year);
-      if (series.length >= 2) {
-        const assessment = evaluateDistrictCropRisk(series);
-        districtAssessments.push({
-          district: dist,
-          riskLevel: assessment.riskLevel,
-          compositeScore: assessment.compositeScore,
-          signalCount: assessment.signalCount,
-          signals: assessment.signals,
-          currentYear: assessment.currentYear,
-          confidence: assessment.confidence,
-        });
+      if (obs.indicator === 'production') {
+        const value = Number(obs.value);
+        entry.production = Number.isFinite(value) ? value : null;
+        entry.sources = {
+          ...(entry.sources ?? {}),
+          production: { unit: obs.unit ?? null, sourceReference: obs.source_reference ?? null, datasetId: obs.dataset_id ?? null },
+        };
+      }
+      if (obs.indicator === 'harvested_area') {
+        const value = Number(obs.value);
+        entry.harvestedArea = Number.isFinite(value) ? value : null;
+        entry.sources = {
+          ...(entry.sources ?? {}),
+          harvested_area: { unit: obs.unit ?? null, sourceReference: obs.source_reference ?? null, datasetId: obs.dataset_id ?? null },
+        };
       }
     }
 
-    return {
+    const assessments = {};
+    const districtAssessments = DISTRICT_NAMES.map((dist) => {
+      const yearMap = byDistrict.get(dist) ?? new Map();
+      const series = [...yearMap.values()].sort((a, b) => a.year - b.year);
+      for (const point of series) point.derivedYield = computeYield(point.production, point.harvestedArea);
+      const assessment = evaluateDistrictCropRisk(series);
+      assessments[dist] = assessment;
+      return {
+        district: dist,
+        status: assessment.status,
+        riskLevel: assessment.status === 'no_signals' ? 'LOW' : assessment.riskLevel,
+        compositeScore: assessment.status === 'insufficient_history' ? null : assessment.compositeScore,
+        signalCount: assessment.signalCount ?? 0,
+        signals: assessment.signals ?? [],
+        currentYear: assessment.currentYear ?? null,
+        message: assessment.message ?? null,
+      };
+    });
+
+    const result = {
       crop: data.crop,
       season: data.season,
       districts: districtAssessments,
+      assessments,
       evaluatedAt: new Date().toISOString(),
     };
+    riskMapCache.set(cacheKey, { value: result, expiresAt: Date.now() + RISK_MAP_CACHE_TTL_MS });
+    if (riskMapCache.size > 100) {
+      const now = Date.now();
+      for (const [key, entry] of riskMapCache) if (entry.expiresAt <= now) riskMapCache.delete(key);
+      while (riskMapCache.size > 100) riskMapCache.delete(riskMapCache.keys().next().value);
+    }
+    return result;
   });
 
 /**
@@ -132,13 +167,39 @@ export const runDigitalTwinScenario = createServerFn({ method: 'POST' })
       year: data.year,
     });
 
-    const prodRow = rows.find((r) => r.indicator === 'production');
-    const areaRow = rows.find((r) => r.indicator === 'harvested_area');
+    const productionRows = rows.filter((r) => r.indicator === 'production');
+    const areaRows = rows.filter((r) => r.indicator === 'harvested_area');
+    const compatiblePairs = productionRows.flatMap((production) => areaRows
+      .filter((area) => production.dataset_id && production.dataset_id === area.dataset_id)
+      .map((area) => ({ production, area })));
 
-    if (!prodRow || !areaRow) {
+    if (compatiblePairs.length !== 1) {
       throw Object.assign(
-        new Error(`Missing verified baseline for ${data.district} ${data.crop} ${data.season} ${data.year}.`),
-        { status: 404 }
+        new Error(`A unique production and harvested-area pair from the same dataset is required for ${data.district} ${data.crop} ${data.season} ${data.year}. Check the source releases before simulating.`),
+        { status: compatiblePairs.length ? 409 : 404 }
+      );
+    }
+
+    const { production: prodRow, area: areaRow } = compatiblePairs[0];
+    if (prodRow.unit !== 'metric tonnes' || areaRow.unit !== 'hectares') {
+      throw Object.assign(
+        new Error(`This baseline uses incompatible units (${prodRow.unit || 'unit missing'} and ${areaRow.unit || 'unit missing'}). Production must be metric tonnes and area must be hectares before simulation.`),
+        { status: 422 }
+      );
+    }
+    if (!prodRow.source_reference || !areaRow.source_reference) {
+      throw Object.assign(
+        new Error('The baseline is missing source references. Add traceable source references before simulating.'),
+        { status: 422 }
+      );
+    }
+
+    const production = Number(prodRow.value);
+    const harvestedArea = Number(areaRow.value);
+    if (!Number.isFinite(production) || production < 0 || !Number.isFinite(harvestedArea) || harvestedArea <= 0) {
+      throw Object.assign(
+        new Error('The selected baseline has invalid production or harvested-area values and cannot be simulated.'),
+        { status: 422 }
       );
     }
 
@@ -147,10 +208,11 @@ export const runDigitalTwinScenario = createServerFn({ method: 'POST' })
       crop: data.crop,
       season: data.season,
       year: data.year,
-      production: Number(prodRow.value),
-      harvestedArea: Number(areaRow.value),
+      production,
+      harvestedArea,
       datasetId: prodRow.dataset_id,
       sourceReference: prodRow.source_reference,
+      sourceUrl: prodRow.source_url,
     };
 
     return runDigitalTwinSimulation(baseline, {
@@ -179,16 +241,40 @@ export const queryAIAnalyst = createServerFn({ method: 'POST' })
  */
 export const dispatchRiskInvestigation = createServerFn({ method: 'POST' })
   .middleware([requireUser])
-  .validator((d) => ({
-    riskAssessment: d.riskAssessment,
-  }))
+  .validator((d) => {
+    const assessment = d?.riskAssessment;
+    if (!assessment || typeof assessment.district !== 'string' || typeof assessment.crop !== 'string' || typeof assessment.season !== 'string')
+      throw new Error('Choose a district, crop and season before requesting field follow-up.');
+    if (!DISTRICT_NAMES.includes(assessment.district) || !CROPS.includes(assessment.crop) || !SEASONS.includes(assessment.season))
+      throw new Error('The selected district, crop or season is not valid.');
+    return { district: assessment.district, crop: assessment.crop, season: assessment.season };
+  })
   .handler(async ({ context, data }) => {
-    const proposal = buildInvestigationProposal(data.riskAssessment);
+    const repository = await recordsForUser(context.user);
+    const service = new EvidenceService(repository, context.user);
+    const series = await service.getSeries(data.district, data.crop, data.season);
+    const riskAssessment = evaluateDistrictCropRisk(series);
+    riskAssessment.district = data.district;
+    riskAssessment.crop = data.crop;
+    riskAssessment.season = data.season;
+    if (!riskAssessment.signals?.length)
+      throw Object.assign(new Error('No current risk signals are available for field follow-up.'), { status: 409 });
+    const proposal = buildInvestigationProposal(riskAssessment);
     const workflow = await workflowForUser(context.user);
-    const investigation = await workflow.create({
+    const investigation = await workflow.createRiskHandoff({
       entity: 'Investigation',
       record: {
-        ...proposal,
+        title: proposal.title,
+        reason: proposal.initialNotes,
+        description: proposal.initialNotes,
+        district: proposal.geography,
+        crop: proposal.crop,
+        indicator: 'production',
+        period: `${proposal.season} ${proposal.year}`,
+        evidence: JSON.stringify(proposal.evidence),
+        questions: proposal.suggestedVerificationTasks.join('\n'),
+        priority: ['urgent', 'high'].includes(proposal.priority) ? 'elevated' : 'standard',
+        source: 'risk_engine',
         idempotency_key: `risk-inv-${proposal.geography}-${proposal.crop}-${proposal.year}-${proposal.season}`,
       },
     });

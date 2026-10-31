@@ -4,6 +4,7 @@ import { ChartPlaceholder } from "@/components/dashboard/ChartPlaceholder";
 import { ArrowLeftRight } from "lucide-react";
 import { formatNumber } from "@/lib/format";
 import { ChartExplanationButton } from "@/components/charts/ChartExplanationButton";
+import { useLanguage } from "@/lib/LanguageContext";
 
 /**
  * Ranked bar chart for comparing entities (districts, crops) on one indicator.
@@ -20,14 +21,15 @@ export function ComparisonBarChart({
   emptyMessage,
   explanationProps,
 }) {
+  const { t } = useLanguage();
   const data = (Array.isArray(rows) ? rows : []).filter((r) => typeof r[valueKey] === "number");
 
   if (!data.length) {
     return (
       <ChartPlaceholder
         icon={ArrowLeftRight}
-        title="No comparison available yet"
-        description={emptyMessage ?? "No compatible values match the current filters."}
+        title={t("No comparison available yet")}
+        description={t(emptyMessage ?? "No compatible values match the current filters.")}
         height={height ?? 250}
       />
     );
@@ -76,8 +78,8 @@ export function ComparisonBarChart({
         </BarChart>
       </ResponsiveContainer>
       <p className="mt-1 text-[11px] text-muted-foreground">
-        Axis maximum: {formatNumber(max, digits)} {unitShort}
-        {highlightKeys.length ? " · highlighted bars are the selected entities" : null}
+        {t("Axis maximum")}: {formatNumber(max, digits)} {unitShort}
+        {highlightKeys.length ? ` · ${t("highlighted bars are the selected entities")}` : null}
       </p>
     </div>
   );

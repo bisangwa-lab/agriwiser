@@ -3,29 +3,31 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/LanguageContext";
 
 /**
  * A row of labelled filters plus a documented reset. `fields` is
  * [{ key, label, allLabel, options: [{ value, label }] }].
  */
 export function FilterBar({ fields, filters, onChange, onReset, className, children, disabled = false }) {
+  const { t } = useLanguage();
   return (
     <div className={cn("panel p-4 sm:p-5", className)}>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {fields.map((field) => (
           <div key={field.key} className="space-y-1.5">
             <Label htmlFor={`filter-${field.key}`} className="text-[11.5px] font-medium text-muted-foreground">
-              {field.label}
+              {t(field.label)}
             </Label>
             <Select value={filters[field.key] ?? "all"} onValueChange={(value) => onChange(field.key, value)} disabled={disabled}>
               <SelectTrigger id={`filter-${field.key}`} className="h-10 border-border/80 bg-muted/30 text-[12px]">
-                <SelectValue placeholder={field.allLabel ?? "All"} />
+                <SelectValue placeholder={t(field.allLabel ?? "All")} />
               </SelectTrigger>
               <SelectContent>
-                {field.allowAll !== false && <SelectItem value="all">{field.allLabel ?? "All"}</SelectItem>}
+                {field.allowAll !== false && <SelectItem value="all">{t(field.allLabel ?? "All")}</SelectItem>}
                 {field.options.map((option) => (
                   <SelectItem key={option.value} value={option.value}>
-                    {option.label}
+                    {t(option.label)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -37,7 +39,7 @@ export function FilterBar({ fields, filters, onChange, onReset, className, child
         {children}
         <Button variant="ghost" size="sm" onClick={onReset} disabled={disabled} className="h-7 text-[11px]">
           <RefreshCw className="mr-1.5 h-3.5 w-3.5" aria-hidden />
-          Reset filters
+          {t("Reset filters")}
         </Button>
       </div>
     </div>

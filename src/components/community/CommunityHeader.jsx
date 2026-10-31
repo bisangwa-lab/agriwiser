@@ -4,28 +4,30 @@ import { Badge } from "@/components/ui/badge";
 import { Sprout, Users, Building2, ShoppingBag, ShieldCheck, BookOpen } from "lucide-react";
 import { CROPS, DISTRICTS } from "@/lib/constants";
 import { APPROVED_GUIDANCE, VERIFIED_COOPERATIVES } from "@/lib/community-data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export function CommunityHeader() {
   const { user } = useAuth();
+  const { t } = useLanguage();
   const role = normalizeRole(user);
 
-  let title = "My Agricultural Community";
+  let title = t("myAgriculturalCommunity");
   let roleIcon = Sprout;
 
   if (role === "farmer") {
-    title = "My Farm & Agricultural Community";
+    title = t("myFarmCommunity");
     roleIcon = Sprout;
   } else if (role === "cooperative") {
-    title = "Cooperative Agricultural Intelligence";
+    title = t("cooperativeIntelligence");
     roleIcon = Users;
   } else if (role === "buyer") {
-    title = "Agricultural Sourcing & Market Intelligence";
+    title = t("sourcingIntelligence");
     roleIcon = ShoppingBag;
   } else if (role === "agribusiness") {
-    title = "Agribusiness Intelligence & Sourcing";
+    title = t("agribusinessIntelligence");
     roleIcon = Building2;
   } else if (role === "super_admin") {
-    title = "Community & Business Administration";
+    title = t("communityAdministration");
     roleIcon = ShieldCheck;
   }
 
@@ -37,7 +39,7 @@ export function CommunityHeader() {
         <div>
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-              Panel 4 · Community & business
+              {t("panelFour")}
             </span>
             <Badge variant="outline" className="flex items-center gap-1 text-[11px] font-medium">
               <RoleIcon className="h-3 w-3 text-primary" aria-hidden />
@@ -48,7 +50,7 @@ export function CommunityHeader() {
             {title}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Explore your crops, understand local farming conditions, and discover useful agricultural opportunities.
+            {t("communityIntro")}
           </p>
         </div>
       </div>
@@ -56,19 +58,19 @@ export function CommunityHeader() {
       <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-muted-foreground">
         <span className="inline-flex items-center gap-1.5 rounded-md bg-muted/60 px-2.5 py-1 font-medium text-foreground">
           <Sprout className="h-3.5 w-3.5 text-primary" aria-hidden />
-          {CROPS.length} published crops
+          {CROPS.length} {t("publishedCrops")}
         </span>
         <span className="inline-flex items-center gap-1.5 rounded-md bg-muted/60 px-2.5 py-1 font-medium text-foreground">
           <Building2 className="h-3.5 w-3.5 text-primary" aria-hidden />
-          {DISTRICTS.length} Rwanda districts
+          {DISTRICTS.length} {t("rwandaDistricts")}
         </span>
         <span className="inline-flex items-center gap-1.5 rounded-md bg-muted/60 px-2.5 py-1 font-medium text-foreground">
           <BookOpen className="h-3.5 w-3.5 text-primary" aria-hidden />
-          {APPROVED_GUIDANCE.length} approved guidance articles
+          {APPROVED_GUIDANCE.length} {t("approvedGuidance")}
         </span>
         <span className="inline-flex items-center gap-1.5 rounded-md bg-muted/60 px-2.5 py-1 font-medium text-foreground">
           <Users className="h-3.5 w-3.5 text-primary" aria-hidden />
-          {VERIFIED_COOPERATIVES.length} verified cooperatives
+          {VERIFIED_COOPERATIVES.length} {t("verifiedCooperatives")}
         </span>
       </div>
     </div>

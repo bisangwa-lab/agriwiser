@@ -1,11 +1,13 @@
 import { Layers } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/LanguageContext";
 
 /**
  * The provenance strip that accompanies a figure, chart or table: source,
  * period, geography and unit. Every important number carries one.
  */
 export function SourceNote({ dataset, period, geography, unit, quality, className }) {
+  const { t } = useLanguage();
   const parts = [
     dataset ? { label: "Source", value: dataset } : null,
     period ? { label: "Period", value: period } : null,
@@ -26,7 +28,7 @@ export function SourceNote({ dataset, period, geography, unit, quality, classNam
       <Layers className="h-3.5 w-3.5 shrink-0 text-muted-foreground/70" aria-hidden />
       {parts.map((part) => (
         <span key={part.label}>
-          <span className="font-medium text-muted-foreground/70">{part.label}:</span> {part.value}
+          <span className="font-medium text-muted-foreground/70">{t(part.label)}:</span> {part.value}
         </span>
       ))}
     </div>

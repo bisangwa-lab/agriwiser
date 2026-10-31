@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/lib/AuthContext";
 import { normalizeRole } from "@/lib/rbac";
+import { useLanguage } from "@/lib/LanguageContext";
 import { formatNumber, formatSignedPercent } from "@/lib/format";
 import {
   Sprout,
@@ -26,10 +27,13 @@ export function MyAgricultureTab({
   onNavigateTab,
   overviewData,
   isLoadingObservations,
+  observationsError = false,
+  observationsErrorMessage,
   savedCrops,
   savedDistricts,
 }) {
   const { user } = useAuth();
+  const { t } = useLanguage();
   const role = normalizeRole(user);
 
   const cards = overviewData?.cards ?? {};
@@ -53,7 +57,7 @@ export function MyAgricultureTab({
               From published statistics to everyday farm and business decisions.
             </h2>
             <p className="text-xs leading-relaxed text-primary-foreground/80 sm:text-sm">
-              Currently following <span className="font-semibold text-white underline decoration-white/40">{selectedCrop}</span> in{" "}
+              {t("Currently following")} <span className="font-semibold text-white underline decoration-white/40">{t(selectedCrop)}</span> {t("in")}{" "}
               <span className="font-semibold text-white underline decoration-white/40">
                 {selectedDistrict === "all" ? "All Rwanda" : `${selectedDistrict} District`}
               </span>
@@ -83,6 +87,12 @@ export function MyAgricultureTab({
         </div>
       </div>
 
+      {observationsError && (
+        <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/5 p-4 text-sm text-destructive">
+          We couldn’t load the published agricultural figures. {observationsErrorMessage || "Please retry in a moment."}
+        </div>
+      )}
+
       {/* Current Crop & District Context Cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Active Context Card */}
@@ -101,7 +111,7 @@ export function MyAgricultureTab({
             </div>
           </div>
           <div className="mt-3 pt-3 border-t border-border flex items-center justify-between text-[11px]">
-            <span className="text-muted-foreground">Period: {latestPeriod}</span>
+            <span className="text-muted-foreground">{t("Period:")} {t(latestPeriod)}</span>
             <button
               onClick={() => onNavigateTab("explorer")}
               className="font-medium text-primary hover:underline inline-flex items-center gap-0.5"
@@ -120,15 +130,15 @@ export function MyAgricultureTab({
             <TrendingUp className="h-4 w-4 text-primary" aria-hidden />
           </div>
           <div className="mt-2">
-            {isLoadingObservations ? (
-              <p className="text-sm text-muted-foreground">Loading production data…</p>
+            {observationsError ? <p role="status" className="text-sm text-muted-foreground">{t("Production figure unavailable because the data request failed.")}</p> : isLoadingObservations ? (
+              <p className="text-sm text-muted-foreground">{t("Loading production data…")}</p>
             ) : productionValue != null ? (
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl font-bold text-foreground">{formatNumber(productionValue)}</span>
                 <span className="text-xs font-medium text-muted-foreground">tonnes (t)</span>
               </div>
             ) : (
-              <p className="text-sm font-medium text-muted-foreground">Data unavailable</p>
+              <p className="text-sm font-medium text-muted-foreground">{t("Data unavailable")}</p>
             )}
             {prodDelta != null && (
               <p className="mt-1 text-xs text-muted-foreground">
@@ -153,15 +163,15 @@ export function MyAgricultureTab({
             <MapPin className="h-4 w-4 text-primary" aria-hidden />
           </div>
           <div className="mt-2">
-            {isLoadingObservations ? (
-              <p className="text-sm text-muted-foreground">Loading harvested area…</p>
+            {observationsError ? <p role="status" className="text-sm text-muted-foreground">{t("Area figure unavailable because the data request failed.")}</p> : isLoadingObservations ? (
+              <p className="text-sm text-muted-foreground">{t("Loading harvested area…")}</p>
             ) : areaValue != null ? (
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl font-bold text-foreground">{formatNumber(areaValue)}</span>
                 <span className="text-xs font-medium text-muted-foreground">hectares (ha)</span>
               </div>
             ) : (
-              <p className="text-sm font-medium text-muted-foreground">Data unavailable</p>
+              <p className="text-sm font-medium text-muted-foreground">{t("Data unavailable")}</p>
             )}
           </div>
           <p className="mt-3 border-t border-border pt-2 text-[10.5px] text-muted-foreground">
@@ -178,15 +188,15 @@ export function MyAgricultureTab({
             <CheckCircle2 className="h-4 w-4 text-primary" aria-hidden />
           </div>
           <div className="mt-2">
-            {isLoadingObservations ? (
-              <p className="text-sm text-muted-foreground">Calculating yield…</p>
+            {observationsError ? <p role="status" className="text-sm text-muted-foreground">{t("Yield unavailable because the data request failed.")}</p> : isLoadingObservations ? (
+              <p className="text-sm text-muted-foreground">{t("Calculating yield…")}</p>
             ) : yieldValue != null ? (
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl font-bold text-foreground">{formatNumber(yieldValue, 2)}</span>
                 <span className="text-xs font-medium text-muted-foreground">t/ha</span>
               </div>
             ) : (
-              <p className="text-sm font-medium text-muted-foreground">Yield unavailable</p>
+              <p className="text-sm font-medium text-muted-foreground">{t("Yield unavailable")}</p>
             )}
           </div>
           <p className="mt-3 border-t border-border pt-2 text-[10.5px] text-muted-foreground">
@@ -272,7 +282,7 @@ export function MyAgricultureTab({
               ? "Recommended for Agricultural Buyers"
               : "Recommended for Agribusinesses"
           }
-          subtitle="Direct actions to move from data to operational decisions"
+          subtitle={t("Direct actions to move from data to operational decisions")}
         >
           <div className="space-y-3.5">
             {role === "farmer" && (
@@ -280,7 +290,7 @@ export function MyAgricultureTab({
                 <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/10 p-3">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="text-xs font-medium text-foreground">Review Seasonal Preparation Guidance</p>
+                    <p className="text-xs font-medium text-foreground">{t("Review Seasonal Preparation Guidance")}</p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
                       Check planting dates, spacing standards and basal fertilizer timing for {selectedCrop}.
                     </p>
@@ -297,7 +307,7 @@ export function MyAgricultureTab({
                 <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/10 p-3">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="text-xs font-medium text-foreground">Compare Recent Seasons</p>
+                    <p className="text-xs font-medium text-foreground">{t("Compare Recent Seasons")}</p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
                       See how {selectedCrop} production in {selectedDistrict === "all" ? "Rwanda" : selectedDistrict} varied between Season A and B.
                     </p>
@@ -314,7 +324,7 @@ export function MyAgricultureTab({
                 <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/10 p-3">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="text-xs font-medium text-foreground">Subsidies & Crop Insurance</p>
+                    <p className="text-xs font-medium text-foreground">{t("Subsidies & Crop Insurance")}</p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
                       Explore the National Crop Intensification Programme and NAIS insurance de-risking opportunities.
                     </p>
@@ -336,7 +346,7 @@ export function MyAgricultureTab({
                 <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/10 p-3">
                   <Users className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="text-xs font-medium text-foreground">Collective Aggregation Standards</p>
+                    <p className="text-xs font-medium text-foreground">{t("Collective Aggregation Standards")}</p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
                       Follow RCA and RICA standards for moisture testing (below 13.5%) and batch intake logs.
                     </p>
@@ -353,7 +363,7 @@ export function MyAgricultureTab({
                 <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/10 p-3">
                   <Users className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="text-xs font-medium text-foreground">Commercial Sourcing & Milling Tenders</p>
+                    <p className="text-xs font-medium text-foreground">{t("Commercial Sourcing & Milling Tenders")}</p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
                       Discover verified commercial buyers sourcing bulk grain in your province.
                     </p>
@@ -375,7 +385,7 @@ export function MyAgricultureTab({
                 <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/10 p-3">
                   <TrendingUp className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="text-xs font-medium text-foreground">District Production Ranks & Trends</p>
+                    <p className="text-xs font-medium text-foreground">{t("District Production Ranks & Trends")}</p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
                       Analyze multi-year production volumes for {selectedCrop} across Rwanda districts to identify leading production basins.
                     </p>
@@ -392,7 +402,7 @@ export function MyAgricultureTab({
                 <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/10 p-3">
                   <Users className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="text-xs font-medium text-foreground">Connect with Verified Cooperatives</p>
+                    <p className="text-xs font-medium text-foreground">{t("Connect with Verified Cooperatives")}</p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
                       Browse verified RCA agricultural cooperatives in {selectedDistrict === "all" ? "Rwanda" : selectedDistrict} for direct contracts.
                     </p>
@@ -420,19 +430,19 @@ export function MyAgricultureTab({
             <div className="flex items-start gap-2 text-xs text-muted-foreground">
               <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
               <p className="leading-relaxed">
-                <strong className="text-foreground">Official Survey Estimates:</strong> Figures in this workspace reflect published Seasonal Agricultural Survey (SAS) observations from the National Institute of Statistics of Rwanda (NISR).
+                <strong className="text-foreground">{t("Official Survey Estimates:")}</strong> {t("Figures in this workspace reflect published Seasonal Agricultural Survey (SAS) observations from the National Institute of Statistics of Rwanda (NISR).")}
               </p>
             </div>
             <div className="flex items-start gap-2 text-xs text-muted-foreground">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
               <p className="leading-relaxed">
-                <strong className="text-foreground">Missing Data Protection:</strong> Where a crop or district was not surveyed or suppressed, values remain explicitly marked as unavailable rather than coerced to zero.
+                <strong className="text-foreground">{t("Missing Data Protection:")}</strong> {t("Where a crop or district was not surveyed or suppressed, values remain explicitly marked as unavailable rather than coerced to zero.")}
               </p>
             </div>
             <div className="flex items-start gap-2 text-xs text-muted-foreground">
               <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" aria-hidden />
               <p className="leading-relaxed">
-                <strong className="text-foreground">Not Live Market Stock:</strong> Historical production statistics describe past seasonal yields; they do not represent current warehouse inventories, live commodity prices, or guaranteed commercial supply.
+                <strong className="text-foreground">{t("Not Live Market Stock:")}</strong> {t("Historical production statistics describe past seasonal yields; they do not represent current warehouse inventories, live commodity prices, or guaranteed commercial supply.")}
               </p>
             </div>
           </div>

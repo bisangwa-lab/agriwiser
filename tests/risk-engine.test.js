@@ -102,6 +102,44 @@ test('Risk Engine - validated prediction generates bounded forecasts', () => {
   assert.equal(assessment.prediction.classification, DATA_CLASSIFICATIONS.MODEL_PREDICTION);
 });
 
+test('Risk Engine - persistent decline requires consecutive comparable years and shows each comparison', () => {
+  const history = [
+    { year: 2022, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 10000, sources: { production: { unit: 'metric tonnes' } } },
+    { year: 2023, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 9400, sources: { production: { unit: 'metric tonnes' } } },
+    { year: 2024, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 8400, sources: { production: { unit: 'metric tonnes' } } },
+  ];
+  const assessment = evaluateDistrictCropRisk(history);
+  const signal = assessment.signals.find((item) => item.id === 'SIG-PERSISTENT-DECLINE');
+  assert.ok(signal);
+  assert.equal(signal.severity, 'moderate');
+  assert.equal(signal.score, 45);
+  assert.deepEqual(signal.comparisonValues.map((point) => point.year), [2022, 2023, 2024]);
+  assert.deepEqual(signal.yearToYearChanges.map((item) => [item.fromYear, item.toYear]), [[2022, 2023], [2023, 2024]]);
+});
+
+test('Risk Engine - mild two-year decline is not labeled critical or persistent', () => {
+  const assessment = evaluateDistrictCropRisk([
+    { year: 2024, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 18669.17, sources: { production: { unit: 'metric tonnes' } } },
+    { year: 2025, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 18000, sources: { production: { unit: 'metric tonnes' } } },
+    { year: 2026, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 17311.14, sources: { production: { unit: 'metric tonnes' } } },
+  ]);
+  assert.equal(assessment.status, 'no_signals');
+  assert.equal(assessment.persistentDecline, false);
+  assert.equal(assessment.signals.some((item) => item.id === 'SIG-PERSISTENT-DECLINE'), false);
+});
+
+test('Risk Engine - gaps in years or mismatched units do not confirm persistent decline', () => {
+  const base = [
+    { year: 2022, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 10000, sources: { production: { unit: 'metric tonnes' } } },
+    { year: 2023, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 9000, sources: { production: { unit: 'metric tonnes' } } },
+    { year: 2024, district: 'Rwamagana', crop: 'Maize', season: 'Season A', production: 8000, sources: { production: { unit: 'metric tonnes' } } },
+  ];
+  const gap = evaluateDistrictCropRisk([base[0], { ...base[2], year: 2025 }, { ...base[2], year: 2026, production: 7000 }]);
+  const mismatch = evaluateDistrictCropRisk([base[0], base[1], { ...base[2], sources: { production: { unit: 'kilograms' } } }]);
+  assert.equal(gap.persistentDecline, false);
+  assert.equal(mismatch.persistentDecline, false);
+});
+
 test('Risk Engine - buildInvestigationProposal constructs valid Field Operations handoff', () => {
   const history = [
     { year: 2023, district: 'Kayonza', crop: 'Maize', season: 'Season A', production: 15000, harvestedArea: 7500, derivedYield: 2.0 },

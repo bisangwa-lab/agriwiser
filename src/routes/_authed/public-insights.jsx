@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import PublicInsightsPanel from "@/components/panels/PublicInsightsPanel";
+import { UssdSimulator } from "@/components/ussd/UssdSimulator";
 
 export const Route = createFileRoute("/_authed/public-insights")({
-  head: () => ({ meta: [{ title: "Public insights · AgriWiser" }] }),
-  component: PublicInsightsPanel,
+  head: () => ({ meta: [{ title: "USSD Simulator · AgriWiser" }] }),
+  component: () => <UssdSimulator embedded />,
 });

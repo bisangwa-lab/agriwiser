@@ -5,7 +5,7 @@ export const QUICK_LOCAL_ACCOUNTS = {
   analytics: { ...PANELS.analytics, email: "analyst@hingasmart.local", role: "agricultural_analyst", description: "Explore, compare, investigate changes and report" },
   field_operations: { ...PANELS.field_operations, email: "officer@hingasmart.local", role: "agricultural_officer", description: "Assigned investigations and observations" },
   community_business: { ...PANELS.community_business, email: "community@hingasmart.local", role: "farmer", description: "Farmers, cooperatives, buyers and agribusinesses" },
-  viewer: { ...PANELS.public_insights, email: "viewer@hingasmart.local", role: "public_viewer", description: "Read-only agricultural insights" },
+  viewer: { ...PANELS.public_insights, email: "viewer@hingasmart.local", role: "public_viewer", description: "Preview AgriWiser services with a basic-phone menu" },
 };
 
 export function quickLoginAllowed({ development, authMode, enabled, hostname }) {

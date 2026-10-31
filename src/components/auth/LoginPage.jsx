@@ -1,4 +1,4 @@
-import { ArrowRight, ClipboardCheck, Eye, Loader2, Lock, LogIn, Mail, ShieldCheck, Sprout, TrendingUp } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Loader2, Lock, LogIn, Mail, Phone, ShieldCheck, Sprout, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import {useAccountConfiguration} from "@/hooks/useAccountConfiguration";
 import { appClient } from "@/api/appClient";
@@ -9,12 +9,14 @@ import { Label } from "@/components/ui/label";
 import { safeReturnTo } from "@/lib/authReturnTo";
 import { destinationAfterSignIn, signIn, signInError } from "@/lib/sign-in";
 import { QUICK_LOCAL_ACCOUNTS } from "@/lib/local-quick-login";
+import { useLanguage } from "@/lib/LanguageContext";
 
-const PANEL_ICONS = { admin: ShieldCheck, analytics: TrendingUp, field_operations: ClipboardCheck, community_business: Sprout, public_insights: Eye };
+const PANEL_ICONS = { admin: ShieldCheck, analytics: TrendingUp, field_operations: ClipboardCheck, community_business: Sprout, public_insights: Phone };
 
 // The /login page. ?returnTo= (or the platform's ?from_url=) is where the visitor
 // goes after signing in — the login gate and the MCP consent page send people here with it.
 export function LoginPage() {
+  const { t } = useLanguage();
   const returnTo = safeReturnTo();
   const configuration=useAccountConfiguration();
   const quickLoginEnabled=configuration.data?.quickLogin===true;
@@ -54,16 +56,16 @@ export function LoginPage() {
   }
 
   return (
-    <AuthLayout icon={LogIn} title="Welcome to AgriWiser" subtitle={quickLoginEnabled ? "Choose one of the five panels to start" : "Sign in to your assigned workspace"} wide={quickLoginEnabled}>
+    <AuthLayout icon={LogIn} title={t("welcome")} subtitle={quickLoginEnabled ? t("chooseFivePanels") : t("signIntoWorkspace")} wide={quickLoginEnabled}>
       <GoogleButton returnTo={returnTo} />
       <OrDivider />
       <AuthError>{error}</AuthError>
       {quickLoginEnabled && <section aria-label="Quick local sign-in" className="mb-6 space-y-3">
         <div className="flex items-center justify-between gap-2">
-          <h2 className="text-sm font-semibold">Choose a panel</h2>
-          <span className="rounded-full bg-accent px-2.5 py-1 text-[10px] font-medium text-accent-foreground">Local development</span>
+          <h2 className="text-sm font-semibold">{t("choosePanelHeading")}</h2>
+          <span className="rounded-full bg-accent px-2.5 py-1 text-[10px] font-medium text-accent-foreground">{t("localDevelopment")}</span>
         </div>
-        <p className="text-xs text-muted-foreground">One click opens that panel with its own account and navigation. No password needed here.</p>
+        <p className="text-xs text-muted-foreground">{t("quickSignInDescription")}</p>
         <div className="grid gap-3 sm:grid-cols-2">
           {Object.entries(QUICK_LOCAL_ACCOUNTS).map(([key, account]) => {
             const Icon = PANEL_ICONS[account.key];
@@ -78,10 +80,10 @@ export function LoginPage() {
         </div>
       </section>}
       <details open={!quickLoginEnabled}>
-      <summary className={quickLoginEnabled ? "mb-4 cursor-pointer text-xs font-medium text-primary" : "hidden"}>Use email and password instead</summary>
+      <summary className={quickLoginEnabled ? "mb-4 cursor-pointer text-xs font-medium text-primary" : "hidden"}>{t("useEmailPassword")}</summary>
       <form onSubmit={submit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="login-email">Email</Label>
+          <Label htmlFor="login-email">{t("email")}</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
             <Input id="login-email" type="email" autoComplete="email" autoFocus={!quickLoginEnabled} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="h-12 pl-10" disabled={busy} required />
@@ -89,9 +91,9 @@ export function LoginPage() {
         </div>
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <Label htmlFor="login-password">Password</Label>
+            <Label htmlFor="login-password">{t("password")}</Label>
             {<AuthLink to="/forgot-password" returnTo={returnTo} className="text-xs text-primary hover:underline">
-              Forgot password?
+              {t("forgotPassword")}
             </AuthLink>}
           </div>
           <div className="relative">
@@ -99,19 +101,24 @@ export function LoginPage() {
             <Input id="login-password" type="password" autoComplete="current-password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} className="h-12 pl-10" disabled={busy} required />
           </div>
         </div>
-        <SubmitButton busy={busy} busyLabel="Logging in...">
-          Log in
+        <SubmitButton busy={busy} busyLabel={t("loggingIn")}>
+          {t("logIn")}
         </SubmitButton>
       </form>
       </details>
       <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
-        Your AgriWiser account determines which workspace opens.
+        {t("accountWorkspaceHint")}
       </p>
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        Don't have an account?{" "}
+        {t("noAccount")} {" "}
         <AuthLink to="/register" returnTo={returnTo}>
-          Create one
+          {t("createOne")}
         </AuthLink>
+      </p>
+      <p className="mt-4 text-center text-sm">
+        <a href="/ussd-simulator" className="font-medium text-primary hover:underline">
+          {t("tryUssd")}
+        </a>
       </p>
     </AuthLayout>
   );

@@ -15,6 +15,7 @@ import {
   Download,
 } from "lucide-react";
 import { downloadCsv, toCsv } from "@/lib/csv";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export function SavedInterestsTab({
   savedInterests,
@@ -28,6 +29,7 @@ export function SavedInterestsTab({
   isRemoving,
   isSaving,
 }) {
+  const { t } = useLanguage();
   const [newType, setNewType] = useState("crop");
   const [newValue, setNewValue] = useState(CROPS[0]);
   const [notes, setNotes] = useState("");
@@ -97,7 +99,7 @@ export function SavedInterestsTab({
               Interest Type
             </label>
             <select
-              aria-label="Interest type"
+              aria-label={t("Interest type")}
               value={newType}
               onChange={(e) => {
                 setNewType(e.target.value);
@@ -105,8 +107,8 @@ export function SavedInterestsTab({
               }}
               className="w-full rounded-md border border-border bg-background px-3 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary h-9"
             >
-              <option value="crop">Agricultural Crop</option>
-              <option value="district">Rwanda District</option>
+              <option value="crop">{t("Agricultural Crop")}</option>
+              <option value="district">{t("Rwanda District")}</option>
             </select>
           </div>
 
@@ -140,7 +142,7 @@ export function SavedInterestsTab({
             </label>
             <Input
               type="text"
-              placeholder="e.g. Cooperative priority, 2025 focus..."
+              placeholder={t("e.g. Cooperative priority, 2025 focus...")}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               className="h-9 text-xs"
@@ -274,7 +276,7 @@ export function SavedInterestsTab({
         <div className="flex items-start gap-2.5 text-xs text-muted-foreground">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
           <p className="leading-relaxed">
-            <strong className="text-foreground">User Privacy & Security:</strong> Your followed crops and districts are private to your authenticated user account. One user cannot access or modify another user's saved interests.
+            <strong className="text-foreground">{t("User Privacy & Security:")}</strong> {t("Your followed crops and districts are private to your authenticated user account. One user cannot access or modify another user's saved interests.")}
           </p>
         </div>
       </div>

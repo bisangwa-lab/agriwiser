@@ -9,7 +9,7 @@
 import { DATA_CLASSIFICATIONS, tagEvidence } from './classification.js';
 import { toNumber, computeYield } from './statistical-engine.js';
 
-export async function fetchAllPages(repository, entity, query = {}, limitPerRequest = 1000, maxTotal = 50000) {
+export async function fetchAllPages(repository, entity, query = {}, limitPerRequest = 2000, maxTotal = 50000) {
   const rows = [];
   for (let offset = 0; offset < maxTotal; offset += limitPerRequest) {
     const page = await repository.read({
@@ -45,13 +45,14 @@ export class EvidenceService {
   /**
    * Queries agricultural observations with strict filtering and normalization.
    */
-  async queryObservations({ crop, district, season, year, indicator, isDemo = false } = {}) {
+  async queryObservations({ crop, district, season, year, indicator, coreMeasures = false, isDemo = false } = {}) {
     const query = { domain: 'crop' };
     if (crop) query.crop = crop;
     if (district) query.geography = district;
     if (season) query.season = season;
     if (year) query.year = Number(year);
     if (indicator) query.indicator = indicator;
+    if (coreMeasures) query.measure_group = 'production_area';
 
     const rows = await fetchAllPages(this.repository, 'AgriculturalObservation', query);
     const filtered = rows.filter((r) => Boolean(r.is_demo) === isDemo);
@@ -91,14 +92,21 @@ export class EvidenceService {
           derivedYield: null,
           datasetId: row.dataset_id,
           sourceReference: row.source_reference,
+          sources: {},
         });
       }
 
       const entry = byYear.get(year);
       const val = toNumber(row.value);
 
-      if (row.indicator === 'production') entry.production = val;
-      if (row.indicator === 'harvested_area') entry.harvestedArea = val;
+      if (row.indicator === 'production') {
+        entry.production = val;
+        entry.sources.production = sourceDetails(row);
+      }
+      if (row.indicator === 'harvested_area') {
+        entry.harvestedArea = val;
+        entry.sources.harvested_area = sourceDetails(row);
+      }
       if (row.indicator === 'cultivated_area') entry.cultivatedArea = val;
       if (row.indicator === 'reported_yield') entry.reportedYield = val;
     }
@@ -136,4 +144,13 @@ export class EvidenceService {
 
     return snapshot;
   }
+}
+
+function sourceDetails(row) {
+  return {
+    datasetId: row.dataset_id ?? null,
+    sourceReference: row.source_reference ?? null,
+    sourceUrl: row.source_url ?? null,
+    unit: row.unit ?? null,
+  };
 }

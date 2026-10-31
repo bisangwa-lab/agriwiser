@@ -185,19 +185,24 @@ export function runDigitalTwinSimulation(baseline, scenarioConfig) {
   const deltaArea = simulatedArea - baseArea;
 
   // --- SENSITIVITY ANALYSIS SWEEP (-20% to +20% variation on primary driver) ---
+  const sensitivityInput = getSensitivityInput(scenarioType, parameters, baseArea);
   const sensitivity = [-20, -10, 0, 10, 20].map((step) => {
-    let sweptProd = simulatedProd;
-    if (scenarioType === SCENARIO_TYPES.RAINFALL) {
-      const sweptDelta = (parameters.rainfallDeltaPct ?? 0) + step;
-      const el = (modelUsed?.elasticities?.[baseline.crop] ?? 0.5);
-      sweptProd = baseProd * (1 + el * (sweptDelta / 100));
-    } else {
-      sweptProd = simulatedProd * (1 + (step / 100) * 0.8);
-    }
+    const variedParameters = varyScenarioParameter(scenarioType, parameters, step, baseArea);
+    const sweptProd = calculateScenarioProduction({
+      scenarioType,
+      parameters: variedParameters,
+      baseArea,
+      baseYield,
+      baseProd,
+      crop: baseline.crop,
+      modelUsed,
+    });
     return {
       variationPct: step,
-      simulatedProductionTonnes: Math.round(sweptProd),
-      differenceTonnes: Math.round(sweptProd - baseProd),
+      inputValue: variedParameters[sensitivityInput.key],
+      inputLabel: sensitivityInput.label,
+      simulatedProductionTonnes: Math.round(sweptProd * 10) / 10,
+      differenceTonnes: Math.round((sweptProd - baseProd) * 10) / 10,
     };
   });
 
@@ -216,6 +221,7 @@ export function runDigitalTwinSimulation(baseline, scenarioConfig) {
         derivedYieldTonnesPerHa: Math.round(baseYield * 1000) / 1000,
         datasetId: baseline.datasetId || baseline.dataset_id,
         sourceReference: baseline.sourceReference || baseline.source_reference,
+        sourceUrl: baseline.sourceUrl || baseline.source_url,
       },
       simulated: {
         productionTonnes: Math.round(simulatedProd * 10) / 10,
@@ -249,4 +255,91 @@ export function runDigitalTwinSimulation(baseline, scenarioConfig) {
       datasetId: baseline.datasetId || baseline.dataset_id,
     }
   );
+}
+
+function getSensitivityInput(scenarioType, parameters, baseArea) {
+  switch (scenarioType) {
+    case SCENARIO_TYPES.RAINFALL:
+    case SCENARIO_TYPES.COMBINED:
+      return { key: 'rainfallDeltaPct', label: 'Rainfall departure (%)' };
+    case SCENARIO_TYPES.IRRIGATION:
+      return { key: 'newlyIrrigatedHectares', label: 'Newly irrigated area (ha)' };
+    case SCENARIO_TYPES.PRODUCTIVITY:
+      return { key: 'yieldIncreasePct', label: 'Yield improvement (%)' };
+    case SCENARIO_TYPES.HARVESTED_AREA:
+      return { key: 'areaDeltaPct', label: 'Harvested area change (%)' };
+    case SCENARIO_TYPES.BUDGET_ALLOCATION:
+      return { key: 'totalBudgetRwf', label: 'Intervention budget (RWF)' };
+    default:
+      return { key: 'rainfallDeltaPct', label: `Scenario input (${baseArea} ha baseline)` };
+  }
+}
+
+function varyScenarioParameter(scenarioType, parameters, step, baseArea) {
+  const varied = { ...parameters };
+  switch (scenarioType) {
+    case SCENARIO_TYPES.RAINFALL:
+    case SCENARIO_TYPES.COMBINED:
+      varied.rainfallDeltaPct = Number(parameters.rainfallDeltaPct ?? 0) + step;
+      break;
+    case SCENARIO_TYPES.IRRIGATION:
+      varied.newlyIrrigatedHectares = Math.min(baseArea, Math.max(0, Number(parameters.newlyIrrigatedHectares ?? 0) * (1 + step / 100)));
+      break;
+    case SCENARIO_TYPES.PRODUCTIVITY:
+      varied.yieldIncreasePct = Number(parameters.yieldIncreasePct ?? 15) + step;
+      break;
+    case SCENARIO_TYPES.HARVESTED_AREA:
+      varied.areaDeltaPct = Number(parameters.areaDeltaPct ?? 0) + step;
+      break;
+    case SCENARIO_TYPES.BUDGET_ALLOCATION:
+      varied.totalBudgetRwf = Math.max(0, Number(parameters.totalBudgetRwf ?? 100000000) * (1 + step / 100));
+      break;
+  }
+  return varied;
+}
+
+function calculateScenarioProduction({ scenarioType, parameters, baseArea, baseYield, baseProd, crop, modelUsed }) {
+  switch (scenarioType) {
+    case SCENARIO_TYPES.RAINFALL: {
+      const rainfallDeltaPct = Number(parameters.rainfallDeltaPct ?? 0);
+      const elasticity = modelUsed?.elasticities?.[crop] ?? modelUsed?.elasticities?.Default ?? 0;
+      const shift = elasticity * (rainfallDeltaPct / 100) * (1 - 0.15 * Math.abs(rainfallDeltaPct / 100));
+      return baseArea * Math.max(0.05, baseYield * (1 + shift));
+    }
+    case SCENARIO_TYPES.IRRIGATION: {
+      const irrigated = Math.min(baseArea, Math.max(0, Number(parameters.newlyIrrigatedHectares ?? 0)));
+      const multiplier = modelUsed?.productivityMultiplier ?? 1;
+      return (baseArea - irrigated) * baseYield + irrigated * baseYield * multiplier;
+    }
+    case SCENARIO_TYPES.PRODUCTIVITY: {
+      const increase = Number(parameters.yieldIncreasePct ?? 15);
+      return baseArea * Math.max(0, baseYield * (1 + increase / 100));
+    }
+    case SCENARIO_TYPES.HARVESTED_AREA: {
+      const area = Math.max(1, baseArea * (1 + Number(parameters.areaDeltaPct ?? 0) / 100));
+      return area * baseYield;
+    }
+    case SCENARIO_TYPES.COMBINED: {
+      const rainShift = Number(parameters.rainfallDeltaPct ?? 0);
+      const irrigated = Math.min(baseArea, Math.max(0, Number(parameters.newlyIrrigatedHectares ?? 0)));
+      const inputBoost = Number(parameters.yieldIncreasePct ?? 0);
+      const area = Math.max(1, baseArea * (1 + Number(parameters.areaDeltaPct ?? 0) / 100));
+      const elasticity = getModelInfo('TWIN-RAINFALL-RESPONSE-V1').elasticities[crop] ?? getModelInfo('TWIN-RAINFALL-RESPONSE-V1').elasticities.Default;
+      const rainFactor = 1 + elasticity * (rainShift / 100) * (1 - 0.15 * Math.abs(rainShift / 100));
+      const rainfed = Math.max(0, area - irrigated);
+      const rainfedYield = Math.max(0.1, baseYield * rainFactor * (1 + inputBoost / 100));
+      const irrigatedYield = Math.max(0.1, baseYield * 1.65 * (1 + inputBoost / 100));
+      return rainfed * rainfedYield + irrigated * irrigatedYield;
+    }
+    case SCENARIO_TYPES.BUDGET_ALLOCATION: {
+      const model = modelUsed ?? getModelInfo('TWIN-BUDGET-PORTFOLIO-V1');
+      const budget = Math.max(0, Number(parameters.totalBudgetRwf ?? 100000000));
+      const irrigationHa = Math.min(baseArea, Math.floor((budget * Number(parameters.irrigationBudgetPct ?? 50) / 100) / model.unitCosts.irrigationPerHectareRwf));
+      const seedHa = Math.min(baseArea, Math.floor((budget * Number(parameters.seedSubsidyBudgetPct ?? 30) / 100) / model.unitCosts.improvedSeedSubsidyPerHaRwf));
+      const limeHa = Math.min(baseArea, Math.floor((budget * Number(parameters.soilLimeBudgetPct ?? 20) / 100) / model.unitCosts.limeSoilConditioningPerHaRwf));
+      return baseProd + irrigationHa * baseYield * 0.65 + seedHa * baseYield * 0.18 + limeHa * baseYield * 0.12;
+    }
+    default:
+      return baseProd;
+  }
 }

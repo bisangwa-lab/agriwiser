@@ -63,6 +63,8 @@ export function canReadCase(user, item) {
   const role = normalizeRole(user);
   if (['agricultural_analyst', 'policy_maker', 'data_manager'].includes(role)) return true;
   if (!STAFF.has(role)) return false;
+  // Risk cases submitted by analysts enter the field team's unassigned queue.
+  if (item.source === 'risk_engine' && !item.assignee_id && !item.assignee_email) return true;
   return (
     same(item.assignee_id, user.id) ||
     same(item.created_by_id, user.id) ||
@@ -140,7 +142,7 @@ export function createFieldWorkflow(repo, user, { now = () => new Date().toISOSt
     } while (cursor);
     return rows;
   }
-  async function assignment(input, current, creating) {
+  async function assignment(input, current, creating, { riskHandoff = false } = {}) {
     const requestedProvided = input.assignee_id !== undefined || input.assignee_email !== undefined;
     if (!creating && !requestedProvided) return {};
     const requested = input.assignee_id ?? input.assignee_email ?? '';
@@ -153,7 +155,7 @@ export function createFieldWorkflow(repo, user, { now = () => new Date().toISOSt
     if (requested && !isSupervisor(user) && !same(requested, user.id) && !same(requested, user.email)) {
       fail('Only supervisors can assign other officers.', 403);
     }
-    const target = requested ? await repo.account(requested) : creating && !isSupervisor(user) ? user : null;
+    const target = requested ? await repo.account(requested) : creating && !isSupervisor(user) && !riskHandoff ? user : null;
     if (requested && !target) fail('Choose an active officer from the account directory.');
     if (target && !ASSIGNABLE.has(normalizeRole(target))) fail('Assign an active field operations account.');
     return {
@@ -303,8 +305,14 @@ export function createFieldWorkflow(repo, user, { now = () => new Date().toISOSt
     return { snapshot, alert, finding };
   }
 
-  async function create({ entity, record: input }) {
-    staff();
+  async function create({ entity, record: input }, { riskHandoff = false } = {}) {
+    if (riskHandoff) {
+      authenticate();
+      if (![...STAFF, 'agricultural_analyst', 'policy_maker'].includes(normalizeRole(user)) || entity !== 'Investigation' || input?.source !== 'risk_engine')
+        fail('This account cannot send a risk signal for field follow-up.', 403);
+    } else {
+      staff();
+    }
     if (!WORK_ENTITIES.has(entity) || ['AuditEvent', 'ReviewDecision', 'EvidenceAttachment', 'EvidenceVerification'].includes(entity))
       fail('Use the dedicated workflow action.', 403);
     if (!input || typeof input !== 'object' || Array.isArray(input) || JSON.stringify(input).length > 1100000)
@@ -331,10 +339,11 @@ export function createFieldWorkflow(repo, user, { now = () => new Date().toISOSt
           return match;
         }
       }
-      const assigned = await assignment(input, null, true);
+      const assigned = await assignment(input, null, true, { riskHandoff });
       const signals = snapshot.signals ?? [];
       const after = {
         ...fields,
+        ...(riskHandoff ? { source: 'risk_engine' } : {}),
         ...assigned,
         id,
         status: 'open',
@@ -700,6 +709,7 @@ export function createFieldWorkflow(repo, user, { now = () => new Date().toISOSt
 
   return {
     create,
+    createRiskHandoff: (request) => create(request, { riskHandoff: true }),
     update,
     review,
     attachEvidence,

@@ -1,6 +1,7 @@
 import { ArrowDownRight, ArrowUpRight, CircleCheck, ClipboardList, Database, FileUp, Gauge, Layers3, MapPin, Minus, Sprout, TriangleAlert } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatNumber, formatSignedPercent, NOT_AVAILABLE } from "@/lib/format";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const DELTA_TONE = {
   up: "text-primary",
@@ -30,6 +31,7 @@ export function StatCard({
   notCalculableReason,
   icon,
 }) {
+  const { t } = useLanguage();
   const hasDelta = deltaPct !== null && deltaPct !== undefined && !Number.isNaN(Number(deltaPct));
   const direction = !hasDelta ? "none" : Number(deltaPct) > 0 ? "up" : Number(deltaPct) < 0 ? "down" : "flat";
   const tone = DELTA_TONE[direction];
@@ -40,7 +42,7 @@ export function StatCard({
   return (
     <div className="panel relative min-w-0 overflow-hidden p-5">
       <div className="flex items-center justify-between gap-2">
-        <p className="text-[11.5px] font-medium text-muted-foreground">{label}</p>
+        <p className="text-[11.5px] font-medium text-muted-foreground">{t(label)}</p>
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/80 text-primary"><Icon className="h-4 w-4" aria-hidden /></span>
       </div>
       <div className="mt-3 flex flex-wrap items-baseline gap-1.5">
@@ -54,14 +56,14 @@ export function StatCard({
         <p className={cn("mt-3 flex flex-wrap items-center gap-1 text-[11px] font-medium", tone)}>
           <DeltaIcon direction={direction} />
           <span className="num">{formatSignedPercent(deltaPct)}</span>
-          {deltaLabel ? <span className="font-normal text-muted-foreground">{deltaLabel}</span> : null}
+          {deltaLabel ? <span className="font-normal text-muted-foreground">{t(deltaLabel)}</span> : null}
         </p>
       ) : notCalculableReason ? (
-        <p className="mt-3 text-xs text-muted-foreground">{notCalculableReason}</p>
+        <p className="mt-3 text-xs text-muted-foreground">{t(notCalculableReason)}</p>
       ) : null}
 
-      {footnote ? <p className="mt-2 text-[10.5px] leading-relaxed text-muted-foreground/80">{footnote}</p> : null}
-      {missing && !footnote && <p className="mt-3 text-[10.5px] text-muted-foreground">Awaiting compatible records</p>}
+      {footnote ? <p className="mt-2 text-[10.5px] leading-relaxed text-muted-foreground/80">{t(footnote)}</p> : null}
+      {missing && !footnote && <p className="mt-3 text-[10.5px] text-muted-foreground">{t("Awaiting compatible records")}</p>}
     </div>
   );
 }

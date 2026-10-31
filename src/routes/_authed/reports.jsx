@@ -34,6 +34,7 @@ import {
 import { buildReportSnapshot, REPORT_TYPES } from "@/lib/reports/snapshot-builder";
 import { exportReportFile } from "@/lib/reports/download-helpers";
 import { ChartExplanationButton } from "@/components/charts/ChartExplanationButton";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export const Route = createFileRoute("/_authed/reports")({
   beforeLoad: requireWorkspace(["planner", "officer", "data_manager"]),
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/_authed/reports")({
 });
 
 export default function ReportsPage() {
+  const { language, t } = useLanguage();
   // Step 1: Report Type
   const [reportType, setReportType] = useState("district_performance");
 
@@ -120,12 +122,19 @@ export default function ReportsPage() {
     setExportSuccess(null);
     setExportError(null);
     try {
-      const res = await exportReportFile(snapshot, format);
-      setExportSuccess(`${res.format} downloaded successfully.`);
+      const localize = (value) => {
+        if (typeof value === "string") return t(value);
+        if (Array.isArray(value)) return value.map(localize);
+        if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, localize(item)]));
+        return value;
+      };
+      const exportSnapshot = language === "rw" ? localize(snapshot) : snapshot;
+      const res = await exportReportFile(exportSnapshot, format);
+      setExportSuccess(`${t(res.format)} ${t("downloaded successfully.")}`);
       setTimeout(() => setExportSuccess(null), 4000);
     } catch (err) {
       console.error("Export error:", err);
-      setExportError(err.message || "Failed to generate report export.");
+      setExportError(t(err.message || "Failed to generate report export."));
       setTimeout(() => setExportError(null), 6000);
     } finally {
       setExportingFormat(null);
@@ -137,9 +146,9 @@ export default function ReportsPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Official Reporting System"
-        title="Evidence-Based Reports &amp; Publications"
-        description="Generate publication-grade agricultural dossiers grounded in verified NISR statistics and meteorological evidence. Every report guarantees reproducible calculations, traceable source references, explicit data limitations, and native editable formats."
+        eyebrow={t("Official Reporting System")}
+        title={t("Evidence-Based Reports & Publications")}
+        description={t("Generate publication-grade agricultural dossiers grounded in verified NISR statistics and meteorological evidence. Every report guarantees reproducible calculations, traceable source references, explicit data limitations, and native editable formats.")}
         actions={
           <div className="no-print flex flex-wrap items-center gap-2">
             <Button
@@ -150,7 +159,7 @@ export default function ReportsPage() {
               className="gap-1.5"
             >
               {exportingFormat === "pdf" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <FileText className="h-3.5 w-3.5" />}
-              PDF Dossier
+              {t("PDF Dossier")}
             </Button>
             <Button
               variant="outline"
@@ -160,7 +169,7 @@ export default function ReportsPage() {
               className="gap-1.5"
             >
               {exportingFormat === "excel" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <FileSpreadsheet className="h-3.5 w-3.5" />}
-              Excel (.xlsx + Chart)
+              {t("Excel (.xlsx + Chart)")}
             </Button>
             <Button
               variant="outline"
@@ -170,7 +179,7 @@ export default function ReportsPage() {
               className="gap-1.5"
             >
               {exportingFormat === "word" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <FileCheck className="h-3.5 w-3.5" />}
-              Word (.docx)
+              {t("Word (.docx)")}
             </Button>
             <Button
               variant="outline"
@@ -180,11 +189,11 @@ export default function ReportsPage() {
               className="gap-1.5"
             >
               {exportingFormat === "csv" ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}
-              CSV Records
+              {t("CSV Records")}
             </Button>
             <Button variant="outline" size="sm" onClick={() => window.print()} className="gap-1.5">
               <Printer className="h-3.5 w-3.5" />
-              Print
+              {t("Print")}
             </Button>
           </div>
         }
@@ -211,41 +220,41 @@ export default function ReportsPage() {
         <CardHeader className="pb-3 pt-4">
           <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
             <Sparkles className="h-4 w-4 text-primary" />
-            Report Configuration &amp; Scope Builder
+            {t("Report Configuration & Scope Builder")}
           </CardTitle>
           <CardDescription className="text-xs">
-            Configure report type, agricultural filters, audience depth, and approval metadata.
+            {t("Configure report type, agricultural filters, audience depth, and approval metadata.")}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Step 1: Select Report Type */}
           <div className="space-y-1.5">
-            <Label className="text-xs font-medium">Step 1 — Report Type</Label>
+            <Label className="text-xs font-medium">{t("Step 1 — Report Type")}</Label>
             <Select value={reportType} onValueChange={setReportType}>
               <SelectTrigger className="h-9">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {REPORT_TYPES.map((t) => (
-                  <SelectItem key={t.id} value={t.id}>
-                    {t.label}
+                {REPORT_TYPES.map((item) => (
+                  <SelectItem key={item.id} value={item.id}>
+                    {t(item.label)}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
             <p className="text-[11.5px] text-muted-foreground">
-              {REPORT_TYPES.find((t) => t.id === reportType)?.description}
+              {t(REPORT_TYPES.find((item) => item.id === reportType)?.description)}
             </p>
           </div>
 
           {/* Step 2: Select Data Scope */}
           <div className="space-y-1.5 pt-1">
-            <Label className="text-xs font-medium">Step 2 — Data Scope &amp; Filters</Label>
+            <Label className="text-xs font-medium">{t("Step 2 — Data Scope & Filters")}</Label>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {reportType !== "investigation_dossier" && reportType !== "alert" ? (
                 <>
                   <div className="space-y-1">
-                    <Label className="text-[11px] text-muted-foreground">District</Label>
+                    <Label className="text-[11px] text-muted-foreground">{t("District")}</Label>
                     <Select value={district} onValueChange={setDistrict}>
                       <SelectTrigger className="h-8 text-xs">
                         <SelectValue />
@@ -260,7 +269,7 @@ export default function ReportsPage() {
                     </Select>
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[11px] text-muted-foreground">Crop</Label>
+                    <Label className="text-[11px] text-muted-foreground">{t("Crop")}</Label>
                     <Select value={crop} onValueChange={setCrop}>
                       <SelectTrigger className="h-8 text-xs">
                         <SelectValue />
@@ -275,7 +284,7 @@ export default function ReportsPage() {
                     </Select>
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[11px] text-muted-foreground">Measure</Label>
+                    <Label className="text-[11px] text-muted-foreground">{t("Measure")}</Label>
                     <Select value={indicator} onValueChange={setIndicator}>
                       <SelectTrigger className="h-8 text-xs">
                         <SelectValue />
@@ -283,14 +292,14 @@ export default function ReportsPage() {
                       <SelectContent>
                         {["production", "harvested_area", "yield"].map((key) => (
                           <SelectItem key={key} value={key} className="text-xs">
-                            {INDICATORS[key].label}
+                            {t(INDICATORS[key].label)}
                           </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[11px] text-muted-foreground">Season</Label>
+                    <Label className="text-[11px] text-muted-foreground">{t("Season")}</Label>
                     <Select value={season} onValueChange={setSeason}>
                       <SelectTrigger className="h-8 text-xs">
                         <SelectValue />
@@ -305,7 +314,7 @@ export default function ReportsPage() {
                     </Select>
                   </div>
                   <div className="space-y-1">
-                    <Label className="text-[11px] text-muted-foreground">Target Period</Label>
+                    <Label className="text-[11px] text-muted-foreground">{t("Target Period")}</Label>
                     <Select value={yearB} onValueChange={setYearB}>
                       <SelectTrigger className="h-8 text-xs">
                         <SelectValue />
@@ -325,10 +334,10 @@ export default function ReportsPage() {
               {/* Alert selection if alert report */}
               {reportType === "alert" ? (
                 <div className="col-span-full space-y-1">
-                  <Label className="text-[11px] text-muted-foreground">Select Alert Record</Label>
+                  <Label className="text-[11px] text-muted-foreground">{t("Select Alert Record")}</Label>
                   <Select value={alertId || (alerts[0]?.id ?? "")} onValueChange={setAlertId}>
                     <SelectTrigger className="h-9">
-                      <SelectValue placeholder="Choose an alert" />
+                      <SelectValue placeholder={t("Choose an alert")} />
                     </SelectTrigger>
                     <SelectContent>
                       {alerts.map((a) => (
@@ -344,13 +353,13 @@ export default function ReportsPage() {
               {/* Investigation selection if investigation report */}
               {reportType === "investigation_dossier" ? (
                 <div className="col-span-full space-y-1">
-                  <Label className="text-[11px] text-muted-foreground">Select Investigation Dossier</Label>
+                  <Label className="text-[11px] text-muted-foreground">{t("Select Investigation Dossier")}</Label>
                   <Select
                     value={investigationId || (investigations[0]?.id ?? "")}
                     onValueChange={setInvestigationId}
                   >
                     <SelectTrigger className="h-9">
-                      <SelectValue placeholder="Choose an investigation" />
+                      <SelectValue placeholder={t("Choose an investigation")} />
                     </SelectTrigger>
                     <SelectContent>
                       {investigations.map((i) => (
@@ -367,46 +376,46 @@ export default function ReportsPage() {
 
           {/* Step 3: Customize Report (Audience Depth & Status) */}
           <div className="space-y-1.5 pt-1">
-            <Label className="text-xs font-medium">Step 3 — Customization &amp; Audience Depth</Label>
+            <Label className="text-xs font-medium">{t("Step 3 — Customization & Audience Depth")}</Label>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="space-y-1">
-                <Label className="text-[11px] text-muted-foreground">Explanation Depth</Label>
+                <Label className="text-[11px] text-muted-foreground">{t("Explanation Depth")}</Label>
                 <Select value={explanationDepth} onValueChange={setExplanationDepth}>
                   <SelectTrigger className="h-8 text-xs">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="simple" className="text-xs">
-                      Simple — Plain language for general readers &amp; farmers
+                      {t("Simple — Plain language for general readers & farmers")}
                     </SelectItem>
                     <SelectItem value="professional" className="text-xs">
-                      Professional (Default) — For officers, analysts &amp; planners
+                      {t("Professional (Default) — For officers, analysts & planners")}
                     </SelectItem>
                     <SelectItem value="technical" className="text-xs">
-                      Technical — Mathematical formulas, decompositions &amp; sampling frame
+                      {t("Technical — Mathematical formulas, decompositions & sampling frame")}
                     </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-1">
-                <Label className="text-[11px] text-muted-foreground">Publication Approval Status</Label>
+                <Label className="text-[11px] text-muted-foreground">{t("Publication Approval Status")}</Label>
                 <Select value={approvalStatus} onValueChange={setApprovalStatus}>
                   <SelectTrigger className="h-8 text-xs">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="Approved Evidence" className="text-xs">
-                      Approved Evidence (Official verified records)
+                      {t("Approved Evidence (Official verified records)")}
                     </SelectItem>
                     <SelectItem value="Under Review" className="text-xs">
-                      Under Supervisory Review
+                      {t("Under Supervisory Review")}
                     </SelectItem>
                     <SelectItem value="Field Investigation Dossier" className="text-xs">
-                      Field Investigation Dossier
+                      {t("Field Investigation Dossier")}
                     </SelectItem>
                     <SelectItem value="Simulated Policy Scenario" className="text-xs">
-                      Simulated Policy Scenario (Exploratory)
+                      {t("Simulated Policy Scenario (Exploratory)")}
                     </SelectItem>
                   </SelectContent>
                 </Select>
@@ -426,18 +435,18 @@ export default function ReportsPage() {
             <div className="flex items-center gap-2">
               <ToneTag tone="outline">{snapshot.approvalStatus}</ToneTag>
               <ToneTag tone="primary">{snapshot.geographicScope}</ToneTag>
-              <span className="text-xs text-muted-foreground">ID: {snapshot.id}</span>
+              <span className="text-xs text-muted-foreground">{t("ID")}: {snapshot.id}</span>
             </div>
             <span className="text-xs text-muted-foreground">
-              Generated {formatDateTime(snapshot.generatedAt)}
+              {t("Generated")} {formatDateTime(snapshot.generatedAt)}
             </span>
           </div>
 
           <CardTitle className="mt-2 text-xl font-semibold tracking-tight text-foreground brand-serif">
-            {snapshot.title}
+            {t(snapshot.title)}
           </CardTitle>
           <CardDescription className="text-xs text-muted-foreground">
-            {snapshot.subtitle} · Prepared by {snapshot.preparedBy}
+            {t(snapshot.subtitle)} · {t("Prepared by")} {t(snapshot.preparedBy)}
           </CardDescription>
         </CardHeader>
 
@@ -445,17 +454,17 @@ export default function ReportsPage() {
           {/* Executive Summary */}
           <section className="space-y-2 rounded-lg border border-primary/20 bg-accent/40 p-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-primary">
-              Executive Summary
+              {t("Executive Summary")}
             </h3>
             <p className="text-sm leading-relaxed text-foreground italic">
-              {snapshot.executiveSummary}
+              {t(snapshot.executiveSummary)}
             </p>
           </section>
 
           {/* Key Findings (5 Core Reporting Questions) */}
           <section className="space-y-3">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-              Key Verified Findings (5 Core Questions)
+              {t("Key Verified Findings (5 Core Questions)")}
             </h3>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {(snapshot.keyFindings || []).map((f) => (
@@ -463,8 +472,8 @@ export default function ReportsPage() {
                   key={f.question}
                   className="space-y-1.5 rounded-md border border-border/60 bg-card/60 p-3.5"
                 >
-                  <h4 className="text-xs font-medium text-primary">{f.question}</h4>
-                  <p className="text-xs leading-relaxed text-muted-foreground">{f.text}</p>
+                  <h4 className="text-xs font-medium text-primary">{t(f.question)}</h4>
+                  <p className="text-xs leading-relaxed text-muted-foreground">{t(f.text)}</p>
                 </div>
               ))}
             </div>
@@ -473,14 +482,14 @@ export default function ReportsPage() {
           {/* Performance & Formula Metrics Table */}
           <section className="space-y-3">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-              Statistical Observations &amp; Empirical Metrics
+              {t("Statistical Observations & Empirical Metrics")}
             </h3>
             <Table>
               <TableHeader>
                 <TableRow>
                   {(snapshot.tableHeaders || []).map((h, i) => (
                     <TableHead key={h} className={i >= 2 ? "text-right" : "text-left"}>
-                      {h}
+                      {t(h)}
                     </TableHead>
                   ))}
                 </TableRow>
@@ -501,7 +510,7 @@ export default function ReportsPage() {
                                 : "text-muted-foreground"
                           }
                         >
-                          {String(v ?? "")}
+                          {t(String(v ?? ""))}
                         </TableCell>
                       ))}
                     </TableRow>
@@ -516,7 +525,7 @@ export default function ReportsPage() {
             <section className="space-y-2">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-                  Visual Evidence: {snapshot.chartSpec.title}
+                  {t("Visual Evidence")}: {t(snapshot.chartSpec.title)}
                 </h3>
                 <ChartExplanationButton
                   chartType="bar comparison"
@@ -539,7 +548,7 @@ export default function ReportsPage() {
                   highlightKeys={[snapshot.chartSpec.data[0]?.name]}
                 />
                 <p className="mt-2 text-center text-xs text-muted-foreground">
-                  {snapshot.chartSpec.explanation}
+                  {t(snapshot.chartSpec.explanation)}
                 </p>
               </div>
             </section>
@@ -548,13 +557,13 @@ export default function ReportsPage() {
           {/* Data Quality, Coverage, and Limitations */}
           <section className="space-y-2">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-              Data Quality, Coverage &amp; Scientific Limitations
+              {t("Data Quality, Coverage & Scientific Limitations")}
             </h3>
             <ul className="space-y-1.5 text-xs text-muted-foreground">
               {(snapshot.limitations || []).map((lim, idx) => (
                 <li key={idx} className="flex items-start gap-1.5">
                   <span className="text-primary">•</span>
-                  <span>{lim}</span>
+                  <span>{t(lim)}</span>
                 </li>
               ))}
             </ul>
@@ -563,13 +572,13 @@ export default function ReportsPage() {
           {/* Recommended Next Steps */}
           <section className="space-y-2">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-              Actionable Verification &amp; Follow-Up Steps
+              {t("Actionable Verification & Follow-Up Steps")}
             </h3>
             <div className="space-y-1.5 text-xs text-muted-foreground">
               {(snapshot.recommendations || []).map((rec, idx) => (
                 <p key={idx} className="flex items-start gap-1.5">
                   <span className="font-semibold text-primary">{idx + 1}.</span>
-                  <span>{rec}</span>
+                  <span>{t(rec)}</span>
                 </p>
               ))}
             </div>
@@ -578,16 +587,16 @@ export default function ReportsPage() {
           {/* Source Attribution & Calculation Methodology */}
           <section className="space-y-1 border-t border-border pt-4 text-[11.5px] text-muted-foreground">
             <p>
-              <strong>Authoritative Source:</strong> {snapshot.primaryDataset?.name} (
+              <strong>{t("Authoritative Source:")}</strong> {snapshot.primaryDataset?.name} (
               {snapshot.primaryDataset?.publisher}). Release Period:{" "}
               {snapshot.primaryDataset?.reporting_period}. License:{" "}
               {snapshot.primaryDataset?.license}.
             </p>
             <p>
-              <strong>Mathematical Protocol:</strong> {snapshot.methodology?.formula}
+              <strong>{t("Mathematical Protocol:")}</strong> {t(snapshot.methodology?.formula)}
             </p>
             <p>
-              <strong>Yield Definition:</strong> {snapshot.methodology?.yieldFormula}
+              <strong>{t("Yield Definition:")}</strong> {t(snapshot.methodology?.yieldFormula)}
             </p>
           </section>
         </CardContent>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { YEARS, SEASONS } from "@/lib/constants";
 import { formatNumber, formatSignedPercent } from "@/lib/format";
 import { percentageChange } from "@/lib/metrics";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   BarChart2,
   Calendar,
@@ -30,7 +31,10 @@ export function CompareSeasonsTab({
   selectedCrop,
   selectedDistrict,
   observationsData,
+  isLoading = false,
+  error = null,
 }) {
+  const { t } = useLanguage();
   const currentYear = YEARS[YEARS.length - 1];
   const previousYear = YEARS[YEARS.length - 2] || currentYear - 1;
 
@@ -46,22 +50,17 @@ export function CompareSeasonsTab({
       let harvested_area = null;
       let yieldVal = null;
 
-      for (const obs of observationsData) {
-        if (
-          obs.crop === selectedCrop &&
-          obs.year === Number(year) &&
-          obs.season === season &&
-          (selectedDistrict === "all" ? obs.geography === "National" || !obs.geography : obs.geography === selectedDistrict)
-        ) {
-          if (obs.indicator === "production" && obs.value != null) {
-            production = (production || 0) + Number(obs.value);
-          }
-          if (obs.indicator === "harvested_area" && obs.value != null) {
-            harvested_area = (harvested_area || 0) + Number(obs.value);
-          }
-          if (obs.indicator === "reported_yield" && obs.value != null) {
-            yieldVal = Number(obs.value);
-          }
+      const matching = observationsData.filter((obs) => obs.crop === selectedCrop && Number(obs.year) === Number(year) && obs.season === season);
+      const national = matching.filter((obs) => !obs.geography || obs.geography === "National");
+      const scoped = selectedDistrict === "all"
+        ? national.length ? national : matching.filter((obs) => Boolean(obs.geography))
+        : matching.filter((obs) => obs.geography === selectedDistrict);
+      for (const obs of scoped) {
+        if (obs.indicator === "production" && obs.value != null) {
+          production = (production || 0) + Number(obs.value);
+        }
+        if (obs.indicator === "harvested_area" && obs.value != null) {
+          harvested_area = (harvested_area || 0) + Number(obs.value);
         }
       }
 
@@ -70,7 +69,7 @@ export function CompareSeasonsTab({
         yieldVal = production / harvested_area;
       }
 
-      return { production, harvested_area, yield: yieldVal };
+      return { production, harvested_area, yield: production != null && harvested_area > 0 ? production / harvested_area : yieldVal };
     }
 
     const p1 = getMetrics(period1.year, period1.season);
@@ -105,19 +104,20 @@ export function CompareSeasonsTab({
     return [
       {
         indicator: "Production (t)",
-        [p1Label]: comparison.p1.production ? Math.round(comparison.p1.production) : 0,
-        [p2Label]: comparison.p2.production ? Math.round(comparison.p2.production) : 0,
+        [p1Label]: comparison.p1.production != null ? Math.round(comparison.p1.production) : null,
+        [p2Label]: comparison.p2.production != null ? Math.round(comparison.p2.production) : null,
       },
       {
         indicator: "Harvested Area (ha)",
-        [p1Label]: comparison.p1.harvested_area ? Math.round(comparison.p1.harvested_area) : 0,
-        [p2Label]: comparison.p2.harvested_area ? Math.round(comparison.p2.harvested_area) : 0,
+        [p1Label]: comparison.p1.harvested_area != null ? Math.round(comparison.p1.harvested_area) : null,
+        [p2Label]: comparison.p2.harvested_area != null ? Math.round(comparison.p2.harvested_area) : null,
       },
     ];
   }, [comparison, p1Label, p2Label]);
 
   return (
     <div className="space-y-6">
+      {error ? <div role="alert" className="rounded-xl border border-destructive/40 bg-destructive/5 p-4 text-sm text-destructive">{t("Season records could not be loaded.")} {t(error)}</div> : null}
       {/* Header & Controls Card */}
       <DashboardCard
         title="Compare Agricultural Seasons"
@@ -133,9 +133,9 @@ export function CompareSeasonsTab({
             </span>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <label className="text-[10px] text-muted-foreground uppercase">Survey Year</label>
+                <label className="text-[10px] text-muted-foreground uppercase">{t("Survey Year")}</label>
                 <select
-                  aria-label="Season 1 survey year"
+                  aria-label={t("Season 1 survey year")}
                   value={period1.year}
                   onChange={(e) => setPeriod1({ ...period1, year: Number(e.target.value) })}
                   className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
@@ -148,9 +148,9 @@ export function CompareSeasonsTab({
                 </select>
               </div>
               <div>
-                <label className="text-[10px] text-muted-foreground uppercase">Season</label>
+                <label className="text-[10px] text-muted-foreground uppercase">{t("Season")}</label>
                 <select
-                  aria-label="Season 1 season name"
+                  aria-label={t("Season 1 season name")}
                   value={period1.season}
                   onChange={(e) => setPeriod1({ ...period1, season: e.target.value })}
                   className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
@@ -169,7 +169,7 @@ export function CompareSeasonsTab({
           {/* Versus Icon */}
           <div className="flex justify-center text-center">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-muted-foreground">
-              <span className="text-xs font-bold">VS</span>
+              <span className="text-xs font-bold">{t("VS")}</span>
             </div>
           </div>
 
@@ -180,9 +180,9 @@ export function CompareSeasonsTab({
             </span>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <label className="text-[10px] text-muted-foreground uppercase">Survey Year</label>
+                <label className="text-[10px] text-muted-foreground uppercase">{t("Survey Year")}</label>
                 <select
-                  aria-label="Season 2 survey year"
+                  aria-label={t("Season 2 survey year")}
                   value={period2.year}
                   onChange={(e) => setPeriod2({ ...period2, year: Number(e.target.value) })}
                   className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
@@ -195,9 +195,9 @@ export function CompareSeasonsTab({
                 </select>
               </div>
               <div>
-                <label className="text-[10px] text-muted-foreground uppercase">Season</label>
+                <label className="text-[10px] text-muted-foreground uppercase">{t("Season")}</label>
                 <select
-                  aria-label="Season 2 season name"
+                  aria-label={t("Season 2 season name")}
                   value={period2.season}
                   onChange={(e) => setPeriod2({ ...period2, season: e.target.value })}
                   className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
@@ -216,6 +216,9 @@ export function CompareSeasonsTab({
       </DashboardCard>
 
       {/* Comparison Results Grid */}
+      {isLoading ? <div role="status" className="rounded-xl border bg-card p-5 text-sm text-muted-foreground">{t("Loading published observations for the selected crop…")}</div> : null}
+      {!isLoading && !error && !comparison && <div role="status" className="rounded-xl border bg-muted/30 p-5 text-sm text-muted-foreground">{t("No records were returned for this crop. Try another crop or check available NISR releases.")}</div>}
+
       <div className="grid gap-4 sm:grid-cols-3">
         {/* Production Delta Card */}
         <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
@@ -239,7 +242,7 @@ export function CompareSeasonsTab({
               </span>
             </div>
             <div className="mt-2 pt-2 border-t border-border flex justify-between items-baseline">
-              <span className="text-[11px] font-semibold text-foreground">Difference:</span>
+              <span className="text-[11px] font-semibold text-foreground">{t("Difference")}:</span>
               <div className="text-right">
                 <span className="text-sm font-bold text-foreground">
                   {comparison?.diffProduction != null
@@ -286,7 +289,7 @@ export function CompareSeasonsTab({
               </span>
             </div>
             <div className="mt-2 pt-2 border-t border-border flex justify-between items-baseline">
-              <span className="text-[11px] font-semibold text-foreground">Difference:</span>
+              <span className="text-[11px] font-semibold text-foreground">{t("Difference")}:</span>
               <div className="text-right">
                 <span className="text-sm font-bold text-foreground">
                   {comparison?.diffArea != null
@@ -329,7 +332,7 @@ export function CompareSeasonsTab({
               </span>
             </div>
             <div className="mt-2 pt-2 border-t border-border flex justify-between items-baseline">
-              <span className="text-[11px] font-semibold text-foreground">Difference:</span>
+              <span className="text-[11px] font-semibold text-foreground">{t("Difference")}:</span>
               <div className="text-right">
                 <span className="text-sm font-bold text-foreground">
                   {comparison?.diffYield != null
@@ -384,7 +387,7 @@ export function CompareSeasonsTab({
         <div className="flex items-start gap-2.5">
           <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
           <div className="text-xs text-muted-foreground space-y-1">
-            <p className="font-semibold text-foreground">Statistical Comparison Safeguards</p>
+            <p className="font-semibold text-foreground">{t("Statistical Comparison Safeguards")}</p>
             <p>
               Percentage change is computed only when baseline observations are valid and non-zero. A missing season is never replaced by zero or an adjacent release.
             </p>
