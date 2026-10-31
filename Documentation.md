@@ -7,6 +7,8 @@
 **Primary Data Context:** Rwanda  
 **Status:** Working technical specification. Validate all assumptions against the existing repository and supplied datasets.
 
+> **Implementation status:** This document records product requirements and technical guidance. Sections phrased as “implement” or “should” may describe intended behavior rather than verified live integrations. For the current feature set and explicit operating limits, use the [Current Product Guide](docs/CURRENT_PRODUCT_GUIDE.md). Confirm behavior against the source code, tests, deployment configuration and source documentation before describing a capability as production-ready. In particular, the USSD screen is a simulator and the Market Prices & Trends view uses historical WFP records, not a live telecom or eSoko integration.
+
 ---
 
 # 1. PROJECT OVERVIEW

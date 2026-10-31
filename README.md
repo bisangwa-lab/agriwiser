@@ -1,43 +1,55 @@
 # AgriWiser
 
-### Agricultural intelligence for Rwanda
+### Agricultural intelligence and decision support for Rwanda
 
-AgriWiser brings agricultural statistics, climate context, analytical tools and field workflows together in a secure decision-support platform. It helps users move from trusted data to clearer understanding, coordinated investigation and evidence-based reporting.
+AgriWiser brings official agricultural statistics, climate context, analytical tools, reporting and authorized field workflows into one role-aware application. It helps teams move from published evidence to clearer analysis, documented investigation and practical follow-up.
 
-## Platform
+The platform is designed around a simple principle: every figure should retain its source, unit, period and geographic context. Missing values stay missing, estimates are identified as estimates, and analytical scenarios are not presented as observed outcomes.
 
-AgriWiser is organized into five connected workspaces:
+## What the platform provides
 
-| Workspace | Purpose |
+| Workspace | What users can do |
 | --- | --- |
-| **Administration** | Govern users, datasets and authorized system operations. |
-| **Analytics & Planning** | Explore agricultural indicators, compare crops and districts, and use planning and analytical tools. |
-| **Field Operations** | Coordinate assigned investigations and operational follow-up. |
-| **Community & Business** | Present agricultural information and community services in an accessible, practical context. |
-| **Public Insights** | Explore published information through approachable public-facing views. |
+| **Administration** | Manage authorized accounts and data operations, review system information, and access account settings. |
+| **Analytics & Planning** | Review agricultural indicators, explore and compare datasets, use maps and planning tools, inspect risk signals, run Digital Twin scenarios, consult the AI Agricultural Analyst, and prepare reports. |
+| **Field Operations** | Review investigations, assignments and follow-up work; record evidence and outcomes through controlled workflows. |
+| **Community & Business** | Browse community agricultural information, compare seasons, save interests, review Rwanda’s published agriculture snapshot, explore historical market-price context, and find listed cooperatives and opportunities. |
+| **Public Insights** | Preview a basic-phone USSD menu experience in English or Kinyarwanda. It is a simulator, not a live telecom service. |
 
-Additional capabilities include weather and climate analysis, reports, dataset exploration, maps, and Agricultural Solutions within Analytics & Planning. Available actions depend on account role and the records configured for the deployment.
+### Community and public information tools
 
-## Built for evidence-led decisions
+- **Rwanda Agriculture Snapshot** filters published agricultural observations by crop, district, season and measure, with source context and comparisons where the data supports them.
+- **Market Prices & Trends** presents historical WFP market observations with market locations, monthly medians and explicit date, unit and coverage context. It is not a live eSoko feed or a guaranteed offer.
+- **Directory & Services** brings together listed cooperatives and approved sourcing opportunities. Users should confirm current membership, availability and terms with the relevant organization.
+- **USSD Simulator** demonstrates numbered menus for market-price references, crop statistics, recent weather and support information. It places no calls, checks no eligibility and submits no service requests.
 
-- Explore published agricultural indicators across available crops, places and reporting periods.
-- Compare production, harvested area and yield where the underlying definitions support those calculations.
-- Review weather information with its source, coverage, resolution and missing values made explicit.
-- Coordinate investigation and follow-up through authenticated field workflows.
-- Use analytical and planning tools with documented inputs, methods and assumptions.
-- Trace information to its dataset and source context.
+### Analysis, investigation and reporting
 
-AgriWiser distinguishes reported observations from estimates and analytical outputs. Missing values remain missing; historical production is not presented as current inventory or market availability.
+- Agricultural exploration and comparisons retain indicator definitions, units, source releases and reporting periods.
+- Weather and climate analysis identifies provider, coverage, resolution, missing data and relevant limitations.
+- Risk analysis surfaces evidence-based signals and can prepare a controlled handoff for field follow-up; the handoff does not itself confirm a cause or field condition.
+- Digital Twin scenarios model hypothetical changes using explicit baselines and assumptions. Their results are scenarios, not forecasts or observed impacts.
+- Reports and exports present selected evidence, explanations and source context for review and communication.
+
+## Evidence and data limits
+
+AgriWiser uses data available and configured for the deployment. Published agricultural statistics describe their stated reporting periods; they do not establish current inventory, demand, income or market availability. WFP price records are historical observations and may differ by market date and unit. USSD content is a demonstration. Confirm changing programs, prices, offers and services with the responsible local source before acting.
+
+The application distinguishes published observations, external estimates, model outputs, sample previews and demo content. It does not infer missing values as zero, claim that weather caused an agricultural outcome, or label scenario outputs as validated forecasts. See [Data Provenance](docs/DATA_PROVENANCE.md), [Statistical Methods](docs/STATISTICAL_METHODS.md), [Weather](WEATHER.md) and [Price Data Sources](docs/PRICE_DATA_SOURCES.md).
+
+## Access and security
+
+AgriWiser provides separate workspaces for signed-in users. Server-side checks still govern access to protected records and operations; a workspace switcher or hidden button is not the security boundary. Supabase identity is verified by server code, current roles are read from `hingasmart_profiles`, and Row Level Security remains enabled. Server secrets stay in ignored local settings or hosting secret storage. Private respondent files and backups are not published as application assets.
+
+See [Security and RBAC](docs/SECURITY_AND_RBAC.md) and [Supabase setup](SUPABASE_SETUP.md) for the implementation and operational controls.
 
 ## Technology
 
-The application uses React 19, JavaScript and JSX, TanStack Start, Vite, Cloudflare Workers and Supabase. It uses file-based routing and server-side rendering. The document shell is owned by `src/routes/__root.jsx`.
-
-The browser communicates with authenticated AgriWiser server functions. Supabase provides application authentication and data services. Local SQLite support is retained for offline development and migration testing.
+React 19, JavaScript and JSX, TanStack Start, Vite, Cloudflare Workers and Supabase. The application uses file-based routes and server-side rendering; `src/routes/__root.jsx` owns the HTML document. Supabase is the configured application backend. Local SQLite support remains available for offline development and migration tests.
 
 ## Run locally
 
-### Prerequisites
+### Requirements
 
 - Node.js and npm compatible with the project lockfile.
 - A Supabase project configured for AgriWiser.
@@ -52,51 +64,29 @@ The browser communicates with authenticated AgriWiser server functions. Supabase
    ```
 
 2. Copy `.env.example` to `.env.local` for non-secret frontend settings.
-3. Copy `.dev.vars.example` to `.dev.vars`. Set `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` and `SUPABASE_SECRET_KEY` for local server use.
-4. Apply the reviewed migrations in `supabase/migrations/` following [Supabase setup](SUPABASE_SETUP.md).
+3. Copy `.dev.vars.example` to `.dev.vars` and set `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` and `SUPABASE_SECRET_KEY` for local server use.
+4. Review and apply migrations following [Supabase setup](SUPABASE_SETUP.md).
 5. Start the local server:
 
    ```sh
    npm run dev -- --host 127.0.0.1 --port 5174
    ```
 
-Use the configured sign-in flow. Development account shortcuts, when enabled, are restricted to eligible local development sessions.
+Use the configured sign-in flow. Development shortcuts, when enabled, are restricted to eligible local development sessions.
 
-## Data and interpretation
+## Project documentation
 
-Agricultural and climate records retain their source context, units, reporting periods and geographic coverage. Dataset availability varies by deployment and selection. Production statistics describe reported production for a defined period; they do not establish current supply, prices, demand, income or an active commercial offer.
-
-Yield is shown only where the measure and its inputs are valid. Comparisons use compatible periods and definitions. Estimated weather products are not direct farm measurements, and statistical association is not evidence of causation.
-
-## Security
-
-- Server functions authenticate requests and enforce permissions for protected operations.
-- The server validates Supabase identity and obtains current roles from `hingasmart_profiles`.
-- Row-level security protects database records, and application workflows mediate writes.
-- Server-secret credentials stay on the server and are used only after authorization and input validation.
-- Session cookies are HttpOnly; cookie-bearing responses are private and non-cacheable.
-- Keep credentials in ignored local settings or hosting secret stores. Never use `VITE_` for secrets.
-- Keep private respondent files, backups and credentials out of Git and static assets.
-
-See [Security and RBAC](docs/SECURITY_AND_RBAC.md) and [Supabase setup](SUPABASE_SETUP.md) for implementation and operational details.
-
-## Project references
-
-- [Complete project documentation](docs/PROJECT_DOCUMENTATION.md)
-- [Supabase configuration and migrations](SUPABASE_SETUP.md)
-- [Local setup](LOCAL_SETUP.md)
-- [Local data workflow](LOCAL_DATA.md)
-- [Dataset exploration](EXPLORE_DATA.md)
-- [Weather and climate](WEATHER.md)
-- [Statistical methods](docs/STATISTICAL_METHODS.md)
-- [Data provenance](docs/DATA_PROVENANCE.md)
-- [Real-data inventory](docs/REAL_DATA_INVENTORY.md)
-- [Security and role-based access](docs/SECURITY_AND_RBAC.md)
-- [Integration test guidance](docs/INTEGRATION_TESTS.md)
+- [Current Product Guide](docs/CURRENT_PRODUCT_GUIDE.md) — end-to-end product, workspace, access and data guide.
+- [Complete Project Documentation](docs/PROJECT_DOCUMENTATION.md) — architecture, development and operating guidance.
+- [Product and System Specification](Documentation.md) — requirements and implementation reference; verify planned items against the current code.
+- [Price Data Sources](docs/PRICE_DATA_SOURCES.md) — source inventory and market-price interpretation.
+- [Data Provenance](docs/DATA_PROVENANCE.md) and [Real-data Inventory](docs/REAL_DATA_INVENTORY.md) — lineage and available records.
+- [Weather](WEATHER.md), [Statistical Methods](docs/STATISTICAL_METHODS.md), [Risk Engine](docs/RISK_ENGINE.md), [Digital Twin](docs/DIGITAL_TWIN.md), and [AI Agricultural Analyst](docs/AI_AGRICULTURAL_ANALYST.md).
+- [Local Setup](LOCAL_SETUP.md), [Explore Data](EXPLORE_DATA.md), [Security and RBAC](docs/SECURITY_AND_RBAC.md), and [Integration Tests](docs/INTEGRATION_TESTS.md).
 
 ## Quality checks
 
-Run the project checks from the repository root:
+Run from the repository root:
 
 ```sh
 npm run lint
@@ -104,21 +94,20 @@ node --test tests/*.test.js
 npm run build
 ```
 
-The production build writes client assets to `dist/client` and Worker output to `dist/server`.
+The production build emits client assets under `dist/client` and Worker output under `dist/server`. Passing local checks does not by itself verify external provider availability, deployed Supabase policies or production configuration.
 
 ## Deployment
 
-Configure production environment values and secrets in the hosting platform, apply reviewed database migrations through the established release process, then deploy the generated Cloudflare Worker using the target account's deployment procedure. Keep development shortcuts and local database placeholders out of production deployments. See [Supabase setup](SUPABASE_SETUP.md) before changing database infrastructure.
+Configure production values and secrets in the hosting platform, review and apply database migrations through the established release process, then deploy the Cloudflare Worker using the authorized account procedure. Follow [Supabase setup](SUPABASE_SETUP.md) before changing database infrastructure. Do not deploy local placeholders or development shortcuts to production.
 
 ## Development conventions
 
-- Preserve the existing route, SSR and plugin structure.
-- Keep application source in JavaScript and JSX.
-- Treat `src/routeTree.gen.ts` as generated router output; do not edit it manually.
-- Maintain source provenance, server-side authorization and user data protections.
-- Keep changes focused and add relevant regression coverage.
-- Never commit credentials, private source records or local database backups.
+- Preserve the frontend, file-based routes, SSR structure, plugin order and layout boundaries.
+- Keep application source in JavaScript and JSX. `src/routeTree.gen.ts` is generated; never edit it manually.
+- Preserve server-side authorization, provenance and user data.
+- Keep private survey files, credentials, backups and local environment files out of Git and static serving.
+- Update relevant documentation and regression coverage with behavior changes.
 
 ## AI Use Disclosure
 
-Our team used OpenAI Codex as an AI-assisted development tool for project documentation and code-lint review. Team members reviewed AI-assisted suggestions before incorporating them. The team is responsible for the project, its data, analysis and final submission.
+OpenAI Codex was used as an AI-assisted development tool for project documentation and code-lint review. Team members reviewed AI-assisted suggestions before incorporating them. The team is responsible for the project, its data, analysis and final submission.

@@ -1,11 +1,12 @@
 # AgriWiser Project Documentation
 
-AgriWiser is an agricultural intelligence and decision-support application focused on Rwanda. This guide introduces the product, its technical structure, data practices, security model, development workflow and the detailed reference documents maintained with the repository.
+AgriWiser is an agricultural intelligence and decision-support application focused on Rwanda. This guide introduces the current product, its technical structure, data practices, security model, development workflow and detailed references maintained with the repository. For a user-oriented explanation of the complete product and its boundaries, see the [Current Product Guide](CURRENT_PRODUCT_GUIDE.md).
 
 ## Contents
 
 - [Product overview](#product-overview)
 - [Workspaces](#workspaces)
+- [Current feature map](#current-feature-map)
 - [System architecture](#system-architecture)
 - [Data and analytical practice](#data-and-analytical-practice)
 - [Identity and security](#identity-and-security)
@@ -16,9 +17,9 @@ AgriWiser is an agricultural intelligence and decision-support application focus
 
 ## Product overview
 
-AgriWiser connects agricultural statistics, climate context, maps, analytical tools and authorized field workflows. Its central journey is to discover relevant information, understand its context, investigate patterns, coordinate follow-up where permitted, and communicate findings with their evidence.
+AgriWiser connects published agricultural statistics, climate context, maps, analytical tools, reports and authorized field workflows. Its central journey is to discover relevant information, understand its context, investigate patterns, coordinate follow-up where permitted, and communicate findings with their evidence.
 
-The application is built for users who need to explore agricultural conditions and make informed decisions. Access to workspaces and records is governed by the signed-in user's current role and the deployment's configured datasets.
+The application is built for users who need to explore agricultural conditions and make informed decisions. Access to protected actions and records is governed by server-side authorization and the signed-in user's current role. Data availability depends on the deployment and configured sources.
 
 ## Workspaces
 
@@ -30,9 +31,21 @@ The application has five main workspaces:
 | Analytics & Planning | Agricultural indicators, dataset exploration, comparisons, maps, reports and planning analysis. |
 | Field Operations | Assigned investigation work and operational follow-up. |
 | Community & Business | Community-focused agricultural information and business-relevant published records. |
-| Public Insights | Public-facing views of information approved for publication. |
+| Public Insights | A USSD-menu simulator that previews how selected agricultural information could appear through a basic-phone flow. |
 
 Agricultural Solutions is a feature within Analytics & Planning, not a sixth workspace. Weather and climate analysis, reports and dataset tools are available within the application's existing navigation and permissions.
+
+## Current feature map
+
+The workspace table above gives the high-level structure. Current user-facing capabilities include:
+
+- **Agricultural data:** Overview, dataset exploration, crop and district comparisons, maps and published-source context.
+- **Analytics & Planning:** Planning tools, Agricultural Solutions, risk intelligence, Digital Twin scenarios, AI Agricultural Analyst, model governance, weather and climate, alerts, and reports with export options.
+- **Field Operations:** Investigations and follow-up workflows with assignments, evidence references, audit events, review gates and role-checked actions.
+- **Community & Business:** Agricultural information, seasonal comparisons, approved guidance, per-user saved interests, Rwanda Agriculture Snapshot, historical Market Prices & Trends, and Directory & Services.
+- **Public Insights:** An English/Kinyarwanda USSD simulator for demonstrating menu navigation and selected information paths.
+
+The simulator does not place calls or connect to a telecom gateway. Market-price records are historical WFP observations rather than live eSoko quotes. Listings and guidance should be verified with their responsible source before users act. Analysis scenarios are hypothetical and do not establish causal effects. The [Current Product Guide](CURRENT_PRODUCT_GUIDE.md) explains these capabilities and their limits in detail; [Price Data Sources](PRICE_DATA_SOURCES.md) documents the market-price data specifically.
 
 ## System architecture
 
@@ -59,7 +72,7 @@ Agricultural statistics and climate products have different origins and meanings
 
 Yield or change calculations should be shown only when their source values and definitions support the calculation. Seasonal comparisons should use compatible periods and definitions. Weather estimates should be described as estimates at their native coverage and resolution, not as direct measurements at an individual farm. Observed association does not establish causation.
 
-The application documentation includes a data inventory, provenance notes, statistical methods and real-data verification references. These describe the datasets and methods documented by the repository; runtime availability depends on deployment configuration.
+The application documentation includes a data inventory, provenance notes, statistical methods and real-data verification references. These describe the datasets and methods documented by the repository; runtime availability depends on deployment configuration. Historical price records, farmer survey prices, published agricultural statistics, external weather estimates and model outputs are distinct evidence types and should not be conflated.
 
 ## Identity and security
 
@@ -114,6 +127,7 @@ Database changes require review against the existing schema and policies, a priv
 ### Product and application operations
 
 - [Project README](../README.md) — concise overview and quick start.
+- [Current Product Guide](CURRENT_PRODUCT_GUIDE.md) — current feature set, end-to-end use, workspace capabilities and interpretation limits.
 - [Product and system specification](../Documentation.md) — detailed product requirements and implementation specification.
 - [Local development setup](../LOCAL_SETUP.md) — local application configuration.
 - [Supabase setup](../SUPABASE_SETUP.md) — authentication, schema, migrations and operational guidance.
@@ -123,6 +137,7 @@ Database changes require review against the existing schema and policies, a priv
 - [Real-data inventory](REAL_DATA_INVENTORY.md) — documented datasets and observation coverage.
 - [Real-data verification](REAL_DATA_VERIFICATION.md) — verification approach and evidence.
 - [Data provenance](DATA_PROVENANCE.md) — source lineage and evidence context.
+- [Price data sources](PRICE_DATA_SOURCES.md) — WFP extract provenance, licensing context, preparation, dates and limitations.
 - [Statistical methods](STATISTICAL_METHODS.md) — definitions and calculation methods.
 - [Explore data](../EXPLORE_DATA.md) — dataset discovery and use.
 - [Weather](../WEATHER.md) — weather sources and analysis context.
