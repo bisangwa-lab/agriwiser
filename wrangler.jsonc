@@ -10,7 +10,7 @@
     {
       "binding": "LOCAL_AUTH_DB",
       "database_name": "hingasmart-local-auth",
-      "database_id": "00000000-0000-0000-0000-000000000001",
+      "database_id": "9dfdc651-70d2-4487-b0e2-f0658eacec76",
       "migrations_dir": "migrations"
     }
   ]

@@ -1,4 +1,4 @@
-import { ArrowRight, ClipboardCheck, Loader2, Lock, LogIn, Mail, Phone, ShieldCheck, Sprout, TrendingUp } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Loader2, Lock, LogIn, Mail, Phone, ShieldCheck, Sprout, TrendingUp, User } from "lucide-react";
 import { useState } from "react";
 import {useAccountConfiguration} from "@/hooks/useAccountConfiguration";
 import { appClient } from "@/api/appClient";
@@ -12,6 +12,16 @@ import { QUICK_LOCAL_ACCOUNTS } from "@/lib/local-quick-login";
 import { useLanguage } from "@/lib/LanguageContext";
 
 const PANEL_ICONS = { admin: ShieldCheck, analytics: TrendingUp, field_operations: ClipboardCheck, community_business: Sprout, public_insights: Phone };
+
+// Demo account credentials for competition access. Informational only — users
+// still enter email and password manually below. No autologin shortcuts.
+const DEMO_CREDENTIALS = [
+  { email: "admin@hingasmart.local", role: "Super Admin", panel: "Administration", icon: ShieldCheck },
+  { email: "analyst@hingasmart.local", role: "Agricultural Analyst", panel: "Analytics & Planning", icon: TrendingUp },
+  { email: "officer@hingasmart.local", role: "Agricultural Officer", panel: "Field Operations", icon: ClipboardCheck },
+  { email: "community@hingasmart.local", role: "Farmer", panel: "Community & Business", icon: Sprout },
+  { email: "viewer@hingasmart.local", role: "Public Viewer", panel: "Public Insights", icon: Phone },
+];
 
 // The /login page. ?returnTo= (or the platform's ?from_url=) is where the visitor
 // goes after signing in — the login gate and the MCP consent page send people here with it.
@@ -79,6 +89,23 @@ export function LoginPage() {
           })}
         </div>
       </section>}
+      <section aria-label="Demo account credentials" className="mb-6 space-y-3">
+        <h2 className="text-sm font-semibold">{t("demoCredentialsHeading")}</h2>
+        <p className="text-xs text-muted-foreground">{t("demoCredentialsDescription")}</p>
+        <div className="grid gap-2 sm:grid-cols-3">
+          {DEMO_CREDENTIALS.map((cred) => {
+            const Icon = cred.icon;
+            return (
+              <div key={cred.email} className="rounded-xl border border-primary/20 bg-accent/40 p-3 text-left">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"><Icon className="h-4 w-4" aria-hidden /></span>
+                <span className="block text-xs font-semibold text-primary">{cred.email}</span>
+                <span className="block text-[10px] text-muted-foreground">{cred.role} · {cred.panel}</span>
+              </div>
+            );
+          })}
+        </div>
+        <p className="text-[10px] text-muted-foreground">{t("demoPasswordNote")}</p>
+      </section>
       <details open={!quickLoginEnabled}>
       <summary className={quickLoginEnabled ? "mb-4 cursor-pointer text-xs font-medium text-primary" : "hidden"}>{t("useEmailPassword")}</summary>
       <form onSubmit={submit} className="space-y-4">
