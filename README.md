@@ -96,6 +96,8 @@ Use the configured sign-in flow. Development shortcuts, when enabled, are restri
 
 ## Project documentation
 
+- [Watch the AgriWiser demo](<demo video/InShot_20261101_114817216.mp4>) — recorded walkthrough of the application.
+
 - [Current Product Guide](docs/CURRENT_PRODUCT_GUIDE.md) — end-to-end product, workspace, access and data guide.
 - [Complete Project Documentation](docs/PROJECT_DOCUMENTATION.md) — architecture, development and operating guidance.
 - [Product and System Specification](Documentation.md) — requirements and implementation reference; verify planned items against the current code.
