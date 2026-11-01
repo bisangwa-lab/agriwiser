@@ -48,7 +48,7 @@ export async function supabaseSessionUser(){
 // The established session is an HttpOnly cookie, same as normal sign-in.
 async function demoPanelLogin(accountKey){
  if(!Object.hasOwn(QUICK_LOCAL_ACCOUNTS,accountKey))throw Object.assign(new Error('Choose a listed demo panel.'),{status:403});
- const account=QUICK_LOCAL_ACCOUNTS[accountKey],admin=supabaseAdminClient();
+ const account=QUICK_LOCAL_ACCOUNTS[accountKey],admin=supabaseAdminClient(),client=supabaseRequestClient();
  const listed=await admin.auth.admin.listUsers({page:1,perPage:1000});
  const existing=listed.data?.users.find(user=>user.email===account.email);
  if(listed.error||!existing)throw Object.assign(new Error('This demo account is unavailable.'),{status:403});

@@ -9,19 +9,22 @@ import { Label } from "@/components/ui/label";
 import { safeReturnTo } from "@/lib/authReturnTo";
 import { destinationAfterSignIn, signIn, signInError } from "@/lib/sign-in";
 import { QUICK_LOCAL_ACCOUNTS } from "@/lib/local-quick-login";
+import { PANELS } from "@/lib/rbac";
 import { useLanguage } from "@/lib/LanguageContext";
 
 const PANEL_ICONS = { admin: ShieldCheck, analytics: TrendingUp, field_operations: ClipboardCheck, community_business: Sprout, public_insights: Phone };
 
 // Demo panel access for competition judging. One click signs in with a
 // pre-provisioned Supabase account and opens that panel — no password needed.
-const DEMO_PANELS = [
-  { key: "administrator", email: "admin@hingasmart.local", role: "Super Admin", panel: "Administration", icon: ShieldCheck, path: "/admin" },
-  { key: "analytics", email: "analyst@hingasmart.local", role: "Agricultural Analyst", panel: "Analytics & Planning", icon: TrendingUp, path: "/analytics" },
-  { key: "field_operations", email: "officer@hingasmart.local", role: "Agricultural Officer", panel: "Field Operations", icon: ClipboardCheck, path: "/field-operations" },
-  { key: "community_business", email: "community@hingasmart.local", role: "Farmer", panel: "Community & Business", icon: Sprout, path: "/community-business" },
-  { key: "viewer", email: "viewer@hingasmart.local", role: "Public Viewer", panel: "Public Insights / USSD", icon: Phone, path: "/public-insights" },
-];
+const DEMO_ICONS = { administrator: ShieldCheck, analytics: TrendingUp, field_operations: ClipboardCheck, community_business: Sprout, viewer: Phone };
+const DEMO_ROLES = { super_admin: "Super Admin", agricultural_analyst: "Agricultural Analyst", agricultural_officer: "Agricultural Officer", farmer: "Farmer", public_viewer: "Public Viewer" };
+const DEMO_PANELS = Object.entries(QUICK_LOCAL_ACCOUNTS).map(([key, account]) => ({
+  key,
+  role: DEMO_ROLES[account.role] ?? account.role,
+  panel: PANELS[account.key]?.label ?? account.label,
+  icon: DEMO_ICONS[key],
+  path: PANELS[account.key]?.path ?? "/",
+}));
 
 // The /login page. ?returnTo= (or the platform's ?from_url=) is where the visitor
 // goes after signing in — the login gate and the MCP consent page send people here with it.
@@ -67,7 +70,7 @@ export function LoginPage() {
   }
 
   return (
-    <AuthLayout icon={LogIn} title={t("welcome")} subtitle={quickLoginEnabled ? t("chooseFivePanels") : t("signIntoWorkspace")} wide={quickLoginEnabled}>
+    <AuthLayout icon={LogIn} title={t("welcome")} subtitle={quickLoginEnabled ? t("chooseFivePanels") : t("signIntoWorkspace")} wide>
       <GoogleButton returnTo={returnTo} />
       <OrDivider />
       <AuthError>{error}</AuthError>
@@ -93,14 +96,14 @@ export function LoginPage() {
       <section aria-label="Demo panel access" className="mb-6 space-y-3">
         <h2 className="text-sm font-semibold">{t("demoPanelHeading")}</h2>
         <p className="text-xs text-muted-foreground">{t("demoPanelDescription")}</p>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {DEMO_PANELS.map((panel) => {
             const Icon = panel.icon;
             return <button key={panel.key} type="button" onClick={() => quickSignIn(panel.key)} disabled={busy}
               aria-label={`Open ${panel.panel} panel`}
-              className={`group flex w-full items-center gap-3 rounded-xl border border-primary/20 bg-accent/40 p-3.5 text-left transition-colors hover:border-primary/50 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-wait disabled:opacity-60`}>
+              className="group flex min-w-0 w-full items-center gap-3 rounded-xl border border-primary/20 bg-accent/40 p-3.5 text-left transition-colors hover:border-primary/50 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary disabled:cursor-wait disabled:opacity-60">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"><Icon className="h-5 w-5" aria-hidden /></span>
-              <span className="flex-1"><span className="block text-sm font-semibold">{panel.role}</span><span className="block text-xs text-muted-foreground">{panel.panel}</span></span>
+              <span className="min-w-0 flex-1"><span className="block text-sm font-semibold">{panel.role}</span><span className="block text-xs text-muted-foreground">{panel.panel}</span></span>
               {quickAccount === panel.key ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <ArrowRight className="h-4 w-4 text-primary" aria-hidden />}
             </button>;
           })}
